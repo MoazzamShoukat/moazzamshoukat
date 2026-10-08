@@ -25,36 +25,39 @@ function isActive(path: string) {
 }
 ---
 
-<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-[#FBFBFA]/90 dark:bg-[#121214]/90 border-b border-stone-200/70 dark:border-zinc-800/80 transition-colors duration-200">
+<header
+  id="main-header"
+  class="sticky top-0 z-50 w-full backdrop-blur-md bg-[#FBFBFA]/85 dark:bg-[#121214]/85 border-b border-stone-200/60 dark:border-zinc-800/60 transition-all duration-300"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       
-      <!-- Brand Logo / Name (Nova Minimalist Style) -->
-      <a href="/" class="group flex items-center gap-3">
-        <div class="w-10 h-10 rounded-2xl bg-stone-900 dark:bg-white text-white dark:text-stone-950 flex items-center justify-center font-bold text-sm tracking-wider shadow-xs group-hover:scale-105 transition-transform">
+      <!-- Logo & Identity on Left -->
+      <a href="/" class="group flex items-center gap-3 select-none flex-shrink-0">
+        <div class="w-10 h-10 rounded-2xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-950 flex items-center justify-center font-black text-sm tracking-widest shadow-2xs group-hover:scale-105 group-hover:shadow-xs transition-all duration-300">
           MS
         </div>
-        <div>
-          <span class="block text-sm sm:text-base font-extrabold text-stone-900 dark:text-stone-100 tracking-tight leading-tight group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
+        <div class="flex flex-col">
+          <span class="text-sm sm:text-base font-extrabold text-stone-900 dark:text-stone-100 tracking-tight leading-tight group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-200">
             {siteData.name}
           </span>
-          <span class="block text-[10px] uppercase tracking-widest font-semibold text-stone-600 dark:text-stone-300">
+          <span class="text-[10px] uppercase tracking-widest font-semibold text-stone-500 dark:text-stone-400">
             Tech • Research • Immigration
           </span>
         </div>
       </a>
 
-      <!-- Desktop Navigation for extra large screens -->
-      <nav class="hidden xl:flex items-center gap-1 bg-stone-100/70 dark:bg-zinc-900/60 p-1.5 rounded-full border border-stone-200/60 dark:border-zinc-800/60">
+      <!-- Desktop Navigation in Center / Right (xl screens show full set) -->
+      <nav class="hidden xl:flex items-center gap-1 bg-stone-200/40 dark:bg-zinc-900/40 p-1.5 rounded-full border border-stone-200/60 dark:border-zinc-800/60 shadow-2xs">
         {navLinks.map((link) => {
           const active = isActive(link.href);
           return (
             <a
               href={link.href}
-              class={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all ${
+              class={`px-3 py-1.5 text-[12px] font-semibold rounded-full transition-all duration-200 ${
                 active
-                  ? 'text-stone-950 dark:text-white bg-white dark:bg-zinc-800 shadow-2xs'
-                  : 'text-stone-600 dark:text-stone-400 hover:text-stone-950 dark:hover:text-white hover:bg-white/60 dark:hover:bg-zinc-800/50'
+                  ? 'text-stone-950 dark:text-white bg-white dark:bg-zinc-800 shadow-xs'
+                  : 'text-stone-600 dark:text-stone-400 hover:text-stone-950 dark:hover:text-white hover:bg-white/70 dark:hover:bg-zinc-800/60'
               }`}
             >
               {link.label}
@@ -63,70 +66,89 @@ function isActive(path: string) {
         })}
       </nav>
 
-      <!-- Desktop Navigation for large screens (compact) -->
-      <nav class="hidden md:flex xl:hidden items-center gap-1 text-xs">
-        <a href="/" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Home</a>
-        <a href="/about" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">About</a>
-        <a href="/services" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Services</a>
-        <a href="/selected-work" class="px-2 py-1 font-bold text-amber-800 dark:text-amber-400">Work</a>
-        <a href="/immigration" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Immigration</a>
-        <a href="/experience" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Experience</a>
-        <a href="/contact" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Contact</a>
+      <!-- Desktop Navigation for Large (lg to xl) screens (compact primary links) -->
+      <nav class="hidden lg:flex xl:hidden items-center gap-1 text-xs">
+        <a href="/" class={`px-2.5 py-1.5 rounded-full font-semibold transition-colors ${isActive('/') ? 'text-stone-950 dark:text-white bg-stone-200/60 dark:bg-zinc-800' : 'text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white'}`}>Home</a>
+        <a href="/about" class={`px-2.5 py-1.5 rounded-full font-semibold transition-colors ${isActive('/about') ? 'text-stone-950 dark:text-white bg-stone-200/60 dark:bg-zinc-800' : 'text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white'}`}>About</a>
+        <a href="/services" class={`px-2.5 py-1.5 rounded-full font-semibold transition-colors ${isActive('/services') ? 'text-stone-950 dark:text-white bg-stone-200/60 dark:bg-zinc-800' : 'text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white'}`}>Services</a>
+        <a href="/selected-work" class={`px-2.5 py-1.5 rounded-full font-bold transition-colors ${isActive('/selected-work') ? 'text-amber-700 dark:text-amber-400 bg-amber-100/60 dark:bg-amber-950/40' : 'text-amber-600 dark:text-amber-400 hover:underline'}`}>Work</a>
+        <a href="/immigration" class={`px-2.5 py-1.5 rounded-full font-semibold transition-colors ${isActive('/immigration') ? 'text-stone-950 dark:text-white bg-stone-200/60 dark:bg-zinc-800' : 'text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white'}`}>Immigration</a>
+        <a href="/experience" class={`px-2.5 py-1.5 rounded-full font-semibold transition-colors ${isActive('/experience') ? 'text-stone-950 dark:text-white bg-stone-200/60 dark:bg-zinc-800' : 'text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white'}`}>Experience</a>
+        <a href="/contact" class={`px-2.5 py-1.5 rounded-full font-semibold transition-colors ${isActive('/contact') ? 'text-stone-950 dark:text-white bg-stone-200/60 dark:bg-zinc-800' : 'text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white'}`}>Contact</a>
       </nav>
 
-      <!-- Right Header Actions (Theme Toggle & Nova Style CTA) -->
-      <div class="hidden md:flex items-center gap-3">
+      <!-- Right Header Actions (Clean Icon-Only Toggle & CTA) -->
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Sun/Moon Icon-Only Toggle -->
         <ThemeToggle />
+
+        <!-- Nova-Style Minimal CTA -->
         <a
           href="/contact"
-          class="inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 dark:bg-amber-400 dark:hover:bg-amber-300 rounded-full shadow-2xs hover:shadow-xs transition-all active:scale-95"
+          class="inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 dark:bg-amber-400 dark:hover:bg-amber-300 rounded-full shadow-2xs hover:shadow-xs transition-all duration-200 active:scale-95"
         >
           Let’s Talk →
         </a>
       </div>
 
-      <!-- Mobile Hamburger and Theme Toggle -->
-      <div class="flex items-center gap-2 md:hidden">
+      <!-- Mobile Right Controls (Toggle & Animated Hamburger) -->
+      <div class="flex items-center gap-2 sm:gap-3 lg:hidden">
+        <!-- Sun/Moon Icon-Only Toggle for Mobile -->
         <ThemeToggle />
+
+        <!-- Modern Hamburger Button with Animated 3-Bar to X Transition -->
         <button
           id="mobile-menu-btn"
           type="button"
           aria-label="Toggle navigation menu"
-          class="p-2 rounded-xl text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-zinc-800 focus:outline-none"
+          aria-expanded="false"
+          class="w-10 h-10 flex flex-col justify-center items-center gap-1.5 text-stone-700 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white focus:outline-none cursor-pointer p-2"
         >
-          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
+          <span
+            id="bar-1"
+            class="w-5 h-[2px] bg-current rounded-full transition-all duration-300 transform origin-center"
+          ></span>
+          <span
+            id="bar-2"
+            class="w-5 h-[2px] bg-current rounded-full transition-all duration-300"
+          ></span>
+          <span
+            id="bar-3"
+            class="w-5 h-[2px] bg-current rounded-full transition-all duration-300 transform origin-center"
+          ></span>
         </button>
       </div>
 
     </div>
   </div>
 
-  <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 dark:border-zinc-800 bg-[#FBFBFA]/98 dark:bg-[#121214]/98 backdrop-blur-md px-4 pt-3 pb-6 space-y-1">
-    {navLinks.map((link) => {
-      const active = isActive(link.href);
-      return (
-        <a
-          href={link.href}
-          class={`mobile-nav-link block px-3 py-2 text-sm font-semibold rounded-xl transition-colors ${
-            active
-              ? 'text-stone-950 dark:text-white bg-stone-200/70 dark:bg-zinc-800'
-              : 'text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-zinc-800'
-          }`}
-        >
-          {link.label}
-        </a>
-      );
-    })}
-    <div class="pt-3">
+  <!-- Mobile Dropdown Menu with Smooth Slide Down & Backdrop Blur -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden border-t border-stone-200/70 dark:border-zinc-800/80 bg-[#FBFBFA]/95 dark:bg-[#121214]/95 backdrop-blur-xl px-5 pt-4 pb-8 space-y-1 transition-all duration-300"
+  >
+    <div class="grid grid-cols-2 gap-1.5 pb-3">
+      {navLinks.map((link) => {
+        const active = isActive(link.href);
+        return (
+          <a
+            href={link.href}
+            class={`mobile-nav-link block px-3.5 py-2.5 text-xs font-bold rounded-xl transition-colors ${
+              active
+                ? 'text-stone-950 dark:text-white bg-stone-200/80 dark:bg-zinc-800 shadow-2xs'
+                : 'text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-zinc-800/60'
+            }`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+    </div>
+
+    <div class="pt-2 border-t border-stone-200/60 dark:border-zinc-800/60">
       <a
         href="/contact"
-        class="mobile-nav-link flex items-center justify-center w-full px-4 py-2.5 text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 rounded-full shadow transition-colors"
+        class="mobile-nav-link flex items-center justify-center w-full px-5 py-3 text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 rounded-full shadow-xs transition-colors"
       >
         Start a Project / Consultation →
       </a>
@@ -135,39 +157,65 @@ function isActive(path: string) {
 </header>
 
 <script>
-  function setupMobileMenu() {
+  function setupHeader() {
+    const header = document.getElementById('main-header');
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    const burger = document.getElementById('hamburger-icon');
-    const close = document.getElementById('close-icon');
+    const bar1 = document.getElementById('bar-1');
+    const bar2 = document.getElementById('bar-2');
+    const bar3 = document.getElementById('bar-3');
     const links = document.querySelectorAll('.mobile-nav-link');
 
-    if (!btn || !menu || !burger || !close) return;
-
-    const toggleMenu = () => {
-      const isOpen = !menu.classList.contains('hidden');
-      if (isOpen) {
-        menu.classList.add('hidden');
-        burger.classList.remove('hidden');
-        close.classList.add('hidden');
+    // Sticky Header Scroll Blur & Shadow Effect
+    const handleScroll = () => {
+      if (!header) return;
+      if (window.scrollY > 15) {
+        header.classList.add('shadow-xs', 'bg-[#FBFBFA]/95', 'dark:bg-[#121214]/95');
+        header.classList.remove('bg-[#FBFBFA]/85', 'dark:bg-[#121214]/85');
       } else {
-        menu.classList.remove('hidden');
-        burger.classList.add('hidden');
-        close.classList.remove('hidden');
+        header.classList.remove('shadow-xs', 'bg-[#FBFBFA]/95', 'dark:bg-[#121214]/95');
+        header.classList.add('bg-[#FBFBFA]/85', 'dark:bg-[#121214]/85');
       }
     };
 
-    btn.addEventListener('click', toggleMenu);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        burger.classList.remove('hidden');
-        close.classList.add('hidden');
+    // Modern Animated Hamburger Transition to X
+    if (btn && menu && bar1 && bar2 && bar3) {
+      let isOpen = false;
+
+      const toggleMenu = () => {
+        isOpen = !isOpen;
+        btn.setAttribute('aria-expanded', isOpen.toString());
+
+        if (isOpen) {
+          menu.classList.remove('hidden');
+          // Animate bars to X
+          bar1.style.transform = 'translateY(5px) rotate(45deg)';
+          bar2.style.opacity = '0';
+          bar2.style.transform = 'scale(0)';
+          bar3.style.transform = 'translateY(-5px) rotate(-45deg)';
+        } else {
+          menu.classList.add('hidden');
+          // Reset bars
+          bar1.style.transform = 'none';
+          bar2.style.opacity = '1';
+          bar2.style.transform = 'none';
+          bar3.style.transform = 'none';
+        }
+      };
+
+      btn.addEventListener('click', toggleMenu);
+
+      links.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (isOpen) toggleMenu();
+        });
       });
-    });
+    }
   }
 
-  setupMobileMenu();
-  document.addEventListener('astro:after-swap', setupMobileMenu);
+  setupHeader();
+  document.addEventListener('astro:after-swap', setupHeader);
 </script>
