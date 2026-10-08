@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+---
+
+<Layout
+  title={`Work Experience | ${siteData.name}`}
+  description="Career history of Moazzam Shoukat at Emulation AI, Ibtidah Solutions, and private consulting."
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Nova Minimalist Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 text-[11px] font-bold uppercase tracking-widest mb-4">
+          CAREER TRACK / TIMELINE
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.1]">
+          Engineering & Advisory <br />
+          <span class="text-stone-500 dark:text-stone-400">Track Record.</span>
+        </h1>
+        <p class="mt-4 text-base text-stone-600 dark:text-stone-300 max-w-xl">
+          6+ years of software engineering, industrial scraping pipelines, and high-stakes migration guidance.
+        </p>
+      </div>
+
+      <!-- Experience Cards Timeline (Nova Bento Style) -->
+      <div class="max-w-4xl space-y-10 mb-20">
+        {siteData.experiences.map((exp, idx) => (
+          <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-5">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-100 dark:border-zinc-800 pb-4">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-stone-600 dark:text-stone-300">0{idx + 1} / {exp.type}</span>
+                <h2 class="text-2xl font-black text-stone-900 dark:text-white mt-0.5">{exp.role}</h2>
+                <div class="text-xs font-semibold text-amber-700 dark:text-amber-400 mt-0.5">
+                  {exp.company} • {exp.location}
+                </div>
+              </div>
+              <div class="text-xs font-bold px-3 py-1.5 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 self-start sm:self-auto">
+                {exp.period}
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+              {exp.description}
+            </p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
+              {exp.responsibilities.map((resp) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-500 font-bold mt-0.5">›</span>
+                  <span class="leading-relaxed">{resp}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="pt-4 border-t border-stone-100 dark:border-zinc-800 flex flex-wrap gap-1.5">
+              {exp.technologies.map((tech) => (
+                <span class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+          </div>
+        ))}
+
+        <!-- Private Practice Card -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-amber-500/10 dark:bg-amber-500/5 border border-amber-300 dark:border-amber-500/30 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-200/60 dark:border-amber-900/40 pb-4">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300">03 / INDEPENDENT ADVISORY</span>
+              <h2 class="text-2xl font-black text-stone-900 dark:text-white mt-0.5">Immigration Strategist & Language Mentor</h2>
+              <div class="text-xs font-semibold text-stone-600 dark:text-stone-300 mt-0.5">
+                Worldwide Consultations & Training
+              </div>
+            </div>
+            <div class="text-xs font-bold px-3 py-1.5 rounded-full bg-amber-200/60 dark:bg-amber-900/60 text-stone-950 dark:text-white self-start sm:self-auto">
+              2018 - Present
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            Personal advisory assisting applicants with Canada Express Entry/PNP, Australia GSM Subclasses 189/190/491, positive Skills Assessment files (ACS, EA, VETASSESS), and intensive IELTS / PTE / NAATI CCL training.
+          </p>
+
+          <div class="pt-2 flex gap-4">
+            <a href="/immigration" class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline">
+              Immigration Roadmaps →
+            </a>
+            <a href="/english-training" class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline">
+              Language Coaching →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Nova CTA -->
+      <div class="p-8 sm:p-12 rounded-3xl bg-stone-900 text-white dark:bg-zinc-900 border border-stone-800 flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl">
+        <div>
+          <span class="text-[11px] font-bold text-amber-400 uppercase tracking-widest block mb-1">HIRING OR CONSULTING</span>
+          <h2 class="text-2xl sm:text-3xl font-bold">Have an engineering role or technical project?</h2>
+        </div>
+        <a
+          href="/contact"
+          class="px-6 py-3.5 rounded-full text-xs font-bold bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors flex-shrink-0"
+        >
+          Discuss Opportunities →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>

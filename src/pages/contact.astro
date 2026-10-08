@@ -1,0 +1,249 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+---
+
+<Layout
+  title={`Contact & Start a Project | ${siteData.name}`}
+  description="Connect directly with Moazzam Shoukat for backend engineering consultations, AI collaboration, or Canada/Australia immigration evaluations."
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Nova Minimalist Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 text-[11px] font-bold uppercase tracking-widest mb-4">
+          START A PROJECT / CONSULTATION
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.1]">
+          Let’s Talk. <br />
+          <span class="text-stone-500 dark:text-stone-400">Tell Me About Your Goals.</span>
+        </h1>
+        <p class="mt-4 text-base text-stone-600 dark:text-stone-300 max-w-xl">
+          Whether you need a senior software engineer for backend systems or an immigration strategist for Canadian/Australian PR, message me directly.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Verified Contact Info (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-stone-600 dark:text-stone-300">Direct Contact</span>
+            
+            <div class="space-y-3 text-xs sm:text-sm">
+              <!-- WhatsApp -->
+              <a
+                href={siteData.contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-between p-4 rounded-2xl bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-800/60 hover:border-emerald-500 transition-colors group"
+              >
+                <div>
+                  <span class="block text-[10px] font-bold text-emerald-800 dark:text-emerald-400 uppercase tracking-wider">WhatsApp Direct</span>
+                  <span class="font-bold text-stone-900 dark:text-white group-hover:text-emerald-600">{siteData.contact.phone}</span>
+                </div>
+                <span class="text-emerald-600 text-xs font-bold">Chat Now →</span>
+              </a>
+
+              <!-- Email -->
+              <a
+                href={`mailto:${siteData.contact.email}`}
+                class="flex items-center justify-between p-4 rounded-2xl bg-stone-50 dark:bg-zinc-900/80 border border-stone-200/60 dark:border-zinc-800 hover:border-stone-400 transition-colors group"
+              >
+                <div>
+                  <span class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider">Email Address</span>
+                  <span class="font-bold text-stone-900 dark:text-white group-hover:text-amber-600">{siteData.contact.email}</span>
+                </div>
+                <span class="text-stone-600 dark:text-stone-300 text-xs font-bold">Send Mail →</span>
+              </a>
+
+              <!-- Location -->
+              <div class="p-4 rounded-2xl bg-stone-50 dark:bg-zinc-900/80 border border-stone-200/60 dark:border-zinc-800">
+                <span class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider">Location & Consults</span>
+                <span class="font-bold text-stone-900 dark:text-white block">{siteData.contact.location}</span>
+                <span class="text-[11px] text-stone-600 dark:text-stone-300">Online video consultations worldwide via Zoom / Google Meet</span>
+              </div>
+            </div>
+
+            <!-- Social Links Matrix -->
+            <div class="pt-4 border-t border-stone-100 dark:border-zinc-800">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-stone-400 mb-3">Professional Profiles</span>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <a href={siteData.socials.linkedin} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-stone-100 dark:bg-zinc-800 hover:text-amber-600 transition-colors flex items-center gap-1.5 font-medium">
+                  <span>🔗</span> LinkedIn
+                </a>
+                <a href={siteData.socials.scholar} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-stone-100 dark:bg-zinc-800 hover:text-amber-600 transition-colors flex items-center gap-1.5 font-medium">
+                  <span>🎓</span> Scholar
+                </a>
+                <a href={siteData.socials.upwork} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-stone-100 dark:bg-zinc-800 hover:text-emerald-600 transition-colors flex items-center gap-1.5 font-medium">
+                  <span>💼</span> Upwork
+                </a>
+                <a href={siteData.socials.coachingInstagram} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-stone-100 dark:bg-zinc-800 hover:text-pink-600 transition-colors flex items-center gap-1.5 font-medium">
+                  <span>📸</span> Coaching
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Inquiry / Consultation Form (7 cols) -->
+        <div class="lg:col-span-7">
+          <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-stone-600 dark:text-stone-300">Form Submission</span>
+              <h3 class="text-2xl font-black text-stone-900 dark:text-white mt-0.5">Send a Message</h3>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">
+                Responses are usually sent within 24 business hours.
+              </p>
+            </div>
+
+            <form id="contact-page-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contactName" class="block text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-1">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="contactName"
+                    name="contactName"
+                    required
+                    placeholder="e.g. John Doe"
+                    class="w-full px-4 py-3 rounded-2xl bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  />
+                </div>
+
+                <div>
+                  <label for="contactEmail" class="block text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-1">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="contactEmail"
+                    name="contactEmail"
+                    required
+                    placeholder="john@example.com"
+                    class="w-full px-4 py-3 rounded-2xl bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contactPhone" class="block text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-1">
+                    WhatsApp / Phone *
+                  </label>
+                  <input
+                    type="tel"
+                    id="contactPhone"
+                    name="contactPhone"
+                    required
+                    placeholder="+92 328 0000000"
+                    class="w-full px-4 py-3 rounded-2xl bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  />
+                </div>
+
+                <div>
+                  <label for="inquiryType" class="block text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-1">
+                    Inquiry Type *
+                  </label>
+                  <select
+                    id="inquiryType"
+                    name="inquiryType"
+                    required
+                    class="w-full px-4 py-3 rounded-2xl bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  >
+                    <option value="">Select Category...</option>
+                    <option value="Software / Backend Engineering Project">Software / Backend Engineering Project</option>
+                    <option value="Canada Immigration (Express Entry/PNP)">Canada Immigration (Express Entry/PNP)</option>
+                    <option value="Australia Migration (189/190/491)">Australia Migration (189/190/491)</option>
+                    <option value="Australia Skills Assessment (ACS/EA)">Australia Skills Assessment (ACS/EA)</option>
+                    <option value="IELTS / PTE / TOEFL Coaching">IELTS / PTE / TOEFL Coaching</option>
+                    <option value="NAATI CCL Urdu Training (+5 PR Points)">NAATI CCL Urdu Training (+5 PR Points)</option>
+                    <option value="Student Visa Guidance">Student Visa Guidance</option>
+                    <option value="General Consultation">General Consultation</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="contactMessage" class="block text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-1">
+                  Message Details *
+                </label>
+                <textarea
+                  id="contactMessage"
+                  name="contactMessage"
+                  rows="4"
+                  required
+                  placeholder="Share details regarding your technical requirements, or your educational background, years of work experience, and migration goals..."
+                  class="w-full px-4 py-3 rounded-2xl bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-contact-btn"
+                class="w-full py-3.5 px-6 rounded-full font-bold text-xs bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Submit Inquiry →</span>
+              </button>
+            </form>
+
+            <div
+              id="contact-success-msg"
+              class="hidden p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 text-xs"
+            >
+              <strong class="block text-sm font-bold mb-1">Message Sent Successfully!</strong>
+              Thank you for reaching out. Moazzam will review your inquiry and follow up shortly.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function setupContact() {
+    const form = document.getElementById('contact-page-form') as HTMLFormElement;
+    const success = document.getElementById('contact-success-msg');
+    const btn = document.getElementById('submit-contact-btn');
+    const select = document.getElementById('inquiryType') as HTMLSelectElement;
+
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam && select) {
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.toLowerCase().includes(serviceParam.toLowerCase()) || 
+            select.options[i].value.toLowerCase().includes(serviceParam.toLowerCase())) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    if (!form || !success || !btn) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      btn.setAttribute('disabled', 'true');
+      btn.innerHTML = 'Sending Message...';
+
+      setTimeout(() => {
+        form.reset();
+        btn.removeAttribute('disabled');
+        btn.innerHTML = '<span>Submit Inquiry →</span>';
+        success.classList.remove('hidden');
+        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 700);
+    });
+  }
+
+  setupContact();
+  document.addEventListener('astro:after-swap', setupContact);
+</script>

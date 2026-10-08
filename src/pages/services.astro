@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+---
+
+<Layout
+  title={`Services | ${siteData.name}`}
+  description="Explore professional services in Software Engineering, Data Pipelines, AI Research, Canadian & Australian Immigration, and English Language Coaching."
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Nova Minimalist Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 text-[11px] font-bold uppercase tracking-widest mb-4">
+          SOLUTIONS / PRACTICE AREAS
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.1]">
+          Services Built for <br />
+          <span class="text-stone-500 dark:text-stone-400">Scale and Precision.</span>
+        </h1>
+        <p class="mt-4 text-base text-stone-600 dark:text-stone-300 max-w-xl">
+          High-performance engineering solutions for companies alongside strategic immigration pathways for individuals and families.
+        </p>
+      </div>
+
+      <!-- Section 1: Software & Data Engineering -->
+      <div class="mb-20">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-xs font-black uppercase tracking-widest text-stone-600 dark:text-stone-300">01 / TECHNOLOGY & DATA</span>
+          <div class="h-px flex-grow bg-stone-200 dark:bg-zinc-800"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {siteData.technicalServices.map((tech) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 hover:border-stone-400 dark:hover:border-zinc-600 transition-all flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-stone-600 dark:text-stone-300 block mb-2">Technical Solution</span>
+                <h3 class="text-xl font-extrabold text-stone-900 dark:text-white mb-3">{tech.title}</h3>
+                <p class="text-xs text-stone-600 dark:text-stone-300 mb-6 leading-relaxed">{tech.desc}</p>
+                <div class="space-y-2 mb-6 border-t border-stone-100 dark:border-zinc-800 pt-4">
+                  {tech.features.map((f) => (
+                    <div class="flex items-center gap-2 text-xs text-stone-700 dark:text-stone-300">
+                      <span class="text-amber-500 font-bold">✓</span>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <a
+                href={`/contact?service=${encodeURIComponent(tech.title)}`}
+                class="block w-full text-center py-3 px-4 rounded-full text-xs font-bold bg-stone-100 dark:bg-zinc-800 hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-stone-950 transition-colors"
+              >
+                Inquire on Service →
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Section 2: Immigration & Language Coaching -->
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">02 / IMMIGRATION & LANGUAGE</span>
+          <div class="h-px flex-grow bg-stone-200 dark:bg-zinc-800"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {siteData.immigrationServices.map((imm) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 hover:border-amber-400 dark:hover:border-amber-400/60 transition-all flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block mb-2">Immigration & Test Prep</span>
+                <h3 class="text-xl font-extrabold text-stone-900 dark:text-white mb-3">{imm.title}</h3>
+                <p class="text-xs text-stone-600 dark:text-stone-300 mb-6 leading-relaxed">{imm.desc}</p>
+                <div class="space-y-2 mb-6 border-t border-stone-100 dark:border-zinc-800 pt-4">
+                  {imm.features.map((f) => (
+                    <div class="flex items-center gap-2 text-xs text-stone-700 dark:text-stone-300">
+                      <span class="text-emerald-500 font-bold">✓</span>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <a
+                href={`/contact?service=${encodeURIComponent(imm.title)}`}
+                class="block w-full text-center py-3 px-4 rounded-full text-xs font-bold bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors"
+              >
+                Consult on {imm.title.split(' ')[0]} →
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

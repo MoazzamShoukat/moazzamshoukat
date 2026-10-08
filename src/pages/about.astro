@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+---
+
+<Layout
+  title={`About | ${siteData.name}`}
+  description="Discover the background, technical journey, research publications, and immigration advisory mission of Moazzam Shoukat."
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Nova Minimalist Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 text-[11px] font-bold uppercase tracking-widest mb-4">
+          BACKGROUND / BIO
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.1]">
+          Engineer. Researcher. <br />
+          <span class="text-stone-500 dark:text-stone-400">Immigration Strategist.</span>
+        </h1>
+        <p class="mt-4 text-base text-stone-600 dark:text-stone-300 max-w-xl">
+          Based in Lahore, Pakistan. Bridging software engineering discipline with global mobility advisory across Canada and Australia.
+        </p>
+      </div>
+
+      <!-- Bento Grid About Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
+        
+        <!-- Profile Card (4 cols) -->
+        <div class="lg:col-span-4 p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-6">
+          <div class="aspect-square rounded-2xl overflow-hidden bg-stone-100 dark:bg-zinc-800">
+            <img
+              src="/images/moazzam.png"
+              alt="Moazzam Shoukat"
+              class="w-full h-full object-cover object-top"
+              onerror="this.src='/favicon.svg'"
+            />
+          </div>
+          <div>
+            <h2 class="text-2xl font-black text-stone-900 dark:text-white">{siteData.name}</h2>
+            <p class="text-xs font-semibold text-amber-700 dark:text-amber-400 mt-1">{siteData.contact.location}</p>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-stone-100 dark:border-zinc-800 text-xs">
+            <div class="flex justify-between py-1 border-b border-stone-50 dark:border-zinc-800/60">
+              <span class="text-stone-500">Degree:</span>
+              <span class="font-bold text-stone-800 dark:text-stone-200">BS CS (ITU Lahore)</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-stone-50 dark:border-zinc-800/60">
+              <span class="text-stone-500">Focus:</span>
+              <span class="font-bold text-stone-800 dark:text-stone-200">Backend & Speech AI</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-stone-500">Immigration:</span>
+              <span class="font-bold text-stone-800 dark:text-stone-200">Canada & Australia PR</span>
+            </div>
+          </div>
+
+          <a
+            href="/contact"
+            class="block w-full text-center py-3 px-4 rounded-full text-xs font-bold bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors shadow-2xs"
+          >
+            Connect With Moazzam →
+          </a>
+        </div>
+
+        <!-- Story & Philosophy (8 cols) -->
+        <div class="lg:col-span-8 space-y-8">
+          
+          <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-5">
+            <span class="text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300">The Journey</span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-white">
+              Data Discipline Meets Legal Precision
+            </h3>
+            <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed">
+              With a formal Computer Science degree from <strong>Information Technology University (ITU), Lahore</strong>, I developed a passion for algorithmic optimization and system architectures. As Software Engineer at <strong>Emulation AI</strong> and Data Engineer at <strong>Ibtidah Solutions</strong>, I engineered high-throughput backends and web scraping engines processing millions of records.
+            </p>
+            <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed">
+              Concurrently, my research on <strong>Speech Transformers</strong> and large audio models resulted in five peer-reviewed publications. When seeing skilled engineers and healthcare workers get rejected for Australian or Canadian PR due to avoidable clerical errors or falling 0.5 bands short in IELTS, I built a strategic advisory practice applying the exact same engineering precision to immigration cases.
+            </p>
+          </div>
+
+          <!-- 3 Visual Principles -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-6 rounded-2xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800">
+              <span class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest block mb-2">01 / HONESTY</span>
+              <h4 class="font-extrabold text-stone-900 dark:text-white text-base mb-1">Zero False Hopes</h4>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Upfront points diagnostic before taking any immigration or software case.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800">
+              <span class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest block mb-2">02 / RIGOR</span>
+              <h4 class="font-extrabold text-stone-900 dark:text-white text-base mb-1">Algorithmic Prep</h4>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Language exam coaching based on machine rubrics (PTE/IELTS).</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800">
+              <span class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest block mb-2">03 / DIRECT</span>
+              <h4 class="font-extrabold text-stone-900 dark:text-white text-base mb-1">Direct Mentorship</h4>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">All clients work directly with me—no outsourced junior agents.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>

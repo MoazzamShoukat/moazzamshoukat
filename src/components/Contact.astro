@@ -1,0 +1,392 @@
+---
+import { siteData } from '../data/siteData';
+import Icon from './Icon.astro';
+---
+
+<section id="contact" class="py-20 bg-slate-50 dark:bg-slate-900/60 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950/70 text-blue-800 dark:text-blue-300 text-xs font-semibold uppercase tracking-wider mb-3">
+        Get In Touch
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        Book a Consultation or Inquire Today
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+        Fill out the form below for a profile evaluation, or reach out directly via WhatsApp and email for urgent queries.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Contact Info & Direct Links (5 columns) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <div class="p-7 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-md space-y-6">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+            Direct Contact Information
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            All consultations are private and confidential. You will receive an assessment of your prospects and actionable next steps.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <!-- Email -->
+            <a
+              href={`mailto:${siteData.email}`}
+              class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
+            >
+              <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <Icon name="mail" class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">Email Inquiries</span>
+                <span class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-amber-400 transition-colors">
+                  {siteData.email}
+                </span>
+              </div>
+            </a>
+
+            <!-- Phone / WhatsApp -->
+            <a
+              href={siteData.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
+            >
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <Icon name="phone" class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">Phone / WhatsApp</span>
+                <span class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  {siteData.phone}
+                </span>
+              </div>
+            </a>
+
+            <!-- Office / Consultations -->
+            <div class="flex items-start gap-3.5 p-3 rounded-2xl">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0">
+                <Icon name="location" class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">Locations & Consultations</span>
+                <span class="text-sm font-medium text-slate-900 dark:text-white">
+                  {siteData.location}
+                </span>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="flex items-start gap-3.5 p-3 rounded-2xl">
+              <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0">
+                <Icon name="clock" class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">Working Hours</span>
+                <span class="text-sm font-medium text-slate-900 dark:text-white">
+                  {siteData.consultationHours}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Chat Action -->
+          <div class="pt-2">
+            <a
+              href={siteData.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-700/20 transition-all"
+            >
+              <span>Instant Chat on WhatsApp</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.71 4.31 3.8 2.53 1.09 2.53.73 2.99.69.45-.04 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+            <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500 mb-3">
+              Connect on Social Platforms
+            </span>
+            <div class="flex items-center gap-3">
+              {siteData.socials.linkedin && (
+                <a
+                  href={siteData.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+              )}
+              {siteData.socials.youtube && (
+                <a
+                  href={siteData.socials.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube Channel"
+                  class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-slate-700 transition-colors"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+              )}
+              {siteData.socials.facebook && (
+                <a
+                  href={siteData.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Page"
+                  class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.7 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/>
+                  </svg>
+                </a>
+              )}
+              {siteData.socials.instagram && (
+                <a
+                  href={siteData.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram Profile"
+                  class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-pink-600 dark:hover:text-pink-400 hover:bg-pink-50 dark:hover:bg-slate-700 transition-colors"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contact Consultation Form (7 columns) -->
+      <div class="lg:col-span-7">
+        <div class="p-7 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-xl relative">
+          
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+            Request Case Assessment
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-8">
+            Tell me about your educational background, target destination, and required services.
+          </p>
+
+          <form id="consultation-form" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="fullName" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  placeholder="e.g. Ahmad Khan"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-amber-400 transition-all"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="name@example.com"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-amber-400 transition-all"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="phone" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  WhatsApp / Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="+92 300 1234567"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-amber-400 transition-all"
+                />
+              </div>
+
+              <div>
+                <label for="service" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  Primary Service Needed *
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-amber-400 transition-all"
+                >
+                  <option value="">Select a service...</option>
+                  <option value="Canada & Australia Immigration">Canada & Australia Immigration</option>
+                  <option value="Student Visa Guidance">Student Visa Guidance</option>
+                  <option value="Australia Skills Assessment">Australia Skills Assessment</option>
+                  <option value="English Test Training (IELTS, PTE, etc.)">English Test Training (IELTS, PTE, etc.)</option>
+                  <option value="NAATI CCL Urdu Training">NAATI CCL Urdu Training (+5 PR Points)</option>
+                  <option value="Combined Immigration & Language Package">Combined Immigration & Language Package</option>
+                  <option value="General Profile Evaluation">General Profile Evaluation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="targetCountry" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  Target Destination
+                </label>
+                <select
+                  id="targetCountry"
+                  name="targetCountry"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-amber-400 transition-all"
+                >
+                  <option value="Both Canada & Australia">Both Canada & Australia</option>
+                  <option value="Canada Only">Canada Only</option>
+                  <option value="Australia Only">Australia Only</option>
+                  <option value="Test Prep / NAATI CCL Only">Test Prep / NAATI CCL Only</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="consultationMode" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  Preferred Consultation Mode
+                </label>
+                <select
+                  id="consultationMode"
+                  name="consultationMode"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-amber-400 transition-all"
+                >
+                  <option value="Online Video Call (Zoom / Google Meet)">Online Video Call (Zoom / Google Meet)</option>
+                  <option value="Phone / WhatsApp Call">Phone / WhatsApp Call</option>
+                  <option value="In-Person Consultation">In-Person Consultation</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                Case Details / Message *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                placeholder="Share your age, highest qualification, years of work experience, current English scores (if any), and specific goals..."
+                class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-amber-400 transition-all"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-blue-600 hover:bg-blue-700 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-slate-950 shadow-md transition-all flex items-center justify-center gap-2"
+            >
+              <span>Submit Consultation Request</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Interactive Success Confirmation Box -->
+          <div
+            id="form-success-message"
+            class="hidden mt-6 p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 text-sm"
+          >
+            <div class="flex items-center gap-3 font-bold text-base mb-1">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
+              <span>Thank You! Consultation Request Received</span>
+            </div>
+            <p class="text-xs text-emerald-700 dark:text-emerald-300 mt-1">
+              I have logged your request and will review your profile shortly. You will receive a response via email or WhatsApp within 24 business hours.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function setupContactForm() {
+    const form = document.getElementById('consultation-form') as HTMLFormElement;
+    const successBox = document.getElementById('form-success-message');
+    const serviceSelect = document.getElementById('service') as HTMLSelectElement;
+
+    // Check URL parameters if redirected from service card
+    const hash = window.location.hash;
+    if (hash.includes('service=')) {
+      const match = hash.match(/service=([^&]+)/);
+      if (match && serviceSelect) {
+        const decoded = decodeURIComponent(match[1]);
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].text.includes(decoded) || serviceSelect.options[i].value.includes(decoded)) {
+            serviceSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    if (!form || !successBox) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      if (submitBtn) {
+        submitBtn.setAttribute('disabled', 'true');
+        submitBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+          Processing Your Request...
+        `;
+      }
+
+      setTimeout(() => {
+        form.reset();
+        if (submitBtn) {
+          submitBtn.removeAttribute('disabled');
+          submitBtn.innerHTML = `
+            <span>Submit Consultation Request</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          `;
+        }
+        successBox.classList.remove('hidden');
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 700);
+    });
+  }
+
+  setupContactForm();
+  document.addEventListener('astro:after-swap', setupContactForm);
+</script>

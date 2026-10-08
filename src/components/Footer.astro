@@ -1,0 +1,100 @@
+---
+import { siteData } from '../data/siteData';
+---
+
+<footer class="bg-stone-900 text-stone-300 dark:bg-[#0A0A0C] border-t border-stone-800 pt-16 pb-12 transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-800/80">
+      
+      <!-- Brand & Profile Summary (4 cols) -->
+      <div class="lg:col-span-4 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-white text-stone-950 flex items-center justify-center font-bold text-sm tracking-wider">
+            MS
+          </div>
+          <div>
+            <span class="block text-base font-bold text-white tracking-tight leading-tight">
+              {siteData.name}
+            </span>
+            <span class="block text-[11px] font-medium text-stone-400">
+              Senior Software Engineer & Immigration Mentor
+            </span>
+          </div>
+        </div>
+
+        <p class="text-xs text-stone-400 leading-relaxed max-w-sm">
+          {siteData.tagline}
+        </p>
+
+        <div class="pt-2 text-xs text-stone-400 space-y-1.5">
+          <p><strong class="text-stone-300">Location:</strong> {siteData.contact.location}</p>
+          <p><strong class="text-stone-300">Email:</strong> <a href={`mailto:${siteData.contact.email}`} class="hover:text-amber-400 transition-colors">{siteData.contact.email}</a></p>
+          <p><strong class="text-stone-300">WhatsApp:</strong> <a href={siteData.contact.whatsapp} class="hover:text-emerald-400 transition-colors">{siteData.contact.phone}</a></p>
+        </div>
+      </div>
+
+      <!-- Quick Page Links (2 cols) -->
+      <div class="lg:col-span-2 space-y-3">
+        <h4 class="text-xs font-bold text-white uppercase tracking-widest">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/" class="hover:text-amber-400 transition-colors">Home</a></li>
+          <li><a href="/about" class="hover:text-amber-400 transition-colors">About</a></li>
+          <li><a href="/services" class="hover:text-amber-400 transition-colors">Services</a></li>
+          <li><a href="/selected-work" class="hover:text-amber-400 transition-colors">Selected Work</a></li>
+          <li><a href="/experience" class="hover:text-amber-400 transition-colors">Experience</a></li>
+          <li><a href="/education-research" class="hover:text-amber-400 transition-colors">Research & Papers</a></li>
+          <li><a href="/skills" class="hover:text-amber-400 transition-colors">Skills</a></li>
+          <li><a href="/contact" class="hover:text-amber-400 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Specialized Pillars (3 cols) -->
+      <div class="lg:col-span-3 space-y-3">
+        <h4 class="text-xs font-bold text-white uppercase tracking-widest">Immigration & Language</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/immigration" class="hover:text-amber-400 transition-colors">Canada Express Entry & PNP</a></li>
+          <li><a href="/immigration" class="hover:text-amber-400 transition-colors">Australia GSM (189/190/491)</a></li>
+          <li><a href="/immigration" class="hover:text-amber-400 transition-colors">Australia Skills Assessment</a></li>
+          <li><a href="/immigration" class="hover:text-amber-400 transition-colors">Student Visa Advisory</a></li>
+          <li><a href="/english-training" class="hover:text-amber-400 transition-colors">IELTS & PTE Masterclasses</a></li>
+          <li><a href="/english-training" class="hover:text-amber-400 transition-colors">NAATI CCL Urdu (+5 PR Points)</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect & Profiles (3 cols) -->
+      <div class="lg:col-span-3 space-y-3">
+        <h4 class="text-xs font-bold text-white uppercase tracking-widest">Verified Profiles</h4>
+        <div class="flex flex-col gap-2 text-xs">
+          <a href={siteData.socials.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+            <span>🔗</span> <span>LinkedIn Profile</span>
+          </a>
+          <a href={siteData.socials.scholar} target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+            <span>🎓</span> <span>Google Scholar Citations</span>
+          </a>
+          <a href={siteData.socials.upwork} target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors flex items-center gap-2">
+            <span>💼</span> <span>Upwork Verified Talent</span>
+          </a>
+          <a href={siteData.socials.coachingInstagram} target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors flex items-center gap-2">
+            <span>📸</span> <span>Coaching by MS (Instagram)</span>
+          </a>
+          <a href={siteData.socials.coachingFacebook} target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors flex items-center gap-2">
+            <span>📘</span> <span>Coaching by MS (Facebook)</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Regulatory Notice & Copyright -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-400">
+      <div class="text-center md:text-left max-w-2xl leading-relaxed">
+        <strong class="text-stone-300">Disclaimer:</strong> Legal immigration advice is provided for strategic guidance and does not guarantee visa outcomes. Visa grants are at the discretion of IRCC and Dept of Home Affairs.
+      </div>
+      <div class="text-center md:text-right flex-shrink-0 text-stone-400">
+        © {new Date().getFullYear()} {siteData.name}. All rights reserved.
+      </div>
+    </div>
+
+  </div>
+</footer>

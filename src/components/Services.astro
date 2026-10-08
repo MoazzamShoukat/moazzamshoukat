@@ -1,0 +1,96 @@
+---
+import { siteData } from '../data/siteData';
+import Icon from './Icon.astro';
+---
+
+<section id="services" class="py-20 bg-white dark:bg-slate-950 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/70 text-amber-800 dark:text-amber-300 text-xs font-semibold uppercase tracking-wider mb-3">
+        Comprehensive Solutions
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        Services Tailored to Your Global Ambition
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+        From initial points calculation to language exam mastery and visa grant, explore our core consulting and training programs.
+      </p>
+    </div>
+
+    <!-- Services Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {siteData.services.map((service, index) => (
+        <div
+          id={service.id}
+          class="group relative flex flex-col justify-between p-7 rounded-3xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/90 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-400/80 shadow-xs hover:shadow-xl transition-all duration-300"
+        >
+          <!-- Top Row: Icon & Badge -->
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex items-center justify-center text-blue-600 dark:text-amber-400 shadow-xs group-hover:scale-105 transition-transform">
+                <Icon name={service.icon} class="w-6 h-6" />
+              </div>
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 group-hover:bg-amber-100 group-hover:text-amber-800 dark:group-hover:bg-amber-950 dark:group-hover:text-amber-300 transition-colors">
+                {service.badge}
+              </span>
+            </div>
+
+            <!-- Title & Desc -->
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-amber-400 transition-colors mb-3">
+              {service.title}
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+              {service.shortDesc}
+            </p>
+
+            <!-- Features Bullet List -->
+            <div class="space-y-2.5 mb-6 border-t border-slate-200/80 dark:border-slate-800/80 pt-5">
+              <span class="block text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
+                What's Included:
+              </span>
+              {service.features.map((feature) => (
+                <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                  <span class="text-emerald-500 font-bold mt-0.5">✓</span>
+                  <span>{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Target Audience & Action Link -->
+          <div class="border-t border-slate-200/80 dark:border-slate-800/80 pt-5 mt-4">
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 italic">
+              <strong class="font-medium text-slate-700 dark:text-slate-300 not-italic">Ideal for:</strong> {service.targetAudience}
+            </p>
+            <a
+              href={`#contact?service=${encodeURIComponent(service.title)}`}
+              class="inline-flex items-center justify-between w-full px-4 py-2.5 text-xs font-semibold rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-amber-400 dark:hover:text-slate-950 transition-colors"
+            >
+              <span>Consult on {service.title.split(' ')[0]}</span>
+              <Icon name="arrow-right" class="w-3.5 h-3.5 ml-1" />
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Custom Inquiries Banner -->
+    <div class="mt-16 p-8 rounded-3xl bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2 text-center md:text-left">
+        <h3 class="text-xl sm:text-2xl font-bold">Need a Custom Strategy for Your Profile?</h3>
+        <p class="text-blue-200 text-sm max-w-xl">
+          Not sure whether you should apply for Australia 189/190/491 or Canada Express Entry? Let's analyze your CRS score and Australian points test side-by-side.
+        </p>
+      </div>
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold text-sm bg-amber-400 text-slate-950 hover:bg-amber-300 shadow-md transition-all flex-shrink-0"
+      >
+        Book Strategy Call
+      </a>
+    </div>
+
+  </div>
+</section>

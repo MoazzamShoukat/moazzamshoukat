@@ -1,0 +1,173 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { siteData } from '../data/siteData';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "");
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/selected-work', label: 'Selected Work' },
+  { href: '/immigration', label: 'Immigration' },
+  { href: '/english-training', label: 'English & NAATI' },
+  { href: '/experience', label: 'Experience' },
+  { href: '/education-research', label: 'Research' },
+  { href: '/skills', label: 'Skills' },
+  { href: '/contact', label: 'Contact' },
+];
+
+function isActive(path: string) {
+  const clean = path.replace(/\/$/, "");
+  if (clean === "" && currentPath === "") return true;
+  if (clean !== "" && currentPath === clean) return true;
+  return false;
+}
+---
+
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-[#FBFBFA]/90 dark:bg-[#121214]/90 border-b border-stone-200/70 dark:border-zinc-800/80 transition-colors duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo / Name (Nova Minimalist Style) -->
+      <a href="/" class="group flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-stone-900 dark:bg-white text-white dark:text-stone-950 flex items-center justify-center font-bold text-sm tracking-wider shadow-xs group-hover:scale-105 transition-transform">
+          MS
+        </div>
+        <div>
+          <span class="block text-sm sm:text-base font-extrabold text-stone-900 dark:text-stone-100 tracking-tight leading-tight group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
+            {siteData.name}
+          </span>
+          <span class="block text-[10px] uppercase tracking-widest font-semibold text-stone-600 dark:text-stone-300">
+            Tech • Research • Immigration
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation for extra large screens -->
+      <nav class="hidden xl:flex items-center gap-1 bg-stone-100/70 dark:bg-zinc-900/60 p-1.5 rounded-full border border-stone-200/60 dark:border-zinc-800/60">
+        {navLinks.map((link) => {
+          const active = isActive(link.href);
+          return (
+            <a
+              href={link.href}
+              class={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all ${
+                active
+                  ? 'text-stone-950 dark:text-white bg-white dark:bg-zinc-800 shadow-2xs'
+                  : 'text-stone-600 dark:text-stone-400 hover:text-stone-950 dark:hover:text-white hover:bg-white/60 dark:hover:bg-zinc-800/50'
+              }`}
+            >
+              {link.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Desktop Navigation for large screens (compact) -->
+      <nav class="hidden md:flex xl:hidden items-center gap-1 text-xs">
+        <a href="/" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Home</a>
+        <a href="/about" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">About</a>
+        <a href="/services" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Services</a>
+        <a href="/selected-work" class="px-2 py-1 font-bold text-amber-800 dark:text-amber-400">Work</a>
+        <a href="/immigration" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Immigration</a>
+        <a href="/experience" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Experience</a>
+        <a href="/contact" class="px-2 py-1 font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700">Contact</a>
+      </nav>
+
+      <!-- Right Header Actions (Theme Toggle & Nova Style CTA) -->
+      <div class="hidden md:flex items-center gap-3">
+        <ThemeToggle />
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 dark:bg-amber-400 dark:hover:bg-amber-300 rounded-full shadow-2xs hover:shadow-xs transition-all active:scale-95"
+        >
+          Let’s Talk →
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger and Theme Toggle -->
+      <div class="flex items-center gap-2 md:hidden">
+        <ThemeToggle />
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          aria-label="Toggle navigation menu"
+          class="p-2 rounded-xl text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-zinc-800 focus:outline-none"
+        >
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 dark:border-zinc-800 bg-[#FBFBFA]/98 dark:bg-[#121214]/98 backdrop-blur-md px-4 pt-3 pb-6 space-y-1">
+    {navLinks.map((link) => {
+      const active = isActive(link.href);
+      return (
+        <a
+          href={link.href}
+          class={`mobile-nav-link block px-3 py-2 text-sm font-semibold rounded-xl transition-colors ${
+            active
+              ? 'text-stone-950 dark:text-white bg-stone-200/70 dark:bg-zinc-800'
+              : 'text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-zinc-800'
+          }`}
+        >
+          {link.label}
+        </a>
+      );
+    })}
+    <div class="pt-3">
+      <a
+        href="/contact"
+        class="mobile-nav-link flex items-center justify-center w-full px-4 py-2.5 text-xs font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 rounded-full shadow transition-colors"
+      >
+        Start a Project / Consultation →
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  function setupMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const burger = document.getElementById('hamburger-icon');
+    const close = document.getElementById('close-icon');
+    const links = document.querySelectorAll('.mobile-nav-link');
+
+    if (!btn || !menu || !burger || !close) return;
+
+    const toggleMenu = () => {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        burger.classList.remove('hidden');
+        close.classList.add('hidden');
+      } else {
+        menu.classList.remove('hidden');
+        burger.classList.add('hidden');
+        close.classList.remove('hidden');
+      }
+    };
+
+    btn.addEventListener('click', toggleMenu);
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        burger.classList.remove('hidden');
+        close.classList.add('hidden');
+      });
+    });
+  }
+
+  setupMobileMenu();
+  document.addEventListener('astro:after-swap', setupMobileMenu);
+</script>
