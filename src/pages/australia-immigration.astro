@@ -1,0 +1,281 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+import CanadaVsAustraliaPathway from '../components/infographics/CanadaVsAustraliaPathway.astro';
+
+const faqs = [
+  {
+    q: "How many points do I need to receive an invite for Australia PR?",
+    a: "While the statutory minimum to submit an Expression of Interest (EOI) is 65 points, actual invitation rounds are competitive. For IT, Engineering, and Accounting occupations, candidates typically need 85–95 points for Subclass 189 and 190. Scoring Superior English (+20 pts) in PTE and passing NAATI CCL Urdu (+5 pts) provides an indispensable 25-point surge."
+  },
+  {
+    q: "What is the difference between Subclass 189, 190, and 491?",
+    a: "Subclass 189 is an independent permanent visa allowing you to live and work anywhere in Australia without sponsorship. Subclass 190 is a permanent visa requiring state or territory government nomination (+5 points). Subclass 491 is a 5-year provisional regional visa (+15 points) with a direct pathway to permanent residency (Subclass 191) after meeting income and residence criteria."
+  },
+  {
+    q: "Why is PTE Academic preferred over IELTS for Australia Skilled Visas?",
+    a: "To achieve 'Superior English' (20 migration points), you must score 8.0 in all four IELTS modules or 79 in all four PTE Academic modules. Because PTE is 100% computer-marked by automated speech and writing algorithms, it is statistically faster and more predictable to attain 79+ through structured template training."
+  },
+  {
+    q: "What is NAATI CCL and how does it award 5 bonus points?",
+    a: "The Credentialed Community Language (CCL) test is conducted online by NAATI. It assesses your ability to interpret dialogues between English and Urdu. Scoring at least 63/90 grants 5 bonus points on your Australian GSM points grid with no work or educational prerequisites."
+  },
+  {
+    q: "How important is third-party financial evidence for Australian Skills Assessment?",
+    a: "Extremely critical. Authorities such as ACS (IT) and VETASSESS reject reference letters that lack third-party payment proof. You must submit official tax records (FBR withholding statements) and continuous bank statements demonstrating direct employer salary deposits."
+  },
+  {
+    q: "Can I bring my spouse and children on an Australian skilled visa?",
+    a: "Yes. All General Skilled Migration visas (189, 190, 491) allow you to include your spouse and dependent children in your application. Your family members receive identical work and study rights in Australia."
+  }
+];
+
+const offerings = [
+  {
+    icon: "🦘",
+    title: "Subclass 189 (Skilled Independent)",
+    desc: "Complete EOI management for the premier direct PR visa with zero state or regional restrictions in Australia."
+  },
+  {
+    icon: "🏛️",
+    title: "Subclass 190 (State Nominated)",
+    desc: "State nomination registration across Victoria (VIC), New South Wales (NSW), South Australia (SA), and Western Australia (WA) for +5 bonus points."
+  },
+  {
+    icon: "🏞️",
+    title: "Subclass 491 (Skilled Work Regional)",
+    desc: "Secure +15 bonus points through regional state sponsorship or eligible family sponsorship with structured pathways to Permanent Residency."
+  },
+  {
+    icon: "⚡",
+    title: "+20 Points via PTE Academic 79+",
+    desc: "Algorithm-targeted coaching to crack Pearson AI scoring rubrics and secure maximum language migration points."
+  },
+  {
+    icon: "🗣️",
+    title: "+5 Points via NAATI CCL Urdu",
+    desc: "1-on-1 dialogue drills, customized shorthand, and vocabulary banks for high-probability first-attempt pass results."
+  },
+  {
+    icon: "📊",
+    title: "Skills Assessment (ACS & EA)",
+    desc: "Airtight documentation engineering for ACS IT RPL and Engineers Australia CDR reports with zero deduction surprises."
+  }
+];
+
+const stats = [
+  { value: "85+", label: "Successful Visa Grants" },
+  { value: "+25 Pts", label: "PTE & NAATI English Boost" },
+  { value: "98%+", label: "Skills Assessment Success Rate" },
+  { value: "85-95", label: "Target Points Tally Achieved" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Australia Immigration Expert | General Skilled Migration (189/190/491) | Moazzam Shoukat"
+  description="Leading Australia immigration expert in Lahore. Master SkillSelect EOI points test for Subclass 189, 190, and 491 with +20 points via PTE 79+ and +5 points via NAATI CCL Urdu."
+  keywords="Australia Immigration Expert, Australia PR Pakistan, Australia Subclass 189 190 491, SkillSelect points test, NAATI CCL Urdu points, PTE 79 Australia PR, Australia skilled migration Lahore"
+  schema={faqSchema}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Service Page Hero Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          GENERAL SKILLED MIGRATION (SUBCLASSES 189, 190 & 491)
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Australia Immigration Expert. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">SkillSelect PR Strategy.</span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          Unlock Australia Permanent Residency by engineering an elite points tally (85–95+). We combine technical skills assessments with +25 bonus points across PTE 79+ and NAATI CCL Urdu to secure state nomination invitations.
+        </p>
+
+        <!-- CTA Action Row -->
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="/contact"
+            class="px-8 py-4 rounded-full bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>Book Free Points Audit</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a
+            href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20want%20an%20Australia%20PR%20points%20evaluation."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>WhatsApp Consultant</span>
+            <span class="text-xs opacity-90">+92-328-048-4399</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Trust Stat Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        {stats.map((s) => (
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs text-center">
+            <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400 tracking-tight">{s.value}</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-bold">{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Offerings Grid -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <h2 class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 mb-2">TARGETED GSM PATHWAYS</h2>
+          <h3 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Structured Path to Permanent Residency</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">From points scoring and state nomination selection to formal visa grant.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {offerings.map((item) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs hover:border-amber-400/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="text-3xl mb-4">{item.icon}</div>
+                <h4 class="text-xl font-bold text-[#0A1128] dark:text-white mb-2">{item.title}</h4>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- NEW EMBEDDED INFOGRAPHIC: Canada vs Australia Pathway Matrix -->
+      <div class="mb-24">
+        <CanadaVsAustraliaPathway />
+      </div>
+
+      <!-- Why Choose Moazzam Shoukat Section -->
+      <div class="p-8 sm:p-12 lg:p-16 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20 mb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400 text-[11px] font-bold uppercase tracking-widest">
+              WHY CHOOSE MOAZZAM SHOUKAT
+            </span>
+            <h3 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+              One Unified Mentor for Assessment, Tests, and Visas.
+            </h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Standard immigration agents outsource your PTE coaching and have zero knowledge of NAATI CCL or technical ACS skills assessments. We handle every single step under one roof, guaranteeing seamless alignment between your resume, test certificates, and Department of Home Affairs forms.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div class="flex items-start gap-3">
+                <span class="text-amber-400 font-bold text-lg">✓</span>
+                <div>
+                  <h5 class="text-sm font-bold text-white">Direct +25 Language Strategy</h5>
+                  <p class="text-xs text-slate-400 mt-0.5">We coach you personally for PTE 79+ and NAATI CCL Urdu.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-amber-400 font-bold text-lg">✓</span>
+                <div>
+                  <h5 class="text-sm font-bold text-white">State Nomination Insights</h5>
+                  <p class="text-xs text-slate-400 mt-0.5">Track live occupation lists across VIC, NSW, SA, WA, and QLD.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-amber-400 font-bold text-lg">✓</span>
+                <div>
+                  <h5 class="text-sm font-bold text-white">Full Transparency</h5>
+                  <p class="text-xs text-slate-400 mt-0.5">Your ImmiAccount and SkillSelect login details remain yours.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-amber-400 font-bold text-lg">✓</span>
+                <div>
+                  <h5 class="text-sm font-bold text-white">Fast Document Verification</h5>
+                  <p class="text-xs text-slate-400 mt-0.5">Pre-screened payslips, bank statements, and reference letters.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col gap-4 p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div class="text-xs uppercase tracking-widest text-amber-400 font-bold">CALCULATE POINTS</div>
+            <div class="text-2xl font-black text-white">Free Australian GSM Diagnostic</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Find out your current points tally and learn which visa subclass (189, 190, or 491) offers the fastest invitation window for your profession.
+            </p>
+            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+              <a
+                href="/contact"
+                class="text-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-xs transition-all shadow-md"
+              >
+                Book Free Assessment
+              </a>
+              <a
+                href="https://wa.me/923280484399?text=Hello%20Moazzam,%20I%20want%20to%20assess%20my%20Australia%20GSM%20points."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-center px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs transition-all shadow-md"
+              >
+                WhatsApp Advisor
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion / Cards -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <h2 class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 mb-2">FREQUENTLY ASKED QUESTIONS</h2>
+          <h3 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Australia PR Queries</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">Answers to essential questions regarding the points test and state nominations.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {faqs.map((faq, i) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                  {i + 1}
+                </span>
+                <div>
+                  <h4 class="text-base font-bold text-[#0A1128] dark:text-white mb-2">{faq.q}</h4>
+                  <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bottom Conversion Callout -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Ready to Calculate Your Australian Migration Points?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          Book an audit session to identify hidden points, fast-track your skills assessment, and submit an invitation-ready EOI.
+        </p>
+        <div class="pt-2 flex justify-center gap-3">
+          <a
+            href="/contact"
+            class="px-8 py-3.5 rounded-full font-bold text-xs bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-colors shadow-md"
+          >
+            Start Points Assessment &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

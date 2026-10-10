@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const capabilities = [
+  {
+    icon: "🌐",
+    title: "Modern Jamstack & Full-Stack Web Apps",
+    desc: "Blazing fast web apps built with Next.js, Astro, React, TypeScript, and modern headless architectures."
+  },
+  {
+    icon: "⚡",
+    title: "Sub-Second Performance & 95+ Lighthouse",
+    desc: "Zero-bloat code, asset optimization, edge caching, and server-side rendering for top Google core web vitals."
+  },
+  {
+    icon: "🎨",
+    title: "High-Converting UI/UX & Design Systems",
+    desc: "Tailwind CSS, clean typography, responsive mobile-first layouts, and accessible dark/light mode theming."
+  },
+  {
+    icon: "🔌",
+    title: "REST & GraphQL API Integration",
+    desc: "Seamless connection to third-party services, Stripe/payment gateways, CRM webhooks, and custom microservices."
+  },
+  {
+    icon: "🛡️",
+    title: "SEO Architecture & Semantic Markup",
+    desc: "Structured JSON-LD schema, dynamic Open Graph tags, canonical URLs, and indexation optimization for organic traffic."
+  },
+  {
+    icon: "🔒",
+    title: "Enterprise Auth & Database Backends",
+    desc: "Secure user authentication (OAuth, Supabase, NextAuth), PostgreSQL/MongoDB storage, and data encryption."
+  }
+];
+
+const techStack = [
+  { name: "Frontend", tools: "Next.js, Astro, React, TypeScript, Tailwind CSS" },
+  { name: "Backend", tools: "Node.js, Python (FastAPI/Django), Serverless Functions" },
+  { name: "Databases", tools: "PostgreSQL, MongoDB, Supabase, Redis" },
+  { name: "Deployment", tools: "Vercel, AWS, Cloudflare, Docker" }
+];
+
+const faqs = [
+  {
+    q: "Why do you recommend Astro or Next.js for web development?",
+    a: "Astro and Next.js offer unparalleled performance through Server-Side Rendering (SSR) and Static Site Generation (SSG). They eliminate client-side JavaScript bloat, load in under a second, and naturally rank higher on Google search results."
+  },
+  {
+    q: "Will my website be mobile-responsive and accessible?",
+    a: "Yes. Every website is built mobile-first, tested across iOS and Android devices, and structured to meet WCAG accessibility standards with full keyboard navigation and high-contrast dark/light mode support."
+  },
+  {
+    q: "Can you build custom client portals or SaaS web applications?",
+    a: "Absolutely. We build complex web applications featuring multi-tenant databases, role-based dashboards, automated billing, and real-time data visualizers."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title={`Full-Stack Web Development | Modern, Fast & Scalable Web Apps | ${siteData.name}`}
+  description="Custom full-stack web applications built with Next.js, Astro, React, and Python backends. Sub-second performance, 95+ Lighthouse scores, and conversion-optimized UI."
+  schema={faqSchema}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">
+            Web Development
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          MODERN FULL-STACK WEB ENGINEERING
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Modern Web Development. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Fast, Sleek & Conversion-Driven.</span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          High-performance web apps, corporate portals, and SaaS platforms built using Next.js, Astro, and Python microservices. Engineered for sub-second load times, top-tier SEO rankings, and seamless user experiences.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="/contact"
+            class="px-8 py-4 rounded-full bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>Start Web Project</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a
+            href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20want%20to%20discuss%20a%20web%20development%20project."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>WhatsApp Discussion</span>
+            <span class="text-xs opacity-90">+92-328-048-4399</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Trust Stats Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">95+</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Google Lighthouse Score</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">&lt;1.0s</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">First Contentful Paint</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">100%</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Mobile Responsiveness</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">SEO-Ready</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Built-in Schema & Meta</div>
+        </div>
+      </div>
+
+      <!-- Capabilities Grid -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 block mb-2">TECHNICAL DELIVERABLES</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">What the Service Includes</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {capabilities.map((cap) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs hover:border-amber-400/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="text-3xl mb-4">{cap.icon}</div>
+                <h3 class="text-xl font-bold text-[#0A1128] dark:text-white mb-2">{cap.title}</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{cap.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tech Stack Breakdown -->
+      <div class="mb-24 p-8 sm:p-12 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20">
+        <div class="max-w-2xl mb-10">
+          <span class="text-xs uppercase tracking-widest font-black text-amber-400 block mb-2">MODERN ARCHITECTURE</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">Production-Proven Tech Stack</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {techStack.map((stack) => (
+            <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <span class="text-amber-400 text-xs font-black uppercase tracking-wider block mb-2">{stack.name}</span>
+              <p class="text-sm text-white font-medium">{stack.tools}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQs -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 block mb-2">QUESTIONS & ANSWERS</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {faqs.map((faq) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs space-y-3">
+              <h4 class="text-base font-bold text-[#0A1128] dark:text-white">{faq.q}</h4>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bottom Conversion -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Ready to Build a High-Performance Website?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          Reach out for a direct consultation on project timeline, technical architecture, and transparent deliverables.
+        </p>
+        <div class="pt-2 flex justify-center gap-3">
+          <a
+            href="/contact"
+            class="px-8 py-3.5 rounded-full font-bold text-xs bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-colors shadow-md"
+          >
+            Request Free Web Quote &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

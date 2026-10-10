@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+import ResearchHighlightsVisual from '../components/infographics/ResearchHighlightsVisual.astro';
+---
+
+<Layout
+  title="AI Researcher Speech Processing & Large Audio Models | Moazzam Shoukat"
+  description="Explore Moazzam Shoukat's 7 published AI research papers in speech processing, large audio models, transformers in Computer Science Review, and acoustic healthcare IoT."
+  keywords="AI Researcher Speech Processing, Large Audio Models, Speech Transformers survey, Computer Science Review Moazzam Shoukat, Affective Computing Metaverse, Internet of Audio Things Healthcare"
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          ACADEMIC SCHOLARSHIP & PAPERS
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Research & <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Publications.</span>
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+          Peer-reviewed survey papers, journal articles, and investigative studies in speech transformers, large audio foundation models, and non-invasive acoustic diagnostics.
+        </p>
+
+        <!-- Google Scholar Link Button -->
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a
+            href={siteData.socials.scholar}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 text-xs font-bold transition-all shadow-md"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+            <span>View Verified Citations on Google Scholar &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- EMBEDDED INFOGRAPHIC: Research Taxonomy Visual -->
+      <div class="mb-16">
+        <ResearchHighlightsVisual />
+      </div>
+
+      <!-- Research Interests Infographic Strip -->
+      <div class="mb-16 p-8 rounded-3xl bg-slate-50 dark:bg-[#111827] border border-slate-200 dark:border-slate-800">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400 block mb-4">
+          PRIMARY RESEARCH DOMAINS
+        </span>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {siteData.researchInterests.map((interest) => (
+            <div class="p-4 rounded-2xl bg-white dark:bg-[#0F172A] border border-slate-200/80 dark:border-slate-800/80 text-center flex flex-col items-center justify-center">
+              <span class="text-lg mb-1">🔬</span>
+              <span class="text-xs font-bold text-[#0A1128] dark:text-white leading-tight">{interest}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Showcase of All 7 Papers with Direct Paper URLs & Scholar Links -->
+      <div class="space-y-6 mb-20">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-black text-[#0A1128] dark:text-white tracking-tight">
+            Published Research Papers ({siteData.publications.length})
+          </h2>
+          <span class="text-xs font-bold text-slate-500">Peer-Reviewed & Preprints</span>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6">
+          {siteData.publications.map((paper, idx) => (
+            <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 hover:shadow-xl transition-all duration-200 flex flex-col justify-between">
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-full text-[11px] font-black bg-slate-100 dark:bg-slate-800 text-[#0A1128] dark:text-slate-200">
+                      Paper 0{idx + 1}
+                    </span>
+                    <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20">
+                      {paper.citationBadge}
+                    </span>
+                  </div>
+                  <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">
+                    {paper.venue} &bull; {paper.year}
+                  </div>
+                </div>
+
+                <h3 class="text-xl sm:text-2xl font-black text-[#0A1128] dark:text-white leading-snug mb-3">
+                  {paper.title}
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                  {paper.description}
+                </p>
+              </div>
+
+              <div class="pt-5 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex flex-wrap gap-2">
+                  {paper.tags.map((tag) => (
+                    <span class="px-2.5 py-1 rounded-md text-[11px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+
+                <!-- Direct Paper Link (arXiv, IEEE, Elsevier) & Google Scholar Link -->
+                <div class="flex items-center gap-3">
+                  <a
+                    href={paper.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-4 py-2 rounded-xl text-xs font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 transition-all inline-flex items-center gap-1.5"
+                  >
+                    <span>Read Paper (arXiv / IEEE)</span>
+                    <span>&rarr;</span>
+                  </a>
+
+                  {paper.scholarUrl && (
+                    <a
+                      href={paper.scholarUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="px-3 py-2 rounded-xl text-xs font-semibold text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors"
+                      title="View Citation Record on Google Scholar"
+                    >
+                      Scholar Citation
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Collaboration CTA -->
+      <div class="p-10 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="text-2xl font-black">Interested in Research Collaboration?</h4>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">Open to peer-reviewing, speech AI benchmarks, and acoustic healthcare explorations.</p>
+        </div>
+        <a
+          href="/contact"
+          class="px-6 py-3 rounded-full text-xs font-black bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 transition-colors shadow-md shrink-0"
+        >
+          Contact Moazzam &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>

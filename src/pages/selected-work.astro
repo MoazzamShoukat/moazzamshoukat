@@ -10,171 +10,148 @@ import { siteData } from '../data/siteData';
   <div class="py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Nova Style Minimalist Header -->
+      <!-- Page Header -->
       <div class="max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 text-[11px] font-bold uppercase tracking-widest mb-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
           PORTFOLIO / SELECTED CASES
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.1]">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
           Crafted Systems. <br />
-          <span class="text-stone-500 dark:text-stone-400">Measurable Outcomes.</span>
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Measurable Outcomes.</span>
         </h1>
-        <p class="mt-4 text-base text-stone-600 dark:text-stone-300 max-w-xl">
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
           A curated selection of backend architectures, speech processing research surveys, data scraping engines, and immigration case breakthroughs.
         </p>
       </div>
 
       <!-- Category Filter Pills -->
-      <div class="flex flex-wrap items-center gap-2 pb-10 border-b border-stone-200/80 dark:border-zinc-800 mb-12">
+      <div class="flex flex-wrap items-center gap-2 pb-10 border-b border-slate-200 dark:border-slate-800 mb-12">
         <button
-          class="project-filter active px-4 py-2 rounded-full text-xs font-bold transition-all bg-stone-900 text-white dark:bg-white dark:text-stone-950 shadow-2xs"
+          class="project-filter active px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#0A1128] text-white dark:bg-amber-400 dark:text-slate-950 shadow-2xs"
           data-category="all"
         >
           All Projects ({siteData.selectedProjects.length})
         </button>
         <button
-          class="project-filter px-4 py-2 rounded-full text-xs font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-200/70 dark:hover:bg-zinc-800 transition-all"
+          class="project-filter px-4 py-2 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-800"
           data-category="Engineering & Data"
         >
           Engineering & Data
         </button>
         <button
-          class="project-filter px-4 py-2 rounded-full text-xs font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-200/70 dark:hover:bg-zinc-800 transition-all"
+          class="project-filter px-4 py-2 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-800"
           data-category="AI & Research"
         >
           AI & Research
         </button>
         <button
-          class="project-filter px-4 py-2 rounded-full text-xs font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-200/70 dark:hover:bg-zinc-800 transition-all"
+          class="project-filter px-4 py-2 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-800"
           data-category="Immigration & Tools"
         >
           Immigration & Tools
         </button>
       </div>
 
-      <!-- Project Cards Grid (Bento / Modern Rounded Cards) -->
+      <!-- Project Cards Grid -->
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {siteData.selectedProjects.map((project, idx) => (
+        {siteData.selectedProjects.map((project) => (
           <div
-            class="project-card group relative flex flex-col justify-between p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 hover:border-stone-400 dark:hover:border-zinc-600 shadow-xs hover:shadow-lg transition-all duration-300 overflow-hidden"
+            class="project-card group relative flex flex-col justify-between p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden"
             data-category={project.category}
           >
-            <!-- Background Ambient Glow -->
-            <div class={`absolute -top-12 -right-12 w-48 h-48 rounded-full bg-gradient-to-br ${project.gradient} blur-2xl pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity`}></div>
-
             <div>
               <!-- Top Metadata Row -->
               <div class="flex items-center justify-between gap-4 mb-6">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-stone-100 dark:bg-zinc-800/80 text-stone-700 dark:text-stone-300 border border-stone-200/60 dark:border-zinc-700/60">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20">
                   {project.tag}
                 </span>
-                <span class="text-xs font-medium text-stone-400">
+                <span class="text-xs font-medium text-slate-400">
                   {project.period}
                 </span>
               </div>
 
               <!-- Title & Role -->
-              <h3 class="text-2xl font-extrabold text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2">
+              <h3 class="text-2xl font-black text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2">
                 {project.title}
               </h3>
-              <p class="text-xs font-semibold text-stone-500 dark:text-stone-400 mb-4">
-                Role: {project.role} • {project.category}
+              <p class="text-xs font-bold text-amber-700 dark:text-amber-400 mb-4">
+                {project.role}
               </p>
 
-              <!-- Short Description -->
-              <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6">
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                 {project.shortDesc}
               </p>
 
-              <!-- Infographic Metrics Bar -->
-              <div class="grid grid-cols-3 gap-2 p-3.5 rounded-2xl bg-stone-50 dark:bg-zinc-900/80 border border-stone-100 dark:border-zinc-800/80 mb-6">
-                {project.impactMetrics.map((m) => (
+              <!-- Impact Metrics Grid -->
+              <div class="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-[#0F172A] border border-slate-100 dark:border-slate-800 mb-6">
+                {project.impactMetrics.map((metric) => (
                   <div class="text-center">
-                    <span class="block text-xs sm:text-sm font-black text-stone-900 dark:text-white">
-                      {m.value}
+                    <span class="block text-base sm:text-lg font-black text-[#0A1128] dark:text-white">
+                      {metric.value}
                     </span>
-                    <span class="block text-[10px] text-stone-600 dark:text-stone-300 uppercase tracking-tight">
-                      {m.label}
+                    <span class="block text-[10px] uppercase font-bold text-slate-500 mt-0.5">
+                      {metric.label}
                     </span>
                   </div>
                 ))}
               </div>
+            </div>
 
-              <!-- Tech Stack Chips -->
-              <div class="flex flex-wrap gap-1.5 mb-8">
-                {project.stack.map((s) => (
-                  <span class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-stone-100 dark:bg-zinc-800/60 text-stone-700 dark:text-stone-300">
-                    {s}
+            <!-- Footer: Tech Stack & Link -->
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-4">
+              <div class="flex flex-wrap gap-1.5">
+                {project.stack.map((tech) => (
+                  <span class="px-2.5 py-0.5 rounded-lg text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
+                    {tech}
                   </span>
                 ))}
               </div>
-            </div>
 
-            <!-- Card Bottom Action Link -->
-            <div class="pt-4 border-t border-stone-100 dark:border-zinc-800/80 flex items-center justify-between">
-              <span class="text-xs text-stone-600 dark:text-stone-300">
-                Case details available
-              </span>
-              <a
-                href={project.link || "/contact"}
-                class="inline-flex items-center gap-1.5 text-xs font-bold text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors"
-              >
-                <span>View Details</span>
-                <span class="transition-transform group-hover:translate-x-0.5">→</span>
-              </a>
+              {project.link && (
+                <div class="pt-2">
+                  <a
+                    href={project.link}
+                    class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0A1128] dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                  >
+                    <span>View Project Details</span>
+                    <span>&rarr;</span>
+                  </a>
+                </div>
+              )}
             </div>
-
           </div>
         ))}
       </div>
 
-      <!-- Bottom Nova Style CTA -->
-      <div class="mt-20 p-8 sm:p-12 rounded-3xl bg-stone-900 text-white dark:bg-zinc-900 border border-stone-800 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <span class="text-[11px] font-bold text-amber-400 uppercase tracking-widest block mb-1">HAVE A SIMILAR INITIATIVE?</span>
-          <h2 class="text-2xl sm:text-3xl font-bold">Let’s build scalable systems or design your immigration roadmap.</h2>
-        </div>
-        <a
-          href="/contact"
-          class="px-6 py-3.5 rounded-full text-xs font-bold bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors flex-shrink-0"
-        >
-          Start a Conversation →
-        </a>
-      </div>
-
     </div>
   </div>
-</Layout>
 
-<script>
-  function setupProjectFilters() {
-    const filterBtns = document.querySelectorAll('.project-filter');
-    const cards = document.querySelectorAll('.project-card');
+  <script is:inline>
+    const filterButtons = document.querySelectorAll('.project-filter');
+    const projectCards = document.querySelectorAll('.project-card');
 
-    filterBtns.forEach(btn => {
+    filterButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        // Toggle active style
-        filterBtns.forEach(b => {
-          b.classList.remove('bg-stone-900', 'text-white', 'dark:bg-white', 'dark:text-stone-950', 'active');
-          b.classList.add('text-stone-600', 'dark:text-stone-300');
-        });
-        btn.classList.add('bg-stone-900', 'text-white', 'dark:bg-white', 'dark:text-stone-950', 'active');
-        btn.classList.remove('text-stone-600', 'dark:text-stone-300');
-
         const category = btn.getAttribute('data-category');
 
-        cards.forEach(card => {
+        filterButtons.forEach((b) => {
+          b.classList.remove('bg-[#0A1128]', 'text-white', 'dark:bg-amber-400', 'dark:text-slate-950', 'active');
+          b.classList.add('text-slate-600', 'dark:text-slate-300');
+        });
+
+        btn.classList.add('bg-[#0A1128]', 'text-white', 'dark:bg-amber-400', 'dark:text-slate-950', 'active');
+        btn.classList.remove('text-slate-600', 'dark:text-slate-300');
+
+        projectCards.forEach((card) => {
           const cardCat = card.getAttribute('data-category');
           if (category === 'all' || cardCat === category) {
-            (card as HTMLElement).style.display = 'flex';
+            card.style.display = 'flex';
           } else {
-            (card as HTMLElement).style.display = 'none';
+            card.style.display = 'none';
           }
         });
       });
     });
-  }
-
-  setupProjectFilters();
-  document.addEventListener('astro:after-swap', setupProjectFilters);
-</script>
+  </script>
+</Layout>

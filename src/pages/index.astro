@@ -1,192 +1,410 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { siteData } from '../data/siteData';
+import { successStoriesData } from '../data/successStoriesData';
+import { blogPosts } from '../data/blogData';
+
+// New Clean Infographics
+import IeltsBandGuide from '../components/infographics/IeltsBandGuide.astro';
+import PteScoreComparison from '../components/infographics/PteScoreComparison.astro';
+import CanadaVsAustraliaPathway from '../components/infographics/CanadaVsAustraliaPathway.astro';
+import SkillsAssessmentSteps from '../components/infographics/SkillsAssessmentSteps.astro';
+import ResearchHighlightsVisual from '../components/infographics/ResearchHighlightsVisual.astro';
+
+const dualPillars = [
+  {
+    title: "AI Research & Software Engineering",
+    badge: "SPEECH TECH & DATA SYSTEMS",
+    icon: "🧠",
+    desc: "Published researcher in speech transformers, large audio foundation models, and healthcare acoustic sensors. Senior software engineer architecting high-throughput data pipelines and resilient backends.",
+    bullets: [
+      "7 Research Papers (Computer Science Review, IEEE, arXiv)",
+      "High-scale web crawlers & ETL pipelines (Scrapy, Selenium)",
+      "Distributed databases & ORMs (PostgreSQL, Peewee, MongoDB)",
+      "Enterprise backend microservices in Python, Django & Flask"
+    ],
+    primaryLink: "/research",
+    primaryLabel: "View 7 Research Papers",
+    secondaryLink: "/experience",
+    secondaryLabel: "Explore Career & Tech Stack"
+  },
+  {
+    title: "Immigration & English Test Advisory",
+    badge: "CANADA & AUSTRALIA EXPERT",
+    icon: "🌐",
+    desc: "Experienced migration strategist and elite language coach. Optimizing PR points for skilled professionals, student visas, and delivering top scores in IELTS, PTE Academic, and NAATI CCL Urdu in Lahore & globally.",
+    bullets: [
+      "Canada Express Entry STEM draws & Provincial Nominees (PNP)",
+      "Australia GSM (Subclass 189, 190, 491) & Skills Assessment",
+      "IELTS Coaching (Band 7.5+ Strategies) & PTE 79+ Superior English",
+      "NAATI CCL Urdu Masterclass (+5 Australia PR Points)"
+    ],
+    primaryLink: "/immigration",
+    primaryLabel: "Explore Immigration Pathways",
+    secondaryLink: "/english-training",
+    secondaryLabel: "IELTS, PTE & NAATI Coaching"
+  }
+];
+
+const immigrationFeaturedServices = [
+  {
+    href: "/canada-immigration",
+    badge: "CANADA PR",
+    title: "Canada Express Entry & PNP",
+    desc: "Targeted category draws for STEM occupations, CRS score optimization, and provincial nominations (OINP Tech, BC PNP, SINP).",
+    stat: "95+ PR Visas",
+    icon: "🍁"
+  },
+  {
+    href: "/australia-immigration",
+    badge: "AUSTRALIA PR",
+    title: "Australia Skilled Migration (GSM)",
+    desc: "SkillSelect EOI strategy, state nomination ROIs across VIC/NSW/SA/WA, and points engineering for Subclasses 189, 190, and 491.",
+    stat: "85+ PR Grants",
+    icon: "🦘"
+  },
+  {
+    href: "/skills-assessment-australia",
+    badge: "ACS • EA • VETASSESS",
+    title: "Skills Assessment Australia",
+    desc: "ACS IT RPL dossiers, Engineers Australia CDR career episodes, and VETASSESS vetting to prevent experience deductions.",
+    stat: "High Acceptance",
+    icon: "📊"
+  },
+  {
+    href: "/ielts-coaching",
+    badge: "IELTS ACADEMIC & GT",
+    title: "IELTS Band 7.5+ Coaching",
+    desc: "1-on-1 speaking diagnostics, AREA answer frameworks, and Task 2 essay templates designed for CLB 9/10 reach in Lahore.",
+    stat: "Band 7.5+ Avg",
+    icon: "🎯"
+  },
+  {
+    href: "/pte-coaching",
+    badge: "PEARSON ACADEMIC",
+    title: "PTE 79+ Superior English",
+    desc: "Pearson AI acoustic speech calibration, Write From Dictation banks, and methods to secure 20 Australia migration points.",
+    stat: "+20 PR Points",
+    icon: "⚡"
+  },
+  {
+    href: "/naati-ccl-urdu",
+    badge: "AUSTRALIA BONUS",
+    title: "NAATI CCL Urdu Preparation",
+    desc: "50+ authentic audio dialogues, specialized shorthand note-taking, and vocabulary banks to claim 5 Australian PR points.",
+    stat: "High Pass Rate",
+    icon: "🗣️"
+  }
+];
+
+const technologyFeaturedServices = [
+  {
+    href: "/application-development",
+    badge: "CUSTOM SOFTWARE",
+    title: "Application Development",
+    desc: "Cross-platform desktop, mobile, and enterprise backend systems engineered for concurrency, fault tolerance, and clean modular code.",
+    stat: "Production Grade",
+    icon: "💻"
+  },
+  {
+    href: "/web-development",
+    badge: "JAMSTACK & REACT",
+    title: "Full-Stack Web Development",
+    desc: "Blazing fast web apps built with Next.js, Astro, React, and Python backends. 95+ Lighthouse scores and sub-second load times.",
+    stat: "Sub-Second Speed",
+    icon: "🌐"
+  },
+  {
+    href: "/data-engineering",
+    badge: "SCALABLE PIPELINES",
+    title: "Data Engineering & Pipelines",
+    desc: "Enterprise data pipeline architecture, automated ETL/ELT workflows, PostgreSQL data warehousing, and query execution tuning.",
+    stat: "10M+ Daily Records",
+    icon: "🔀"
+  },
+  {
+    href: "/data-scraping",
+    badge: "DISTRIBUTED CRAWLERS",
+    title: "Enterprise Web Scraping",
+    desc: "High-throughput crawlers equipped with proxy rotation, Cloudflare/anti-bot bypassing, headless automation, and structured delivery.",
+    stat: "Anti-Bot Bypass",
+    icon: "🕷️"
+  },
+  {
+    href: "/ai-development",
+    badge: "SPEECH AI & PYTORCH",
+    title: "AI & Machine Learning",
+    desc: "Applied machine learning models, speech recognition (ASR), Whisper tuning, and on-premise LLMs backed by 7 published papers.",
+    stat: "7 Published Papers",
+    icon: "🧠"
+  },
+  {
+    href: "/ai-agentic-development",
+    badge: "AUTONOMOUS AGENTS",
+    title: "AI Agentic Development",
+    desc: "Autonomous multi-agent orchestration (LangGraph, CrewAI), deterministic tool-calling, vector RAG, and self-healing agent loops.",
+    stat: "Deterministic Actions",
+    icon: "🤖"
+  }
+];
+
+const stats = [
+  { value: "07+", label: "Research Papers", sub: "Speech AI, Audio IoT & CSR" },
+  { value: "06+", label: "Years Engineering", sub: "Backend, Scraping & Pipelines" },
+  { value: "95%+", label: "Client Success Rate", sub: "Canada & Australia Strategies" },
+  { value: "500+", label: "Coached Aspirants", sub: "IELTS 7.5+, PTE 79+, NAATI CCL" }
+];
+
+const latestBlogs = blogPosts.slice(0, 3);
+const topStories = successStoriesData.slice(0, 3);
+
+// JSON-LD Structured Data Schema for Person & Professional Consultant
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Moazzam Shoukat",
+  "jobTitle": "AI Researcher, Senior Software Engineer & Immigration Strategist",
+  "url": "https://moazzamshoukat.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/moazzamshoukat/",
+    "https://scholar.google.com/citations?user=uU550yYAAAAJ",
+    "https://www.upwork.com/freelancers/~013acf6cdef10719d7",
+    "https://www.instagram.com/moazzamshoukat/",
+    "http://facebook.com/moazzamshoukat"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lahore",
+    "addressCountry": "Pakistan"
+  },
+  "knowsAbout": [
+    "Speech Processing",
+    "Large Audio Models",
+    "Affective Computing",
+    "Canada Immigration Consultant",
+    "Australia Skilled Migration",
+    "IELTS Trainer in Lahore",
+    "Best PTE Coaching Pakistan",
+    "NAATI CCL Urdu Trainer"
+  ]
+};
 ---
 
 <Layout
-  title={`${siteData.name} | Senior Software Engineer & Immigration Strategist`}
-  description={siteData.shortBio}
+  title="Moazzam Shoukat | AI Researcher | IELTS & PTE Trainer | Canada & Australia Immigration Expert"
+  description="Official portal of Moazzam Shoukat: Speech AI Researcher (7 publications), Senior Software Engineer, trusted Canada & Australia Immigration Consultant, and elite IELTS/PTE Trainer in Lahore."
+  keywords="IELTS Trainer in Lahore, Best PTE Coaching Pakistan, NAATI CCL Urdu Trainer, Canada Immigration Consultant, Australia Immigration Expert, Student Visa Consultant Pakistan, Skills Assessment Australia, AI Researcher Speech Processing, Large Audio Models"
 >
-  <!-- Hero Section (Nova Minimalist Style) -->
-  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-    <!-- Subtle Organic Ambient Lights -->
-    <div class="absolute top-10 right-1/4 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-    <div class="absolute bottom-10 left-1/4 w-96 h-96 bg-stone-300/20 dark:bg-zinc-800/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <!-- Schema.org JSON-LD Script -->
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Clean, Elegant Hero Section: Glassmorphic Crystal Style + Profile Portrait -->
+  <section class="relative bg-gradient-to-b from-[#0A1128] via-[#0F172A] to-[#0A1128] text-white pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden border-b border-amber-500/20">
+    <!-- Subtle Ambient Glow & Grid -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(212,175,55,0.09),transparent_60%)] pointer-events-none"></div>
+    <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-sky-900/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Top Tagline Pill -->
-      <div class="flex items-center gap-2 mb-6">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-200/60 dark:bg-zinc-800/80 border border-stone-300/60 dark:border-zinc-700/60 text-stone-800 dark:text-stone-200 text-xs font-bold uppercase tracking-widest">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          STRATEGY • TECHNOLOGY • IMMIGRATION
-        </span>
+      <!-- Top Confident Identity Badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-amber-400/30 text-amber-300 text-xs font-semibold mb-8 backdrop-blur-xl shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        <span class="tracking-wide">AI Researcher &bull; IELTS & PTE Trainer &bull; Canada & Australia Immigration Strategist</span>
       </div>
 
-      <!-- Main Headline Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
         
-        <div class="lg:col-span-8 space-y-6">
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.08]">
-            Designing Resilient Backends. <br />
-            <span class="text-stone-500 dark:text-stone-400">Guiding Global PR.</span>
+        <!-- Left Hero Content (7 cols) - Focused, Uncluttered, Max 2 CTAs -->
+        <div class="lg:col-span-7 space-y-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
+            Pioneering Speech AI Research. <br class="hidden sm:inline" />
+            <span class="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 bg-clip-text text-transparent">
+              Mastering Global Immigration
+            </span> & English Testing.
           </h1>
 
-          <p class="text-base sm:text-xl text-stone-600 dark:text-stone-300 max-w-2xl font-normal leading-relaxed">
-            I am <strong class="text-stone-900 dark:text-white font-bold">{siteData.name}</strong>. Senior Software Engineer with a research background in speech processing, and an immigration strategist specializing in Canadian & Australian permanent residency.
+          <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+            Empowering professionals, researchers, and students to unlock breakthrough machine learning publications, elite language test scores (<strong class="text-white font-semibold">IELTS Band 7.5+</strong> & <strong class="text-white font-semibold">PTE 79+</strong>), and permanent residency pathways for Canada and Australia.
           </p>
 
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center gap-3 pt-2">
+          <!-- Exactly 2 Clear Primary CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
             <a
               href="/contact"
-              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold bg-amber-400 hover:bg-amber-300 text-stone-950 transition-all shadow-2xs hover:shadow-xs active:scale-95"
+              class="inline-flex items-center justify-center px-8 py-4 text-xs sm:text-sm font-black text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 rounded-full shadow-lg shadow-amber-500/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center cursor-pointer"
             >
-              <span>Let’s Talk</span>
-              <span>→</span>
+              Book Consultation &rarr;
             </a>
 
             <a
-              href="/selected-work"
-              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-semibold text-stone-800 dark:text-stone-200 bg-stone-200/60 dark:bg-zinc-800/70 hover:bg-stone-200 dark:hover:bg-zinc-800 transition-colors"
+              href="/services"
+              class="inline-flex items-center justify-center px-7 py-4 text-xs sm:text-sm font-bold text-slate-200 hover:text-white bg-white/10 hover:bg-white/15 border border-white/20 hover:border-amber-400/60 rounded-full backdrop-blur-md transition-all duration-300 text-center cursor-pointer"
             >
-              <span>See Selected Work</span>
-              <span>↗</span>
-            </a>
-
-            <a
-              href="/immigration"
-              class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full text-xs font-semibold text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white transition-colors"
-            >
-              Immigration Pathways →
+              <span>Explore Services</span>
             </a>
           </div>
 
-          <!-- Quick Verified Badges -->
-          <div class="pt-4 flex flex-wrap items-center gap-3 text-xs text-stone-500 dark:text-stone-400 font-medium">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-2xs">
-              📍 Lahore, Pakistan
-            </span>
-            <a href={siteData.socials.scholar} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 hover:border-amber-400 transition-colors">
-              🎓 5 Research Papers
-            </a>
-            <a href={siteData.socials.upwork} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 hover:border-emerald-500 transition-colors">
-              💼 Upwork Talent
-            </a>
-            <a href={siteData.contact.whatsapp} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-              💬 Direct WhatsApp
-            </a>
+          <!-- Trust Badges & Accreditation Line -->
+          <div class="pt-4 flex flex-wrap items-center gap-4 text-xs text-slate-400">
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <span>Google Scholar Verified</span>
+            </div>
+            <span>&bull;</span>
+            <span>ITU Lahore BS CS</span>
+            <span>&bull;</span>
+            <span class="text-amber-300/90 font-semibold">500+ Coached Aspirants</span>
+            <span>&bull;</span>
+            <span>Lahore, Pakistan</span>
           </div>
+
         </div>
 
-        <!-- Right Visual Card (Nova Rounded Bento Style) -->
-        <div class="lg:col-span-4 flex justify-center">
-          <div class="w-full max-w-sm bg-white dark:bg-[#18181B] rounded-3xl p-6 border border-stone-200/80 dark:border-zinc-800 shadow-xl space-y-5">
+        <!-- Right Hero Visual Card with High-Performance WebP Photo (5 cols) -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
             
-            <div class="aspect-square rounded-2xl overflow-hidden bg-stone-100 dark:bg-zinc-800 relative">
-              <img
-                src="/images/moazzam.png"
-                alt="Moazzam Shoukat"
-                class="w-full h-full object-cover object-top"
-                onerror="this.src='/favicon.svg'"
-              />
-              <div class="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase">
-                Dual Practice
-              </div>
-            </div>
+            <!-- Ambient Glowing Backdrop -->
+            <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-amber-500/20 via-sky-500/10 to-amber-500/20 blur-2xl opacity-75"></div>
 
-            <div>
-              <h2 class="text-xl font-extrabold text-stone-900 dark:text-white leading-tight">Moazzam Shoukat</h2>
-              <p class="text-xs text-stone-600 dark:text-stone-300 mt-0.5">Software Engineer & Migration Advisor</p>
-            </div>
+            <!-- Glass / Crystal Outer Frame -->
+            <div class="relative rounded-3xl bg-white/10 dark:bg-[#0C1428]/85 border border-white/20 dark:border-amber-500/30 p-5 sm:p-6 backdrop-blur-2xl shadow-2xl text-white">
+              
+              <!-- Photo Container with Optimized WebP Profile Image -->
+              <div class="relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#101935] to-[#0A1128] border border-amber-400/30 group">
+                <div class="aspect-[4/5] w-full relative overflow-hidden bg-slate-900 flex items-center justify-center">
+                  <picture>
+                    <source srcset="/images/moazzam.webp" type="image/webp" />
+                    <img
+                      src="/images/moazzam.png"
+                      alt="Moazzam Shoukat - AI Researcher, IELTS & PTE Trainer, Canada and Australia Immigration Consultant in Lahore"
+                      width="800"
+                      height="1000"
+                      fetchpriority="high"
+                      loading="eager"
+                      decoding="async"
+                      class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  </picture>
 
-            <!-- Two Visual Cards inside -->
-            <div class="space-y-2 pt-2 border-t border-stone-100 dark:border-zinc-800 text-xs">
-              <div class="p-3 rounded-xl bg-stone-50 dark:bg-zinc-900/80 border border-stone-100 dark:border-zinc-800/60 flex items-center justify-between">
-                <div>
-                  <span class="block font-bold text-stone-900 dark:text-white">Backend Systems</span>
-                  <span class="text-[11px] text-stone-600 dark:text-stone-300">Django, Scrapy, PostgreSQL</span>
+                  <!-- Clean Status Badge: Bottom Left -->
+                  <div class="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-white/15 text-[11px] font-bold text-white shadow-lg flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Accepting Consultations 2026 - 27</span>
+                  </div>
                 </div>
-                <a href="/experience" class="text-xs font-bold text-stone-900 dark:text-white hover:text-amber-500">→</a>
               </div>
 
-              <div class="p-3 rounded-xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/40 flex items-center justify-between">
+              <!-- Refined Identity Label Under Photo -->
+              <div class="pt-4 pb-1 flex items-center justify-between border-b border-white/10">
                 <div>
-                  <span class="block font-bold text-amber-950 dark:text-amber-200">Canada & Australia PR</span>
-                  <span class="text-[11px] text-amber-800 dark:text-amber-400">ACS, EA, NAATI CCL Urdu</span>
+                  <h2 class="text-lg font-black text-white tracking-tight flex items-center gap-1.5">
+                    <span>Moazzam Shoukat</span>
+                    <span class="text-amber-400 text-xs">✓</span>
+                  </h2>
+                  <p class="text-[11px] text-amber-400/90 font-medium">
+                    Speech AI Researcher &bull; Immigration & Language Strategist
+                  </p>
                 </div>
-                <a href="/immigration" class="text-xs font-bold text-amber-600 dark:text-amber-400">→</a>
+                <div class="text-right">
+                  <span class="text-xs font-black text-amber-300">7 Papers &bull; 95+ Grants</span>
+                  <p class="text-[10px] text-slate-400">Lahore &bull; Online Worldwide</p>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
 
-      </div>
-
-      <!-- Minimalist Stat Strip -->
-      <div class="mt-16 pt-10 border-t border-stone-200/80 dark:border-zinc-800">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {siteData.stats.map((st) => (
-            <div class="p-5 rounded-2xl bg-white dark:bg-[#18181B] border border-stone-200/70 dark:border-zinc-800">
-              <span class="block text-3xl sm:text-4xl font-black text-stone-900 dark:text-white tracking-tight">
-                {st.value}
-              </span>
-              <span class="block text-xs font-bold text-stone-800 dark:text-stone-200 mt-1">
-                {st.label}
-              </span>
-              <span class="block text-[11px] text-stone-600 dark:text-stone-300 mt-0.5">
-                {st.sublabel}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Featured Selected Work Strip (Nova Style) -->
-  <section class="py-20 bg-stone-100/60 dark:bg-zinc-900/40 border-y border-stone-200/60 dark:border-zinc-800/80">
+  <!-- Quick Trust Stats Bar: Clean Navy & Warm Champagne -->
+  <section class="bg-white dark:bg-[#0F172A] border-b border-slate-200 dark:border-slate-800 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {stats.map((stat) => (
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800/80 transition-all hover:border-amber-400/40">
+            <div class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-amber-400 tracking-tight">
+              {stat.value}
+            </div>
+            <div class="text-xs font-bold text-slate-800 dark:text-slate-200 mt-1">
+              {stat.label}
+            </div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+              {stat.sub}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Dual Expertise Highlight Cards: Maximum Visual Impact -->
+  <section class="py-20 bg-slate-50 dark:bg-[#0B0F19]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-        <div>
-          <span class="text-[11px] font-bold uppercase tracking-widest text-stone-600 dark:text-stone-300 block mb-2">FEATURED CASES</span>
-          <h2 class="text-3xl sm:text-4xl font-black text-stone-900 dark:text-white tracking-tight">
-            Selected Work
-          </h2>
-        </div>
-        <a
-          href="/selected-work"
-          class="inline-flex items-center gap-1.5 text-xs font-bold text-stone-900 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
-        >
-          <span>View all {siteData.selectedProjects.length} projects</span>
-          <span>→</span>
-        </a>
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+          Two Distinct Pillars of Mastery
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Where Rigorous Computer Science Meets Global Migration Strategy
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+          Moazzam Shoukat offers high-impact dual expertise: cutting-edge speech AI research and software engineering, paired with battle-tested immigration and language test advisory in Lahore and internationally.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {siteData.selectedProjects.slice(0, 3).map((item) => (
-          <div class="group p-6 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 hover:border-stone-400 dark:hover:border-zinc-600 transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300">
-                  {item.category}
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {dualPillars.map((pillar) => (
+          <div class="rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 p-8 sm:p-10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:border-amber-500/40">
+            <div class="space-y-6">
+              <div class="flex items-center justify-between">
+                <span class="text-3xl">{pillar.icon}</span>
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 uppercase">
+                  {pillar.badge}
                 </span>
-                <span class="text-xs text-stone-400">{item.period}</span>
               </div>
-              <h3 class="text-lg font-bold text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2">
-                {item.title}
-              </h3>
-              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
-                {item.shortDesc}
-              </p>
+
+              <div>
+                <h3 class="text-2xl font-black text-[#0A1128] dark:text-white tracking-tight mb-3">
+                  {pillar.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {pillar.desc}
+                </p>
+              </div>
+
+              <div class="space-y-2.5 pt-2 border-t border-slate-100 dark:border-slate-800">
+                {pillar.bullets.map((b) => (
+                  <div class="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <svg class="w-4 h-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{b}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div class="pt-4 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between text-xs font-semibold">
-              <span class="text-stone-600 dark:text-stone-300">{item.tag}</span>
-              <a href="/selected-work" class="text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400">
-                Explore →
+
+            <div class="pt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a
+                href={pillar.primaryLink}
+                class="px-5 py-3 rounded-full text-xs font-bold bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 text-center transition-colors shadow-sm"
+              >
+                {pillar.primaryLabel} &rarr;
+              </a>
+              <a
+                href={pillar.secondaryLink}
+                class="px-5 py-3 rounded-full text-xs font-bold border border-slate-300 dark:border-slate-700 hover:border-amber-500/50 text-slate-800 dark:text-slate-200 text-center transition-colors"
+              >
+                {pillar.secondaryLabel}
               </a>
             </div>
           </div>
@@ -196,82 +414,298 @@ import { siteData } from '../data/siteData';
     </div>
   </section>
 
-  <!-- Two Pillars of Mastery Infographic (Minimalist) -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Featured Services Section (Two Distinct Pillars) -->
+  <section class="py-20 bg-white dark:bg-[#0F172A] border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-[11px] font-bold uppercase tracking-widest text-stone-600 dark:text-stone-300 block mb-2">VALUE PROPOSITION</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-stone-900 dark:text-white tracking-tight">
-          Engineering & Immigration Synergy
-        </h2>
-        <p class="mt-3 text-sm text-stone-600 dark:text-stone-300">
-          How rigorous technical engineering principles translate into zero-error migration petitions.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Pillar 1: Engineering -->
-        <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-6">
-          <div class="w-12 h-12 rounded-2xl bg-stone-900 dark:bg-white text-white dark:text-stone-950 flex items-center justify-center font-black text-lg">
-            01
-          </div>
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 block mb-1">Pillar One</span>
-            <h3 class="text-2xl font-extrabold text-stone-900 dark:text-white">Software Architecture & Data Pipelines</h3>
-          </div>
-          <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-            Hands-on development at Emulation AI and Ibtidah Solutions. Scalable Django microservices, anti-bot web crawling with Scrapy/Selenium, and published research in speech transformer models.
-          </p>
-          <div class="pt-4 border-t border-stone-100 dark:border-zinc-800 flex items-center gap-4">
-            <a href="/experience" class="text-xs font-bold text-stone-900 dark:text-white hover:underline">
-              Experience Timeline →
-            </a>
-            <a href="/education-research" class="text-xs font-bold text-stone-600 dark:text-stone-300 hover:underline">
-              5 Research Papers →
-            </a>
-          </div>
-        </div>
-
-        <!-- Pillar 2: Immigration -->
-        <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-6">
-          <div class="w-12 h-12 rounded-2xl bg-amber-400 text-stone-950 flex items-center justify-center font-black text-lg">
-            02
-          </div>
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 block mb-1">Pillar Two</span>
-            <h3 class="text-2xl font-extrabold text-stone-900 dark:text-white">Immigration & Language Pedagogy</h3>
-          </div>
-          <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-            Data-backed strategy for Canada Express Entry, Australia GSM (189/190/491), ANZSCO Skills Assessment submissions, and NAATI CCL Urdu training (+5 PR points).
-          </p>
-          <div class="pt-4 border-t border-stone-100 dark:border-zinc-800 flex items-center gap-4">
-            <a href="/immigration" class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline">
-              Immigration Roadmaps →
-            </a>
-            <a href="/english-training" class="text-xs font-bold text-stone-600 dark:text-stone-300 hover:underline">
-              NAATI CCL Urdu & IELTS →
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Nova CTA -->
-      <div class="mt-16 p-8 sm:p-12 rounded-3xl bg-stone-900 text-white dark:bg-zinc-900 border border-stone-800 flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Top Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <span class="text-[11px] font-bold text-amber-400 uppercase tracking-widest block mb-1">START A CONVERSATION</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold">Ready to evaluate your case or hire engineering leadership?</h2>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+            SOLUTIONS & SPECIALIZATIONS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight mt-1">
+            Two Pillars of Professional Mastery
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 max-w-2xl">
+            Explore dedicated services across immigration advisory & language coaching, alongside enterprise software engineering & autonomous AI systems.
+          </p>
         </div>
         <a
-          href="/contact"
-          class="px-6 py-3.5 rounded-full text-xs font-bold bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors flex-shrink-0"
+          href="/services"
+          class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline inline-flex items-center gap-1 shrink-0"
         >
-          Book Consultation →
+          <span>View All Dedicated Portals &rarr;</span>
         </a>
       </div>
 
+      <!-- Pillar 1: Immigration & Language Coaching -->
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">01 / IMMIGRATION & LANGUAGE TEST ADVISORY</span>
+          <div class="h-px flex-grow bg-slate-200 dark:bg-slate-800"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {immigrationFeaturedServices.map((svc) => (
+            <a
+              href={svc.href}
+              class="group p-8 rounded-3xl bg-slate-50 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400/60 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span class="text-3xl group-hover:scale-110 transition-transform">{svc.icon}</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold tracking-wider bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20">
+                    {svc.badge}
+                  </span>
+                </div>
+
+                <h3 class="text-xl font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2">
+                  {svc.title}
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {svc.desc}
+                </p>
+              </div>
+
+              <div class="pt-5 mt-5 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between text-xs font-bold">
+                <span class="text-amber-700 dark:text-amber-400 font-extrabold">{svc.stat}</span>
+                <span class="text-slate-500 group-hover:text-amber-600 dark:group-hover:text-amber-400 group-hover:translate-x-1 transition-all">
+                  View Program &rarr;
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Pillar 2: Technology & AI Services -->
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">02 / TECHNOLOGY & AI SERVICES</span>
+          <div class="h-px flex-grow bg-slate-200 dark:bg-slate-800"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {technologyFeaturedServices.map((svc) => (
+            <a
+              href={svc.href}
+              class="group p-8 rounded-3xl bg-slate-50 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400/60 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span class="text-3xl group-hover:scale-110 transition-transform">{svc.icon}</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold tracking-wider bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20">
+                    {svc.badge}
+                  </span>
+                </div>
+
+                <h3 class="text-xl font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2">
+                  {svc.title}
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {svc.desc}
+                </p>
+              </div>
+
+              <div class="pt-5 mt-5 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between text-xs font-bold">
+                <span class="text-amber-700 dark:text-amber-400 font-extrabold">{svc.stat}</span>
+                <span class="text-slate-500 group-hover:text-amber-600 dark:group-hover:text-amber-400 group-hover:translate-x-1 transition-all">
+                  Explore Architecture &rarr;
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEW HIGH-VALUE INFOGRAPHICS SECTION: Visual Comparative Systems -->
+  <section class="py-20 bg-slate-50 dark:bg-[#0B0F19] border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+          Visual Strategy & Decision Infographics
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Clear, Data-Backed Roadmaps for Language & Immigration
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300">
+          Make informed strategic decisions with our side-by-side comparative matrices, score concordance tables, and migration stage breakdowns.
+        </p>
+      </div>
+
+      <!-- Infographic 1: IELTS Band Score Guide -->
+      <IeltsBandGuide />
+
+      <!-- Infographic 2: PTE Score Comparison -->
+      <PteScoreComparison />
+
+      <!-- Infographic 3: Canada vs Australia Pathway -->
+      <CanadaVsAustraliaPathway />
+
+      <!-- Infographic 4: Skills Assessment Steps -->
+      <SkillsAssessmentSteps />
+
+      <!-- Infographic 5: Research Architecture & Taxonomy -->
+      <ResearchHighlightsVisual />
+
+    </div>
+  </section>
+
+  <!-- Verified Success Stories Spotlight - Correct Field Mappings -->
+  <section class="py-20 bg-white dark:bg-[#0F172A] border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+            Proven Results & Scorecards
+          </span>
+          <h2 class="text-3xl font-black text-[#0A1128] dark:text-white tracking-tight mt-1">
+            Student & Applicant Success Stories
+          </h2>
+        </div>
+        <a
+          href="/success-stories"
+          class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline inline-flex items-center gap-1"
+        >
+          <span>View All Scorecards & Grants</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {topStories.map((story) => (
+          <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-xs hover:border-amber-400/50 transition-all">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20">
+                  {story.category}
+                </span>
+                <span class="text-xs font-bold text-amber-700 dark:text-amber-400">
+                  {story.targetBadge}
+                </span>
+              </div>
+
+              <h3 class="text-lg font-bold text-[#0A1128] dark:text-white">
+                {story.name}
+              </h3>
+
+              <p class="text-xs font-semibold text-amber-600 dark:text-amber-400">
+                {story.achievement}
+              </p>
+
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
+                "{story.testimonial}"
+              </p>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+              <span>{story.city}</span>
+              <span class="text-slate-400">{story.date}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Latest Insights & Guides Section (Previewing 35 Articles) -->
+  <section class="py-20 bg-slate-50 dark:bg-[#0B0F19] border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+            Knowledge Hub ({blogPosts.length} Guides Available)
+          </span>
+          <h2 class="text-3xl font-black text-[#0A1128] dark:text-white tracking-tight mt-1">
+            Latest Research Breakdowns & Preparation Guides
+          </h2>
+        </div>
+        <a
+          href="/blog"
+          class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline inline-flex items-center gap-1"
+        >
+          <span>Explore All 35 Articles</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestBlogs.map((post) => (
+          <article class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:border-amber-400/60 shadow-xs hover:shadow-lg transition-all group">
+            <div>
+              <div class="flex items-center justify-between text-xs text-slate-400 mb-4">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20">
+                  {post.category}
+                </span>
+                <span>{post.readTime}</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug">
+                <a href={`/blog/${post.slug}`}>
+                  {post.title}
+                </a>
+              </h3>
+
+              <p class="mt-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+                {post.excerpt}
+              </p>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+              <span class="text-xs text-slate-400">{post.publishDate}</span>
+              <a
+                href={`/blog/${post.slug}`}
+                class="text-xs font-bold text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+              >
+                <span>Read Guide</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final High-Conversion Action Banner -->
+  <section class="py-20 bg-gradient-to-r from-[#0A1128] to-[#1E293B] text-white border-t border-amber-500/20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <span class="px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-amber-500/10 text-amber-300 border border-amber-500/20">
+        START YOUR JOURNEY TODAY
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">
+        Ready to Advance Your Global Career or AI Research?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Whether you are aiming for Canada Express Entry PR, Australian GSM points, Band 7.5+ in IELTS, 79+ in PTE, or discussing speech AI research collaborations, schedule your diagnostic session with Moazzam Shoukat today.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/contact"
+          class="px-8 py-4 rounded-full font-black text-xs sm:text-sm bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 transition-colors shadow-xl"
+        >
+          Book Consultation &rarr;
+        </a>
+        <a
+          href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20would%20like%20to%20book%20a%20consultation"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-7 py-4 rounded-full font-bold text-xs sm:text-sm border border-white/20 hover:bg-white/10 text-white transition-colors flex items-center gap-2"
+        >
+          <svg class="w-4 h-4 fill-current text-[#25D366]" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.174.449.741.963 1.199.662.59 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/></svg><span>Direct WhatsApp (+92-328-048-4399)</span>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>

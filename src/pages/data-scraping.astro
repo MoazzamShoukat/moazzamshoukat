@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const capabilities = [
+  {
+    icon: "🕷️",
+    title: "Large-Scale Distributed Web Crawlers",
+    desc: "Engineered with Scrapy and asynchronous Python to scrape millions of web pages reliably with multi-threaded architecture."
+  },
+  {
+    icon: "🛡️",
+    title: "Anti-Bot & Cloudflare Bypass Engineering",
+    desc: "Sophisticated TLS fingerprint impersonation, rotating premium residential proxy pools, and CAPTCHA solving systems."
+  },
+  {
+    icon: "⚡",
+    title: "Headless Browser Automation (Playwright / Selenium)",
+    desc: "Scraping single-page JavaScript apps, dynamic infinite-scroll feeds, and complex behind-login dashboards."
+  },
+  {
+    icon: "🧹",
+    title: "Automated Data Normalization & Cleansing",
+    desc: "Raw HTML parsing with BeautifulSoup and lxml, regular expression cleansing, deduplication, and schema validation."
+  },
+  {
+    icon: "🔄",
+    title: "Scheduled Cron Extraction & Delta Syncing",
+    desc: "Automated periodic scraping routines that capture incremental changes, price alterations, and inventory updates."
+  },
+  {
+    icon: "📦",
+    title: "Direct Database & Storage Delivery",
+    desc: "Automated delivery into PostgreSQL, MongoDB, Amazon S3, Google BigQuery, or structured CSV/JSON/Parquet datasets."
+  }
+];
+
+const faqs = [
+  {
+    q: "Can you scrape websites protected by Cloudflare, DataDome, or Akamai?",
+    a: "Yes. We engineer customized scraping architectures incorporating rotating residential proxies, stealth browser drivers, TLS fingerprint replication, and automated CAPTCHA resolution to extract public data smoothly."
+  },
+  {
+    q: "How do you ensure the scraper does not break when website HTML changes?",
+    a: "We implement dynamic CSS/XPath fallbacks, automated schema validation checks, and health-monitoring alarms. If a target site updates its DOM structure, the pipeline alerts us and self-heals or routes to fallback extractors."
+  },
+  {
+    q: "Is web scraping legal and compliant?",
+    a: "We extract publicly available web data in strict compliance with industry standards, respecting rate limits, avoiding server overload, and ensuring no proprietary personal PII data is extracted."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title={`Enterprise Web Scraping & Data Extraction Systems | ${siteData.name}`}
+  description="High-throughput web scraping, distributed crawlers, headless browser automation (Playwright/Selenium), and anti-bot bypassing by Moazzam Shoukat."
+  schema={faqSchema}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">
+            Data Scraping
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          AUTOMATED DATA EXTRACTION & CRAWLING
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Enterprise Data Scraping. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Reliable Web Extraction at Scale.</span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          Convert complex web pages into structured, normalized datasets. Distributed crawling architectures engineered with Scrapy, Selenium, and Playwright, equipped with proxy rotation and anti-bot mitigation.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="/contact"
+            class="px-8 py-4 rounded-full bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>Discuss Extraction Requirements</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a
+            href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20need%20an%20enterprise%20web%20scraping%20solution."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>WhatsApp Scraper Engineer</span>
+            <span class="text-xs opacity-90">+92-328-048-4399</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Trust Stats Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">10M+</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Records Crawled / Month</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">99.8%</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Extraction Accuracy</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">Zero</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">IP Blacklisting (Proxy Pools)</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">24/7</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Automated Monitoring</div>
+        </div>
+      </div>
+
+      <!-- Capabilities Grid -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 block mb-2">EXTRACTION CAPABILITIES</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">What the Service Includes</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {capabilities.map((cap) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs hover:border-amber-400/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="text-3xl mb-4">{cap.icon}</div>
+                <h3 class="text-xl font-bold text-[#0A1128] dark:text-white mb-2">{cap.title}</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{cap.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQs -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 block mb-2">COMMON QUESTIONS</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {faqs.map((faq) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs space-y-3">
+              <h4 class="text-base font-bold text-[#0A1128] dark:text-white">{faq.q}</h4>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bottom Callout -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Need Clean Web Data for Your Business or AI Models?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          Share your target website URLs and desired data schema for a feasibility audit and sample data export.
+        </p>
+        <div class="pt-2 flex justify-center gap-3">
+          <a
+            href="/contact"
+            class="px-8 py-3.5 rounded-full font-bold text-xs bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-colors shadow-md"
+          >
+            Request Scraping Feasibility Audit &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

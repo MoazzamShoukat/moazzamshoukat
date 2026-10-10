@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const capabilities = [
+  {
+    icon: "💻",
+    title: "Custom Desktop & Enterprise Applications",
+    desc: "Robust, fault-tolerant standalone and cross-platform software tailored to specific enterprise operational workflows."
+  },
+  {
+    icon: "📱",
+    title: "Cross-Platform Mobile Applications",
+    desc: "High-performance iOS and Android applications utilizing React Native and Flutter with native device integration."
+  },
+  {
+    icon: "⚡",
+    title: "Backend Microservices & Cloud APIs",
+    desc: "Distributed backends built with Python (Django, FastAPI), Node.js, and Go designed for low-latency concurrency."
+  },
+  {
+    icon: "🔄",
+    title: "Legacy Software Modernization & Refactoring",
+    desc: "Upgrading legacy codebases to modern microservices, eliminating technical debt, and improving security posture."
+  },
+  {
+    icon: "🛡️",
+    title: "Role-Based Access Control (RBAC) & Security",
+    desc: "Enterprise authentication architectures, OAuth2/JWT tokens, end-to-end data encryption, and OWASP compliance."
+  },
+  {
+    icon: "🚀",
+    title: "Automated CI/CD & Cloud Deployment",
+    desc: "Docker containerization, Kubernetes orchestration, and automated deployment pipelines on AWS and DigitalOcean."
+  }
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Discovery & Requirements Engineering",
+    desc: "We analyze business logic, user personas, system workflows, and functional requirements to draft architectural specifications."
+  },
+  {
+    step: "02",
+    title: "System Design & Prototyping",
+    desc: "Interactive wireframing, relational database schema modeling, and API contract definition before writing production code."
+  },
+  {
+    step: "03",
+    title: "Agile Iterative Development",
+    desc: "Bi-weekly sprints with test-driven development, continuous integration, and transparent client milestone reviews."
+  },
+  {
+    step: "04",
+    title: "Security Auditing & Production Launch",
+    desc: "Comprehensive load testing, vulnerability scanning, cloud deployment, and detailed documentation handover."
+  }
+];
+
+const faqs = [
+  {
+    q: "What programming languages and frameworks do you specialize in?",
+    a: "We specialize in Python (Django, FastAPI, Flask), TypeScript / JavaScript (React, Next.js, Node.js), PostgreSQL, Redis, Docker, and AWS cloud infrastructures, alongside Flutter and React Native for mobile apps."
+  },
+  {
+    q: "Can you take over and refactor an existing codebase?",
+    a: "Yes. We frequently conduct code audits on legacy applications to identify bottlenecks, security vulnerabilities, and database query slowdowns, systematically modernizing the architecture without operational downtime."
+  },
+  {
+    q: "Do you offer post-launch maintenance and SLA support?",
+    a: "Absolutely. We provide dedicated monthly maintenance agreements covering bug resolutions, security patches, cloud server monitoring, and continuous feature expansion."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title={`Application Development Services | Custom Software & Mobile Solutions | ${siteData.name}`}
+  description="Full-lifecycle custom application development for web, desktop, and mobile. Engineered with high concurrency, fault tolerance, and clean modular code."
+  schema={faqSchema}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">
+            Application Development
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          ENTERPRISE SOFTWARE ENGINEERING
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Custom Application Development. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Engineered for Scale.</span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          From full-stack enterprise platforms to high-performance mobile apps. Led by Moazzam Shoukat (Senior Software Engineer with 6+ years building fault-tolerant architectures, distributed systems, and real-time APIs).
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="/contact"
+            class="px-8 py-4 rounded-full bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>Discuss Your Project</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a
+            href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20want%20to%20discuss%20an%20application%20development%20project."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>WhatsApp Engineer</span>
+            <span class="text-xs opacity-90">+92-328-048-4399</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Trust Stats Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">6+ Years</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Enterprise Engineering</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">99.9%</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Target System Uptime</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">&lt;120ms</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">API Response Latency</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400">100%</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">Clean Modular Code</div>
+        </div>
+      </div>
+
+      <!-- Capabilities Grid -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 block mb-2">FULL-CYCLE DELIVERY</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">What the Service Includes</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">From initial specification blueprints to production deployment and long-term cloud management.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {capabilities.map((cap) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs hover:border-amber-400/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="text-3xl mb-4">{cap.icon}</div>
+                <h3 class="text-xl font-bold text-[#0A1128] dark:text-white mb-2">{cap.title}</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{cap.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Process Section -->
+      <div class="mb-24 p-8 sm:p-12 lg:p-16 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20">
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-widest font-black text-amber-400 block mb-2">SYSTEMATIC LIFECYCLE</span>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">How We Build & Ship</h2>
+          <p class="text-slate-300 text-sm mt-3">A transparent, milestone-driven engineering methodology designed to mitigate risks and hit deadlines.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {processSteps.map((step) => (
+            <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <span class="text-amber-400 text-2xl font-black mb-3 block">{step.step}</span>
+                <h4 class="text-base font-bold text-white mb-2">{step.title}</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQs -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 block mb-2">CLARITY & ASSURANCE</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {faqs.map((faq) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs space-y-3">
+              <h4 class="text-base font-bold text-[#0A1128] dark:text-white">{faq.q}</h4>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bottom CTA Banner -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Ready to Build Your Application?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          Book a 20-minute technical discovery session to review requirements, tech stack options, and delivery milestones.
+        </p>
+        <div class="pt-2 flex justify-center gap-3">
+          <a
+            href="/contact"
+            class="px-8 py-3.5 rounded-full font-bold text-xs bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-colors shadow-md"
+          >
+            Start Project Consultation &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

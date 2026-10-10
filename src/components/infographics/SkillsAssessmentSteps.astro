@@ -1,0 +1,90 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+
+const steps = [
+  {
+    step: "01",
+    title: "ANZSCO & Body Selection",
+    authority: "ACS / Engineers Australia / VETASSESS",
+    desc: "Match your degree and professional responsibilities with the exact ANZSCO occupation code (e.g. 261313 Software Engineer, 261312 Developer Programmer).",
+    duration: "Week 1 - 2"
+  },
+  {
+    step: "02",
+    title: "Dossier & Reference Engineering",
+    authority: "Audit-Proof Documentation",
+    desc: "Draft employer reference letters detailing 5-6 core duties on official letterheads. Pair with verified salary tax returns and bank deposit records to eliminate deduction risks.",
+    duration: "Week 2 - 4"
+  },
+  {
+    step: "03",
+    title: "Official Submission & Review",
+    authority: "Case Officer Processing",
+    desc: "Lodge the digital application dossier with certified colour scans. Track review timelines and respond promptly to case officer requests for further information (RFI).",
+    duration: "6 - 12 Weeks"
+  },
+  {
+    step: "04",
+    title: "Positive Outcome & SkillSelect EOI",
+    authority: "Claim Up to 15 Points",
+    desc: "Receive the official Positive Outcome Letter validating qualification equivalency and qualifying post-deduction work experience. Immediately lodge your SkillSelect EOI.",
+    duration: "Milestone Achieved"
+  }
+];
+---
+
+<div class={`rounded-3xl bg-white dark:bg-[#0F172A] border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm ${className}`}>
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-8 border-b border-slate-100 dark:border-slate-800 gap-4">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 mb-2">
+        INFOGRAPHIC &bull; 4-STAGE MIGRATION WORKFLOW
+      </div>
+      <h3 class="text-2xl font-black text-[#0A1128] dark:text-white tracking-tight">
+        Australia Skills Assessment: Step-by-Step Roadmap
+      </h3>
+      <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
+        How we navigate ACS, Engineers Australia (CDR), and VETASSESS to guarantee positive outcomes with zero deduction penalties.
+      </p>
+    </div>
+    <span class="px-3.5 py-2 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-300 font-bold text-xs flex-shrink-0">
+      100% Verified Track Record
+    </span>
+  </div>
+
+  <!-- 4 Step Flow Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+    {steps.map((st, idx) => (
+      <div class="relative p-5 rounded-2xl bg-slate-50 dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800/80 flex flex-col justify-between hover:border-amber-400/50 transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-3xl font-black text-amber-500/30 group-hover:text-amber-500 transition-colors">
+              {st.step}
+            </span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-slate-200/60 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+              {st.duration}
+            </span>
+          </div>
+
+          <h4 class="text-sm font-black text-[#0A1128] dark:text-white mb-1">
+            {st.title}
+          </h4>
+          <div class="text-[10px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider mb-2">
+            {st.authority}
+          </div>
+          <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
+            {st.desc}
+          </p>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-200/70 dark:border-slate-800/60 flex items-center gap-1.5 text-[10px] font-bold text-slate-500 dark:text-slate-400">
+          <span>{idx === 3 ? "🏆 Final Grant Target" : `➡️ Progresses to Stage ${idx + 2}`}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

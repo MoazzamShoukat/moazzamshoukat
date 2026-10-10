@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+---
+
+<Layout
+  title={`Education & Academic Projects | Moazzam Shoukat`}
+  description="Academic background of Moazzam Shoukat: BS Computer Science from ITU Lahore, Anemia AI FYP, Google Classroom clone, Urdu NLP, and technical certifications."
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          ACADEMIC QUALIFICATIONS
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Education & <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Academic Projects.</span>
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+          Rigorous computer science training at Information Technology University, Lahore, foundational engineering diploma, and specialized certifications in data science and cloud architecture.
+        </p>
+      </div>
+
+      <!-- Degrees Grid -->
+      <div class="space-y-12 mb-20">
+        
+        <!-- BS CS Section -->
+        <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm space-y-8">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
+            <div>
+              <span class="text-xs font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 block mb-1">TERTIARY DEGREE</span>
+              <h2 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white">
+                Bachelor of Science in Computer Science (BS CS)
+              </h2>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                Information Technology University (ITU), Lahore, Pakistan
+              </p>
+            </div>
+            <span class="px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 text-xs font-bold shrink-0">
+              Graduated with Distinction
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-[#0A1128] dark:text-white">Featured Academic Software Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              <!-- FYP -->
+              <div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#0F172A] border border-slate-200/80 dark:border-slate-800/80 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black bg-amber-500/10 text-amber-700 dark:text-amber-400 uppercase">
+                      Final Year Project
+                    </span>
+                    <span class="text-lg">🩸</span>
+                  </div>
+                  <h4 class="font-bold text-base text-[#0A1128] dark:text-white mb-2">
+                    Anemia Detection (Non-Invasive)
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                    Non-invasive clinical diagnostic system analyzing palpebral conjunctiva color histograms and machine learning models for early anemia detection without blood draws.
+                  </p>
+                </div>
+                <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-slate-800">
+                  Tech: Python, OpenCV, Scikit-Learn, Digital Health
+                </div>
+              </div>
+
+              <!-- Google Classroom Clone -->
+              <div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#0F172A] border border-slate-200/80 dark:border-slate-800/80 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 uppercase">
+                      Full-Stack Web App
+                    </span>
+                    <span class="text-lg">🏫</span>
+                  </div>
+                  <h4 class="font-bold text-base text-[#0A1128] dark:text-white mb-2">
+                    Google Classroom Clone
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                    Multi-tier web application featuring teacher/student role authorization, assignment submission, automatic grading records, and announcement feeds.
+                  </p>
+                </div>
+                <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-slate-800">
+                  Tech: Java, Spring Boot, Angular, REST APIs, MVC
+                </div>
+              </div>
+
+              <!-- Urdu Spell Checker -->
+              <div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#0F172A] border border-slate-200/80 dark:border-slate-800/80 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 uppercase">
+                      NLP & Linguistics
+                    </span>
+                    <span class="text-lg">✍️</span>
+                  </div>
+                  <h4 class="font-bold text-base text-[#0A1128] dark:text-white mb-2">
+                    Urdu Spell Checker & Predictor
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                    Algorithmic linguistic engine utilizing N-gram statistical models and Levenshtein distance metrics to detect spelling errors and suggest phonetic Urdu completions.
+                  </p>
+                </div>
+                <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-slate-800">
+                  Tech: Python, Natural Language Processing, N-Grams
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- DAE Section -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 block">ENGINEERING DIPLOMA</span>
+          <h2 class="text-2xl font-black text-[#0A1128] dark:text-white">
+            Diploma of Associate Engineer (DAE) in Automobile & Diesel Technology
+          </h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400">
+            Government College of Technology, Lahore, Pakistan
+          </p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+            Practical mechanical and industrial engineering foundation covering thermodynamics, machine diagnostics, systems kinematics, and manufacturing processes.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Professional Certifications Section -->
+      <div class="mb-20">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">CREDENTIALS</span>
+            <h2 class="text-2xl font-black text-[#0A1128] dark:text-white mt-1">Professional Certifications</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {siteData.certifications.map((cert) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-sm font-bold mb-3">
+                  ✓
+                </div>
+                <h4 class="font-bold text-sm text-[#0A1128] dark:text-white mb-1">
+                  {cert.name}
+                </h4>
+                <p class="text-xs font-semibold text-amber-700 dark:text-amber-400 mb-2">
+                  {cert.issuer}
+                </p>
+                {cert.details && (
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {cert.details}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Navigation Footnote -->
+      <div class="flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl bg-slate-100 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 gap-4">
+        <div>
+          <h4 class="font-bold text-sm text-[#0A1128] dark:text-white">Explore Professional Work History</h4>
+          <p class="text-xs text-slate-500 mt-0.5">Review software engineering roles at Emulation AI and Ibtidah Solutions.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a
+            href="/experience"
+            class="px-5 py-2.5 rounded-full text-xs font-bold bg-[#0A1128] text-white hover:bg-slate-800 dark:bg-amber-400 dark:text-slate-950 transition-colors"
+          >
+            View Experience &rarr;
+          </a>
+          <a
+            href="/skills"
+            class="px-5 py-2.5 rounded-full text-xs font-bold border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-amber-400 transition-colors"
+          >
+            Technical Skills
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

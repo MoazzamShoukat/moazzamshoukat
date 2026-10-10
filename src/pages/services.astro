@@ -1,94 +1,267 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { siteData } from '../data/siteData';
+
+const immigrationPages = [
+  {
+    href: '/canada-immigration',
+    title: 'Canada Express Entry & PNP',
+    subtitle: 'Federal Skilled Worker & Provincial',
+    desc: 'Targeted STEM category draws, comprehensive CRS score enhancement, and provincial nomination filings.',
+    tag: '95+ PR Visas',
+    icon: '🍁'
+  },
+  {
+    href: '/australia-immigration',
+    title: 'Australia Skilled Migration PR',
+    subtitle: 'Subclass 189, 190 & 491',
+    desc: 'SkillSelect EOI strategy, state nomination ROIs across VIC/NSW/SA/WA, and points test engineering.',
+    tag: '85+ PR Grants',
+    icon: '🦘'
+  },
+  {
+    href: '/skills-assessment-australia',
+    title: 'Australia Skills Assessment',
+    subtitle: 'ACS, Engineers Australia CDR & VETASSESS',
+    desc: 'Technical reference letter drafting, ANZSCO duty alignment, and 100% audit-proof CDR episodes.',
+    tag: 'Audit-Proof',
+    icon: '📊'
+  },
+  {
+    href: '/student-visa',
+    title: 'Canada & Australia Student Visas',
+    subtitle: 'University Admissions & SOP',
+    desc: 'Course shortlisting aligned with long-term PR, Genuine Student (GS) compliance, and non-plagiarized SOPs.',
+    tag: 'High Approval',
+    icon: '🎓'
+  },
+  {
+    href: '/ielts-coaching',
+    title: 'IELTS Band 7.5+ Coaching',
+    subtitle: 'British Council / IDP Standards',
+    desc: '1-on-1 speaking mock diagnostics, Cambridge test banks, and Task 2 essay feedback for CLB 9/10 reach.',
+    tag: 'Band 7.5+ Avg',
+    icon: '🎯'
+  },
+  {
+    href: '/pte-coaching',
+    title: 'PTE Academic (79+ Superior)',
+    subtitle: 'AI Acoustic Engine Strategy',
+    desc: 'Master Read Aloud, Repeat Sentence, and Write From Dictation algorithms for max 20 Australia PR points.',
+    tag: '+20 PR Points',
+    icon: '⚡'
+  },
+  {
+    href: '/naati-ccl-urdu',
+    title: 'NAATI CCL Urdu Preparation',
+    subtitle: 'Credentialed Community Language',
+    desc: '50+ authentic dialogues, note-taking shorthand, and bilingual terminology for 5 Australian PR points.',
+    tag: '96% Pass Rate',
+    icon: '🗣️'
+  }
+];
+
+const technicalPages = [
+  {
+    href: '/application-development',
+    title: 'Application Development',
+    subtitle: 'Cross-Platform & Enterprise Software',
+    desc: 'Full-lifecycle desktop, mobile, and enterprise applications. Built with high concurrency, fault tolerance, and clean modular code.',
+    tag: 'Custom Software',
+    icon: '💻',
+    features: ['Desktop & Mobile Apps', 'Microservices & Cloud APIs', 'Legacy Modernization', 'Secure RBAC & CI/CD']
+  },
+  {
+    href: '/web-development',
+    title: 'Full-Stack Web Development',
+    subtitle: 'Next.js, Astro & React Jamstack',
+    desc: 'Ultra-fast modern web applications and portals. Engineered for sub-second load times, 95+ Google Lighthouse scores, and high conversion.',
+    tag: 'Sub-Second Speed',
+    icon: '🌐',
+    features: ['Jamstack & SSR/SSG', '95+ Lighthouse Score', 'High-Converting UI/UX', 'REST & GraphQL APIs']
+  },
+  {
+    href: '/data-engineering',
+    title: 'Data Engineering & Pipelines',
+    subtitle: 'Scalable ETL & Warehousing',
+    desc: 'Enterprise data pipeline architecture, automated ETL/ELT workflows, PostgreSQL data warehousing, and query execution tuning.',
+    tag: '10M+ Records / Day',
+    icon: '🔀',
+    features: ['High-Volume Ingestion', 'PostgreSQL Warehousing', 'Query Optimization', 'Automated Data Checks']
+  },
+  {
+    href: '/data-scraping',
+    title: 'Enterprise Web Scraping',
+    subtitle: 'Scrapy, Selenium & Anti-Bot Crawlers',
+    desc: 'Distributed web crawlers equipped with proxy rotation, Cloudflare/anti-bot bypassing, headless automation, and structured delivery.',
+    tag: 'Anti-Bot Bypass',
+    icon: '🕷️',
+    features: ['Distributed Crawlers', 'Proxy & Captcha Solving', 'Playwright Automation', 'Clean Data Exports']
+  },
+  {
+    href: '/ai-development',
+    title: 'AI & Machine Learning Development',
+    subtitle: 'Speech AI, NLP & Model Fine-Tuning',
+    desc: 'Applied machine learning solutions backed by 7 published Speech AI papers. Speech recognition (ASR), Whisper tuning, and on-premise LLMs.',
+    tag: '7 Research Papers',
+    icon: '🧠',
+    features: ['Speech AI & Acoustic Models', 'Private LLM Fine-Tuning', 'NLP & Sentiment Analysis', 'Low-Latency Serving']
+  },
+  {
+    href: '/ai-agentic-development',
+    title: 'AI Agentic Development',
+    subtitle: 'Autonomous Multi-Agent Systems & RAG',
+    desc: 'Production-grade autonomous AI agents (LangGraph, CrewAI), tool-calling workflows, enterprise vector RAG, and self-healing agent loops.',
+    tag: 'Autonomous Action',
+    icon: '🤖',
+    features: ['Multi-Agent State Graphs', 'Vector RAG Knowledge', 'Deterministic Tool Calling', 'Human-in-the-Loop Safety']
+  }
+];
 ---
 
 <Layout
-  title={`Services | ${siteData.name}`}
-  description="Explore professional services in Software Engineering, Data Pipelines, AI Research, Canadian & Australian Immigration, and English Language Coaching."
+  title={`Services & Practice Areas | ${siteData.name}`}
+  description="Explore professional services in Canadian & Australian Immigration, IELTS 7.5+, PTE 79+, NAATI CCL Urdu, alongside Enterprise Application Development, Data Engineering, Scraping, and AI Agentic Solutions."
 >
   <div class="py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Nova Minimalist Header -->
+      <!-- Top Badge & Page Header -->
       <div class="max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 text-[11px] font-bold uppercase tracking-widest mb-4">
-          SOLUTIONS / PRACTICE AREAS
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          SOLUTIONS & DEDICATED TRACKS
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.1]">
-          Services Built for <br />
-          <span class="text-stone-500 dark:text-stone-400">Scale and Precision.</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Dual Mastery. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Immigration Advisory & Technical Engineering.</span>
         </h1>
-        <p class="mt-4 text-base text-stone-600 dark:text-stone-300 max-w-xl">
-          High-performance engineering solutions for companies alongside strategic immigration pathways for individuals and families.
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+          High-yield global immigration and language test coaching for ambitious individuals, paired with enterprise-grade software engineering, data pipelines, and autonomous AI systems for forward-thinking organizations.
         </p>
       </div>
 
-      <!-- Section 1: Software & Data Engineering -->
-      <div class="mb-20">
+      <!-- SECTION 1: Immigration & Language Portals -->
+      <div class="mb-24">
         <div class="flex items-center gap-3 mb-8">
-          <span class="text-xs font-black uppercase tracking-widest text-stone-600 dark:text-stone-300">01 / TECHNOLOGY & DATA</span>
-          <div class="h-px flex-grow bg-stone-200 dark:bg-zinc-800"></div>
+          <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">01 / IMMIGRATION & LANGUAGE PRACTICE AREAS</span>
+          <div class="h-px flex-grow bg-slate-200 dark:bg-slate-800"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {siteData.technicalServices.map((tech) => (
-            <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 hover:border-stone-400 dark:hover:border-zinc-600 transition-all flex flex-col justify-between">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {immigrationPages.map((page) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 shadow-xs transition-all flex flex-col justify-between group">
               <div>
-                <span class="text-[11px] font-bold uppercase tracking-widest text-stone-600 dark:text-stone-300 block mb-2">Technical Solution</span>
-                <h3 class="text-xl font-extrabold text-stone-900 dark:text-white mb-3">{tech.title}</h3>
-                <p class="text-xs text-stone-600 dark:text-stone-300 mb-6 leading-relaxed">{tech.desc}</p>
-                <div class="space-y-2 mb-6 border-t border-stone-100 dark:border-zinc-800 pt-4">
-                  {tech.features.map((f) => (
-                    <div class="flex items-center gap-2 text-xs text-stone-700 dark:text-stone-300">
-                      <span class="text-amber-500 font-bold">✓</span>
-                      <span>{f}</span>
-                    </div>
-                  ))}
+                <div class="flex items-center justify-between mb-3 text-xs">
+                  <span class="text-2xl">{page.icon}</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20">
+                    {page.tag}
+                  </span>
                 </div>
+                <h3 class="text-xl font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-1">
+                  <a href={page.href}>
+                    {page.title}
+                  </a>
+                </h3>
+                <span class="text-xs text-slate-400 block mb-3 font-semibold">{page.subtitle}</span>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                  {page.desc}
+                </p>
               </div>
-              <a
-                href={`/contact?service=${encodeURIComponent(tech.title)}`}
-                class="block w-full text-center py-3 px-4 rounded-full text-xs font-bold bg-stone-100 dark:bg-zinc-800 hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-stone-950 transition-colors"
-              >
-                Inquire on Service →
-              </a>
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-bold">
+                <a href={page.href} class="text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                  View Program &rarr;
+                </a>
+                <a
+                  href={`https://wa.me/923280484399?text=Hi%20Moazzam,%20I%20want%20to%20inquire%20about%20${encodeURIComponent(page.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-amber-700 dark:text-amber-400 hover:underline"
+                >
+                  WhatsApp &rarr;
+                </a>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      <!-- Section 2: Immigration & Language Coaching -->
-      <div>
+      <!-- SECTION 2: Technology & AI Engineering Services -->
+      <div class="mb-24">
         <div class="flex items-center gap-3 mb-8">
-          <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">02 / IMMIGRATION & LANGUAGE</span>
-          <div class="h-px flex-grow bg-stone-200 dark:bg-zinc-800"></div>
+          <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">02 / TECHNOLOGY & AI SERVICES</span>
+          <div class="h-px flex-grow bg-slate-200 dark:bg-slate-800"></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {siteData.immigrationServices.map((imm) => (
-            <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 hover:border-amber-400 dark:hover:border-amber-400/60 transition-all flex flex-col justify-between">
+          {technicalPages.map((tech) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 shadow-xs transition-all flex flex-col justify-between group">
               <div>
-                <span class="text-[11px] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block mb-2">Immigration & Test Prep</span>
-                <h3 class="text-xl font-extrabold text-stone-900 dark:text-white mb-3">{imm.title}</h3>
-                <p class="text-xs text-stone-600 dark:text-stone-300 mb-6 leading-relaxed">{imm.desc}</p>
-                <div class="space-y-2 mb-6 border-t border-stone-100 dark:border-zinc-800 pt-4">
-                  {imm.features.map((f) => (
-                    <div class="flex items-center gap-2 text-xs text-stone-700 dark:text-stone-300">
-                      <span class="text-emerald-500 font-bold">✓</span>
-                      <span>{f}</span>
+                <div class="flex items-center justify-between mb-3 text-xs">
+                  <span class="text-2xl">{tech.icon}</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20">
+                    {tech.tag}
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-1">
+                  <a href={tech.href}>
+                    {tech.title}
+                  </a>
+                </h3>
+                <span class="text-xs text-slate-400 block mb-3 font-semibold">{tech.subtitle}</span>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                  {tech.desc}
+                </p>
+
+                <div class="space-y-1.5 pt-3 mb-6 border-t border-slate-100 dark:border-slate-800">
+                  {tech.features.map((feat) => (
+                    <div class="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
+                      <span class="text-amber-600 dark:text-amber-400 font-bold">✓</span>
+                      <span>{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <a
-                href={`/contact?service=${encodeURIComponent(imm.title)}`}
-                class="block w-full text-center py-3 px-4 rounded-full text-xs font-bold bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors"
-              >
-                Consult on {imm.title.split(' ')[0]} →
-              </a>
+
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-bold">
+                <a href={tech.href} class="text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                  Explore Architecture &rarr;
+                </a>
+                <a
+                  href={`https://wa.me/923280484399?text=Hi%20Moazzam,%20I%20want%20to%20discuss%20${encodeURIComponent(tech.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-amber-700 dark:text-amber-400 hover:underline"
+                >
+                  WhatsApp &rarr;
+                </a>
+              </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <!-- High-Value Freelance / Enterprise Engagement Banner -->
+      <div class="p-10 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20 flex flex-col lg:flex-row items-center justify-between gap-8 mb-20">
+        <div class="space-y-2 max-w-2xl">
+          <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">FREELANCE & ENTERPRISE CONTRACTS</span>
+          <h4 class="text-2xl sm:text-3xl font-black text-white">Need a custom engineering solution or advisory?</h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            From scraping pipelines and API backends to custom RAG agents and research consultation. Available for milestone-based, retainer, or sprint contracts worldwide.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a
+            href="/contact"
+            class="px-6 py-3.5 rounded-full text-xs font-black bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 transition-colors shadow-md text-center"
+          >
+            Book Free Consultation &rarr;
+          </a>
+          <a
+            href="/pricing"
+            class="px-6 py-3.5 rounded-full text-xs font-bold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors text-center"
+          >
+            View Pricing & Packages
+          </a>
         </div>
       </div>
 

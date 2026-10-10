@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { successStoriesData } from '../data/successStoriesData';
+
+const categories = ["All", "IELTS", "PTE", "NAATI CCL", "Australia PR", "Canada PR", "Student Visa"];
+---
+
+<Layout
+  title="Success Stories & Verified Results | Moazzam Shoukat"
+  description="Explore real student achievements and client visa grants: IELTS 8.5, PTE 86 Superior English, NAATI CCL Urdu passes, and Australian & Canadian PR approvals."
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Badge & Page Header -->
+      <div class="max-w-3xl mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          PROVEN TRACK RECORD & CLIENT TRIUMPHS
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Real Results. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Transformative Journeys.</span>
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          From jumping 2 full IELTS bands to scoring 86/90 in PTE Academic, passing NAATI CCL Urdu on the first attempt, and receiving permanent residency grants in Canada and Australia.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
+          <div class="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+            <div class="text-3xl font-black text-[#0A1128] dark:text-amber-400">96%</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-0.5">First-Attempt Pass Rate</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+            <div class="text-3xl font-black text-[#0A1128] dark:text-amber-400">250+</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-0.5">Test Score Triumphs</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+            <div class="text-3xl font-black text-[#0A1128] dark:text-amber-400">180+</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-0.5">PR & Visa Grants</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+            <div class="text-3xl font-black text-[#0A1128] dark:text-amber-400">5.0 ★</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-bold mt-0.5">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="mb-10 flex flex-wrap gap-2">
+        {categories.map((cat, idx) => (
+          <button
+            type="button"
+            data-filter={cat}
+            class={`story-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+              idx === 0
+                ? "bg-[#0A1128] text-white dark:bg-amber-400 dark:text-slate-950 shadow-sm active-filter"
+                : "bg-white dark:bg-[#111827] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-amber-400"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Cards Grid -->
+      <div id="stories-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+        {successStoriesData.map((item) => (
+          <div
+            data-category={item.category}
+            class="story-card p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col justify-between hover:border-amber-400/50 hover:shadow-lg transition-all"
+          >
+            <div>
+              <!-- Header Row -->
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                  {item.category}
+                </span>
+                <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20">
+                  {item.targetBadge}
+                </span>
+              </div>
+
+              <!-- Main Title & Achievement -->
+              <h3 class="text-xl sm:text-2xl font-black text-[#0A1128] dark:text-white tracking-tight">
+                {item.title}
+              </h3>
+              <p class="text-xs sm:text-sm font-bold text-amber-700 dark:text-amber-400 mt-1">
+                {item.achievement}
+              </p>
+
+              <!-- Optional Section Scores Grid -->
+              {item.scoreBreakdown && item.scoreBreakdown.sections.length > 0 && (
+                <div class="grid grid-cols-4 gap-2 my-5 p-3 rounded-2xl bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20">
+                  {item.scoreBreakdown.sections.map((sec) => (
+                    <div class="text-center">
+                      <div class="text-[10px] uppercase font-bold text-slate-400">{sec.label}</div>
+                      <div class="text-sm sm:text-base font-black text-[#0A1128] dark:text-white mt-0.5">{sec.score}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <!-- Testimonial Quote -->
+              <div class="mt-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic border-l-2 border-amber-400 dark:border-amber-500 pl-4 py-1">
+                "{item.testimonial}"
+              </div>
+
+              <!-- Strategy Takeaway -->
+              <div class="mt-4 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 text-xs">
+                <span class="font-bold text-amber-700 dark:text-amber-400">Key Tactic: </span>
+                {item.keyTakeaway}
+              </div>
+            </div>
+
+            <!-- Client Footer Meta -->
+            <div class="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <div class="font-bold text-[#0A1128] dark:text-slate-100">{item.name}</div>
+              <div>{item.city} • {item.date}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bottom Banner -->
+      <div class="p-10 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl font-black">Be Our Next Featured Success Story</h3>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">Book a free diagnostic with Moazzam to map out your scores and visa roadmap.</p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            href="/contact"
+            class="px-6 py-3.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-xs transition-all shadow-md"
+          >
+            Start Your Journey &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script is:inline>
+    const filterButtons = document.querySelectorAll('.story-filter-btn');
+    const cards = document.querySelectorAll('.story-card');
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Toggle active button style
+        filterButtons.forEach((b) => {
+          b.classList.remove('bg-[#0A1128]', 'text-white', 'dark:bg-amber-400', 'dark:text-slate-950', 'active-filter');
+          b.classList.add('bg-white', 'dark:bg-[#111827]', 'text-slate-700', 'dark:text-slate-300', 'border', 'border-slate-200', 'dark:border-slate-800');
+        });
+
+        btn.classList.add('bg-[#0A1128]', 'text-white', 'dark:bg-amber-400', 'dark:text-slate-950', 'active-filter');
+        btn.classList.remove('bg-white', 'dark:bg-[#111827]', 'text-slate-700', 'dark:text-slate-300', 'border-slate-200');
+
+        // Filter cards
+        cards.forEach((card) => {
+          const cardCategory = card.getAttribute('data-category');
+          if (filter === 'All' || cardCategory === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</Layout>

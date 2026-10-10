@@ -1,0 +1,411 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+// English Test Coaching Packages
+const testCoachingPackages = [
+  {
+    id: "pte-ielts",
+    name: "PTE Academic / IELTS Coaching",
+    badge: "Most Popular",
+    price: "PKR 30,000",
+    period: "Per 4-Week Cycle",
+    renewalNote: "Fee will be charged again after the 4-week period ends",
+    tagline: "Targeted 1-on-1 coaching for candidates aiming for Band 7.5+ or PTE 79+ Superior language migration points.",
+    featured: false,
+    ctaText: "Enroll in PTE / IELTS",
+    whatsappText: "Hi Moazzam, I want to enroll in PTE / IELTS Coaching (PKR 30,000 / 4 weeks).",
+    features: [
+      "1-on-1 diagnostic evaluation & custom study schedule",
+      "Examiner-style speaking simulations with immediate audio critique",
+      "Line-by-line essay evaluations using official Cambridge / Pearson rubrics",
+      "Cambridge past exams & high-yield Pearson AI templates",
+      "Flexible morning, evening & weekend slots (Lahore & Online Zoom)"
+    ]
+  },
+  {
+    id: "naati-ccl",
+    name: "NAATI CCL Urdu Masterclass",
+    badge: "+5 Australia PR Points",
+    price: "PKR 40,000",
+    period: "Per 4-Week Cycle",
+    renewalNote: "Fee will be charged again after the 4-week period ends",
+    tagline: "The fastest, most reliable way to claim 5 bonus points for Australian Skilled Migration (189, 190, 491).",
+    featured: false,
+    ctaText: "Enroll in NAATI CCL",
+    whatsappText: "Hi Moazzam, I want to enroll in NAATI CCL Urdu (PKR 40,000 / 4 weeks).",
+    features: [
+      "50+ authentic exam-simulated bilingual dialogue practices",
+      "Specialized shorthand note-taking symbol framework",
+      "Comprehensive domain glossaries (Medical, Legal, Community, Housing)",
+      "ProctorExam format simulations with rubric grading",
+      "Proven 96% first-attempt candidate success rate"
+    ]
+  },
+  {
+    id: "pte-naati-bundle",
+    name: "PTE + NAATI Dual Package",
+    badge: "Best Value • 03 Months Track",
+    price: "PKR 150,000",
+    period: "03 Months Comprehensive Package",
+    renewalNote: "One-time flat fee covering full 90 days (no 4-week renewal required)",
+    tagline: "The ultimate Australia PR fast-track bundle: secure +20 points (PTE 79+) and +5 points (NAATI CCL) together.",
+    featured: true,
+    ctaText: "Get 3-Month Bundle",
+    whatsappText: "Hi Moazzam, I want to enroll in the PTE + NAATI 03 Months Package (PKR 150,000).",
+    features: [
+      "Full 3-month comprehensive roadmap covering both exams",
+      "Complete PTE 79+ Superior preparation from diagnostic to exam day",
+      "Complete NAATI CCL Urdu dialogue interpretations & vocabulary drills",
+      "Priority scheduling for 1-on-1 mock interviews and reviews",
+      "Unlimited essay corrections & weekly timed test hall simulations",
+      "Direct mentor WhatsApp access for continuous guidance"
+    ]
+  }
+];
+
+// Immigration Services
+const immigrationService = {
+  name: "Immigration Consultancy",
+  badge: "Canada & Australia Strategic Advisory",
+  price: "Starts from PKR 150,000",
+  period: "Custom Strategy & Complete Dossier Preparation",
+  tagline: "End-to-end guidance for Canadian Express Entry & Australian Skilled Migration (GSM), structured by a Senior Software Engineer & Migration Strategist.",
+  features: [
+    "Comprehensive points audit (Canada CRS & Australian GSM 189/190/491)",
+    "Australian Skills Assessment dossier audit (ACS IT, Engineers Australia CDR, VETASSESS)",
+    "Detailed employment reference letter engineering to eliminate experience deductions",
+    "Canadian Express Entry, PNP Category-Based Selection & WES ECA alignment",
+    "Financial documentation structuring (FBR tax returns, bank balance verification)",
+    "Direct strategic advisory with Moazzam Shoukat (zero junior agency hand-offs)"
+  ],
+  whatsappText: "Hi Moazzam, I would like to consult regarding Immigration Consultancy (Starts from PKR 150,000)."
+};
+
+const pricingFaqs = [
+  {
+    q: "How does the 4-week fee structure work for PTE, IELTS, and NAATI?",
+    a: "For the individual PTE/IELTS (PKR 30,000) and NAATI CCL (PKR 40,000) tracks, your fee covers a focused 4-week preparation block. If you wish to continue into a second or third month for additional mock exams or guided revision, the fee will be charged again for each 4-week period. The 3-Month PTE + NAATI package (PKR 150,000) is a one-time flat fee covering the entire 3 months."
+  },
+  {
+    q: "Why choose the 3-Month PTE + NAATI Package?",
+    a: "Securing +25 points (+20 from PTE 79+ Superior and +5 from NAATI CCL) is the single most critical differentiator in Australian Skilled Migration invitations. The 3-month bundle aligns both timelines seamlessly, provides priority 1-on-1 slots, and offers substantial savings compared to booking separate months."
+  },
+  {
+    q: "What does the 'Starts from PKR 150,000' Immigration Consultancy include?",
+    a: "This fee covers in-depth strategic profile analysis, skills assessment documentation drafting/review (ACS, Engineers Australia, or VETASSESS), EOI / Express Entry profiling, and audit-proof financial matrix preparation. Highly complex dossiers (such as recognition of prior learning RPL reports or multi-country employment verification) are quoted transparently following an initial profile audit."
+  },
+  {
+    q: "What payment methods are accepted?",
+    a: "We accept local Pakistani bank transfers (Raast, IBFT), Meezan Bank, JazzCash, Nayapay, as well as international transfers via Wise, Payoneer, and direct bank wire transfers for candidates living in the UAE, Saudi Arabia, Australia, or the UK."
+  }
+];
+
+// Schema for Pricing
+const pricingSchema = {
+  "@context": "https://schema.org",
+  "@type": "PriceSpecification",
+  "name": "Moazzam Shoukat Advisory & Coaching Pricing",
+  "description": "Transparent pricing packages for PTE/IELTS coaching, NAATI CCL Urdu masterclasses, and Canada & Australia immigration consultancy."
+};
+---
+
+<Layout
+  title={`Transparent Advisory & Coaching Fees | ${siteData.name}`}
+  description="Explore transparent pricing for 1-on-1 PTE Academic, IELTS coaching, NAATI CCL Urdu, 3-Month PR bundle, and Australia & Canada immigration consultancy."
+  schema={pricingSchema}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Breadcrumbs Navigation -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">
+            Pricing & Packages
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          TRANSPARENT ADVISORY & COACHING FEES
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Honest Guidance. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Clear, Upfront Pricing.</span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          No hidden charges, zero predatory lock-ins. Realistic, high-yield language test coaching and migration strategy packages tailored for ambitious professionals and students in Pakistan and worldwide.
+        </p>
+      </div>
+
+      <!-- SECTION 1: English Test Coaching -->
+      <div class="mb-20">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">TRACK 01</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight mt-1">
+              English Test & Language Coaching
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md sm:text-right">
+            PTE Academic 79+, IELTS Band 7.5+, and NAATI CCL Urdu dialogue interpretations.
+          </p>
+        </div>
+
+        <!-- 3 Cards Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {testCoachingPackages.map((pkg) => (
+            <div class={`rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all relative ${
+              pkg.featured
+                ? 'bg-[#0A1128] text-white border-2 border-amber-400 shadow-2xl ring-4 ring-amber-500/10'
+                : 'bg-white dark:bg-[#111827] text-slate-800 dark:text-white border border-slate-200 dark:border-slate-800 shadow-sm hover:border-amber-400/50'
+            }`}>
+              
+              {pkg.featured && (
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-widest shadow-md whitespace-nowrap">
+                  {pkg.badge}
+                </div>
+              )}
+
+              <div>
+                {!pkg.featured && (
+                  <span class="inline-block px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-amber-300 text-[10px] font-bold uppercase tracking-widest mb-4">
+                    {pkg.badge}
+                  </span>
+                )}
+
+                <h3 class={`text-xl sm:text-2xl font-black mb-2 ${pkg.featured ? 'text-white' : 'text-[#0A1128] dark:text-white'}`}>
+                  {pkg.name}
+                </h3>
+                
+                <p class={`text-xs mb-6 leading-relaxed ${pkg.featured ? 'text-slate-300' : 'text-slate-600 dark:text-slate-400'}`}>
+                  {pkg.tagline}
+                </p>
+
+                <!-- Price Box -->
+                <div class="mb-6 pb-6 border-b border-slate-200/50 dark:border-slate-800">
+                  <div class="text-3xl sm:text-4xl font-black text-amber-600 dark:text-amber-400">
+                    {pkg.price}
+                  </div>
+                  <div class={`text-xs font-bold mt-1.5 ${pkg.featured ? 'text-amber-300' : 'text-slate-700 dark:text-slate-300'}`}>
+                    {pkg.period}
+                  </div>
+                  <!-- Renewal Note Notice -->
+                  <div class={`mt-2 p-2.5 rounded-xl text-[11px] font-medium leading-snug ${
+                    pkg.featured
+                      ? 'bg-amber-400/10 border border-amber-400/20 text-amber-200'
+                      : 'bg-amber-500/10 border border-amber-500/20 text-amber-900 dark:text-amber-300'
+                  }`}>
+                    <span class="font-bold">Billing Cycle Note:</span> {pkg.renewalNote}
+                  </div>
+                </div>
+
+                <!-- Features List -->
+                <ul class="space-y-3 mb-8 text-xs sm:text-[13px]">
+                  {pkg.features.map((feat) => (
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-amber-500 dark:text-amber-400 font-bold shrink-0 mt-0.5">✓</span>
+                      <span class={pkg.featured ? 'text-slate-200' : 'text-slate-600 dark:text-slate-300'}>
+                        {feat}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="space-y-2.5 pt-4">
+                <a
+                  href={`https://wa.me/923280484399?text=${encodeURIComponent(pkg.whatsappText)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={`w-full block text-center py-3.5 px-4 rounded-full font-bold text-xs sm:text-sm transition-all shadow-md ${
+                    pkg.featured
+                      ? 'bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black'
+                      : 'bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950'
+                  }`}
+                >
+                  Book via WhatsApp
+                </a>
+                <a
+                  href="/contact"
+                  class={`w-full block text-center py-2 px-4 rounded-full font-semibold text-xs transition-colors ${
+                    pkg.featured
+                      ? 'text-slate-300 hover:text-white'
+                      : 'text-slate-500 hover:text-[#0A1128] dark:hover:text-amber-400'
+                  }`}
+                >
+                  Inquire via Consultation Form &rarr;
+                </a>
+              </div>
+
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- SECTION 2: Immigration Consultancy (Canada & Australia) -->
+      <div class="mb-24">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">TRACK 02</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight mt-1">
+              Immigration Consultancy & Dossier Strategy
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md sm:text-right">
+            Canada Express Entry, Provincial Nominees (PNP), and Australia GSM Subclasses 189/190/491.
+          </p>
+        </div>
+
+        <div class="rounded-3xl p-8 sm:p-12 bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-lg relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7 space-y-4">
+              <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 text-[10px] font-black uppercase tracking-widest">
+                {immigrationService.badge}
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white">
+                {immigrationService.name}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                {immigrationService.tagline}
+              </p>
+
+              <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                {immigrationService.features.map((feat) => (
+                  <div class="flex items-start gap-2.5">
+                    <span class="text-amber-600 dark:text-amber-400 font-bold shrink-0 mt-0.5">✓</span>
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-[#0A1128] text-white border border-amber-500/30 flex flex-col justify-between space-y-6">
+              <div>
+                <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">INVESTMENT STARTING RATE</span>
+                <div class="text-3xl sm:text-4xl font-black text-amber-400 mt-1">
+                  {immigrationService.price}
+                </div>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  {immigrationService.period}. Based on individual profile complexity, assessing body requirements, and document readiness.
+                </p>
+              </div>
+
+              <div class="space-y-3">
+                <a
+                  href={`https://wa.me/923280484399?text=${encodeURIComponent(immigrationService.whatsappText)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full block text-center py-3.5 px-4 rounded-full font-bold text-xs sm:text-sm bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 transition-all shadow-md"
+                >
+                  Book Immigration Strategy Call
+                </a>
+                <a
+                  href="/contact"
+                  class="w-full block text-center py-2 px-4 rounded-full font-semibold text-xs text-slate-300 hover:text-white transition-colors"
+                >
+                  Submit Profile For Evaluation &rarr;
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule an Appointment / Booking Box -->
+      <div id="booking-section" class="p-8 sm:p-12 lg:p-16 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20 mb-24">
+        <div class="max-w-3xl mx-auto text-center space-y-6">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400 text-[11px] font-bold uppercase tracking-widest">
+            DIRECT CONSULTATION SCHEDULING
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Schedule Your Profile Consultation
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            Ready to map out your Canadian Express Entry, Australian GSM, or IELTS / PTE test prep? Select a preferred channel below to reserve your slot directly.
+          </p>
+
+          <div class="pt-4 flex flex-wrap justify-center items-center gap-4">
+            <a
+              href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20would%20like%20to%20schedule%20a%20consultation%20call."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+            >
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.174.449.741.963 1.199.662.59 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/></svg>
+              <span>Instant WhatsApp Booking (+92-328-048-4399)</span>
+            </a>
+            <a
+              href="/contact"
+              class="px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+            >
+              <span>Submit In-Depth Audit Form &rarr;</span>
+            </a>
+          </div>
+
+          <div class="pt-6 border-t border-slate-800 text-xs text-slate-400">
+            Sessions held via Zoom, Google Meet, or in-person in Lahore. Flexible evening & weekend slots available.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing FAQs -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <h2 class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 mb-2">CLARITY & POLICIES</h2>
+          <h3 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Frequently Asked Questions</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">Essential details on 4-week billing cycles, bundle inclusions, and session arrangements.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {pricingFaqs.map((faq, idx) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                  {idx + 1}
+                </span>
+                <div>
+                  <h4 class="text-base font-bold text-[#0A1128] dark:text-white mb-2">{faq.q}</h4>
+                  <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bottom Conversion Callout -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Not Sure Which Pathway Fits Your Profile?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          Reach out for an initial diagnostic check. We review your current scores, career background, and target timeline with total transparency.
+        </p>
+        <div class="pt-2 flex justify-center gap-3">
+          <a
+            href="/contact"
+            class="px-8 py-3.5 rounded-full font-bold text-xs bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-colors shadow-md"
+          >
+            Start Your Inquiry &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

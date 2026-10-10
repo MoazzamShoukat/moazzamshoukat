@@ -4,17 +4,29 @@
 
 @layer base {
   :root {
-    --bg-page: #FBFBFA;
+    --bg-page: #F8FAFC;
     --card-bg: #FFFFFF;
-    --card-border: #E8E6E1;
-    --accent-warm: #C59B27;
+    --card-border: #E2E8F0;
+    --brand-navy: #0A1128; /* Deep Midnight Navy */
+    --brand-navy-subtle: #1E293B; /* Slate Navy */
+    --brand-charcoal: #0F172A; /* Rich Charcoal */
+    --brand-gold: #C59B27; /* Rich Gold */
+    --brand-gold-champagne: #D4AF37; /* Warm Champagne Gold */
+    --brand-gold-light: #FBF8F1; /* Soft Champagne White */
+    --brand-gold-glow: rgba(212, 175, 55, 0.15);
   }
 
   .dark {
-    --bg-page: #121214;
-    --card-bg: #1A1A1E;
-    --card-border: #27272A;
-    --accent-warm: #D4AF37;
+    --bg-page: #0B0F19; /* Deep Midnight Charcoal / Navy */
+    --card-bg: #111827; /* Charcoal */
+    --card-border: #1E293B; /* Navy Slate Border */
+    --brand-navy: #0F172A;
+    --brand-navy-subtle: #334155;
+    --brand-charcoal: #030712;
+    --brand-gold: #E5C07B; /* Warm Radiant Gold */
+    --brand-gold-champagne: #F3E8C9; /* Pale Champagne */
+    --brand-gold-light: rgba(229, 192, 123, 0.08);
+    --brand-gold-glow: rgba(229, 192, 123, 0.2);
   }
 
   html {
@@ -24,11 +36,33 @@
   
   body {
     background-color: var(--bg-page);
+    color: #0F172A;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  ::selection {
-    background-color: #F6E05E;
-    color: #1A202C;
+  .dark body {
+    color: #F8FAFC;
   }
+
+  ::selection {
+    background-color: #D4AF37;
+    color: #0A1128;
+  }
+}
+
+/* Crystal / Liquid Glassmorphism Effect for Header */
+.crystal-glass-header {
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 10px 30px -10px rgba(10, 17, 40, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .crystal-glass-header {
+  background: rgba(10, 17, 40, 0.72);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
 }

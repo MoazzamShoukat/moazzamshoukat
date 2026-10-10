@@ -1,0 +1,350 @@
+---
+import { siteData } from '../data/siteData';
+import Icon from './Icon.astro';
+---
+
+<section id="contact" class="py-20 bg-slate-50 dark:bg-slate-900/60 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 text-xs font-semibold uppercase tracking-wider mb-3">
+        Get In Touch
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        Book a Consultation or Inquire Today
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+        Fill out the form below for a profile evaluation, or reach out directly via WhatsApp and email for prompt review.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Contact Info & Direct Links (5 columns) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <div class="p-7 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-md space-y-6">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+            Direct Contact Information
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            All consultations are private and confidential. You will receive an assessment of your prospects and actionable next steps.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <!-- Email -->
+            <a
+              href={`mailto:${siteData.contact.email}`}
+              class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
+            >
+              <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <Icon name="mail" class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">Email Inquiries</span>
+                <span class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-amber-400 transition-colors">
+                  {siteData.contact.email}
+                </span>
+              </div>
+            </a>
+
+            <!-- Phone / WhatsApp -->
+            <a
+              href={siteData.contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
+            >
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <Icon name="phone" class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">Phone / WhatsApp</span>
+                <span class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 transition-colors">
+                  {siteData.contact.phone}
+                </span>
+              </div>
+            </a>
+
+            <!-- Office / Consultations -->
+            <div class="flex items-start gap-3.5 p-3 rounded-2xl">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0">
+                <Icon name="location" class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">Locations & Consultations</span>
+                <span class="text-sm font-medium text-slate-900 dark:text-white">
+                  {siteData.contact.location}
+                </span>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="flex items-start gap-3.5 p-3 rounded-2xl">
+              <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0">
+                <Icon name="clock" class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">Availability</span>
+                <span class="text-sm font-medium text-slate-900 dark:text-white">
+                  Mon - Sat: 10:00 AM - 8:00 PM PKT
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Chat Action -->
+          <div class="pt-2">
+            <a
+              href={siteData.contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-700/20 transition-all"
+            >
+              <span>Instant Chat on WhatsApp</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.71 4.31 3.8 2.53 1.09 2.53.73 2.99.69.45-.04 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+            <span class="block text-xs font-semibold uppercase text-slate-400 dark:text-slate-500 mb-3">
+              Connect on Social Platforms
+            </span>
+            <div class="flex items-center gap-3">
+              {siteData.socials.linkedin && (
+                <a
+                  href={siteData.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+              )}
+              {siteData.socials.scholar && (
+                <a
+                  href={siteData.socials.scholar}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Google Scholar Profile"
+                  class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-50 dark:hover:bg-slate-700 transition-colors"
+                >
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                </a>
+              )}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contact Consultation Form (7 columns) -->
+      <div class="lg:col-span-7">
+        <div class="p-7 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-xl relative">
+          
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+            Request Case Assessment
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-8">
+            Tell me about your educational background, target destination, and required services.
+          </p>
+
+          <form id="consultation-form" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="fullName" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  placeholder="e.g. Ahmad Khan"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-amber-400 transition-all"
+                />
+              </div>
+
+              <div>
+                <label for="cEmail" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="cEmail"
+                  name="email"
+                  required
+                  placeholder="name@example.com"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-amber-400 transition-all"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="cPhone" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  WhatsApp / Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="cPhone"
+                  name="phone"
+                  required
+                  placeholder="+92 300 1234567"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-amber-400 transition-all"
+                />
+              </div>
+
+              <div>
+                <label for="cService" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                  Primary Service Needed *
+                </label>
+                <select
+                  id="cService"
+                  name="service"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-amber-400 transition-all"
+                >
+                  <option value="">Select a service...</option>
+                  <option value="Canada & Australia Immigration">Canada & Australia Immigration</option>
+                  <option value="Student Visa Guidance">Student Visa Guidance</option>
+                  <option value="Australia Skills Assessment">Australia Skills Assessment</option>
+                  <option value="English Test Training (IELTS, PTE, etc.)">English Test Training (IELTS, PTE, etc.)</option>
+                  <option value="NAATI CCL Urdu Training">NAATI CCL Urdu Training (+5 PR Points)</option>
+                  <option value="Combined Immigration & Language Package">Combined Immigration & Language Package</option>
+                  <option value="General Profile Evaluation">General Profile Evaluation</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="cMessage" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                Case Details / Message *
+              </label>
+              <textarea
+                id="cMessage"
+                name="message"
+                rows="4"
+                required
+                placeholder="Share your age, highest qualification, years of work experience, current English scores (if any), and specific goals..."
+                class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-amber-400 transition-all"
+              ></textarea>
+            </div>
+
+            <!-- Status confirmation area -->
+            <div id="c-form-status" class="hidden p-4 rounded-xl border border-amber-500/40 bg-amber-500/10 text-xs text-slate-900 dark:text-white space-y-2">
+              <div id="c-status-title" class="font-bold text-sm"></div>
+              <div id="c-status-desc" class="leading-relaxed"></div>
+              <div id="c-status-actions" class="pt-2 flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <button
+                type="submit"
+                id="c-submit-btn"
+                class="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>💬 Submit via WhatsApp</span>
+              </button>
+
+              <button
+                type="button"
+                id="c-mail-btn"
+                class="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>✉️ Send via Email</span>
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function setupContactForm() {
+    const form = document.getElementById('consultation-form') as HTMLFormElement;
+    const statusBox = document.getElementById('c-form-status');
+    const statusTitle = document.getElementById('c-status-title');
+    const statusDesc = document.getElementById('c-status-desc');
+    const statusActions = document.getElementById('c-status-actions');
+    const mailBtn = document.getElementById('c-mail-btn');
+
+    if (!form || !statusBox || !statusTitle || !statusDesc || !statusActions) return;
+
+    function buildPayload() {
+      const name = (document.getElementById('fullName') as HTMLInputElement)?.value.trim();
+      const email = (document.getElementById('cEmail') as HTMLInputElement)?.value.trim();
+      const phone = (document.getElementById('cPhone') as HTMLInputElement)?.value.trim();
+      const service = (document.getElementById('cService') as HTMLSelectElement)?.value;
+      const message = (document.getElementById('cMessage') as HTMLTextAreaElement)?.value.trim();
+
+      const text = `*New Case Evaluation Request*\n\n` +
+        `• *Name:* ${name}\n` +
+        `• *Phone/WhatsApp:* ${phone}\n` +
+        `• *Email:* ${email}\n` +
+        `• *Service:* ${service}\n` +
+        `• *Details:* ${message}\n\n` +
+        `Sent from moazzamshoukat.com`;
+
+      return { name, email, phone, service, message, text };
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const payload = buildPayload();
+      if (!payload.name || !payload.email || !payload.phone) {
+        alert('Please fill out all required fields.');
+        return;
+      }
+
+      const waUrl = `https://wa.me/923280484399?text=${encodeURIComponent(payload.text)}`;
+      statusBox.classList.remove('hidden');
+      statusTitle.innerHTML = '🚀 Opening WhatsApp with your case details...';
+      statusDesc.innerHTML = 'Your case inquiry has been pre-formatted for Moazzam Shoukat. If WhatsApp did not launch, click below:';
+      statusActions.innerHTML = `
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs inline-flex items-center gap-1.5 shadow-sm">
+          Launch WhatsApp Direct &rarr;
+        </a>
+      `;
+
+      window.open(waUrl, '_blank');
+    });
+
+    if (mailBtn) {
+      mailBtn.addEventListener('click', () => {
+        const payload = buildPayload();
+        if (!payload.name || !payload.email) {
+          alert('Please fill out your name and email before sending.');
+          return;
+        }
+
+        const mailUrl = `mailto:moazzamshoukat1@gmail.com?subject=${encodeURIComponent('Consultation Request: ' + payload.service)}&body=${encodeURIComponent(payload.text)}`;
+        statusBox.classList.remove('hidden');
+        statusTitle.innerHTML = '✉️ Launching email client...';
+        statusDesc.innerHTML = 'Your inquiry has been formatted. If your email app did not open, click below:';
+        statusActions.innerHTML = `
+          <a href="${mailUrl}" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs inline-flex items-center gap-1.5 shadow-sm">
+            Open Email App &rarr;
+          </a>
+        `;
+
+        window.location.href = mailUrl;
+      });
+    }
+  }
+
+  setupContactForm();
+  document.addEventListener('astro:after-swap', setupContactForm);
+</script>

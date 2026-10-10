@@ -1,26 +1,53 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { siteData } from '../data/siteData';
+
+const subpages = [
+  {
+    href: '/ielts-coaching',
+    icon: '🎯',
+    title: 'IELTS Band 7.5+ Coaching',
+    subtitle: 'Academic & General Training',
+    desc: 'Targeted preparation for Canada Express Entry (CLB 9/10) and Australia PR. Master Cambridge test mechanics, AREA speaking drills, and high-scoring Task 2 essay templates.',
+    badge: 'Band 7.5+ Average'
+  },
+  {
+    href: '/pte-coaching',
+    icon: '⚡',
+    title: 'PTE Academic (79+ Superior)',
+    subtitle: 'Pearson AI Algorithm Calibration',
+    desc: 'Score 79+ in all modules to claim the maximum 20 migration points for Australia. Master Read Aloud, Repeat Sentence, and Write From Dictation with verified prediction files.',
+    badge: '+20 PR Points'
+  },
+  {
+    href: '/naati-ccl-urdu',
+    icon: '🗣️',
+    title: 'NAATI CCL Urdu Masterclass',
+    subtitle: '+5 Australia PR Bonus Points',
+    desc: 'Specialized bilingual dialogue interpretation coaching with customized shorthand symbols, sector glossaries (Medical, Legal, Housing), and full-length exam simulations.',
+    badge: '96% Pass Rate'
+  }
+];
 ---
 
 <Layout
   title={`English Coaching & NAATI CCL Urdu | ${siteData.name}`}
-  description="Master IELTS Band 8+, PTE Academic 79+ Superior, TOEFL, Duolingo, and secure +5 Australia PR points with NAATI CCL Urdu coaching."
+  description="Master IELTS Band 8+, PTE Academic 79+ Superior, and secure +5 Australia PR points with NAATI CCL Urdu coaching by Moazzam Shoukat."
 >
   <div class="py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Nova Minimalist Header -->
+      <!-- Page Header -->
       <div class="max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 text-[11px] font-bold uppercase tracking-widest mb-4">
-          LANGUAGE PEDAGOGY / NAATI CCL
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          LANGUAGE PEDAGOGY & NAATI CCL
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.1]">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
           High Band Scores. <br />
-          <span class="text-stone-500 dark:text-stone-400">+5 Australian PR Points.</span>
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">+5 Australian PR Points.</span>
         </h1>
-        <p class="mt-4 text-base text-stone-600 dark:text-stone-300 max-w-xl">
-          Algorithm-tested strategies for IELTS 8+, PTE 79+ Superior English, and intensive bilingual dialogue training for NAATI CCL Urdu.
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
+          Algorithm-tested strategies for IELTS 7.5+, PTE 79+ Superior English, and intensive bilingual dialogue training for NAATI CCL Urdu.
         </p>
 
         <!-- Social coaching badges -->
@@ -29,7 +56,7 @@ import { siteData } from '../data/siteData';
             href={siteData.socials.coachingInstagram}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-stone-800 dark:text-stone-200 font-semibold hover:border-pink-500 transition-colors shadow-2xs"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 font-semibold hover:border-amber-400 transition-colors shadow-2xs"
           >
             <span>📸</span> Follow @coachingbyms on Instagram
           </a>
@@ -37,120 +64,103 @@ import { siteData } from '../data/siteData';
             href={siteData.socials.coachingFacebook}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-stone-800 dark:text-stone-200 font-semibold hover:border-blue-500 transition-colors shadow-2xs"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 font-semibold hover:border-amber-400 transition-colors shadow-2xs"
           >
             <span>📘</span> Follow @coachingbyms on Facebook
           </a>
         </div>
       </div>
 
-      <!-- NAATI CCL Highlight Banner (Nova Bento Style) -->
-      <div class="p-8 sm:p-12 rounded-3xl bg-amber-500/10 dark:bg-amber-500/5 border border-amber-300 dark:border-amber-500/30 mb-20 relative overflow-hidden">
-        <div class="max-w-3xl space-y-4">
-          <span class="px-3 py-1 rounded-full bg-amber-400 text-stone-950 text-[10px] font-black uppercase tracking-wider inline-block">
+      <!-- 3 Core Programs Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        {subpages.map((p) => (
+          <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">{p.icon}</span>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20">
+                  {p.badge}
+                </span>
+              </div>
+              <h2 class="text-xl font-black text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-1">
+                <a href={p.href}>{p.title}</a>
+              </h2>
+              <span class="text-xs text-slate-400 block mb-3 font-semibold">{p.subtitle}</span>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                {p.desc}
+              </p>
+            </div>
+
+            <div class="pt-5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+              <a
+                href={p.href}
+                class="text-xs font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors inline-flex items-center gap-1"
+              >
+                <span>View Program Details</span>
+                <span>&rarr;</span>
+              </a>
+              <a
+                href={`https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20want%20to%20enroll%20in%20${encodeURIComponent(p.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline"
+              >
+                WhatsApp &rarr;
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- NAATI CCL Feature Callout -->
+      <div class="p-8 sm:p-12 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20 mb-20 space-y-6">
+        <div class="flex items-center justify-between">
+          <span class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 text-[10px] font-black uppercase tracking-wider">
             +5 Bonus Points For Australia PR
           </span>
-          <h2 class="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white">
-            NAATI CCL Urdu Masterclass
-          </h2>
-          <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
-            The Credentialed Community Language (CCL) test awards an immediate 5 bonus points towards your Australia PR points test. In competitive invitation rounds, those 5 points make the crucial difference.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-            <div class="p-4 rounded-2xl bg-white dark:bg-[#18181B] border border-stone-200/60 dark:border-zinc-800 text-xs">
-              <strong class="block text-stone-900 dark:text-white mb-1">Live Dialogues</strong>
-              <span class="text-stone-600 dark:text-stone-300">100+ interpretation simulations with instant phonetic feedback.</span>
-            </div>
-            <div class="p-4 rounded-2xl bg-white dark:bg-[#18181B] border border-stone-200/60 dark:border-zinc-800 text-xs">
-              <strong class="block text-stone-900 dark:text-white mb-1">Domain Glossaries</strong>
-              <span class="text-stone-600 dark:text-stone-300">Medical, Legal, Social Security, and Housing terminology.</span>
-            </div>
-            <div class="p-4 rounded-2xl bg-white dark:bg-[#18181B] border border-stone-200/60 dark:border-zinc-800 text-xs">
-              <strong class="block text-stone-900 dark:text-white mb-1">Memory Shortcuts</strong>
-              <span class="text-stone-600 dark:text-stone-300">Note-taking symbols to eliminate omission and distortion errors.</span>
-            </div>
+          <span class="text-amber-400 text-xs font-bold">96% First-Attempt Success</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white">
+          Why NAATI CCL Urdu is Your Most Critical Migration Investment
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+          The Credentialed Community Language (CCL) test awards an immediate 5 bonus points towards your Australia PR points test. In competitive invitation rounds (Subclass 189 & 190), those 5 points make the crucial difference between receiving an invitation and waiting years.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs">
+            <strong class="block text-amber-400 mb-1">Live Dialogues</strong>
+            <span class="text-slate-300">100+ interpretation simulations with instant phonetic feedback and timing.</span>
           </div>
-          <div class="pt-2">
-            <a
-              href="/contact?service=NAATI%20CCL%20Urdu%20Training"
-              class="inline-block px-5 py-3 rounded-full font-bold text-xs bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors shadow-2xs"
-            >
-              Enroll in Upcoming NAATI CCL Batch →
-            </a>
+          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs">
+            <strong class="block text-amber-400 mb-1">Domain Glossaries</strong>
+            <span class="text-slate-300">Medical, Legal, Social Security (Centrelink), and Housing terminology.</span>
           </div>
+          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs">
+            <strong class="block text-amber-400 mb-1">Memory Shortcuts</strong>
+            <span class="text-slate-300">Vertical shorthand symbols that eliminate memory overload and omissions.</span>
+          </div>
+        </div>
+        <div class="pt-3">
+          <a
+            href="/naati-ccl-urdu"
+            class="inline-block px-6 py-3.5 rounded-full font-bold text-xs bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 transition-colors shadow-md"
+          >
+            Explore Complete NAATI CCL Course &rarr;
+          </a>
         </div>
       </div>
 
-      <!-- Test Breakdown Bento Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-        
-        <!-- IELTS -->
-        <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-extrabold text-stone-900 dark:text-white">IELTS (Academic & General)</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-200">Band 8+ Target</span>
-          </div>
-          <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-            Essential for Canada Express Entry (CLB 9/10) and Australian Skilled Visas. Master Cambridge test mechanics and high-yield Task 2 essay writing structures.
-          </p>
-          <div class="space-y-1.5 pt-3 border-t border-stone-100 dark:border-zinc-800 text-xs text-stone-700 dark:text-stone-300">
-            <div>✓ Listening & Reading keyword tracking</div>
-            <div>✓ Writing Task 1 & 2 Lexical Resource rubrics</div>
-            <div>✓ 1-on-1 Speaking fluency and pronunciation drills</div>
-          </div>
-        </div>
-
-        <!-- PTE Academic -->
-        <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-extrabold text-stone-900 dark:text-white">PTE Academic</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-300">79+ Superior Target</span>
-          </div>
-          <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-            PTE Academic uses automated AI grading. Because of my software engineering and AI background, I teach you exactly how the algorithms evaluate your responses.
-          </p>
-          <div class="space-y-1.5 pt-3 border-t border-stone-100 dark:border-zinc-800 text-xs text-stone-700 dark:text-stone-300">
-            <div>✓ Read Aloud acoustic stress & oral fluency</div>
-            <div>✓ Tested Describe Image & Retell Lecture templates</div>
-            <div>✓ Write From Dictation memory retention drills</div>
-          </div>
-        </div>
-
-        <!-- TOEFL iBT -->
-        <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-extrabold text-stone-900 dark:text-white">TOEFL iBT</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-200">100+ Target</span>
-          </div>
-          <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-            Essential for university graduate admissions across North America. Focus on academic lecture synthesis and integrated writing.
-          </p>
-        </div>
-
-        <!-- Duolingo English Test -->
-        <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-extrabold text-stone-900 dark:text-white">Duolingo English Test (DET)</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-200">125+ Target</span>
-          </div>
-          <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-            Adaptive test format covering C-test reading fills, interactive listening, and camera-ready speaking production subscores.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Bottom Nova CTA -->
-      <div class="p-8 sm:p-12 rounded-3xl bg-stone-900 text-white dark:bg-zinc-900 border border-stone-800 flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Bottom Consultation Banner -->
+      <div class="p-10 rounded-3xl bg-slate-100 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
-          <span class="text-[11px] font-bold text-amber-400 uppercase tracking-widest block mb-1">DIAGNOSTIC SESSION</span>
-          <h2 class="text-2xl sm:text-3xl font-bold">Unsure where your current band baseline stands?</h2>
+          <h4 class="text-2xl font-black text-[#0A1128] dark:text-white">Take a Diagnostic Mock Test</h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">Get an objective evaluation of your current speaking and writing level.</p>
         </div>
         <a
-          href="/contact?service=English%20Test%20Training"
-          class="px-6 py-3.5 rounded-full text-xs font-bold bg-amber-400 hover:bg-amber-300 text-stone-950 transition-colors flex-shrink-0"
+          href="/contact"
+          class="px-6 py-3.5 rounded-full text-xs font-black bg-[#0A1128] text-white hover:bg-slate-800 dark:bg-amber-400 dark:text-slate-950 transition-colors shadow-md shrink-0"
         >
-          Book 1-on-1 Diagnostic Call →
+          Book Assessment &rarr;
         </a>
       </div>
 

@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "What is Australia's new Genuine Student (GS) requirement?",
+    a: "Australia replaced the old GTE with the Genuine Student (GS) criterion. Instead of a generic 300-word statement, applicants must answer targeted questions detailing course justification, current circumstances in home country, economic incentives to return, and the realistic value of the qualification to future career outcomes."
+  },
+  {
+    q: "How much bank statement is needed for an Australian student visa?",
+    a: "Under current Department of Home Affairs regulations, applicants must demonstrate 12 months of living costs (approx. AUD $29,710), remaining 1-year course tuition fees, and return travel expenses (approx. AUD $2,000). Funds must generally be seasoned for 3–6 months."
+  },
+  {
+    q: "What is Canada's Provincial Attestation Letter (PAL) requirement?",
+    a: "Most post-secondary undergraduate and college international students in Canada now require a Provincial Attestation Letter (PAL) issued by the province before submitting a study permit application to IRCC. Masters and doctoral degree applicants are currently exempt from the PAL cap."
+  },
+  {
+    q: "Can my spouse accompany me on a study visa?",
+    a: "For Australia, master's and doctoral candidates can bring their spouses with full work rights. For Canada, open work permits for spouses are now primarily reserved for spouses of students enrolled in master's, doctoral, and professional degree programs."
+  },
+  {
+    q: "What is the minimum IELTS or PTE score needed for admission and visa?",
+    a: "For Australian higher education, a minimum PTE of 64 or IELTS 6.5 (with no band under 6.0) is standard. For Canadian universities, IELTS Academic 6.5 or PTE 60+ is typically required."
+  },
+  {
+    q: "How many hours can I work while studying in Canada and Australia?",
+    a: "In Australia, international students can work up to 48 hours per fortnight during study terms and unlimited hours during term breaks. In Canada, students can work up to 24 hours per week off-campus during academic sessions."
+  }
+];
+
+const offerings = [
+  {
+    icon: "🎓",
+    title: "University & Program Selection",
+    desc: "Shortlist reputable institutions in Canada (DLIs) and Australia (Go8 and Level 1 universities) aligned with post-study work permits."
+  },
+  {
+    icon: "✍️",
+    title: "High-Approval SOP & GS Drafting",
+    desc: "Custom-written Statements of Purpose that clearly demonstrate academic intent, financial stability, and genuine student credibility."
+  },
+  {
+    icon: "💰",
+    title: "Financial Matrix & GIC Structuring",
+    desc: "Precise structuring of sponsor accounts, FBR tax returns, and Canadian Guaranteed Investment Certificates (GIC)."
+  },
+  {
+    icon: "🎯",
+    title: "In-House IELTS & PTE Preparation",
+    desc: "Fast-track language test training to hit your university's exact admission benchmark in 3 to 4 weeks."
+  },
+  {
+    icon: "🤝",
+    title: "Dependent & Spouse Visa Guidance",
+    desc: "Seamless dependent visa filings with unrestricted spouse work authorization for qualifying postgraduate degrees."
+  },
+  {
+    icon: "🚀",
+    title: "Visa Filing & Biometrics Support",
+    desc: "Comprehensive document indexing, biometrics scheduling, and medical test coordination with zero filing flaws."
+  }
+];
+
+const stats = [
+  { label: "Student Visa Approvals", value: "120+" },
+  { label: "Visa Success Rate", value: "97%" },
+  { label: "University Partners", value: "45+" },
+  { label: "Scholarships Secured", value: "$450K+" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Student Visa Consultant Pakistan | Canada & Australia Study Visas | Moazzam Shoukat"
+  description="Top student visa consultant in Pakistan for Canada and Australia. University admissions, Genuine Student (GS) Statements of Purpose, bank statements, and high visa approval rates."
+  keywords="Student Visa Consultant Pakistan, Student Visa Consultant Lahore, Australia Student Visa Lahore, Canada Study Permit Pakistan, Genuine Student GS Statement, Subclass 500 Pakistan, PGWP Canada"
+  schema={faqSchema}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Badge & SEO Heading -->
+      <div class="max-w-3xl mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          INTERNATIONAL HIGHER EDUCATION & STUDY VISAS
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Student Visa Consultant Pakistan. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Canada & Australia Admissions.</span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          Unlock world-class degrees aligned with post-study work rights and permanent residency. We craft airtight Genuine Student (GS) narratives, structure legitimate financial trails, and secure swift study visa grants for Pakistani students.
+        </p>
+
+        <!-- CTA Action Row -->
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="/contact"
+            class="px-8 py-4 rounded-full bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>Book Free Study Counseling</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a
+            href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20want%20to%20apply%20for%20a%20study%20visa%20for%20Canada%2FAustralia."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>WhatsApp Now</span>
+            <span class="text-xs opacity-90">+92-328-048-4399</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Trust Stat Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        {stats.map((s) => (
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs text-center">
+            <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400 tracking-tight">{s.value}</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-bold">{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Offerings Grid -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <h2 class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 mb-2">END-TO-END ADMISSIONS</h2>
+          <h3 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Structured Student Visa Services</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">From university offer letters to visa grant and pre-departure briefings.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {offerings.map((item) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs hover:border-amber-400/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="text-3xl mb-4">{item.icon}</div>
+                <h4 class="text-xl font-bold text-[#0A1128] dark:text-white mb-2">{item.title}</h4>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ Accordion / Cards -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <h2 class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 mb-2">FREQUENTLY ASKED QUESTIONS</h2>
+          <h3 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Student Visa Inquiries</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">Answers to essential questions regarding Genuine Student criteria, funds, and spouse rights.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {faqs.map((faq, i) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                  {i + 1}
+                </span>
+                <div>
+                  <h4 class="text-base font-bold text-[#0A1128] dark:text-white mb-2">{faq.q}</h4>
+                  <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bottom Conversion Callout -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Ready to Secure Your International Admission?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          Book a 1-on-1 counseling session to evaluate your academic profile, select eligible universities, and start your visa application.
+        </p>
+        <div class="pt-2 flex justify-center gap-3">
+          <a
+            href="/contact"
+            class="px-8 py-3.5 rounded-full font-bold text-xs bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-colors shadow-md"
+          >
+            Start Student Visa Assessment &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

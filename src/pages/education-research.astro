@@ -4,133 +4,68 @@ import { siteData } from '../data/siteData';
 ---
 
 <Layout
-  title={`Education & Research Publications | ${siteData.name}`}
-  description="Academic credentials from ITU Lahore and published research in Speech Processing, Large Audio Models, and Affective AI."
+  title={`Education & Research Hub | Moazzam Shoukat`}
+  description="Explore Moazzam Shoukat's academic foundation from ITU Lahore and 7 published research papers in speech processing, audio foundation models, and digital healthcare."
 >
   <div class="py-16 md:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
       
-      <!-- Nova Minimalist Header -->
-      <div class="max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 text-[11px] font-bold uppercase tracking-widest mb-4">
-          ACADEMIC RIGOR / SCHOLARSHIP
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white tracking-tight leading-[1.1]">
-          Research Papers. <br />
-          <span class="text-stone-500 dark:text-stone-400">Formal Education.</span>
-        </h1>
-        <p class="mt-4 text-base text-stone-600 dark:text-stone-300 max-w-xl">
-          Computer Science degree from ITU Lahore alongside five peer-reviewed publications in audio transformers and foundation speech models.
-        </p>
-
-        <div class="mt-6">
-          <a
-            href={siteData.socials.scholar}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-xs font-bold text-stone-900 dark:text-white hover:border-amber-400 transition-colors shadow-2xs"
-          >
-            <span>🎓</span> View Citations on Google Scholar →
-          </a>
-        </div>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest">
+        ACADEMIC & RESEARCH DIRECTORY
       </div>
 
-      <!-- Published Research Section -->
-      <div class="mb-20">
-        <div class="flex items-center gap-3 mb-8">
-          <span class="text-xs font-black uppercase tracking-widest text-stone-600 dark:text-stone-300">01 / PUBLISHED PAPERS (5)</span>
-          <div class="h-px flex-grow bg-stone-200 dark:bg-zinc-800"></div>
-        </div>
+      <h1 class="text-4xl sm:text-5xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight">
+        Education & Research Sections <br />
+        <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Are Now Dedicated Pages</span>
+      </h1>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {siteData.publications.map((pub, idx) => (
-            <div class="p-8 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 hover:border-stone-400 dark:hover:border-zinc-600 transition-all flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-4">
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300">
-                    Paper 0{idx + 1}
-                  </span>
-                  <span class="text-xs text-stone-400 font-medium">{pub.year}</span>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 dark:text-white leading-snug mb-3">
-                  {pub.title}
-                </h3>
-                <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6">
-                  {pub.description}
-                </p>
-              </div>
+      <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed">
+        To provide deeper technical depth and direct access to full papers and degree details, research publications and formal education have been separated into dedicated pages:
+      </p>
 
-              <div class="pt-4 border-t border-stone-100 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2">
-                <div class="flex flex-wrap gap-1.5">
-                  {pub.tags.map((tag) => (
-                    <span class="px-2 py-0.5 rounded-md text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href={pub.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline inline-flex items-center gap-1"
-                >
-                  Scholar Link ↗
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 text-left">
+        <!-- Research Card -->
+        <a
+          href="/research"
+          class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400 shadow-sm hover:shadow-lg transition-all group block"
+        >
+          <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">🔬</div>
+          <h2 class="text-xl font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+            Research & Publications &rarr;
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+            All 7 peer-reviewed papers in speech transformers, audio foundation models, and acoustic healthcare IoT with direct arXiv & IEEE links.
+          </p>
+          <span class="mt-4 inline-block text-xs font-bold text-amber-700 dark:text-amber-400">
+            View 7 Research Papers &rarr;
+          </span>
+        </a>
+
+        <!-- Education Card -->
+        <a
+          href="/education"
+          class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-amber-400 shadow-sm hover:shadow-lg transition-all group block"
+        >
+          <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">🎓</div>
+          <h2 class="text-xl font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+            Formal Education & Degrees &rarr;
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+            Bachelor of Science in Computer Science from ITU Lahore, DAE in Mechanical Diagnostics, and key academic projects.
+          </p>
+          <span class="mt-4 inline-block text-xs font-bold text-amber-700 dark:text-amber-400">
+            View Education & Projects &rarr;
+          </span>
+        </a>
       </div>
 
-      <!-- Formal Education Section -->
-      <div class="mb-20">
-        <div class="flex items-center gap-3 mb-8">
-          <span class="text-xs font-black uppercase tracking-widest text-stone-600 dark:text-stone-300">02 / ACADEMIC BACKGROUND</span>
-          <div class="h-px flex-grow bg-stone-200 dark:bg-zinc-800"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {siteData.education.map((edu) => (
-            <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 shadow-xs space-y-4">
-              <span class="text-[11px] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">Degree Conferred</span>
-              <h3 class="text-2xl font-black text-stone-900 dark:text-white">{edu.degree}</h3>
-              <p class="text-xs font-semibold text-stone-500 dark:text-stone-400">
-                {edu.institution} • {edu.location}
-              </p>
-              
-              {edu.highlights && (
-                <div class="space-y-2 border-t border-stone-100 dark:border-zinc-800 pt-4">
-                  <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Key Projects:</span>
-                  <ul class="space-y-1.5 text-xs text-stone-600 dark:text-stone-300">
-                    {edu.highlights.map((h) => (
-                      <li class="flex items-start gap-2">
-                        <span class="text-amber-500 font-bold">›</span>
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Certifications -->
-      <div>
-        <div class="flex items-center gap-3 mb-8">
-          <span class="text-xs font-black uppercase tracking-widest text-stone-600 dark:text-stone-300">03 / CERTIFICATIONS & ACCREDITATIONS</span>
-          <div class="h-px flex-grow bg-stone-200 dark:bg-zinc-800"></div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {siteData.certifications.map((cert) => (
-            <div class="p-5 rounded-2xl bg-white dark:bg-[#18181B] border border-stone-200/80 dark:border-zinc-800 space-y-1">
-              <h4 class="font-bold text-stone-900 dark:text-white text-xs">{cert.name}</h4>
-              <p class="text-[11px] text-stone-500 dark:text-stone-400">{cert.issuer}</p>
-            </div>
-          ))}
-        </div>
+      <div class="pt-6">
+        <a
+          href="/"
+          class="text-xs font-bold text-slate-500 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+        >
+          &larr; Return to Homepage
+        </a>
       </div>
 
     </div>

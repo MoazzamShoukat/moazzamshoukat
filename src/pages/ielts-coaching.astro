@@ -1,0 +1,281 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+import IeltsBandGuide from '../components/infographics/IeltsBandGuide.astro';
+
+const faqs = [
+  {
+    q: "What is the difference between IELTS Academic and General Training?",
+    a: "IELTS Academic is required for university admissions (undergraduate, masters, PhD) and professional healthcare registrations. IELTS General Training is primarily used for permanent residency immigration (such as Canada Express Entry and Australia PR) and work visas. The Listening and Speaking modules are identical; Reading and Writing Task 1 differ."
+  },
+  {
+    q: "How long does it typically take to jump from Band 6.0 to 7.5?",
+    a: "With structured daily drills, targeted lexical upgrades, and continuous 1-on-1 essay evaluations, most committed students achieve a 1.0 to 1.5 band improvement within 4 to 6 weeks. We focus immediately on high-impact weaknesses rather than generic book exercises."
+  },
+  {
+    q: "Do you provide real-time 1-on-1 Speaking mock interviews?",
+    a: "Yes. Every student undergoes simulated 15-minute examiner-style interviews covering Part 1, Part 2 Cue Cards, and Part 3 abstract discussions. You receive immediate score diagnostics based on Fluency, Lexical Resource, Grammar, and Pronunciation."
+  },
+  {
+    q: "How are IELTS Writing essays graded in your program?",
+    a: "We mark your essays strictly against the official British Council / IDP 9-band rubric: Task Achievement / Response, Coherence & Cohesion, Lexical Resource, and Grammatical Range & Accuracy. You receive line-by-line corrections and re-written benchmark models."
+  },
+  {
+    q: "Can I join online if I live in Karachi, Islamabad, or outside Pakistan?",
+    a: "Absolutely. Over 65% of our candidates attend live interactive 1-on-1 and small-group Zoom sessions across Pakistan, the UAE, Saudi Arabia, the UK, and Australia with flexible evening and weekend slots."
+  },
+  {
+    q: "What minimum IELTS score is required for Canadian Express Entry?",
+    a: "To maximize CRS points and achieve CLB 9 or CLB 10, candidates need at least Listening 8.0, Reading 7.0, Writing 7.0, and Speaking 7.0 (often called the 8-7-7-7 benchmark). Reaching CLB 9 unlocks up to 50 bonus skill transferability points."
+  }
+];
+
+const offerings = [
+  {
+    icon: "🎯",
+    title: "1-on-1 Speaking Simulations",
+    desc: "Simulated examiner sessions tackling Part 1, 2 & 3 with real-time feedback on hesitation, vocabulary depth, and rhythm in Lahore & online."
+  },
+  {
+    icon: "✍️",
+    title: "Writing Task 1 & 2 Masterclass",
+    desc: "Foolproof paragraph architectures, cohesive devices, and high-band lexical collocations that stop you getting stuck at 6.5."
+  },
+  {
+    icon: "📖",
+    title: "High-Speed Reading Strategies",
+    desc: "Master skimming, scanning, True/False/Not Given traps, and paragraph heading matching within 50 minutes."
+  },
+  {
+    icon: "🎧",
+    title: "Listening Prediction & Focus",
+    desc: "Spelling accuracy, accent adaptation (British, Australian, American), and distractor-spotting in Sections 3 and 4."
+  },
+  {
+    icon: "📊",
+    title: "Authentic Cambridge Mock Tests",
+    desc: "Diagnostic assessments using authentic past exam test banks under timed exam hall conditions."
+  },
+  {
+    icon: "⚡",
+    title: "Flexible Crash & Weekend Batches",
+    desc: "Designed for busy engineers, doctors, and working professionals targeting rapid score leaps."
+  }
+];
+
+const stats = [
+  { value: "Band 7.5+", label: "Average Student Outcome" },
+  { value: "500+", label: "Candidates Mentored" },
+  { value: "95%+", label: "Target Band Success Rate" },
+  { value: "4-6 Wks", label: "Average Preparation Cycle" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="IELTS Trainer in Lahore | Band 7.5+ Strategy Coaching | Moazzam Shoukat"
+  description="Master IELTS Academic & General Training with Lahore's leading IELTS trainer Moazzam Shoukat (Band 8.5). 1-on-1 speaking diagnostics, Writing Task 2 masterclasses, and Cambridge mock tests."
+  keywords="IELTS Trainer in Lahore, Best IELTS Coaching Lahore, IELTS Speaking Band 7+, IELTS Writing Task 2 Lahore, CLB 9 IELTS General Training, Cambridge IELTS preparation Pakistan"
+  schema={faqSchema}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Service Page Hero Header -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+          IELTS ACADEMIC & GENERAL TRAINING MASTERCLASS
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-[1.1]">
+          Best IELTS Trainer in Lahore. <br />
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Targeted Band 7.5+ Strategies.</span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          Stop getting stuck at Band 6.5 in Writing and Speaking. Learn from Moazzam Shoukat (Band 8.5) using official Cambridge rubrics, personalized diagnostics, and high-scoring paragraph structures in Lahore and online worldwide.
+        </p>
+
+        <!-- CTA Action Row -->
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="/contact"
+            class="px-8 py-4 rounded-full bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>Book Free Mock Diagnostic</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a
+            href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20want%20to%20enroll%20in%20IELTS%20coaching."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2"
+          >
+            <span>WhatsApp Coach</span>
+            <span class="text-xs opacity-90">+92-328-048-4399</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Trust Stat Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        {stats.map((s) => (
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs text-center">
+            <div class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-amber-400 tracking-tight">{s.value}</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-bold">{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Offerings Grid -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <h2 class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 mb-2">CURRICULUM BREAKDOWN</h2>
+          <h3 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">Four Modules. One Systematic Roadmap.</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">Targeted drills engineered specifically to overcome the common pitfalls faced by Pakistani students.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {offerings.map((item) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs hover:border-amber-400/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="text-3xl mb-4">{item.icon}</div>
+                <h4 class="text-xl font-bold text-[#0A1128] dark:text-white mb-2">{item.title}</h4>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- NEW EMBEDDED INFOGRAPHIC: IELTS Band Score & CLB Guide -->
+      <div class="mb-24">
+        <IeltsBandGuide />
+      </div>
+
+      <!-- Why Choose Moazzam Shoukat Section -->
+      <div class="p-8 sm:p-12 lg:p-16 rounded-3xl bg-[#0A1128] text-white border border-amber-500/20 mb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400 text-[11px] font-bold uppercase tracking-widest">
+              WHY CHOOSE MOAZZAM SHOUKAT
+            </span>
+            <h3 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+              Taught by a Band 8.5 Scorer in Lahore.
+            </h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Most academies in Lahore employ fresh graduates or general English teachers who have never taken the exam themselves. Moazzam Shoukat personally achieved Band 8.5 and has coached hundreds of doctors, engineers, and emigrants to their required target scores.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div class="flex items-start gap-3">
+                <span class="text-amber-400 font-bold text-lg">✓</span>
+                <div>
+                  <h5 class="text-sm font-bold text-white">Direct Line-by-Line Essay Feedback</h5>
+                  <p class="text-xs text-slate-400 mt-0.5">Written corrections highlighting grammatical range and coherence gaps.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-amber-400 font-bold text-lg">✓</span>
+                <div>
+                  <h5 class="text-sm font-bold text-white">Real-Time Speaking Diagnostics</h5>
+                  <p class="text-xs text-slate-400 mt-0.5">Simulated examiner interrogations with instant vocal recordings review.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-amber-400 font-bold text-lg">✓</span>
+                <div>
+                  <h5 class="text-sm font-bold text-white">Small-Batch & 1-on-1 Attention</h5>
+                  <p class="text-xs text-slate-400 mt-0.5">Never lost in massive classes; customized pacing for your exam date.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-amber-400 font-bold text-lg">✓</span>
+                <div>
+                  <h5 class="text-sm font-bold text-white">Full Cambridge Material Library</h5>
+                  <p class="text-xs text-slate-400 mt-0.5">Access to official Cambridge 1 to 19 past exam papers and audio files.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col gap-4 p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div class="text-xs uppercase tracking-widest text-amber-400 font-bold">NEXT BATCH ENROLLMENT</div>
+            <div class="text-2xl font-black text-white">Book Free Diagnostic Call</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Have your speaking and writing assessed today to receive a customized study schedule aligned with your test date.
+            </p>
+            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+              <a
+                href="/contact"
+                class="text-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-xs transition-all shadow-md"
+              >
+                Enroll Now
+              </a>
+              <a
+                href="https://wa.me/923280484399?text=Hello%20Moazzam,%20I%20would%20like%20to%20join%20the%20IELTS%20batch."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-center px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs transition-all shadow-md"
+              >
+                WhatsApp Advisor
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion / Cards -->
+      <div class="mb-24">
+        <div class="max-w-2xl mb-12">
+          <h2 class="text-xs uppercase tracking-widest font-black text-amber-700 dark:text-amber-400 mb-2">FREQUENTLY ASKED QUESTIONS</h2>
+          <h3 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white tracking-tight">IELTS Coaching Inquiries</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">Essential details regarding batch timings, fee structures, and study material in Lahore & online.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {faqs.map((faq, i) => (
+            <div class="p-8 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-xs">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                  {i + 1}
+                </span>
+                <div>
+                  <h4 class="text-base font-bold text-[#0A1128] dark:text-white mb-2">{faq.q}</h4>
+                  <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bottom Conversion Callout -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight">
+          Ready to Secure Your Band 7.5 or 8.0?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+          Book your 1-on-1 diagnostic consultation to evaluate your current speaking level and receive a tailored 30-day study plan.
+        </p>
+        <div class="pt-2 flex justify-center gap-3">
+          <a
+            href="/contact"
+            class="px-8 py-3.5 rounded-full font-bold text-xs bg-[#0A1128] hover:bg-slate-800 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-colors shadow-md"
+          >
+            Start Your Preparation &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>
