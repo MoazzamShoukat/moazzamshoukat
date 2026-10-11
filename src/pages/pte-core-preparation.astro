@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "What is PTE Core and how is it different from PTE Academic?",
+    a: "PTE Core is Pearson's newer English test specifically approved by Immigration, Refugees and Citizenship Canada (IRCC) for Canadian immigration pathways, including Express Entry (Federal Skilled Worker, Canadian Experience Class) and Provincial Nominee Programs (PNP). Unlike PTE Academic which focuses on university lecture and research topics, PTE Core uses everyday vocational and workplace English."
+  },
+  {
+    q: "What are the new question types unique to PTE Core?",
+    a: "PTE Core replaces 'Retell Lecture' and 'Describe Image' nuances with two distinct questions: 'Respond to a Situation' in the Speaking module, and 'Summarize Group Discussion' in the Listening module. It also tests informal/formal email writing instead of just academic argumentative essays."
+  },
+  {
+    q: "How does PTE Core map to Canadian Language Benchmarks (CLB)?",
+    a: "Under IRCC guidelines: CLB 7 requires Reading 60-68, Writing 69-78, Listening 60-70, Speaking 68-75. CLB 9 (crucial for maximum Express Entry CRS points) requires Reading 78-87, Writing 88-89, Listening 82-88, Speaking 84-88. CLB 10 requires scores of 89-90 across modules."
+  },
+  {
+    q: "How do you master 'Respond to a Situation' in PTE Core Speaking?",
+    a: "In 'Respond to a Situation', you listen to a 60-90 second prompt depicting a workplace or daily dilemma and have 40 seconds to record your verbal response. We train candidates in a 4-step conversational framework: Greeting & Acknowledgment, Immediate Solution, Rationale, and Polite Follow-up."
+  },
+  {
+    q: "How do you score maximum marks in 'Summarize Group Discussion'?",
+    a: "In 'Summarize Group Discussion', three speakers discuss an issue. Candidates must extract the consensus, dissenting opinions, and the agreed action. We provide shorthand matrix sheets to capture speaker identities and agreement markers without losing oral fluency."
+  },
+  {
+    q: "Is PTE Core easier than IELTS General Training for Canada PR?",
+    a: "Many candidates find PTE Core significantly faster to prepare for because of automated computer scoring. In IELTS General Training, human examiners strictly grade Writing Task 1 and Task 2, where achieving Band 8.0 (CLB 9) is notoriously difficult. With PTE Core, structural templates and clean typing yield consistent CLB 9 and CLB 10 scores."
+  }
+];
+
+const pteCoreModules = [
+  {
+    title: "Speaking: Respond to a Situation",
+    icon: "🗣️",
+    desc: "Master realistic workplace conversational prompts with our structured 4-step diplomacy and resolution template that satisfies Pearson's acoustic recognition engine."
+  },
+  {
+    title: "Listening: Summarize Group Discussion",
+    icon: "👥",
+    desc: "Navigate multi-speaker dialogues with our speaker-attribution shorthand system, capturing key consensus points within the required 50-70 word boundary."
+  },
+  {
+    title: "Writing: Workplace & Formal Email Writing",
+    icon: "✉️",
+    desc: "Craft polished, error-free complaint, inquiry, and notification emails using standardized opening salutations, bulleted body requests, and sign-offs."
+  },
+  {
+    title: "Reading: Everyday & Workplace Texts",
+    icon: "📖",
+    desc: "Master Reading & Writing Fill in the Blanks with commercial, corporate, and everyday contextual vocabulary banks tailored specifically to Canadian life."
+  }
+];
+
+const clbMapping = [
+  { clb: "CLB 7", reading: "60 - 68", writing: "69 - 78", listening: "60 - 70", speaking: "68 - 75", impact: "Minimum for Express Entry FSW" },
+  { clb: "CLB 8", reading: "69 - 77", writing: "79 - 87", listening: "71 - 81", speaking: "76 - 83", impact: "Strong Express Entry Profile" },
+  { clb: "CLB 9", reading: "78 - 87", writing: "88 - 89", listening: "82 - 88", speaking: "84 - 88", impact: "Maximum CRS Skill Transferability (+50 Pts)" },
+  { clb: "CLB 10+", reading: "88 - 90", writing: "90", listening: "89 - 90", speaking: "89 - 90", impact: "Peak Canadian Immigration Score" }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://moazzamshoukat.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://moazzamshoukat.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "PTE Core Preparation",
+      "item": "https://moazzamshoukat.com/pte-core-preparation/"
+    }
+  ]
+};
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "PTE Core Preparation for Canada PR (CLB 9 / CLB 10)",
+  "description": "Specialized coaching for Pearson PTE Core exam accepted by IRCC for Canadian Permanent Residency by Moazzam Shoukat. Mastery of Respond to a Situation and Group Discussion.",
+  "provider": {
+    "@type": "Person",
+    "name": "Moazzam Shoukat",
+    "url": "https://moazzamshoukat.com/"
+  },
+  "educationalCredentialAwarded": "PTE Core CLB 9 / CLB 10 Proficiency",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": ["Online", "Blended"],
+    "courseWorkload": "PT15H"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="PTE Core Preparation for Canada PR | CLB 9 & 10 Strategy | Moazzam Shoukat"
+  description="Master PTE Core for Canadian Express Entry & PNP with Moazzam Shoukat. Comprehensive preparation for Respond to a Situation, Summarize Group Discussion & CLB 9+ target."
+  keywords="PTE Core Preparation, PTE Core Canada PR, PTE Respond to a Situation, PTE Summarize Group Discussion, PTE Core CLB 9, PTE Core Coaching Pakistan, Online PTE Core Classes"
+  schema={[breadcrumbSchema, courseSchema, faqSchema]}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">PTE Core Preparation</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
+          <span>🍁 IRCC Approved for Canada Express Entry & PNP</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
+          Specialized <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">PTE Core Preparation</span> for Canada PR
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+          Unlock Canadian Permanent Residency and maximize your Express Entry Comprehensive Ranking System (CRS) score with targeted PTE Core coaching. Master exclusive task formats including <em>Respond to a Situation</em> and <em>Summarize Group Discussion</em> with proven templates and simulated exams.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={siteData.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
+          >
+            <span>Start PTE Core Assessment</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="/canada-immigration/"
+            class="px-7 py-4 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all"
+          >
+            Canada PR Guidance &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Modules Grid -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Master the Exclusive PTE Core Task Types
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Unlike PTE Academic, PTE Core evaluates everyday vocational communication. Here is how our coaching prepares you for each unique element:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {pteCoreModules.map((m) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 hover:border-amber-500/50 transition-all shadow-sm">
+              <div class="text-3xl mb-4">{m.icon}</div>
+              <h3 class="text-base font-black text-slate-900 dark:text-white mb-2">{m.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{m.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CLB Score Mapping Table -->
+      <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div class="max-w-3xl mb-6">
+          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">IRCC Equivalency Guide</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
+            PTE Core to Canadian Language Benchmark (CLB) Score Table
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Achieving CLB 9 triggers the maximum skill transferability bonus in Canada Express Entry, boosting your profile by up to 50 additional CRS points.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">
+                <th class="py-3 px-4 font-bold">CLB Level</th>
+                <th class="py-3 px-4 font-bold">Reading</th>
+                <th class="py-3 px-4 font-bold">Writing</th>
+                <th class="py-3 px-4 font-bold">Listening</th>
+                <th class="py-3 px-4 font-bold">Speaking</th>
+                <th class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Express Entry Impact</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
+              {clbMapping.map((row) => (
+                <tr class={row.clb === "CLB 9" ? "bg-amber-500/10 dark:bg-amber-400/10 font-bold" : ""}>
+                  <td class="py-3 px-4 font-black text-slate-900 dark:text-white">{row.clb}</td>
+                  <td class="py-3 px-4">{row.reading}</td>
+                  <td class="py-3 px-4">{row.writing}</td>
+                  <td class="py-3 px-4">{row.listening}</td>
+                  <td class="py-3 px-4">{row.speaking}</td>
+                  <td class="py-3 px-4 text-amber-700 dark:text-amber-400">{row.impact}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Frequently Asked Questions: PTE Core for Canada PR
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Everything you need to know about the exam structure and Canada immigration approval.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+          {faqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Related Navigation Links -->
+      <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Explore Related Programs</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          Connect your PTE Core preparation directly with our Canadian Express Entry strategy and profile evaluations.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+          <a href="/canada-immigration/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Canada Express Entry & PNP</a>
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE Trainer in Lahore</a>
+          <a href="/online-pte-classes/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Online PTE Classes</a>
+          <a href="/ielts-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">IELTS General Training</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,301 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "Why choose Moazzam Shoukat as your IELTS trainer in Lahore?",
+    a: "Moazzam Shoukat holds an verified Band 8.5 credentials and brings years of pedagogical expertise coaching hundreds of students to Band 7.5, 8.0, and 8.5. Unlike generic centers in Lahore that hand out generic essays, Moazzam personally evaluates your Speaking fluency using the AREA method and dissects Writing Task 1 and Task 2 against official British Council & IDP rubrics."
+  },
+  {
+    q: "Do you offer both IELTS Academic and IELTS General Training in Lahore?",
+    a: "Yes. IELTS Academic coaching is tailored for doctors (GMC/PLAB/AMC), healthcare specialists, engineers, and students applying to universities in Australia, the UK, and Canada. IELTS General Training is customized for working professionals pursuing skilled migration (Express Entry and Australia 189/190/491)."
+  },
+  {
+    q: "How are the 1-on-1 Speaking room diagnostics structured?",
+    a: "Each candidate participates in realistic 15-minute speaking mock exams simulating official British Council and AEO Lahore test conditions. Moazzam records the session and breaks down your score across the 4 examiner criteria: Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation."
+  },
+  {
+    q: "What is the secret to scoring Band 7.5+ in IELTS Writing Task 2?",
+    a: "Most candidates fail due to poor Task Achievement and weak Cohesion. Moazzam teaches a clear 4-paragraph argumentative architecture: Paraphrased Introduction with clear Thesis Statement, 2 fully developed Body Paragraphs (using Topic Sentence -> Explanation -> Real-World Example -> Impact), and a decisive Restated Conclusion."
+  },
+  {
+    q: "Where in Lahore are sessions held, and can I attend online?",
+    a: "We offer both in-person physical consultations in Lahore and high-definition interactive online sessions for students across Lahore (Gulberg, DHA, Model Town, Johar Town, Bahria Town) and other cities in Pakistan."
+  },
+  {
+    q: "How many weeks of preparation do I need to jump from Band 6.0 to Band 7.5+?",
+    a: "A typical focused cycle is 4 to 6 weeks. Students with basic grammatical foundations who complete our daily homework drills and weekly full-length mock exams consistently gain 1.0 to 1.5 bands within this timeframe."
+  }
+];
+
+const pillars = [
+  {
+    icon: "🗣️",
+    title: "1-on-1 Speaking Mock Rooms",
+    desc: "Intensive Part 1, Part 2 Cue Card, and Part 3 abstract discussion simulations with immediate examiner-level feedback and hesitation reduction."
+  },
+  {
+    icon: "✍️",
+    title: "Line-by-Line Writing Task 1 & 2 Audits",
+    desc: "Every essay and report/letter is marked with detailed inline corrections addressing lexical redundancy, cohesion lapses, and grammatical range."
+  },
+  {
+    icon: "🎧",
+    title: "Listening Section 3 & 4 Accent Mastery",
+    desc: "Targeted listening drills designed to master rapid British, Australian, and North American accents, distractor traps, and numerical spellings."
+  },
+  {
+    icon: "📖",
+    title: "Reading Speed Scanning & T/F/NG Logic",
+    desc: "Defeat True/False/Not Given and Heading Matching pitfalls with keyword tracking and paragraph architecture decoding under strict 60-minute limits."
+  },
+  {
+    icon: "📚",
+    title: "Official Cambridge Mock Series",
+    desc: "Exclusive training utilizing authentic Cambridge IELTS past papers (Books 14-19) under strict exam-day timing and scoring matrices."
+  },
+  {
+    icon: "🎯",
+    title: "Immigration & University Target Mapping",
+    desc: "Direct alignment with Australian Skilled Migration (Band 8 Superior = 20 pts) and Canadian Express Entry (CLB 9/10 requirements)."
+  }
+];
+
+const bandMatrix = [
+  { criterion: "Task Achievement (25%)", band6: "Addresses task partially; format may be inappropriate", band8: "Fully covers all requirements; ideas well-developed and supported" },
+  { criterion: "Coherence & Cohesion (25%)", band6: "Uses cohesive devices, but some mechanical or faulty", band8: "Sequences information logically; skillful paragraphing and linking" },
+  { criterion: "Lexical Resource (25%)", band6: "Adequate vocabulary; some errors in spelling and collocation", band8: "Wide vocabulary fluently used; skillful use of uncommon lexical items" },
+  { criterion: "Grammatical Range (25%)", band6: "Mix of simple and complex forms; frequent punctuation errors", band8: "Wide range of structures; majority of sentences are error-free" }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://moazzamshoukat.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://moazzamshoukat.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "IELTS Trainer in Lahore",
+      "item": "https://moazzamshoukat.com/ielts-trainer-lahore/"
+    }
+  ]
+};
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "IELTS Academic & General Training in Lahore (Band 7.5+)",
+  "description": "Premier IELTS preparation in Lahore by Moazzam Shoukat (Band 8.5). Individual speaking room diagnostics, Writing Task 2 masterclasses, and Cambridge mock tests.",
+  "provider": {
+    "@type": "Person",
+    "name": "Moazzam Shoukat",
+    "url": "https://moazzamshoukat.com/"
+  },
+  "educationalCredentialAwarded": "IELTS Band 7.5 - Band 8.5 Competency",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": ["Onsite", "Online", "Blended"],
+    "location": "Lahore, Punjab, Pakistan"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Best IELTS Trainer in Lahore | IELTS Academic & General Band 7.5+ | Moazzam Shoukat"
+  description="Achieve IELTS Band 7.5+ & 8.0 with Lahore's leading IELTS trainer Moazzam Shoukat. 1-on-1 Speaking room diagnostics, Writing Task 2 masterclasses, and authentic Cambridge mock tests."
+  keywords="Best IELTS Trainer in Lahore, IELTS Trainer in Lahore, IELTS Coaching Lahore, IELTS Online Classes Pakistan, IELTS Academic Preparation, IELTS General Training Lahore, IELTS Speaking and Writing Coaching"
+  schema={[breadcrumbSchema, courseSchema, faqSchema]}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">IELTS Trainer in Lahore</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
+          <span>📍 Lahore, Pakistan &bull; Proven Band 8.5 Coaching Methodology</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
+          Best <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">IELTS Trainer in Lahore</span>: Unlock Band 7.5 & 8.0+
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+          Personalized, intensive IELTS Academic & General Training designed to beat the examiner marking rubrics. Master Speaking fluency, complex Writing Task 2 structures, and speed Reading with Lahore's highest-rated IELTS specialist.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={siteData.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
+          >
+            <span>Book Free Lahore Speaking Diagnostic</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="/pte-trainer-lahore/"
+            class="px-7 py-4 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all"
+          >
+            PTE Coaching in Lahore &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 shadow-xl mb-20">
+        <div class="text-center p-3">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">Band 8.5</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Trainer Qualification</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">Band 7.5+</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Average Student Outcome</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">1-on-1</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Speaking & Essay Review</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">500+</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Students Mentored in Lahore</div>
+        </div>
+      </div>
+
+      <!-- Pillars Section -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            The 6 Pillars of Band 7.5+ IELTS Mastery
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            A systematic, evidence-based approach that targets the precise grading criteria human examiners look for.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pillars.map((p) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 hover:border-amber-500/50 transition-all shadow-sm">
+              <div class="text-3xl mb-4">{p.icon}</div>
+              <h3 class="text-base font-black text-slate-900 dark:text-white mb-2">{p.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Examiner Rubric Breakdown -->
+      <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div class="max-w-3xl mb-6">
+          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">Official Evaluation Rubric</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
+            How We Move You from Band 6.0 to Band 8.0 in Writing & Speaking
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Examiners mark strictly on 4 criteria. Here is the operational difference between an average candidate and an elite Band 8 achiever:
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">
+                <th class="py-3 px-4 font-bold">Examiner Criterion</th>
+                <th class="py-3 px-4 font-bold">Typical Band 6.0 Mistake</th>
+                <th class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Our Band 8.0 Training Focus</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
+              {bandMatrix.map((row) => (
+                <tr>
+                  <td class="py-3 px-4 font-black text-slate-900 dark:text-white">{row.criterion}</td>
+                  <td class="py-3 px-4 text-slate-500">{row.band6}</td>
+                  <td class="py-3 px-4 text-amber-700 dark:text-amber-400 font-semibold">{row.band8}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Frequently Asked Questions: IELTS Coaching in Lahore
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Answers to common questions regarding class structure, diagnostic tests, and test booking in Lahore.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+          {faqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Related Navigation Links -->
+      <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Explore Related Coaching & Visas</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          Choose the right test for your pathway: compare IELTS with PTE Academic or prepare for NAATI CCL Urdu.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE Trainer in Lahore</a>
+          <a href="/naati-ccl-urdu-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">NAATI CCL Urdu (+5 Points)</a>
+          <a href="/australian-immigration-consultant/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australia Immigration Guidance</a>
+          <a href="/student-visa/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Student Visa SOP Guidance</a>
+          <a href="/contact/" class="px-4 py-2 rounded-xl bg-amber-400 text-slate-950 hover:bg-amber-300 transition-colors">Book Free Speaking Evaluation</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

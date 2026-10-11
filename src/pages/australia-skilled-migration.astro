@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "How does the Australia Points-Tested Skilled Migration system work?",
+    a: "Australia's General Skilled Migration (GSM) uses a merit-based points test to evaluate applicants for Subclass 189 (Independent), Subclass 190 (State Nominated), and Subclass 491 (Regional). Candidates earn points across age, English proficiency, overseas and Australian work experience, educational qualifications, specialist STEM degrees, NAATI CCL community language, partner qualifications, and state sponsorship."
+  },
+  {
+    q: "What is the detailed breakdown of the Australia PR Points Table in 2026?",
+    a: "Key allocations include: Age (Max 30 pts for ages 25-32), English Language (20 pts for Superior PTE 79+ / IELTS 8.0, 10 pts for Proficient PTE 65+ / IELTS 7.0), Education (15 pts for Bachelor/Master, 20 pts for PhD), Overseas Experience (15 pts for 8+ years, 10 pts for 5-7 years, 5 pts for 3-4 years), NAATI CCL (+5 pts), Partner Skills (10 pts for skilled partner with positive assessment & competent English, or 10 pts for single applicants), and State Nomination (+5 pts for 190, +15 pts for 491)."
+  },
+  {
+    q: "What are the MLTSSL, STSOL, and ROL occupation lists?",
+    a: "Australia maintains three skilled occupation lists: The Medium and Long-term Strategic Skills List (MLTSSL) includes occupations eligible for all skilled visas including Subclass 189 (e.g., Software Engineers, ICT Security Specialists, Civil Engineers). The Short-term Skilled Occupation List (STSOL) includes occupations eligible for state-sponsored visas like Subclass 190 and 491. The Regional Occupation List (ROL) includes occupations eligible specifically for regional Subclass 491."
+  },
+  {
+    q: "How can Pakistani applicants reach 85+ or 90+ points for competitive IT occupations?",
+    a: "A typical high-scoring profile from Pakistan includes: Age 25-32 (30 pts) + Bachelor/Master degree (15 pts) + 5 to 8 years experience (10 to 15 pts) + Single or Skilled Partner (10 pts) = 65 to 70 pts. By adding Superior PTE 79+ (+20 pts) and NAATI CCL Urdu (+5 pts), the score jumps directly to 90 or 95 points, making an invitation highly probable."
+  },
+  {
+    q: "What are the residency and work conditions for Subclass 491 visa holders?",
+    a: "Subclass 491 is a 5-year provisional visa requiring you to live, work, and study in a designated regional area of Australia (anywhere outside the major metropolitan centers of Sydney, Melbourne, and Brisbane). After living in the regional area for at least 3 years and earning a taxable income, you can transition to permanent residency via the Permanent Residence (Skilled Regional) visa (Subclass 191)."
+  },
+  {
+    q: "Can I submit multiple Expressions of Interest (EOIs) across different states?",
+    a: "Yes. Candidates are legally permitted to submit separate EOIs for different states (e.g., Victoria, NSW, South Australia) or separate EOIs for Subclass 189 and 190. However, EOIs must be managed carefully so that once an invitation is accepted, overlapping EOIs are promptly withdrawn to avoid duplicate commitments."
+  }
+];
+
+const pointsTable = [
+  { category: "Age (25 - 32 years)", maxPoints: "30 Points", detail: "Ages 18-24 earn 25 pts; 33-39 earn 25 pts; 40-44 earn 15 pts." },
+  { category: "English Proficiency (PTE 79+ / IELTS 8)", maxPoints: "20 Points", detail: "Superior English yields 20 pts; Proficient (PTE 65+ / IELTS 7) yields 10 pts." },
+  { category: "Educational Qualifications", maxPoints: "15 - 20 Points", detail: "15 pts for Bachelor/Master degree; 20 pts for recognized Doctorate (PhD)." },
+  { category: "Overseas Work Experience (Outside Australia)", maxPoints: "15 Points", detail: "8+ years earns 15 pts; 5-7 years earns 10 pts; 3-4 years earns 5 pts." },
+  { category: "NAATI CCL Urdu Credential", maxPoints: "5 Points", detail: "Passing NAATI CCL Urdu confers 5 bonus immigration points directly." },
+  { category: "Partner Skills / Marital Status", maxPoints: "10 Points", detail: "10 pts for single applicants OR skilled partner with positive assessment & English." },
+  { category: "State Nomination (Subclass 190 / 491)", maxPoints: "5 - 15 Points", detail: "+5 pts for Subclass 190 (Permanent); +15 pts for Subclass 491 (Regional)." }
+];
+
+const steps = [
+  { step: "Step 1", title: "Nominated Occupation Selection", desc: "Identify your target occupation on the MLTSSL or STSOL and verify the relevant assessing authority (ACS, Engineers Australia, VETASSESS)." },
+  { step: "Step 2", title: "Positive Skills Assessment", desc: "Prepare reference letters, qualification transcripts, and projects to obtain a full positive skills outcome." },
+  { step: "Step 3", title: "Max Language & NAATI Testing", desc: "Secure 20 points through PTE Academic 79+ Superior English and 5 points via NAATI CCL Urdu." },
+  { step: "Step 4", title: "SkillSelect EOI & State ROI", desc: "Lodge accurate Expressions of Interest on SkillSelect and submit Registrations of Interest to targeted Australian states." },
+  { step: "Step 5", title: "Invitation & Visa Lodgement", desc: "Upon receiving an Invitation to Apply (ITA), compile medicals, PCCs, and evidence to lodge the formal visa application within 60 days." }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://moazzamshoukat.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://moazzamshoukat.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Australia Skilled Migration",
+      "item": "https://moazzamshoukat.com/australia-skilled-migration/"
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Australia Points-Tested Skilled Migration Guidance",
+  "description": "Comprehensive points optimization and advisory for Australian General Skilled Migration (Subclass 189, 190, 491) by Moazzam Shoukat.",
+  "provider": {
+    "@type": "Person",
+    "name": "Moazzam Shoukat",
+    "url": "https://moazzamshoukat.com/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Australia Skilled Migration Guidance | Points-Tested PR (189/190/491) | Moazzam Shoukat"
+  description="Master the Australia Skilled Migration points test for Subclass 189, 190 & 491 with Moazzam Shoukat. Points calculator, occupation lists, state nomination & EOI guidance."
+  keywords="Australia Skilled Migration Guidance, Australia Points Tested Skilled Migration, Subclass 189 190 491 Guidance, Australian PR Points Calculator, Australia Skilled Independent Visa, Australia State Nomination"
+  schema={[breadcrumbSchema, serviceSchema, faqSchema]}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">Australia Skilled Migration</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
+          <span>🇦🇺 Points-Tested Visas: Subclass 189 &bull; Subclass 190 &bull; Subclass 491</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Australia Skilled Migration</span> Strategy & Points Mastery
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+          Navigate Australia's complex points-tested skilled migration system with precision. From Skills Assessments and 25-point English/NAATI boosts to State Nominations, we help you build an elite EOI profile that stands out in SkillSelect invitation rounds.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={siteData.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
+          >
+            <span>Calculate Your PR Points Free</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="/skill-assessment-guidance/"
+            class="px-7 py-4 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all"
+          >
+            Skills Assessment (ACS / EA) &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Points Table Breakdown -->
+      <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div class="max-w-3xl mb-6">
+          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">SkillSelect Points Matrix</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
+            Australia PR Points Table Breakdown (2026 Criteria)
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Every point counts. Here is how points are awarded across each official statutory dimension:
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">
+                <th class="py-3 px-4 font-bold">Category</th>
+                <th class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Maximum Claimable</th>
+                <th class="py-3 px-4 font-bold text-slate-900 dark:text-white">Statutory Criteria & Evidence</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
+              {pointsTable.map((row) => (
+                <tr>
+                  <td class="py-3 px-4 font-black text-slate-900 dark:text-white">{row.category}</td>
+                  <td class="py-3 px-4 font-black text-amber-700 dark:text-amber-400">{row.maxPoints}</td>
+                  <td class="py-3 px-4 text-slate-600 dark:text-slate-300">{row.detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 5-Step Process -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            The 5-Step Skilled Migration Execution Roadmap
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            A linear, methodical process to take your case from initial profile audit to visa invitation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          {steps.map((s) => (
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest">{s.step}</span>
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white mt-1 mb-2">{s.title}</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Frequently Asked Questions: Skilled Migration
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Clear, realistic guidance on invitation rounds, points calculations, and visa categories.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+          {faqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Related Navigation Links -->
+      <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Claim the Maximum +25 Points Today</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          Add 20 points through PTE Academic Superior English and 5 points via NAATI CCL Urdu.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE 79+ Superior English (+20 Pts)</a>
+          <a href="/naati-ccl-urdu-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">NAATI CCL Urdu (+5 Pts)</a>
+          <a href="/skill-assessment-guidance/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">ACS & Engineers Australia Guidance</a>
+          <a href="/australian-immigration-consultant/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Lahore Immigration Consultation</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

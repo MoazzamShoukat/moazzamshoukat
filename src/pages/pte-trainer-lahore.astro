@@ -1,0 +1,335 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "Why is Moazzam Shoukat considered the best PTE trainer in Lahore?",
+    a: "Moazzam Shoukat combines a master's-level research background in Speech Processing and acoustic artificial intelligence with hundreds of proven PTE student success stories. Rather than teaching generic memorized scripts, he diagnoses candidates' oral acoustic waveforms, microphone distance, speech cadence, and pitch modulation to ensure full marks from Pearson's automated scoring algorithm."
+  },
+  {
+    q: "Where are the PTE classes conducted in Lahore?",
+    a: "Classes are offered through flexible formats in Lahore, including in-person physical sessions and premium interactive 1-on-1 live sessions for working professionals in areas such as Gulberg, DHA, Johar Town, Model Town, and Cantt. All students receive access to official Pearson mock testing software and active question prediction banks."
+  },
+  {
+    q: "What is the difference between PTE Academic and PTE Core training?",
+    a: "PTE Academic is designed for university admissions and Australian/New Zealand skilled migration visas (Subclass 189, 190, 491). PTE Core is tailored specifically for Canadian Permanent Residency (Express Entry & PNP) and work permits. Moazzam provides specialized modules for both formats, including PTE Core's 'Respond to a Situation' and 'Summarize Group Discussion'."
+  },
+  {
+    q: "How many weeks does it take to achieve PTE 79+ (Superior English) in Lahore?",
+    a: "Candidates with intermediate English proficiency typically achieve a 79+ score (equivalent to IELTS Band 8.0 for 20 Australia PR points) in 3 to 4 weeks under Moazzam's structured curriculum. Fast-track 10-day bootcamps are also available for test-takers needing an urgent score bump."
+  },
+  {
+    q: "Which PTE test centers are available in Lahore, and do you help with booking?",
+    a: "Lahore hosts authorized Pearson Professional Test Centers at locations including Gulberg and Mall Road. Moazzam guides candidates on test center acoustic environments, headset calibration, slot availability, and strategic exam day timing."
+  },
+  {
+    q: "Do you offer full-length AI mock tests with diagnostic scoring?",
+    a: "Yes. Every student receives access to full-length computer-scored mock exams with detailed diagnostic analytics highlighting pronunciation, oral fluency, vocabulary range, and written discourse weaknesses before taking the actual exam."
+  }
+];
+
+const highlights = [
+  {
+    icon: "🎙️",
+    title: "Acoustic AI Speech Diagnostics",
+    desc: "Personalized voice pitch, oral fluency, and microphone positioning analysis calibrated against Pearson's automated speech recognition models."
+  },
+  {
+    icon: "⚡",
+    title: "PTE 79+ & 90/90 Score Architecture",
+    desc: "Rigorous training designed to unlock maximum immigration points (+20 for Australia PR) with flawless Written Discourse and Pronunciation scores."
+  },
+  {
+    icon: "📝",
+    title: "Foolproof Speaking & Writing Templates",
+    desc: "Battle-tested templates for Describe Image, Retell Lecture, and Write Essay that guarantee syntax precision and eliminate cognitive overload."
+  },
+  {
+    icon: "🎯",
+    title: "High-Weight Task Prioritization",
+    desc: "Relentless mastery of the 4 big scoring pillars: Repeat Sentence, Write From Dictation, Read Aloud, and Reading & Writing Fill in the Blanks."
+  },
+  {
+    icon: "💻",
+    title: "Lahore Center Simulation & Mocks",
+    desc: "Mock test sessions recreating test center noise, headset volume settings, and strict Pearson countdown timers."
+  },
+  {
+    icon: "🤝",
+    title: "One-to-One Personalized Mentorship",
+    desc: "Direct feedback from Moazzam Shoukat with daily homework tracking, WhatsApp audio checks, and targeted error correction."
+  }
+];
+
+const syllabus = [
+  {
+    week: "Module 1",
+    title: "Speaking & Pronunciation Calibration",
+    tasks: ["Read Aloud rhythm & chunking", "Repeat Sentence auditory retention", "Describe Image template automation", "Retell Lecture note-taking shorthand"]
+  },
+  {
+    week: "Module 2",
+    title: "Writing Discourse & Essay Mastery",
+    tasks: ["Summarize Written Text 1-sentence logic", "Standard Write Essay 90/90 template", "Grammar & vocabulary range rules", "PTE Core email writing frameworks"]
+  },
+  {
+    week: "Module 3",
+    title: "Reading Precision & Collocations",
+    tasks: ["Reading & Writing Fill in the Blanks", "Re-order Paragraphs transitional clues", "Academic collocation frequency lists", "Time management per question type"]
+  },
+  {
+    week: "Module 4",
+    title: "Listening Dictation & Exam Simulation",
+    tasks: ["Write From Dictation recurrent banks", "Summarize Spoken Text key points", "Highlight Incorrect Words reflexes", "3 Full-length AI mocks with diagnostics"]
+  }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://moazzamshoukat.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://moazzamshoukat.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "PTE Trainer in Lahore",
+      "item": "https://moazzamshoukat.com/pte-trainer-lahore/"
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "PTE Academic & PTE Core Preparation in Lahore",
+  "description": "Comprehensive PTE coaching in Lahore by Moazzam Shoukat. Specialized training for PTE 79+ Superior English for Australian and Canadian PR.",
+  "provider": {
+    "@type": "Person",
+    "name": "Moazzam Shoukat",
+    "url": "https://moazzamshoukat.com/"
+  },
+  "educationalCredentialAwarded": "PTE 79+ / PTE 90 Score Competency",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": ["Blended", "Onsite", "Online"],
+    "location": "Lahore, Punjab, Pakistan"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Best PTE Trainer in Lahore | PTE Academic & Core Coaching | Moazzam Shoukat"
+  description="Looking for the best PTE trainer in Lahore? Master PTE Academic & Core with Moazzam Shoukat. AI speech algorithm calibration, 79+ Superior English strategies, and Lahore test center mock tests."
+  keywords="Best PTE Trainer in Lahore, PTE Trainer in Lahore, PTE Coaching Lahore, Online PTE Classes Pakistan, PTE Academic Preparation Lahore, PTE Core Preparation Lahore, PTE 79+ Preparation, One to One PTE Classes Lahore"
+  schema={[breadcrumbSchema, serviceSchema, faqSchema]}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">PTE Trainer in Lahore</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
+          <span>📍 Lahore, Pakistan &bull; Pearson Certified Methodology</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
+          Best <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">PTE Trainer in Lahore</span>: Achieve PTE 79+ & 90
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+          Unlock Superior English (+20 Australia PR points) and Canadian Express Entry qualifications with Lahore's premier PTE specialist. Master the Pearson AI scoring engine through custom acoustic calibration, foolproof templates, and high-frequency exam banks.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={siteData.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
+          >
+            <span>Book Free Lahore Diagnostic</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="/online-pte-classes/"
+            class="px-7 py-4 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all"
+          >
+            Explore Online Classes &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Stats Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 shadow-xl mb-20">
+        <div class="text-center p-3">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">79+ (Band 8)</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Average Student Target</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">+20 Pts</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Australia PR SkillSelect Boost</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">90 / 90</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Speaking Fluency Record</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">3-4 Wks</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Typical Course Duration</div>
+        </div>
+      </div>
+
+      <!-- Why Choose Section -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Why Train for PTE with Moazzam Shoukat in Lahore?
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Unlike traditional academies that rely on rote memorization, our methodology is built around the computational mechanics of Pearson's speech recognition and natural language evaluation algorithms.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {highlights.map((h) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 hover:border-amber-500/50 transition-all shadow-sm">
+              <div class="text-3xl mb-4">{h.icon}</div>
+              <h3 class="text-base font-black text-slate-900 dark:text-white mb-2">{h.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{h.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Course Syllabus / Roadmap -->
+      <section class="mb-20">
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-[#0A1128] text-white border border-amber-500/20 shadow-2xl">
+          <div class="max-w-3xl mb-8">
+            <span class="text-amber-400 text-xs font-black uppercase tracking-widest">Structured Curriculum</span>
+            <h2 class="text-2xl sm:text-3xl font-black mt-2">
+              4-Week PTE Masterplan for 79+ Superior English
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 mt-2">
+              Every section focuses on high-yield questions that influence cross-module communicative and enabling scores.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {syllabus.map((m) => (
+              <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/40 transition-all">
+                <div class="text-xs font-black text-amber-400 mb-1">{m.week}</div>
+                <h3 class="text-sm font-bold text-white mb-3">{m.title}</h3>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  {m.tasks.map((task) => (
+                    <li class="flex items-start gap-1.5">
+                      <span class="text-amber-400 text-[10px] mt-0.5">✔</span>
+                      <span>{task}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Lahore Test Center Advice -->
+      <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-4">
+          Pearson Test Center Environment in Lahore
+        </h2>
+        <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          <p>
+            Taking the PTE in Lahore means sitting in close proximity to other test-takers who are speaking simultaneously. Without specialized background-noise coping drills, many students suffer sudden drops in oral fluency scores.
+          </p>
+          <p>
+            During our sessions, candidates undergo simulation exercises with ambient cafe and examination noise. We train you on proper headset microphone positioning (typically 2 fingers below the lower lip to prevent popping 'p' and 'b' breath bursts), steady volume projection, and pacing that isolates your vocal frequency from surrounding test-takers.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-4 text-xs font-bold text-slate-700 dark:text-slate-300">
+          <span class="px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">📍 Pearson Professional Center - Gulberg, Lahore</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">🎧 Microphone Position Calibration</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">⏱️ Strict Section Timers</span>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Frequently Asked Questions: PTE Training in Lahore
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Clear answers about class schedules, scoring rules, and preparation strategies.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+          {faqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Related Navigation Links -->
+      <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Explore Related Services</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          Combine your PTE preparation with NAATI CCL Urdu and Australian skilled migration guidance for a streamlined permanent residency pathway.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+          <a href="/online-pte-classes/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Online PTE Classes</a>
+          <a href="/pte-core-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE Core Preparation</a>
+          <a href="/naati-ccl-urdu-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">NAATI CCL Urdu (+5 Points)</a>
+          <a href="/ielts-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">IELTS Trainer in Lahore</a>
+          <a href="/australian-immigration-consultant/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australian Immigration Guidance</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

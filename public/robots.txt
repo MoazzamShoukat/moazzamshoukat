@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Disallow error page from indexing
+Disallow: /404.html
+Disallow: /404/
+
+# XML Sitemaps
+Sitemap: https://moazzamshoukat.com/sitemap.xml
 Sitemap: https://moazzamshoukat.com/sitemap-index.xml

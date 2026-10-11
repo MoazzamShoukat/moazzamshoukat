@@ -35,7 +35,7 @@ function isActive(path: string) {
     <div class="flex items-center gap-4 text-[11px]">
       <span class="inline-flex items-center gap-1.5 text-amber-300/90 font-medium">
         <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-        AI Researcher &bull; Canada & Australia PR Strategist &bull; IELTS/PTE Trainer
+        AI Researcher &bull; Australia & Canada PR Strategist &bull; PTE & IELTS Master Trainer
       </span>
     </div>
   </div>
@@ -68,7 +68,7 @@ function isActive(path: string) {
 
         <!-- About Link -->
         <a
-          href="/about"
+          href="/about/"
           class={`px-3 py-2 rounded-lg transition-all ${
             isActive('/about')
               ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
@@ -78,12 +78,12 @@ function isActive(path: string) {
           About
         </a>
 
-        <!-- Services Dropdown (Fixed: Valid HTML with no nested <a> inside <button>) -->
+        <!-- Services Dropdown -->
         <div class="relative group">
           <a
-            href="/services"
+            href="/services/"
             class={`px-3 py-2 rounded-lg inline-flex items-center gap-1.5 transition-all cursor-pointer ${
-              currentPath.includes('services') || currentPath.includes('canada') || currentPath.includes('australia') || currentPath.includes('student-visa') || currentPath.includes('skills-assessment') || currentPath.includes('ielts') || currentPath.includes('pte') || currentPath.includes('naati') || currentPath.includes('english') || currentPath.includes('immigration') || currentPath.includes('application-development') || currentPath.includes('web-development') || currentPath.includes('data-engineering') || currentPath.includes('data-scraping') || currentPath.includes('ai-development') || currentPath.includes('ai-agentic-development')
+              currentPath.includes('services') || currentPath.includes('canada') || currentPath.includes('australia') || currentPath.includes('student-visa') || currentPath.includes('skills-assessment') || currentPath.includes('skill-assessment') || currentPath.includes('ielts') || currentPath.includes('pte') || currentPath.includes('naati') || currentPath.includes('english') || currentPath.includes('immigration') || currentPath.includes('application-development') || currentPath.includes('web-development') || currentPath.includes('data-engineering') || currentPath.includes('data-scraping') || currentPath.includes('ai-development') || currentPath.includes('ai-agentic-development') || currentPath.includes('ai-research')
                 ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
                 : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
             }`}
@@ -95,7 +95,7 @@ function isActive(path: string) {
           </a>
           
           <!-- Services Mega Menu Crystal Card -->
-          <div class="absolute -left-36 lg:-left-44 top-full pt-3 w-[840px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
+          <div class="absolute -left-36 lg:-left-44 top-full pt-3 w-[880px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
             <div class="p-6 rounded-3xl bg-white/95 dark:bg-[#0C1324]/95 backdrop-blur-2xl border border-white/60 dark:border-white/10 shadow-2xl shadow-slate-900/20 space-y-4">
               
               <!-- 3-Column Mega Grid -->
@@ -107,28 +107,35 @@ function isActive(path: string) {
                     <span>Immigration Services</span>
                     <span class="text-[9px] font-semibold text-slate-400">PR Pathways</span>
                   </div>
-                  <a href="/canada-immigration" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                  <a href="/australia-skilled-migration/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                    <span class="text-base shrink-0 mt-0.5">🇦🇺</span>
+                    <div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Australia Skilled Migration</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Subclass 189, 190, 491 points</div>
+                    </div>
+                  </a>
+                  <a href="/australian-immigration-consultant/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                    <span class="text-base shrink-0 mt-0.5">🦘</span>
+                    <div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Immigration Advisor Lahore</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Strategic case & EOI guidance</div>
+                    </div>
+                  </a>
+                  <a href="/skill-assessment-guidance/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                    <span class="text-base shrink-0 mt-0.5">📊</span>
+                    <div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Skills Assessment (ACS / EA)</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">IT, CDR & VETASSESS reviews</div>
+                    </div>
+                  </a>
+                  <a href="/canada-immigration/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                     <span class="text-base shrink-0 mt-0.5">🍁</span>
                     <div>
                       <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Canada Express Entry & PNP</div>
                       <div class="text-[10px] text-slate-500 dark:text-slate-400">STEM draws & CRS points</div>
                     </div>
                   </a>
-                  <a href="/australia-immigration" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🦘</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Australia Skilled Migration</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Subclass 189, 190, 491 EOIs</div>
-                    </div>
-                  </a>
-                  <a href="/skills-assessment-australia" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">📊</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Skills Assessment Australia</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">ACS IT, EA CDR & VETASSESS</div>
-                    </div>
-                  </a>
-                  <a href="/student-visa" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                  <a href="/student-visa/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                     <span class="text-base shrink-0 mt-0.5">🎓</span>
                     <div>
                       <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Student Visa & GS Guidance</div>
@@ -143,32 +150,39 @@ function isActive(path: string) {
                     <span>English & NAATI</span>
                     <span class="text-[9px] font-semibold text-slate-400">Max Score</span>
                   </div>
-                  <a href="/ielts-coaching" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🎯</span>
+                  <a href="/pte-trainer-lahore/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                    <span class="text-base shrink-0 mt-0.5">📍</span>
                     <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">IELTS Coaching (Band 7.5+)</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Speaking mock diagnostics</div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">PTE Trainer in Lahore</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Speech algorithm calibration</div>
                     </div>
                   </a>
-                  <a href="/pte-coaching" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                  <a href="/online-pte-classes/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                    <span class="text-base shrink-0 mt-0.5">🌐</span>
+                    <div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Online PTE Classes (1-on-1)</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Pakistan & Australia timings</div>
+                    </div>
+                  </a>
+                  <a href="/pte-core-preparation/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                     <span class="text-base shrink-0 mt-0.5">⚡</span>
                     <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">PTE Academic (79+ Superior)</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">+20 Australia PR points boost</div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">PTE Core for Canada PR</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">CLB 9/10 & workplace tasks</div>
                     </div>
                   </a>
-                  <a href="/naati-ccl-urdu" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                  <a href="/ielts-trainer-lahore/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                    <span class="text-base shrink-0 mt-0.5">🎯</span>
+                    <div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">IELTS Trainer in Lahore</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Speaking rooms & Task 2 (Band 8+)</div>
+                    </div>
+                  </a>
+                  <a href="/naati-ccl-urdu-preparation/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                     <span class="text-base shrink-0 mt-0.5">🗣️</span>
                     <div>
                       <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">NAATI CCL Urdu (+5 Points)</div>
                       <div class="text-[10px] text-slate-500 dark:text-slate-400">50+ recorded exam dialogues</div>
-                    </div>
-                  </a>
-                  <a href="/english-training" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">📖</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Language Training Overview</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Complete curriculum matrix</div>
                     </div>
                   </a>
                 </div>
@@ -179,42 +193,42 @@ function isActive(path: string) {
                     <span>Technology & AI</span>
                     <span class="text-[9px] font-semibold text-slate-400">Engineering</span>
                   </div>
-                  <a href="/application-development" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-sm shrink-0 mt-0.5">💻</span>
+                  <a href="/ai-research/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                    <span class="text-sm shrink-0 mt-0.5">🔬</span>
                     <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Application Development</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Custom desktop & mobile apps</div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">AI Research & LAMs</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">7 papers in Elsevier & IEEE</div>
                     </div>
                   </a>
-                  <a href="/web-development" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                  <a href="/data-engineering/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                    <span class="text-sm shrink-0 mt-0.5">🔀</span>
+                    <div>
+                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Data Engineering & Pipelines</div>
+                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Scalable Python ETL & PostgreSQL</div>
+                    </div>
+                  </a>
+                  <a href="/web-development/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                     <span class="text-sm shrink-0 mt-0.5">🌐</span>
                     <div>
                       <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Full-Stack Web Development</div>
                       <div class="text-[10px] text-slate-500 dark:text-slate-400">Next.js & Astro Jamstack</div>
                     </div>
                   </a>
-                  <a href="/data-engineering" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-sm shrink-0 mt-0.5">🔀</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Data Engineering & Pipelines</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Scalable ETL & PostgreSQL</div>
-                    </div>
-                  </a>
-                  <a href="/data-scraping" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                  <a href="/data-scraping/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                     <span class="text-sm shrink-0 mt-0.5">🕷️</span>
                     <div>
                       <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Enterprise Data Scraping</div>
                       <div class="text-[10px] text-slate-500 dark:text-slate-400">Scrapy & anti-bot bypass</div>
                     </div>
                   </a>
-                  <a href="/ai-development" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                  <a href="/ai-development/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                     <span class="text-sm shrink-0 mt-0.5">🧠</span>
                     <div>
                       <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">AI & Machine Learning</div>
                       <div class="text-[10px] text-slate-500 dark:text-slate-400">Speech AI, Whisper & LLMs</div>
                     </div>
                   </a>
-                  <a href="/ai-agentic-development" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+                  <a href="/ai-agentic-development/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                     <span class="text-sm shrink-0 mt-0.5">🤖</span>
                     <div>
                       <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">AI Agentic Development</div>
@@ -229,10 +243,10 @@ function isActive(path: string) {
               <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs px-2">
                 <span class="text-slate-400 text-[11px]">Empowering Global Careers & Enterprise AI Breakthroughs</span>
                 <div class="flex items-center gap-4">
-                  <a href="/services" class="font-bold text-amber-700 dark:text-amber-400 hover:underline">
+                  <a href="/services/" class="font-bold text-amber-700 dark:text-amber-400 hover:underline">
                     View All Services &rarr;
                   </a>
-                  <a href="/pricing" class="font-bold text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400">
+                  <a href="/pricing/" class="font-bold text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400">
                     Transparent Pricing
                   </a>
                 </div>
@@ -242,11 +256,11 @@ function isActive(path: string) {
           </div>
         </div>
 
-        <!-- Research Link (Prominently Featured) -->
+        <!-- Research Link -->
         <a
-          href="/research"
+          href="/research/"
           class={`px-3 py-2 rounded-lg transition-all ${
-            isActive('/research') || isActive('/education-research')
+            isActive('/research') || isActive('/education-research') || isActive('/ai-research')
               ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
               : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
           }`}
@@ -257,7 +271,7 @@ function isActive(path: string) {
         <!-- Background Dropdown: Experience, Education, Skills -->
         <div class="relative group">
           <a
-            href="/experience"
+            href="/experience/"
             class={`px-3 py-2 rounded-lg inline-flex items-center gap-1.5 transition-all cursor-pointer ${
               currentPath.includes('experience') || currentPath.includes('education') || currentPath.includes('skills') || currentPath.includes('selected-work')
                 ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
@@ -272,28 +286,28 @@ function isActive(path: string) {
           
           <div class="absolute left-0 top-full pt-2 w-72 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
             <div class="p-2.5 rounded-2xl bg-white/95 dark:bg-[#0C1324]/95 backdrop-blur-2xl border border-white/60 dark:border-white/10 shadow-2xl shadow-slate-900/15 space-y-1">
-              <a href="/experience" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+              <a href="/experience/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                 <span class="text-base">💼</span>
                 <div>
                   <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Professional Experience</div>
                   <div class="text-[11px] text-slate-500 dark:text-slate-400">Software engineering & data leadership</div>
                 </div>
               </a>
-              <a href="/education" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+              <a href="/education/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                 <span class="text-base">🎓</span>
                 <div>
                   <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Education & Degrees</div>
                   <div class="text-[11px] text-slate-500 dark:text-slate-400">ITU Lahore BS CS, DAE & Projects</div>
                 </div>
               </a>
-              <a href="/skills" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+              <a href="/skills/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                 <span class="text-base">🛠️</span>
                 <div>
                   <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Technical Skills</div>
                   <div class="text-[11px] text-slate-500 dark:text-slate-400">Python, ETL, Databases & Tools</div>
                 </div>
               </a>
-              <a href="/selected-work" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
+              <a href="/selected-work/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
                 <span class="text-base">⭐</span>
                 <div>
                   <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Selected Work</div>
@@ -306,7 +320,7 @@ function isActive(path: string) {
 
         <!-- Success Stories Link -->
         <a
-          href="/success-stories"
+          href="/success-stories/"
           class={`px-3 py-2 rounded-lg transition-all ${
             isActive('/success-stories')
               ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
@@ -318,7 +332,7 @@ function isActive(path: string) {
 
         <!-- Blog Link -->
         <a
-          href="/blog"
+          href="/blog/"
           class={`px-3 py-2 rounded-lg transition-all ${
             isActive('/blog')
               ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
@@ -330,7 +344,7 @@ function isActive(path: string) {
 
         <!-- Pricing Link -->
         <a
-          href="/pricing"
+          href="/pricing/"
           class={`px-3 py-2 rounded-lg transition-all ${
             isActive('/pricing')
               ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
@@ -342,7 +356,7 @@ function isActive(path: string) {
 
         <!-- Contact Link -->
         <a
-          href="/contact"
+          href="/contact/"
           class={`px-3 py-2 rounded-lg transition-all ${
             isActive('/contact')
               ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
@@ -356,26 +370,25 @@ function isActive(path: string) {
       <!-- Right Header Actions (Phone Icon, Sun/Moon Only Toggle & CTA) -->
       <div class="flex items-center gap-2.5 sm:gap-3">
         
-        <!-- Clean Phone Icon Only (Direct Call trigger to +92-328-048-4399, No text) -->
+        <!-- Clean Phone Icon Only -->
         <a
           href="tel:+923280484399"
-          aria-label="Call Moazzam Shoukat at +92-328-048-4399"
+          class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors"
+          aria-label="Direct Call to +92-328-048-4399"
           title="Direct Call: +92-328-048-4399"
-          class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-white/60 dark:bg-white/5 border border-white/80 dark:border-white/10 hover:border-amber-400/60 dark:hover:border-amber-400/40 hover:bg-amber-500/10 dark:hover:bg-amber-400/10 text-slate-700 dark:text-amber-300 shadow-xs backdrop-blur-md transition-all duration-200 active:scale-95 group select-none cursor-pointer"
         >
-          <svg class="w-4 h-4 text-slate-700 dark:text-amber-300 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
           </svg>
-          <span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-amber-400 ring-2 ring-white dark:ring-[#0A1128]"></span>
         </a>
 
-        <!-- Sun/Moon Icon-Only Toggle -->
+        <!-- Dark/Light Theme Toggle -->
         <ThemeToggle />
 
-        <!-- Refined Deep Navy / Champagne Gold "Book Consultation" Button -->
+        <!-- Consultation Booking CTA Button -->
         <a
-          href="/contact"
-          class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-full transition-all duration-200 active:scale-95 shadow-xs hover:shadow-md group bg-[#0A1128] hover:bg-[#152042] text-white border border-amber-500/40 hover:border-amber-400 dark:bg-gradient-to-r dark:from-amber-400 dark:to-amber-500 dark:hover:from-amber-300 dark:hover:to-amber-400 dark:text-slate-950 dark:border-transparent"
+          href="/contact/"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-black bg-[#0A1128] hover:bg-slate-900 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-all shadow-md group cursor-pointer border border-amber-500/20"
         >
           <svg class="w-3.5 h-3.5 text-amber-400 dark:text-slate-950 shrink-0 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -410,16 +423,16 @@ function isActive(path: string) {
   >
     <div class="grid grid-cols-2 gap-2 text-xs font-bold">
       <a href="/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Home</a>
-      <a href="/about" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">About Moazzam</a>
-      <a href="/services" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">All Services</a>
-      <a href="/research" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-amber-600 dark:text-amber-400 font-extrabold">Research & Papers</a>
-      <a href="/experience" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Experience</a>
-      <a href="/education" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Education</a>
-      <a href="/skills" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Technical Skills</a>
-      <a href="/success-stories" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-amber-600 dark:text-amber-400 font-extrabold">Success Stories</a>
-      <a href="/blog" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Blog & Guides</a>
-      <a href="/pricing" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Pricing & Packages</a>
-      <a href="/contact" class="p-3 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-300 font-extrabold">Contact Moazzam</a>
+      <a href="/about/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">About Moazzam</a>
+      <a href="/services/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">All Services</a>
+      <a href="/research/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-amber-600 dark:text-amber-400 font-extrabold">Research & Papers</a>
+      <a href="/experience/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Experience</a>
+      <a href="/education/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Education</a>
+      <a href="/skills/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Technical Skills</a>
+      <a href="/success-stories/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-amber-600 dark:text-amber-400 font-extrabold">Success Stories</a>
+      <a href="/blog/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Blog & Guides</a>
+      <a href="/pricing/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Pricing & Packages</a>
+      <a href="/contact/" class="p-3 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-300 font-extrabold">Contact Moazzam</a>
     </div>
 
     <!-- Mobile Immigration Section -->
@@ -428,17 +441,44 @@ function isActive(path: string) {
         Immigration Services
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
-        <a href="/canada-immigration" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+        <a href="/australia-skilled-migration/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold text-amber-600 dark:text-amber-400">
+          <span>🇦🇺</span> Australia GSM (189/190/491)
+        </a>
+        <a href="/australian-immigration-consultant/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+          <span>🦘</span> Immigration Advisor Lahore
+        </a>
+        <a href="/skill-assessment-guidance/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+          <span>📊</span> Skills Assessment (ACS/EA)
+        </a>
+        <a href="/canada-immigration/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
           <span>🍁</span> Canada Express Entry & PNP
         </a>
-        <a href="/australia-immigration" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🦘</span> Australia GSM Subclasses 189/190
+        <a href="/student-visa/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+          <span>🎓</span> Student Visa & GS SOP
         </a>
-        <a href="/student-visa" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🎓</span> Student Visa & Genuine Student (GS)
+      </div>
+    </div>
+
+    <!-- Mobile English Training Section -->
+    <div class="pt-2 border-t border-slate-200/50 dark:border-slate-800">
+      <div class="text-[11px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">
+        PTE, IELTS & NAATI Coaching
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
+        <a href="/pte-trainer-lahore/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-bold flex items-center gap-2 text-amber-600 dark:text-amber-400">
+          <span>📍</span> PTE Trainer in Lahore
         </a>
-        <a href="/skills-assessment-australia" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>📊</span> Australia Skills Assessment (ACS/EA)
+        <a href="/online-pte-classes/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
+          <span>🌐</span> Online PTE Classes (1-on-1)
+        </a>
+        <a href="/pte-core-preparation/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
+          <span>⚡</span> PTE Core for Canada PR
+        </a>
+        <a href="/ielts-trainer-lahore/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
+          <span>🎯</span> IELTS Trainer in Lahore (Band 8+)
+        </a>
+        <a href="/naati-ccl-urdu-preparation/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
+          <span>🗣️</span> NAATI CCL Urdu (+5 Points)
         </a>
       </div>
     </div>
@@ -449,41 +489,23 @@ function isActive(path: string) {
         Technology & AI Services
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
-        <a href="/application-development" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>💻</span> Application Development
+        <a href="/ai-research/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold text-amber-600 dark:text-amber-400">
+          <span>🔬</span> AI Research & LAMs
         </a>
-        <a href="/web-development" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🌐</span> Full-Stack Web Development
-        </a>
-        <a href="/data-engineering" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+        <a href="/data-engineering/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
           <span>🔀</span> Data Engineering & Pipelines
         </a>
-        <a href="/data-scraping" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+        <a href="/web-development/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+          <span>🌐</span> Full-Stack Web Development
+        </a>
+        <a href="/data-scraping/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
           <span>🕷️</span> Enterprise Web Scraping
         </a>
-        <a href="/ai-development" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+        <a href="/ai-development/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
           <span>🧠</span> AI & Machine Learning
         </a>
-        <a href="/ai-agentic-development" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
+        <a href="/ai-agentic-development/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
           <span>🤖</span> AI Agentic Development
-        </a>
-      </div>
-    </div>
-
-    <!-- Mobile English Training Section -->
-    <div class="pt-2 border-t border-slate-200/50 dark:border-slate-800">
-      <div class="text-[11px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">
-        English & NAATI Coaching
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-1.5 text-xs">
-        <a href="/ielts-coaching" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
-          <span>🎯</span> IELTS Coaching (7.5+)
-        </a>
-        <a href="/pte-coaching" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
-          <span>⚡</span> PTE Academic (79+)
-        </a>
-        <a href="/naati-ccl-urdu" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
-          <span>🗣️</span> NAATI CCL Urdu (5 Points)
         </a>
       </div>
     </div>

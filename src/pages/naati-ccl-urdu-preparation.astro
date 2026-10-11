@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "What is NAATI CCL Urdu and why is it crucial for Australia PR?",
+    a: "NAATI Credentialed Community Language (CCL) is an online interpreting test conducted by the National Accreditation Authority for Translators and Interpreters in Australia. Passing the NAATI CCL in Urdu awards 5 bonus immigration points on the points test for Australian General Skilled Migration visas (Subclass 189, 190, and 491). In today's competitive invitation rounds, these 5 points frequently make the difference between receiving an Invitation to Apply (ITA) or remaining stuck in the SkillSelect queue."
+  },
+  {
+    q: "Can I take the NAATI CCL Urdu test from Pakistan?",
+    a: "Yes! NAATI CCL tests are conducted 100% online via proctored Microsoft Teams video calls. You can take the exam from the comfort of your home in Lahore, Karachi, Islamabad, or anywhere in Pakistan or Australia, provided you have a reliable internet connection and headset."
+  },
+  {
+    q: "What is the format and passing score of the NAATI CCL Urdu exam?",
+    a: "The test consists of 2 recorded dialogues (approximately 300 words each). Each dialogue involves an English speaker and an Urdu speaker across 12 to 14 segments of up to 35 words each. The total exam is scored out of 90 marks (45 marks per dialogue). To pass, you must score at least 29 out of 45 in each dialogue, with an overall aggregate score of at least 63 out of 90."
+  },
+  {
+    q: "What is the specialized shorthand note-taking technique taught by Moazzam Shoukat?",
+    a: "Because segments can be up to 35 words long with complex numbers, technical terms, and dates, human memory alone leads to omissions. Moazzam teaches an intuitive symbol-based shorthand system that captures subject-verb-object flows, quantities, and temporal markers in 3 to 4 symbols, eliminating memory lapses and long pauses."
+  },
+  {
+    q: "Which topic domains appear most frequently in the Urdu dialogues?",
+    a: "Dialogue scenarios are taken from Australian community life: Healthcare (doctor consultations, hospital admissions), Legal (tenancy disputes, minor traffic violations), Housing & Community Services (Centrelink, rental leases), Education (parent-teacher interviews), and Immigration/Employment inquiries."
+  },
+  {
+    q: "How many mock tests are included in the preparation course?",
+    a: "The course includes 8 full-length simulated exam dialogues conducted under strict exam conditions, complete with timed segment audio, repeat allowance management (1 free repeat per dialogue), and detailed point-deduction marksheets."
+  }
+];
+
+const pillars = [
+  {
+    icon: "✍️",
+    title: "Symbol-Based Shorthand Technique",
+    desc: "A proprietary shorthand system engineered to capture 35-word segments, complex numerical data, and chronological markers without cognitive lag."
+  },
+  {
+    icon: "🎧",
+    title: "50+ Authentic Audio Dialogues",
+    desc: "Extensive library of high-probability dialogues covering Centrelink, Medicare, Australian tenancy law, police inquiries, and schools."
+  },
+  {
+    icon: "📖",
+    title: "Curated Urdu-English Glossary",
+    desc: "Comprehensive 800+ term terminology bank of Australian institutional and legal jargon translated into natural, examiner-acceptable Urdu equivalents."
+  },
+  {
+    icon: "⏱️",
+    title: "Repeat & Pause Management",
+    desc: "Strategic training on utilizing your 1 free repeat per dialogue and managing the 5-second post-chime response window to avoid hesitation penalties."
+  },
+  {
+    icon: "🔍",
+    title: "Granular Deduction Audits",
+    desc: "Every practice segment is evaluated against official NAATI marking guidelines: zero tolerance for distortions, omissions, and unjustified insertions."
+  },
+  {
+    icon: "🎯",
+    title: "96% First-Attempt Success Rate",
+    desc: "Proven track record of helping over 350+ candidates in Pakistan and Australia clear the test on their very first attempt within 3 to 4 weeks."
+  }
+];
+
+const scoringRules = [
+  { penalty: "Deduction for Omission", severity: "-1 to -3 marks", desc: "Leaving out critical details, dates, medication dosages, or directional instructions." },
+  { penalty: "Deduction for Distortion", severity: "-2 to -4 marks", desc: "Mistranslating meaning (e.g., confusing 'tenant' with 'landlord' or 'plaintiff' with 'defendant')." },
+  { penalty: "Deduction for Insertion", severity: "-1 to -2 marks", desc: "Adding personal interpretations or words that were not uttered by the speaker." },
+  { penalty: "Excessive Hesitation / False Starts", severity: "-1 to -2 marks", desc: "Repeated stuttering, filler words (umm, achha), or taking longer than 5 seconds after chime." }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://moazzamshoukat.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://moazzamshoukat.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "NAATI CCL Urdu Preparation",
+      "item": "https://moazzamshoukat.com/naati-ccl-urdu-preparation/"
+    }
+  ]
+};
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "NAATI CCL Urdu Preparation & Online Classes (+5 Australia PR Points)",
+  "description": "Comprehensive NAATI CCL Urdu test preparation by Moazzam Shoukat. Claim 5 bonus Australian immigration points with 50+ recorded exam dialogues, vocabulary banks, and mock tests.",
+  "provider": {
+    "@type": "Person",
+    "name": "Moazzam Shoukat",
+    "url": "https://moazzamshoukat.com/"
+  },
+  "educationalCredentialAwarded": "NAATI CCL Urdu Credentialed Pass (63+/90)",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": ["Online", "Blended"],
+    "courseWorkload": "PT16H"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="NAATI CCL Urdu Preparation | Claim +5 Australia PR Points | Moazzam Shoukat"
+  description="Pass NAATI CCL Urdu on your first attempt and secure +5 Australia PR points with Moazzam Shoukat. 50+ real dialogues, specialized shorthand notes, glossary & mock tests."
+  keywords="NAATI CCL Urdu Preparation, NAATI CCL Urdu Online Classes, NAATI Urdu Test Preparation Pakistan, NAATI CCL Practice and Mock Tests, NAATI CCL Urdu Lahore, Claim 5 Australia PR Points"
+  schema={[breadcrumbSchema, courseSchema, faqSchema]}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">NAATI CCL Urdu Preparation</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
+          <span>🇦🇺 Official +5 Points on SkillSelect &bull; 96% First-Attempt Pass Rate</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">NAATI CCL Urdu Preparation</span>: Claim Your +5 Australia PR Points
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+          The fastest and most reliable way to boost your Australian Skilled Migration score for Subclass 189, 190, and 491. Master bilateral English-Urdu interpreting with authentic community dialogues, proprietary shorthand symbols, and timed mock tests.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={siteData.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
+          >
+            <span>Book Free Diagnostic Dialogue</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="/australia-skilled-migration/"
+            class="px-7 py-4 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all"
+          >
+            Australia Points Strategy &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 shadow-xl mb-20">
+        <div class="text-center p-3">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">+5 Points</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Direct SkillSelect Addition</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">63 / 90</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Passing Mark Requirement</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">50+</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Practice Dialogues Included</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">3 Weeks</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Average Intensive Timeline</div>
+        </div>
+      </div>
+
+      <!-- Pillars Grid -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Proven Preparation Architecture for NAATI CCL Urdu
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Engineered specifically to solve the real obstacles candidates face: rapid long segments, specialized legal/medical terms, and memory freeze under proctored exam conditions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pillars.map((p) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 hover:border-amber-500/50 transition-all shadow-sm">
+              <div class="text-3xl mb-4">{p.icon}</div>
+              <h3 class="text-base font-black text-slate-900 dark:text-white mb-2">{p.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Scoring & Penalties Table -->
+      <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div class="max-w-3xl mb-6">
+          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">Marking Transparency</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
+            Official NAATI Examiner Deduction Framework
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+            In NAATI CCL, you start with full marks (45 per dialogue) and examiners deduct points for errors. Understanding these deduction brackets is how our students consistently stay above the 29-mark per dialogue safety threshold.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">
+                <th class="py-3 px-4 font-bold">Error Category</th>
+                <th class="py-3 px-4 font-bold text-red-600 dark:text-red-400">Deduction Severity</th>
+                <th class="py-3 px-4 font-bold text-slate-900 dark:text-white">Explanation & How We Prevent It</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
+              {scoringRules.map((row) => (
+                <tr>
+                  <td class="py-3 px-4 font-black text-slate-900 dark:text-white">{row.penalty}</td>
+                  <td class="py-3 px-4 font-bold text-red-600 dark:text-red-400">{row.severity}</td>
+                  <td class="py-3 px-4">{row.desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Frequently Asked Questions: NAATI CCL Urdu
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Everything you need to know about booking, exam day equipment, and point validity.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+          {faqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Related Navigation Links -->
+      <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Complete Your Australia PR Points Strategy</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          Combine +5 NAATI CCL points with +20 PTE Superior English points to maximize your invitation chances for Subclass 189, 190, and 491.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE 79+ (+20 Points)</a>
+          <a href="/australia-skilled-migration/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australia Skilled Migration (189/190/491)</a>
+          <a href="/skill-assessment-guidance/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Skills Assessment (ACS / EA)</a>
+          <a href="/australian-immigration-consultant/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Immigration Guidance Lahore</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

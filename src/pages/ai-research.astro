@@ -1,0 +1,301 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "What are Moazzam Shoukat's primary areas of AI research?",
+    a: "Moazzam Shoukat specializes in Speech Processing, Large Audio Foundation Models, Affective Computing (Emotion Recognition), and Acoustic Healthcare IoT. His academic work focuses on transformer architectures for audio signals, low-latency streaming models, and multimodal audio-language representations."
+  },
+  {
+    q: "Where are Moazzam's research papers published?",
+    a: "His research has been published in premier peer-reviewed venues, including Elsevier's flagship journal *Computer Science Review* and the *IEEE Open Journal of the Computer Society*, as well as high-impact arXiv surveys on Large Audio Models and transformer speech processing."
+  },
+  {
+    q: "What is the focus of the Computer Science Review paper on Speech Transformers?",
+    a: "The paper provides an exhaustive state-of-the-art taxonomy of self-attention and transformer architectures applied to acoustic modeling, Automatic Speech Recognition (ASR), speaker identification, and text-to-speech (TTS), addressing critical computational bottlenecks and low-latency edge deployment challenges."
+  },
+  {
+    q: "How does his AI research inform his commercial software and coaching work?",
+    a: "His deep understanding of acoustic feature representations (MFCCs, spectrograms, neural speech encoders) directly powers his PTE and IELTS speech training methodology. In software engineering, it enables him to architect production-grade voice agents, Whisper transcription pipelines, and intelligent multi-agent systems."
+  },
+  {
+    q: "Is Moazzam available for university research collaborations and industry advisory?",
+    a: "Yes. Moazzam actively collaborates with university research labs, PhD candidates, and technology startups on peer-reviewed papers, dataset curation, open-source AI tooling, and enterprise AI roadmaps."
+  }
+];
+
+const researchPillars = [
+  {
+    icon: "🎙️",
+    title: "Speech Processing & Transformers",
+    desc: "Architectural optimization for Automatic Speech Recognition (ASR), acoustic foundation encoders, and low-latency transformer inference."
+  },
+  {
+    icon: "🧠",
+    title: "Large Audio Models (LAMs)",
+    desc: "Investigating zero-shot acoustic reasoning, multimodal audio-text representation learning, and generative audio foundation systems."
+  },
+  {
+    icon: "❤️",
+    title: "Affective Computing & Emotion AI",
+    desc: "Real-time acoustic emotion recognition, prosodic sentiment extraction, and expressive voice synthesis for metaverse applications."
+  },
+  {
+    icon: "🏥",
+    title: "Acoustic IoT & Digital Healthcare",
+    desc: "Non-invasive diagnostic algorithms analyzing respiratory acoustics, cough biomarkers, and privacy-preserving wearable audio telemetry."
+  },
+  {
+    icon: "🐍",
+    title: "Python AI & Model Engineering",
+    desc: "End-to-end implementation with PyTorch, Hugging Face Transformers, Whisper, LangChain, and distributed GPU acceleration."
+  },
+  {
+    icon: "📊",
+    title: "High-Throughput Data Infrastructure",
+    desc: "Architecting large-scale audio corpus extraction pipelines, multi-terabyte dataset curation, and scalable PostgreSQL/vector stores."
+  }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://moazzamshoukat.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://moazzamshoukat.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Research & Publications",
+      "item": "https://moazzamshoukat.com/ai-research/"
+    }
+  ]
+};
+
+const researchSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "Moazzam Shoukat - AI Researcher & Speech Processing Scientist",
+  "description": "Academic research profile and publications of Moazzam Shoukat: 7 peer-reviewed papers in speech transformers, large audio models, and healthcare acoustics.",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Moazzam Shoukat",
+    "jobTitle": "AI Researcher & Senior Software Engineer",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=uU550yYAAAAJ",
+      "https://www.linkedin.com/in/moazzamshoukat/",
+      "https://github.com/moazzamshoukat"
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="AI Researcher | Speech Processing & Large Audio Models | Moazzam Shoukat"
+  description="Explore the AI research of Moazzam Shoukat: 7 published papers in Computer Science Review & IEEE on speech transformers, large audio foundation models & audio IoT."
+  keywords="AI Researcher, Speech Processing and Language AI Research, Large Audio Models, Python Developer, Data Engineer, AI and Machine Learning Solutions, Computer Science Review Moazzam Shoukat"
+  schema={[breadcrumbSchema, researchSchema, faqSchema]}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/research/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Research</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">AI Research & Speech Processing</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
+          <span>🔬 7 Peer-Reviewed Publications &bull; Elsevier & IEEE Journals</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">AI Researcher</span> & Speech Processing Specialist
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+          Bridging advanced academic scholarship and scalable production software. Published researcher in transformer architectures for speech recognition, foundation audio models, and non-invasive acoustic diagnostics.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={siteData.socials.scholar}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
+          >
+            <span>View Google Scholar Profile</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="/data-engineering/"
+            class="px-7 py-4 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all"
+          >
+            Data Engineering Solutions &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 shadow-xl mb-20">
+        <div class="text-center p-3">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">07</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Published Research Papers</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">Elsevier & IEEE</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Leading Academic Venues</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">Speech AI</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Core Research Domain</div>
+        </div>
+        <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">ITU Lahore</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">BS Computer Science</div>
+        </div>
+      </div>
+
+      <!-- Research Domains -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Key AI Research & Engineering Pillars
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            A dual capability combining theoretical mathematical rigor with enterprise Python and cloud deployment.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {researchPillars.map((p) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 hover:border-amber-500/50 transition-all shadow-sm">
+              <div class="text-3xl mb-4">{p.icon}</div>
+              <h3 class="text-base font-black text-slate-900 dark:text-white mb-2">{p.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Publications List -->
+      <section class="mb-20">
+        <div class="max-w-3xl mb-10">
+          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">Academic Record</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1">
+            Featured Research Papers & Surveys
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          {siteData.publications.map((paper) => (
+            <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 transition-all shadow-sm">
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <span class="px-3 py-1 rounded-full text-[11px] font-black bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
+                  {paper.citationBadge}
+                </span>
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400">{paper.venue} &bull; {paper.year}</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white mb-3">
+                {paper.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                {paper.description}
+              </p>
+              <div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div class="flex flex-wrap gap-1.5">
+                  {paper.tags.map((tag) => (
+                    <span class="px-2.5 py-0.5 rounded-md text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={paper.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Read Publication on arXiv / IEEE</span>
+                  <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Frequently Asked Questions: AI Research & Advisory
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Insights into academic collaborations, technical advisory, and research methodology.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+          {faqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Related Navigation Links -->
+      <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Explore Technical & Advisory Services</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          From production data pipelines to acoustic algorithm coaching for PTE candidates.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+          <a href="/data-engineering/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Data Engineering & ETL</a>
+          <a href="/ai-development/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">AI & Machine Learning</a>
+          <a href="/ai-agentic-development/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">AI Agentic Workflows</a>
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Speech AI for PTE Coaching</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

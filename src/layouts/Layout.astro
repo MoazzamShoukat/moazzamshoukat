@@ -10,18 +10,27 @@ interface Props {
   description?: string;
   keywords?: string;
   ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
   schema?: Record<string, any> | Array<Record<string, any>>;
 }
 
 const {
   title = `${siteData.name} | AI Researcher & Immigration Strategist`,
   description = siteData.tagline,
-  keywords = "IELTS Trainer in Lahore, Best PTE Coaching Pakistan, NAATI CCL Urdu Trainer, Canada Immigration Consultant, Australia Immigration Expert, Student Visa Consultant Pakistan, Skills Assessment Australia, AI Researcher Speech Processing, Large Audio Models",
+  keywords = "PTE Trainer in Lahore, Best PTE Coaching Pakistan, IELTS Trainer in Lahore, NAATI CCL Urdu Preparation, Australia Immigration Consultant, Australia Skilled Migration, Skills Assessment Australia, AI Researcher Speech Processing, Python Developer, Data Engineer",
   ogImage = "/images/moazzam.png",
+  ogType = "website",
+  noindex = false,
   schema
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site || "https://moazzamshoukat.com").href;
+// Ensure normalized canonical URL with trailing slash for directory routes
+let pathname = Astro.url.pathname;
+if (!pathname.endsWith('/') && !pathname.includes('.')) {
+  pathname += '/';
+}
+const canonicalUrl = new URL(pathname, Astro.site || "https://moazzamshoukat.com").href;
 const absoluteOgImage = new URL(ogImage, Astro.site || "https://moazzamshoukat.com").href;
 
 const baseSchema = {
@@ -30,9 +39,10 @@ const baseSchema = {
     {
       "@type": "WebSite",
       "@id": "https://moazzamshoukat.com/#website",
-      "url": "https://moazzamshoukat.com",
+      "url": "https://moazzamshoukat.com/",
       "name": "Moazzam Shoukat",
-      "description": "AI Researcher, Senior Software Engineer, Canada/Australia Immigration Consultant, and IELTS/PTE Trainer in Lahore",
+      "description": "Technical Specialist, AI Researcher, Senior Software Engineer, Australia & Canada Migration Guidance, and Elite PTE & IELTS Trainer in Lahore",
+      "inLanguage": "en-US",
       "publisher": {
         "@id": "https://moazzamshoukat.com/#person"
       }
@@ -41,23 +51,75 @@ const baseSchema = {
       "@type": "Person",
       "@id": "https://moazzamshoukat.com/#person",
       "name": "Moazzam Shoukat",
-      "url": "https://moazzamshoukat.com",
-      "jobTitle": "AI Researcher & Immigration Consultant",
+      "url": "https://moazzamshoukat.com/",
+      "image": "https://moazzamshoukat.com/images/moazzam.png",
+      "jobTitle": "Senior Software Engineer, AI Researcher & Master English/Immigration Trainer",
       "telephone": "+92-328-048-4399",
       "email": "moazzamshoukat1@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Information Technology University (ITU) Lahore"
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Lahore",
         "addressRegion": "Punjab",
         "addressCountry": "PK"
       },
+      "knowsAbout": [
+        "PTE Academic Preparation",
+        "PTE Core Preparation",
+        "IELTS Academic & General Training",
+        "NAATI CCL Urdu",
+        "Australian Skilled Migration (Subclass 189, 190, 491)",
+        "Australian Skills Assessment (ACS, Engineers Australia, VETASSESS)",
+        "Speech Processing & Deep Learning",
+        "Large Audio Models",
+        "Data Engineering & ETL Pipelines",
+        "Python & Full-Stack Web Development"
+      ],
       "sameAs": [
         "https://www.linkedin.com/in/moazzamshoukat/",
         "https://scholar.google.com/citations?user=uU550yYAAAAJ",
         "https://www.upwork.com/freelancers/~013acf6cdef10719d7",
         "https://www.instagram.com/moazzamshoukat/",
-        "http://facebook.com/moazzamshoukat"
+        "http://facebook.com/moazzamshoukat",
+        "https://github.com/moazzamshoukat"
       ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://moazzamshoukat.com/#organization",
+      "name": "Moazzam Shoukat - Technical Advisory, Test Prep & Migration Guidance",
+      "url": "https://moazzamshoukat.com/",
+      "logo": "https://moazzamshoukat.com/favicon.svg",
+      "image": "https://moazzamshoukat.com/images/moazzam.png",
+      "telephone": "+92-328-048-4399",
+      "email": "moazzamshoukat1@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lahore",
+        "addressRegion": "Punjab",
+        "addressCountry": "PK"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lahore"
+        },
+        {
+          "@type": "Country",
+          "name": "Pakistan"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      ],
+      "founder": {
+        "@id": "https://moazzamshoukat.com/#person"
+      }
     }
   ]
 };
@@ -69,7 +131,25 @@ const baseSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google3f3b78b78c472c84" />
+
+    <!-- Robots Directives -->
+    <meta
+      name="robots"
+      content={noindex
+        ? "noindex, nofollow"
+        : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
+    />
+    <meta
+      name="googlebot"
+      content={noindex
+        ? "noindex, nofollow"
+        : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
+    />
 
     <!-- SEO Meta Tags -->
     <title>{title}</title>
@@ -79,14 +159,15 @@ const baseSchema = {
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph / Social Sharing (Absolute URLs) -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={absoluteOgImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Moazzam Shoukat - AI Researcher and Migration Strategist" />
+    <meta property="og:image:alt" content="Moazzam Shoukat - Technical Specialist, AI Researcher and Migration Strategist" />
     <meta property="og:site_name" content={siteData.name} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -102,7 +183,7 @@ const baseSchema = {
     <!-- Base Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
     
-    <!-- Page-Specific JSON-LD Schema (e.g. FAQPage, Article) -->
+    <!-- Page-Specific JSON-LD Schema (e.g. FAQPage, Article, Service, BreadcrumbList) -->
     {schema && (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     )}

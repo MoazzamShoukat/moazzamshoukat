@@ -1,0 +1,269 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "Why is a positive Skills Assessment the prerequisite for Australia Skilled Migration?",
+    a: "Before you can submit a valid Expression of Interest (EOI) on SkillSelect for Subclass 189, 190, or 491, Australian immigration law requires a formal, positive Skills Assessment from the assessing authority designated for your nominated occupation (such as ACS for IT or Engineers Australia for engineering). This assessment certifies that your educational qualifications and overseas work experience meet Australian professional standards."
+  },
+  {
+    q: "How does the Australian Computer Society (ACS) evaluate IT experience from Pakistan?",
+    a: "ACS evaluates both the ICT content of your degree (Major vs Minor vs Non-ICT) and the relevance of your employment. For graduates with an ICT Major closely related to their nominated ANZSCO code (e.g. BS Computer Science from ITU, NUST, FAST, or COMSATS), ACS typically deducts 2 years of work experience to deem you 'skilled'. Any experience after that deduction date can be claimed for immigration points."
+  },
+  {
+    q: "What makes an employment reference letter acceptable to ACS and VETASSESS?",
+    a: "A valid reference letter must be printed on official company letterhead, signed by an authorized supervisor or HR manager with full contact details, and list: exact employment dates (DD/MM/YYYY), hours worked per week (must be at least 20 hrs/week for skilled claims), official job title, country of employment, and critically, a detailed breakdown of 5 to 7 specific daily duties that align with at least 65% of the official ANZSCO core duties for your occupation."
+  },
+  {
+    q: "What is required for an Engineers Australia CDR (Competency Demonstration Report)?",
+    a: "If your engineering degree is not recognized under the Washington Accord (such as older non-accredited batches or specialized programs), you must submit a CDR. This requires: Continuing Professional Development (CPD) list, 3 detailed Career Episodes (each documenting an engineering project where you personal problem-solved using engineering principles), and an exhaustive Summary Statement cross-referencing Engineers Australia competency elements."
+  },
+  {
+    q: "What third-party financial evidence is required to prove paid employment?",
+    a: "Assessing authorities will reject claims supported solely by reference letters without independent financial evidence. You must provide at least two types of independent official documentation: bank account statements showing regular salary deposits, official income tax returns/FBR tax assessment orders, provident fund/EOBI statements, or employer-generated pay slips covering the entire duration."
+  },
+  {
+    q: "What if my company has closed down or refuses to issue a detailed reference letter?",
+    a: "If an employer has ceased operations or refuses to provide detailed duties due to strict HR policy, ACS and VETASSESS allow a formal Statutory Declaration or Affidavit signed by a former direct supervisor or colleague who worked alongside you during that period, accompanied by third-party proof of their employment at that company."
+  }
+];
+
+const authorities = [
+  {
+    authority: "Australian Computer Society (ACS)",
+    occupations: "Software Engineer (261313), Developer Programmer (261312), Systems Analyst (261112), ICT Security (262112), Data Scientist (224999)",
+    focus: "Closely reviews ICT curriculum match, core ANZSCO duties, statutory deductions, and third-party salary evidence.",
+    icon: "💻"
+  },
+  {
+    authority: "Engineers Australia (EA)",
+    occupations: "Civil (233211), Mechanical (233512), Electrical (233311), Telecommunications (263311), Biomedical (233913)",
+    focus: "Washington Accord qualification pathways or Competency Demonstration Reports (CDR) with 3 technical Career Episodes.",
+    icon: "⚙️"
+  },
+  {
+    authority: "VETASSESS",
+    occupations: "Marketing Specialist (225113), Management Consultant (224711), Financial Investment Manager (222312), University Lecturer (242111)",
+    focus: "Assesses over 360 general professional occupations; mandates highly structured organizational charts and position descriptions.",
+    icon: "📊"
+  },
+  {
+    authority: "Trades Recognition Australia (TRA)",
+    occupations: "Chefs, Automotive Technicians, Electricians, Carpenters, Welders",
+    focus: "Rigorous technical skills verification, formal apprenticeships, practical workplace demonstrations, and video evidence.",
+    icon: "🔧"
+  }
+];
+
+const rejectionPitfalls = [
+  { pitfall: "Generic HR Duties", risk: "Immediate ACS Rejection", fix: "Draft customized reference letters mapping at least 65% of specific ANZSCO technical duties." },
+  { pitfall: "Unverified Cash Salary", risk: "Non-Skilled Deeming", fix: "Compile bank statement credit entries, FBR tax returns, and employer pay stubs." },
+  { pitfall: "Plagiarized CDR Episodes", risk: "1-3 Year EA Ban", fix: "Author 100% original, project-specific narratives based on your personal engineering tasks." },
+  { pitfall: "Incomplete Organizational Chart", risk: "VETASSESS Negative Outcome", fix: "Include detailed hierarchy charts indicating your exact position, manager, and direct subordinates." }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://moazzamshoukat.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://moazzamshoukat.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Skill Assessment Guidance",
+      "item": "https://moazzamshoukat.com/skill-assessment-guidance/"
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Australian Skill Assessment Assistance & Documentation Review",
+  "description": "Expert guidance for Australian Skills Assessment applications: ACS IT assessments, Engineers Australia CDR reports, and VETASSESS professional dossiers by Moazzam Shoukat.",
+  "provider": {
+    "@type": "Person",
+    "name": "Moazzam Shoukat",
+    "url": "https://moazzamshoukat.com/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Australian Skill Assessment Assistance | ACS, Engineers Australia, VETASSESS | Moazzam Shoukat"
+  description="Secure a positive Australian Skills Assessment with expert documentation guidance from Moazzam Shoukat. ACS IT assessments, Engineers Australia CDRs & VETASSESS dossiers."
+  keywords="Australian Skill Assessment Assistance, Skill Assessment Guidance Pakistan, ACS Skills Assessment Pakistan, Engineers Australia CDR Preparation, VETASSESS Guidance Pakistan, Australian Visa Documentation Assistance"
+  schema={[breadcrumbSchema, serviceSchema, faqSchema]}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">Skill Assessment Guidance</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
+          <span>📑 Foundation of Australian PR &bull; ACS &bull; EA &bull; VETASSESS &bull; TRA</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
+          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Australian Skill Assessment</span> Guidance & Pre-Vetting
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+          A positive skills assessment is the non-negotiable gateway to Australian skilled migration. We provide meticulous pre-vetting for employment reference letters, CDR Career Episodes, and financial evidence to eliminate years deducted and ensure a flawless first-attempt outcome.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={siteData.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
+          >
+            <span>Review My Assessment Documents</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="/australia-skilled-migration/"
+            class="px-7 py-4 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all"
+          >
+            Skilled Migration Points Guide &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Authorities Grid -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Key Australian Assessing Authorities Covered
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Each authority enforces distinct criteria, documentation standards, and verification procedures.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {authorities.map((a) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 hover:border-amber-500/50 transition-all shadow-sm">
+              <div class="text-3xl mb-3">{a.icon}</div>
+              <h3 class="text-base font-black text-slate-900 dark:text-white mb-1">{a.authority}</h3>
+              <div class="text-xs font-semibold text-amber-700 dark:text-amber-400 mb-2">{a.occupations}</div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{a.focus}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Rejection Pitfalls Table -->
+      <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div class="max-w-3xl mb-6">
+          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">Risk Mitigation</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
+            Top Skills Assessment Rejection Pitfalls and How We Solve Them
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Most rejections stem from procedural oversights rather than a lack of true qualifications. We audit every file before submission:
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">
+                <th class="py-3 px-4 font-bold">Documentation Trap</th>
+                <th class="py-3 px-4 font-bold text-red-600 dark:text-red-400">Assessing Risk</th>
+                <th class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Our Pre-Vetting Solution</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
+              {rejectionPitfalls.map((row) => (
+                <tr>
+                  <td class="py-3 px-4 font-black text-slate-900 dark:text-white">{row.pitfall}</td>
+                  <td class="py-3 px-4 text-red-600 dark:text-red-400 font-semibold">{row.risk}</td>
+                  <td class="py-3 px-4 text-slate-600 dark:text-slate-300">{row.fix}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Frequently Asked Questions: Skills Assessment
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Answers on experience deduction policies, processing times, and document translations.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+          {faqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Related Navigation Links -->
+      <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Next Steps in Your PR Journey</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          Once your skills assessment is in motion, lock in your language points to prepare for your EOI submission.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+          <a href="/australia-skilled-migration/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australia Skilled Migration (189/190/491)</a>
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE 79+ (+20 English Points)</a>
+          <a href="/naati-ccl-urdu-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">NAATI CCL Urdu (+5 Points)</a>
+          <a href="/australian-immigration-consultant/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Lahore Immigration Consultation</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

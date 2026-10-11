@@ -1,0 +1,340 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const faqs = [
+  {
+    q: "How are the online PTE classes conducted?",
+    a: "Classes are delivered live 1-on-1 via high-definition video conferencing (Zoom or Google Meet) with real-time screen sharing and audio waveform analysis. You practice speaking tasks directly using your headset, and Moazzam Shoukat analyzes your acoustic pitch, oral fluency, and pauses in real-time."
+  },
+  {
+    q: "Can I take online PTE classes if I am already located in Australia or UAE?",
+    a: "Yes! A significant portion of our students are professionals residing in Sydney, Melbourne, Brisbane, Dubai, and Riyadh who need to jump from 65 to 79+ or 90 to secure critical PR points before their visas expire. Sessions are scheduled flexibly across Australian Eastern Standard Time (AEST) and Gulf Standard Time (GST)."
+  },
+  {
+    q: "What is included in the 1-on-1 PTE coaching package?",
+    a: "The package includes complete coverage of all 20 PTE task types, personalized speaking templates, automated writing skeletons, high-yield Write From Dictation banks, 3 full-length AI-scored mock tests with diagnostic feedback, and daily WhatsApp audio check-ins."
+  },
+  {
+    q: "How does online coaching help me reach 79+ (Band 8 equivalent) in 30 days?",
+    a: "We eliminate wasted effort on low-scoring tasks. By focusing heavily on the four high-yield questions—Repeat Sentence, Write From Dictation, Read Aloud, and Reading & Writing Fill in the Blanks—we target over 55% of the total score within the first two weeks."
+  },
+  {
+    q: "Are the mock test platforms identical to the official Pearson exam?",
+    a: "Yes. Candidates practice on authentic AI-based simulation portals that reproduce Pearson's scoring rubrics for Oral Fluency, Pronunciation, Grammar, Spelling, and Written Discourse."
+  },
+  {
+    q: "Do you offer weekend and evening slots for working professionals?",
+    a: "Yes. Flexible early morning and evening time slots are reserved specifically for working engineers, doctors, IT experts, and finance professionals who balance full-time careers with preparation."
+  }
+];
+
+const features = [
+  {
+    icon: "💻",
+    title: "1-on-1 Interactive Screen & Audio Lab",
+    desc: "Live interactive drills with instant acoustic correction. No pre-recorded videos; every session is tailored to your real-time diagnostic performance."
+  },
+  {
+    icon: "📈",
+    title: "PTE 79+ & 90 Score Roadmaps",
+    desc: "Specialized scoring strategies to cross the 79+ benchmark in all four modules, guaranteeing +20 points for Australian General Skilled Migration."
+  },
+  {
+    icon: "🎧",
+    title: "Hardware & Acoustic Voice Tuning",
+    desc: "We analyze your microphone setup, ambient room acoustics, and vocal delivery volume to match Pearson's acoustic speech recognition standards."
+  },
+  {
+    icon: "📊",
+    title: "Full-Length AI Mock Portals",
+    desc: "Practice with full timed mock exams powered by automated scoring engines that highlight exact score leakages in each enabling skill."
+  },
+  {
+    icon: "📚",
+    title: "Active Monthly Prediction Banks",
+    desc: "Direct access to curated lists of high-frequency Repeat Sentences, Write From Dictation items, and Reading collocations updated monthly."
+  },
+  {
+    icon: "🌍",
+    title: "Global Time Zone Availability",
+    desc: "Convenient batch and 1-on-1 slots accommodating Pakistan (PKT), Australia (AEST/AWST), UAE (GST), and UK time zones."
+  }
+];
+
+const fourSkills = [
+  {
+    module: "Speaking",
+    weight: "Critical for Oral Fluency",
+    focus: "Read Aloud phrasing, Repeat Sentence acoustic retention, Describe Image & Retell Lecture template fluency without hesitation.",
+    target: "Target: 79 - 90"
+  },
+  {
+    module: "Writing",
+    weight: "Syntactic Precision",
+    focus: "Summarize Written Text complex compound sentences, Write Essay 1-template architecture achieving 90/90 Written Discourse.",
+    target: "Target: 79 - 90"
+  },
+  {
+    module: "Reading",
+    weight: "Collocations & Logic",
+    focus: "Reading & Writing FIB collocation banks, Re-order Paragraphs transitional linking words, and speed scanning tactics.",
+    target: "Target: 79 - 90"
+  },
+  {
+    module: "Listening",
+    weight: "Dictation & Accuracy",
+    focus: "Write From Dictation pluralization accuracy, Summarize Spoken Text keyword extraction, and Highlight Incorrect Words reflexes.",
+    target: "Target: 79 - 90"
+  }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://moazzamshoukat.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://moazzamshoukat.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Online PTE Classes",
+      "item": "https://moazzamshoukat.com/online-pte-classes/"
+    }
+  ]
+};
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Online PTE Classes & One-to-One PTE Training",
+  "description": "Premium online 1-on-1 PTE coaching for candidates in Pakistan, Australia, and worldwide by Moazzam Shoukat. AI scoring calibration and 79+ Superior English roadmaps.",
+  "provider": {
+    "@type": "Person",
+    "name": "Moazzam Shoukat",
+    "url": "https://moazzamshoukat.com/"
+  },
+  "educationalCredentialAwarded": "PTE 79+ / PTE 90 Score Competency",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "Online",
+    "courseWorkload": "PT20H"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Online PTE Classes in Pakistan & Australia | PTE 79+ Coaching | Moazzam Shoukat"
+  description="Enroll in high-impact online PTE classes with Moazzam Shoukat. 1-on-1 live coaching for candidates in Pakistan, Australia & UAE. AI speech diagnostics, PTE 79+ strategies & mock tests."
+  keywords="Online PTE Classes in Pakistan, Online PTE Trainer, One to One PTE Classes, PTE 79+ Preparation, PTE 90 Score Preparation, Online PTE Coaching Australia, PTE Mock Tests and Feedback"
+  schema={[breadcrumbSchema, courseSchema, faqSchema]}
+>
+  <div class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <li>
+            <a href="/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Home</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li>
+            <a href="/services/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
+          </li>
+          <li class="text-slate-400">/</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">Online PTE Classes</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
+          <span>🌐 100% Online Live 1-on-1 &bull; Pakistan, Australia & Worldwide</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
+          Master <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Online PTE Classes</span>: Guaranteed 79+ & 90 Roadmap
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+          Personalized, live one-to-one PTE coaching designed for ambitious candidates targeting Superior English (Band 8 equivalent) for Australia Skilled Migration and Canadian Express Entry. Learn from anywhere with speech AI diagnostics, foolproof templates, and full mock simulations.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={siteData.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
+          >
+            <span>Book 1-on-1 Online Assessment</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="/pte-trainer-lahore/"
+            class="px-7 py-4 rounded-full text-xs sm:text-sm font-bold bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all"
+          >
+            Lahore Physical Classes &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Highlights Grid -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Why Professionals Choose Our Online PTE Training
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Engineered around active practice, computational voice scoring, and real-time error isolation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((f) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 hover:border-amber-500/50 transition-all shadow-sm">
+              <div class="text-3xl mb-4">{f.icon}</div>
+              <h3 class="text-base font-black text-slate-900 dark:text-white mb-2">{f.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 4 Modules Breakdown -->
+      <section class="mb-20">
+        <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl">
+          <div class="max-w-3xl mb-8">
+            <span class="text-amber-400 text-xs font-black uppercase tracking-widest">Comprehensive Skill Coverage</span>
+            <h2 class="text-2xl sm:text-3xl font-black mt-2">
+              All 4 Communicative Skills Mastered in 30 Days
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 mt-2">
+              Every section is balanced to ensure you clear the 79+ cutoff across all four components simultaneously.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {fourSkills.map((s) => (
+              <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/40 transition-all">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-lg font-black text-white">{s.module}</h3>
+                  <span class="text-xs font-black text-amber-400 px-2.5 py-1 rounded-full bg-amber-400/10 border border-amber-400/20">{s.target}</span>
+                </div>
+                <div class="text-xs text-amber-300/80 font-semibold mb-2">{s.weight}</div>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">{s.focus}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison: Academy vs 1-on-1 -->
+      <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-6 text-center">
+          Traditional Academy Batches vs. Moazzam Shoukat 1-on-1 Coaching
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">
+                <th class="py-3 px-4 font-bold">Feature</th>
+                <th class="py-3 px-4 font-bold">Crowded Online Academy Batches</th>
+                <th class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Moazzam Shoukat 1-on-1 Mentorship</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
+              <tr>
+                <td class="py-3 px-4 font-bold">Student Attention</td>
+                <td class="py-3 px-4 text-slate-500">30 to 50 students in 1 Zoom link</td>
+                <td class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">100% Dedicated 1-on-1 Attention</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold">Speaking Speech Analysis</td>
+                <td class="py-3 px-4 text-slate-500">Rarely given individual speaking turns</td>
+                <td class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Live speech waveform & acoustic pitch check</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold">Writing Feedback</td>
+                <td class="py-3 px-4 text-slate-500">Automated or generic peer reviews</td>
+                <td class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Line-by-line syntax & discourse inspection</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold">Scheduling</td>
+                <td class="py-3 px-4 text-slate-500">Rigid fixed academy times</td>
+                <td class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Flexible slots tailored to your timezone</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold">Score Guarantee Focus</td>
+                <td class="py-3 px-4 text-slate-500">Targeting generic 58 or 65 score</td>
+                <td class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Dedicated 79+ (Band 8) and 90 roadmap</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
+            Frequently Asked Questions: Online PTE Classes
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Everything you need to know about joining online from Pakistan, Australia, or abroad.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+          {faqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Related Navigation Links -->
+      <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Explore Related Prep & Advisory</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          Pair your online PTE training with our NAATI CCL Urdu coaching and Australian PR documentation roadmap.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE Trainer in Lahore</a>
+          <a href="/pte-core-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE Core for Canada PR</a>
+          <a href="/naati-ccl-urdu-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">NAATI CCL Urdu Online (+5 Points)</a>
+          <a href="/australia-skilled-migration/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australia Skilled Migration (189/190/491)</a>
+          <a href="/contact/" class="px-4 py-2 rounded-xl bg-amber-400 text-slate-950 hover:bg-amber-300 transition-colors">Book Free Online Assessment</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>
