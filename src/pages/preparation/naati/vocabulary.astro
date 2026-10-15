@@ -3,17 +3,21 @@ import Layout from '../../../layouts/Layout.astro';
 ---
 
 <Layout
-  title="NAATI CCL Urdu Vocabulary Bank | Moazzam Shoukat"
-  description="Search 669+ high-frequency NAATI CCL Urdu terms in English or Urdu with authentic translations, domains, and bilingual dialogue example sentences."
+  title="NAATI CCL Urdu Dictionary (7,796 Terms) | Moazzam Shoukat"
+  description="Search 7,796+ NAATI CCL Urdu vocabulary terms in English or Urdu with verified meanings, community domains, and bilingual dialogue sentences."
 >
-  <!-- Explicit Google Font for Noto Nastaliq Urdu -->
+  <!-- Google Font: Noto Nastaliq Urdu -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet" />
 
   <style>
-    .urdu-text {
-      font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', Tahoma, serif;
+    .noto-nastaliq-urdu {
+      font-family: "Noto Nastaliq Urdu", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      direction: rtl;
     }
   </style>
 
@@ -27,22 +31,22 @@ import Layout from '../../../layouts/Layout.astro';
       <span>/</span>
       <span class="text-slate-400">NAATI CCL</span>
       <span>/</span>
-      <span class="text-amber-600 dark:text-amber-400 font-bold">Urdu Vocabulary</span>
+      <span class="text-amber-600 dark:text-amber-400 font-bold">Urdu Dictionary</span>
     </nav>
 
     <!-- Header Section -->
     <div class="text-center max-w-3xl mx-auto mb-10">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black tracking-wider uppercase bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 mb-4">
         <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        Bilingual Database &bull; 669 Verified Terms
+        Complete Bilingual Dictionary &bull; 7,796 Items
       </div>
       
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
-        NAATI CCL Urdu <span class="text-amber-600 dark:text-amber-400">Vocabulary Bank</span>
+        NAATI CCL Urdu <span class="text-amber-600 dark:text-amber-400">Vocabulary Dictionary</span>
       </h1>
       
       <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-        Search 669+ high-frequency NAATI terms in <strong class="text-slate-900 dark:text-white font-extrabold">English or Urdu</strong> (<span dir="rtl" class="urdu-text font-bold text-amber-700 dark:text-amber-300">اردو یا انگریزی میں تلاش کریں</span>) with domain categories, verified Urdu translations, and real bilingual dialogue context sentences.
+        Search all 7,796+ official NAATI words in <strong class="text-slate-900 dark:text-white font-extrabold">English or Urdu</strong> (<span dir="rtl" class="noto-nastaliq-urdu font-bold text-amber-700 dark:text-amber-300">اردو یا انگریزی میں تلاش کریں</span>) with parts of speech, community domains, and 46,700+ bilingual dialogue scenario sentences.
       </p>
 
       <!-- Rate Limit & Fair Usage Pill -->
@@ -72,7 +76,7 @@ import Layout from '../../../layouts/Layout.astro';
             type="text"
             id="search-input"
             autocomplete="off"
-            placeholder="Search in English or Urdu (e.g. Abdomen, پیٹ, Affidavit, حلف نامہ)..."
+            placeholder="Search in English or Urdu (e.g. camel, اونٹ, calamity, آفت)..."
             class="w-full py-2.5 sm:py-3 bg-transparent text-slate-900 dark:text-white placeholder-slate-400 text-sm sm:text-base font-medium focus:outline-none"
           />
 
@@ -109,7 +113,7 @@ import Layout from '../../../layouts/Layout.astro';
       <div class="mt-4 space-y-2">
         <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-slate-500 dark:text-slate-400 justify-center">
           <span class="font-semibold text-slate-700 dark:text-slate-300 mr-1">English:</span>
-          {['Abdomen', 'Affidavit', 'Compensation', 'Guardian'].map((word) => (
+          {['camel', 'calamity', 'beginning', 'embrace', 'compensation'].map((word) => (
             <button
               type="button"
               class="sample-chip px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-amber-500/10 hover:text-amber-700 dark:bg-slate-800/80 dark:hover:bg-amber-400/10 dark:hover:text-amber-300 text-slate-600 dark:text-slate-300 transition-colors border border-slate-200/60 dark:border-slate-700/60 cursor-pointer font-medium"
@@ -121,10 +125,10 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
         <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-slate-500 dark:text-slate-400 justify-center" dir="rtl">
           <span class="font-semibold text-slate-700 dark:text-slate-300 ml-1">اردو الفاظ:</span>
-          {['پیٹ', 'حلف نامہ', 'ہرجانہ', 'سرپرست'].map((word) => (
+          {['اُونْٹ', 'آفت', 'آغاز', 'آغوش', 'معاوضہ'].map((word) => (
             <button
               type="button"
-              class="sample-chip urdu-text px-3 py-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-300 transition-colors border border-amber-500/20 cursor-pointer font-bold text-xs"
+              class="sample-chip noto-nastaliq-urdu px-3 py-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-300 transition-colors border border-amber-500/20 cursor-pointer font-bold text-xs"
               data-word={word}
             >
               {word}
@@ -153,21 +157,29 @@ import Layout from '../../../layouts/Layout.astro';
       </div>
     </div>
 
-    <!-- Fuzzy Match Notice with Bright Red Alert (Hidden by default) -->
-    <div id="fuzzy-notice" class="hidden max-w-3xl mx-auto mb-6 p-4 rounded-2xl bg-red-500/10 border-2 border-red-500/60 shadow-lg shadow-red-500/5">
-      <div class="flex items-center gap-3 text-xs sm:text-sm">
-        <div class="w-7 h-7 rounded-lg bg-red-500/20 text-red-600 dark:text-red-400 flex items-center justify-center shrink-0">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <!-- NOT FOUND State in Bright Red with 3 Clickable Closest Words -->
+    <div id="not-found-card" class="hidden max-w-3xl mx-auto mb-8 p-6 sm:p-8 rounded-3xl bg-red-500/10 border-2 border-red-500/60 shadow-xl shadow-red-500/5">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-red-500/20 text-red-600 dark:text-red-400 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
         </div>
-        <div id="fuzzy-text" class="font-semibold text-slate-800 dark:text-slate-200">
-          <span class="text-red-600 dark:text-red-400 font-black uppercase tracking-wide">Exact match not found.</span>
-          <span class="ml-1">Closest match: <strong id="fuzzy-word-name" class="text-amber-600 dark:text-amber-400 font-extrabold underline">Word</strong></span>
+        <div class="flex-grow">
+          <h2 class="text-2xl font-black text-red-600 dark:text-red-400 tracking-tight mb-1">
+            Not Found
+          </h2>
+          <p id="not-found-desc" class="text-xs sm:text-sm text-red-700 dark:text-red-300 font-medium mb-6">
+            Exact match not found for your query. Here are the 3 closest words calculated by minimum edit distance:
+          </p>
+
+          <!-- 3 Clickable Closest Words List -->
+          <div id="closest-suggestions-list" class="space-y-3">
+            <!-- Dynamically populated via JS -->
+          </div>
         </div>
       </div>
     </div>
-
     <!-- Result Container -->
     <div id="results-area" class="max-w-3xl mx-auto">
       
@@ -179,10 +191,10 @@ import Layout from '../../../layouts/Layout.astro';
           </svg>
         </div>
         <h3 class="font-extrabold text-base text-slate-800 dark:text-white mb-1">
-          Search in English or Urdu
+          Search the 7,796 NAATI Dictionary
         </h3>
         <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto">
-          Type an English term or an Urdu word above, or select a sample word to instantly access verified translations and bilingual dialogue contexts.
+          Type an English word or an Urdu term above to instantly access authentic translations, parts of speech, and bilingual dialogue contexts.
         </p>
       </div>
 
@@ -190,75 +202,62 @@ import Layout from '../../../layouts/Layout.astro';
       <div id="loading-state" class="hidden text-center py-16">
         <div class="w-12 h-12 mx-auto mb-4 border-4 border-amber-400/30 border-t-amber-500 rounded-full animate-spin"></div>
         <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold tracking-wider uppercase">
-          Searching bilingual terminology database...
+          Searching 7,796 vocabulary database...
         </p>
       </div>
 
-      <!-- Bright Red Not Found State -->
-      <div id="error-state" class="hidden text-center py-12 px-6 rounded-3xl bg-red-500/10 border-2 border-red-500/60 shadow-xl shadow-red-500/5">
-        <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-red-500/20 text-red-600 dark:text-red-400 flex items-center justify-center">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </div>
-        <h3 class="font-black text-lg sm:text-xl text-red-600 dark:text-red-400 mb-1" id="error-title">
-          Word not found
-        </h3>
-        <p class="text-xs sm:text-sm text-red-700 dark:text-red-300 font-semibold max-w-md mx-auto" id="error-desc">
-          No matching vocabulary found. Please check your spelling in English or Urdu and try again.
-        </p>
-      </div>
-      <!-- Result Card (hidden by default) -->
+      <!-- Word FOUND Result Card (hidden by default) -->
       <div id="result-card" class="hidden">
         <div class="rounded-3xl bg-white dark:bg-[#0C1324] border border-slate-200/90 dark:border-white/10 shadow-2xl shadow-slate-900/10 overflow-hidden">
           
           <!-- Term Header Banner -->
           <div class="p-6 sm:p-8 bg-gradient-to-r from-slate-900 via-[#0E172F] to-[#0A1128] text-white">
-            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-              <span id="card-domain" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-400/15 text-amber-300 border border-amber-400/25">
-                Healthcare & Medical
-              </span>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
               <div class="flex items-center gap-2">
-                <span id="card-match-badge" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/10 text-slate-300">
-                  Exact Match
+                <span id="card-domain" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-400/15 text-amber-300 border border-amber-400/25">
+                  Community & Daily Life
                 </span>
-                
-                <!-- Download JPG Button -->
-                <button
-                  type="button"
-                  id="download-jpg-btn"
-                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition-all shadow-md hover:shadow-amber-400/25 cursor-pointer"
-                  title="Download this card as a high-resolution JPG image"
-                >
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.5V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                  </svg>
-                  <span id="download-btn-label">Download JPG</span>
-                </button>
+                <span id="card-pos" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/10 text-slate-300">
+                  Noun
+                </span>
               </div>
+              
+              <!-- Download Image Button -->
+              <button
+                type="button"
+                id="download-image-btn"
+                class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition-all shadow-md hover:shadow-amber-400/25 cursor-pointer"
+                title="Download this word as a high-quality JPG image"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.5V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                <span id="download-btn-label">Download Image</span>
+              </button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <!-- English Meaning -->
               <div>
                 <div class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-1">
-                  English Term
+                  English Meaning
                 </div>
-                <h2 id="card-word" class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                  Abdomen
+                <h2 id="card-english" class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug">
+                  camel
                 </h2>
               </div>
 
-              <!-- Urdu Meaning Box (RTL) with Noto Nastaliq Urdu -->
+              <!-- Urdu Word Box (RTL) with Noto Nastaliq Urdu -->
               <div class="text-right p-4 rounded-2xl bg-white/5 border border-white/10">
                 <div class="text-[11px] text-amber-300 uppercase tracking-widest font-semibold mb-1">
-                  اردو ترجمہ (Urdu Meaning)
+                  اردو لفظ (Urdu Word)
                 </div>
                 <div
-                  id="card-meaning"
+                  id="card-urdu"
                   dir="rtl"
-                  class="urdu-text text-2xl sm:text-3xl font-bold text-amber-400 tracking-normal leading-relaxed"
+                  class="noto-nastaliq-urdu text-3xl sm:text-4xl font-bold text-amber-400 tracking-normal leading-relaxed"
                 >
-                  پیٹ / شکم
+                  اُونْٹ
                 </div>
               </div>
             </div>
@@ -272,7 +271,7 @@ import Layout from '../../../layouts/Layout.astro';
                 NAATI CCL Dialogue Examples
               </h3>
               <span class="text-[11px] text-slate-500 dark:text-slate-400">
-                3 Bilingual Context Scenarios
+                Real Australian Community Scenarios
               </span>
             </div>
 
@@ -339,45 +338,46 @@ import Layout from '../../../layouts/Layout.astro';
     
     const initialState = document.getElementById('initial-state');
     const loadingState = document.getElementById('loading-state');
-    const errorState = document.getElementById('error-state');
-    const errorTitle = document.getElementById('error-title');
-    const errorDesc = document.getElementById('error-desc');
-    
-    const fuzzyNotice = document.getElementById('fuzzy-notice');
-    const fuzzyWordName = document.getElementById('fuzzy-word-name');
+    const notFoundCard = document.getElementById('not-found-card');
+    const notFoundDesc = document.getElementById('not-found-desc');
+    const closestSuggestionsList = document.getElementById('closest-suggestions-list');
+
     const rateLimitBanner = document.getElementById('rate-limit-banner');
     const rateLimitMessage = document.getElementById('rate-limit-message');
     const rateLimitText = document.getElementById('rate-limit-text');
 
     const resultCard = document.getElementById('result-card');
     const cardDomain = document.getElementById('card-domain');
-    const cardMatchBadge = document.getElementById('card-match-badge');
-    const cardWord = document.getElementById('card-word');
-    const cardMeaning = document.getElementById('card-meaning');
+    const cardPos = document.getElementById('card-pos');
+    const cardEnglish = document.getElementById('card-english');
+    const cardUrdu = document.getElementById('card-urdu');
     const cardExamples = document.getElementById('card-examples');
-    const downloadJpgBtn = document.getElementById('download-jpg-btn');
+    const downloadImageBtn = document.getElementById('download-image-btn');
     const downloadBtnLabel = document.getElementById('download-btn-label');
 
     let currentItem = null;
     let fallbackDb = null;
 
-    // Urdu text normalizer
     function normalizeUrdu(text) {
       if (!text) return '';
       return text
         .trim()
-        .replace(/[\u064B-\u065F\u0670]/g, '') // strip diacritics
-        .replace(/\u200C/g, '') // ZWNJ
-        .replace(/\u0640/g, '') // tatweel
-        .replace(/[\u0622\u0623\u0625]/g, '\u0627') // Alef variations
-        .replace(/[\u064A\u0649\u0626]/g, '\u06CC') // Yeh variations
-        .replace(/\u0643/g, '\u06A9') // Kaf
-        .replace(/[\u0629\u0647]/g, '\u06C1') // Teh Marbuta / Heh
+        .replace(/[\u064B-\u065F\u0670]/g, '')
+        .replace(/\u200C/g, '')
+        .replace(/\u0640/g, '')
+        .replace(/[\u0622\u0623\u0625]/g, '\u0627')
+        .replace(/[\u064A\u0649\u0626]/g, '\u06CC')
+        .replace(/\u0643/g, '\u06A9')
+        .replace(/[\u0629\u0647]/g, '\u06C1')
         .replace(/\s+/g, ' ')
         .toLowerCase();
     }
 
-    // Levenshtein helper
+    function cleanEnglish(text) {
+      if (!text) return '';
+      return text.replace(/\s*\(Standard Urdu:[^)]*\)/i, '').trim();
+    }
+
     function levenshtein(a, b) {
       const an = a ? a.length : 0;
       const bn = b ? b.length : 0;
@@ -401,7 +401,6 @@ import Layout from '../../../layouts/Layout.astro';
       return matrix[bn][an];
     }
 
-    // Toggle clear button
     input.addEventListener('input', function() {
       if (this.value.trim().length > 0) {
         clearBtn.classList.remove('hidden');
@@ -416,7 +415,6 @@ import Layout from '../../../layouts/Layout.astro';
       input.focus();
     });
 
-    // Sample chip clicks
     document.querySelectorAll('.sample-chip').forEach(function(chip) {
       chip.addEventListener('click', function() {
         const word = this.getAttribute('data-word');
@@ -439,9 +437,8 @@ import Layout from '../../../layouts/Layout.astro';
         btnText.classList.add('hidden');
         btnSpinner.classList.remove('hidden');
         initialState.classList.add('hidden');
-        errorState.classList.add('hidden');
+        notFoundCard.classList.add('hidden');
         resultCard.classList.add('hidden');
-        fuzzyNotice.classList.add('hidden');
         loadingState.classList.remove('hidden');
       } else {
         searchBtn.disabled = false;
@@ -461,37 +458,79 @@ import Layout from '../../../layouts/Layout.astro';
       rateLimitText.classList.add('text-rose-500', 'font-bold');
     }
 
-    function showNotFoundError(term, customMsg) {
+    function renderNotFound(closestWords, query) {
       initialState.classList.add('hidden');
       loadingState.classList.add('hidden');
       resultCard.classList.add('hidden');
-      fuzzyNotice.classList.add('hidden');
-      
-      errorTitle.textContent = customMsg || 'Word not found';
-      errorDesc.textContent = 'No matching vocabulary found for "' + term + '". Please check the spelling in English or Urdu and try again.';
-      errorState.classList.remove('hidden');
-    }
 
-    function renderResult(item, isClosest, closestWord) {
-      currentItem = item;
-      initialState.classList.add('hidden');
-      errorState.classList.add('hidden');
-      loadingState.classList.add('hidden');
+      notFoundDesc.textContent = 'Exact match not found for "' + query + '". Here are the 3 closest words calculated by minimum edit distance:';
+      closestSuggestionsList.innerHTML = '';
 
-      if (isClosest) {
-        fuzzyNotice.classList.remove('hidden');
-        fuzzyWordName.textContent = closestWord || item.word;
-        cardMatchBadge.textContent = 'Closest Match';
-        cardMatchBadge.className = 'text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30';
-      } else {
-        fuzzyNotice.classList.add('hidden');
-        cardMatchBadge.textContent = 'Exact Match';
-        cardMatchBadge.className = 'text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/10 text-slate-300';
+      if (closestWords && Array.isArray(closestWords) && closestWords.length > 0) {
+        closestWords.forEach(function(cw) {
+          const card = document.createElement('div');
+          card.className = 'p-3.5 sm:p-4 rounded-2xl bg-white/90 dark:bg-[#0D152A] hover:bg-amber-500/10 dark:hover:bg-amber-400/10 border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all cursor-pointer shadow-sm group';
+          card.setAttribute('role', 'button');
+          card.setAttribute('tabindex', '0');
+
+          const topRow = document.createElement('div');
+          topRow.className = 'flex items-center justify-between gap-3 mb-1.5';
+
+          const urduEl = document.createElement('div');
+          urduEl.setAttribute('dir', 'rtl');
+          urduEl.className = 'noto-nastaliq-urdu text-xl sm:text-2xl font-bold text-amber-700 dark:text-amber-400 group-hover:text-amber-600';
+          urduEl.textContent = cw.urdu_word || '';
+
+          const domainPill = document.createElement('div');
+          domainPill.className = 'text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 shrink-0';
+          domainPill.textContent = cw.naati_domain || 'General Context';
+
+          topRow.appendChild(urduEl);
+          topRow.appendChild(domainPill);
+
+          const bottomRow = document.createElement('div');
+          bottomRow.className = 'flex items-center justify-between text-xs text-slate-700 dark:text-slate-300';
+
+          const enEl = document.createElement('div');
+          enEl.className = 'font-semibold line-clamp-1';
+          enEl.textContent = cw.english_meaning || '';
+
+          const actionEl = document.createElement('div');
+          actionEl.className = 'text-amber-700 dark:text-amber-400 font-bold text-[11px] shrink-0 group-hover:translate-x-0.5 transition-transform';
+          actionEl.textContent = 'View Details →';
+
+          bottomRow.appendChild(enEl);
+          bottomRow.appendChild(actionEl);
+
+          card.appendChild(topRow);
+          card.appendChild(bottomRow);
+
+          // Click on suggestion loads that word immediately
+          card.addEventListener('click', function() {
+            if (cw.id) {
+              doSearchById(cw.id);
+            } else {
+              doSearch(cw.urdu_word);
+            }
+          });
+
+          closestSuggestionsList.appendChild(card);
+        });
       }
 
-      cardDomain.textContent = item.domain || 'NAATI CCL Domain';
-      cardWord.textContent = item.word;
-      cardMeaning.textContent = item.meaning;
+      notFoundCard.classList.remove('hidden');
+    }
+
+    function renderFound(item) {
+      currentItem = item;
+      initialState.classList.add('hidden');
+      notFoundCard.classList.add('hidden');
+      loadingState.classList.add('hidden');
+
+      cardDomain.textContent = item.naati_domain || 'NAATI CCL Domain';
+      cardPos.textContent = (item.part_of_speech || 'Vocabulary').toUpperCase();
+      cardEnglish.textContent = cleanEnglish(item.english_meaning);
+      cardUrdu.textContent = item.urdu_word;
 
       cardExamples.innerHTML = '';
       if (item.examples && Array.isArray(item.examples)) {
@@ -499,20 +538,30 @@ import Layout from '../../../layouts/Layout.astro';
           const block = document.createElement('div');
           block.className = 'p-4 rounded-2xl bg-white dark:bg-[#0E1527] border border-slate-200/80 dark:border-white/5 space-y-2';
 
+          const topBar = document.createElement('div');
+          topBar.className = 'flex items-center justify-between';
+
           const title = document.createElement('div');
           title.className = 'text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400';
-          title.textContent = 'Example ' + (idx + 1) + ' (Dialogue Context)';
+          title.textContent = 'Example ' + (ex.example_number || (idx + 1));
+
+          const ctxBadge = document.createElement('div');
+          ctxBadge.className = 'text-[10px] text-slate-500 dark:text-slate-400 font-medium';
+          ctxBadge.textContent = ex.context || 'Community Scenario';
+
+          topBar.appendChild(title);
+          topBar.appendChild(ctxBadge);
 
           const enP = document.createElement('div');
           enP.className = 'text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-medium leading-relaxed';
-          enP.textContent = ex.en || '';
+          enP.textContent = ex.english || '';
 
           const urP = document.createElement('div');
           urP.setAttribute('dir', 'rtl');
-          urP.className = 'urdu-text text-sm sm:text-base text-slate-900 dark:text-amber-200/90 font-medium leading-relaxed pt-1.5 border-t border-slate-100 dark:border-white/5';
-          urP.textContent = ex.ur || '';
+          urP.className = 'noto-nastaliq-urdu text-sm sm:text-base text-slate-900 dark:text-amber-200/90 font-medium leading-relaxed pt-1.5 border-t border-slate-100 dark:border-white/5';
+          urP.textContent = ex.urdu || '';
 
-          block.appendChild(title);
+          block.appendChild(topBar);
           block.appendChild(enP);
           block.appendChild(urP);
           cardExamples.appendChild(block);
@@ -521,8 +570,6 @@ import Layout from '../../../layouts/Layout.astro';
 
       resultCard.classList.remove('hidden');
     }
-
-    // Local dev search fallback supporting English and Urdu
     async function executeDevFallback(term) {
       const key = 'naati_dev_searches_ts';
       const now = Date.now();
@@ -552,73 +599,94 @@ import Layout from '../../../layouts/Layout.astro';
 
       const isUrdu = /[\u0600-\u06FF]/.test(term);
       let exact = null;
-      let closest = null;
-      let minDistance = 9999;
+      const candidates = [];
 
       if (isUrdu) {
         const normQ = normalizeUrdu(term);
         for (let i = 0; i < fallbackDb.length; i++) {
           const item = fallbackDb[i];
-          const normMeaning = normalizeUrdu(item.meaning);
-          const tokens = normMeaning.split(/[\/\,\;\-،]/).map(t => t.trim());
+          const normWord = normalizeUrdu(item.urdu_word);
 
-          for (let k = 0; k < tokens.length; k++) {
-            if (tokens[k] === normQ) {
-              exact = item;
-              break;
-            }
+          if (normWord === normQ) {
+            exact = item;
+            break;
           }
-          if (exact) break;
-
-          if (normMeaning.includes(normQ)) {
+          if (normWord.includes(normQ) && !exact) {
             exact = item;
             break;
           }
 
-          for (let e = 0; e < item.examples.length; e++) {
-            if (normalizeUrdu(item.examples[e].ur).includes(normQ)) {
-              exact = item;
-              break;
-            }
-          }
-          if (exact) break;
-
-          for (let k = 0; k < tokens.length; k++) {
-            if (tokens[k]) {
-              const d = levenshtein(normQ, tokens[k]);
-              if (d < minDistance) {
-                minDistance = d;
-                closest = item;
-              }
-            }
-          }
+          const dist = levenshtein(normQ, normWord);
+          candidates.push({ item: item, dist: dist });
         }
       } else {
         const qLower = term.toLowerCase().trim();
         for (let i = 0; i < fallbackDb.length; i++) {
           const item = fallbackDb[i];
-          const wLower = item.word.toLowerCase();
-          if (wLower === qLower) {
+          const cleanEn = cleanEnglish(item.english_meaning).toLowerCase();
+          const tokens = cleanEn.split(/[\;\,\/]/).map(t => t.trim());
+
+          for (let k = 0; k < tokens.length; k++) {
+            if (tokens[k] === qLower) {
+              exact = item;
+              break;
+            }
+          }
+          if (exact) break;
+
+          if (cleanEn.includes(qLower) && !exact) {
             exact = item;
             break;
           }
-          let d = levenshtein(qLower, wLower);
-          if (wLower.includes(qLower) || qLower.includes(wLower)) {
-            d = Math.max(1, d - 2);
-          }
-          if (d < minDistance) {
-            minDistance = d;
-            closest = item;
-          }
+
+          const firstWord = cleanEn.split(' ')[0];
+          const dist = levenshtein(qLower, firstWord);
+          candidates.push({ item: item, dist: dist });
         }
       }
 
       if (exact) {
-        renderResult(exact, false);
-      } else if (closest && minDistance <= 4) {
-        renderResult(closest, true, closest.word);
+        renderFound(exact);
       } else {
-        showNotFoundError(term, 'Word not found');
+        candidates.sort((a, b) => a.dist - b.dist);
+        const top3 = candidates.slice(0, 3).map(c => ({
+          id: c.item.id,
+          urdu_word: c.item.urdu_word,
+          english_meaning: cleanEnglish(c.item.english_meaning),
+          naati_domain: c.item.naati_domain,
+          part_of_speech: c.item.part_of_speech
+        }));
+        renderNotFound(top3, term);
+      }
+    }
+
+    async function doSearchById(id) {
+      setLoading(true);
+      try {
+        const response = await fetch('/api/naati-vocab.php?id=' + encodeURIComponent(id));
+        if (response.ok) {
+          const result = await response.json();
+          setLoading(false);
+          if (result.success && result.data) {
+            renderFound(result.data);
+            input.value = result.data.urdu_word;
+            clearBtn.classList.remove('hidden');
+            return;
+          }
+        }
+      } catch (e) {}
+
+      // Fallback local lookup
+      if (fallbackDb) {
+        const item = fallbackDb.find(x => x.id === Number(id));
+        setLoading(false);
+        if (item) {
+          renderFound(item);
+          input.value = item.urdu_word;
+          clearBtn.classList.remove('hidden');
+        }
+      } else {
+        setLoading(false);
       }
     }
 
@@ -636,50 +704,51 @@ import Layout from '../../../layouts/Layout.astro';
         }
 
         const contentType = response.headers.get('content-type') || '';
-        if (response.ok && contentType.includes('application/json')) {
-          const result = await response.json();
-          setLoading(false);
+        if (response.ok || response.status === 200 || response.status === 404) {
+          if (contentType.includes('application/json')) {
+            const result = await response.json();
+            setLoading(false);
 
-          if (result.searchesRemaining !== undefined) {
-            rateLimitText.textContent = result.searchesRemaining + ' searches remaining today (20 max / 24h)';
-          }
+            if (result.searchesRemaining !== undefined) {
+              rateLimitText.textContent = result.searchesRemaining + ' searches remaining today (20 max / 24h)';
+            }
 
-          if (result.success && result.data) {
-            const isClosest = result.match === 'closest';
-            renderResult(result.data, isClosest, result.closestWord);
-          } else {
-            showNotFoundError(term, 'Word not found');
+            if (result.success && result.data) {
+              renderFound(result.data);
+            } else {
+              renderNotFound(result.closestWords || [], term);
+            }
+            return;
           }
-          return;
         }
 
-        console.warn('Production PHP endpoint unreachable in dev. Running dev fallback.');
         await executeDevFallback(term);
         setLoading(false);
 
       } catch (err) {
-        console.warn('PHP API request error, running dev fallback:', err);
+        console.warn('Network error, running dev fallback:', err);
         try {
           await executeDevFallback(term);
         } catch (fbErr) {
-          showNotFoundError(term, 'Word not found');
+          renderNotFound([], term);
         }
         setLoading(false);
       }
     }
+
     // -------------------------------------------------------------------------
-    // Canvas High-Resolution JPG Study Card Generator
+    // Download Image Feature (High-Quality JPG Canvas Generator)
     // -------------------------------------------------------------------------
-    downloadJpgBtn.addEventListener('click', async function() {
+    downloadImageBtn.addEventListener('click', async function() {
       if (!currentItem) return;
 
       downloadBtnLabel.textContent = 'Generating...';
-      downloadJpgBtn.disabled = true;
+      downloadImageBtn.disabled = true;
 
       try {
         await document.fonts.ready;
         try {
-          await document.fonts.load("bold 32px 'Noto Nastaliq Urdu'");
+          await document.fonts.load("bold 34px 'Noto Nastaliq Urdu'");
           await document.fonts.load("400 20px 'Noto Nastaliq Urdu'");
         } catch(e) {}
 
@@ -687,12 +756,12 @@ import Layout from '../../../layouts/Layout.astro';
         const ctx = canvas.getContext('2d');
 
         const width = 1200;
-        let estimatedHeight = 1380;
+        let estimatedHeight = 1420;
         
         canvas.width = width;
         canvas.height = estimatedHeight;
 
-        // 1. Background gradient (Navy to deep midnight)
+        // Background Gradient (Deep Navy to Midnight)
         const bgGrad = ctx.createLinearGradient(0, 0, 0, estimatedHeight);
         bgGrad.addColorStop(0, '#0A1128');
         bgGrad.addColorStop(0.5, '#0D1736');
@@ -700,35 +769,34 @@ import Layout from '../../../layouts/Layout.astro';
         ctx.fillStyle = bgGrad;
         ctx.fillRect(0, 0, width, estimatedHeight);
 
-        // 2. Outer decorative gold border
+        // Outer Decorative Gold Border
         ctx.strokeStyle = '#F59E0B';
         ctx.lineWidth = 3;
         ctx.strokeRect(30, 30, width - 60, estimatedHeight - 60);
 
-        // Thin inner border
         ctx.strokeStyle = 'rgba(245, 158, 11, 0.25)';
         ctx.lineWidth = 1;
         ctx.strokeRect(38, 38, width - 76, estimatedHeight - 76);
 
-        // 3. Subtle background watermark
+        // Subtle Watermark
         ctx.save();
         ctx.translate(width / 2, estimatedHeight / 2);
         ctx.rotate(-0.35);
         ctx.fillStyle = 'rgba(245, 158, 11, 0.035)';
-        ctx.font = '900 78px sans-serif';
+        ctx.font = '900 80px sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('MOAZZAM SHOUKAT', 0, -40);
         ctx.fillText('NAATI CCL URDU', 0, 60);
         ctx.restore();
 
-        // 4. Header Bar
+        // Header Bar
         ctx.fillStyle = '#F59E0B';
         ctx.font = 'bold 15px sans-serif';
         ctx.textAlign = 'left';
-        ctx.fillText('NAATI CCL URDU • VOCABULARY STUDY BANK', 60, 85);
+        ctx.fillText('NAATI CCL URDU • VOCABULARY DICTIONARY', 60, 85);
 
         // Domain Badge (Right)
-        const domainText = (currentItem.domain || 'NAATI CCL Context').toUpperCase();
+        const domainText = (currentItem.naati_domain || 'NAATI CCL Context').toUpperCase();
         ctx.font = 'bold 13px sans-serif';
         const dWidth = ctx.measureText(domainText).width + 30;
         const dX = width - 60 - dWidth;
@@ -745,55 +813,57 @@ import Layout from '../../../layouts/Layout.astro';
         ctx.textAlign = 'center';
         ctx.fillText(domainText, dX + (dWidth / 2), 86);
 
-        // Separator below header
+        // Header Separator
         ctx.strokeStyle = 'rgba(245, 158, 11, 0.2)';
         ctx.beginPath();
         ctx.moveTo(60, 115);
         ctx.lineTo(width - 60, 115);
         ctx.stroke();
 
-        // 5. Hero Card: English Term & Urdu Meaning
+        // Hero Card: English Meaning & Urdu Word
         ctx.fillStyle = '#111C3D';
         ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
-        ctx.roundRect(60, 140, width - 120, 175, 20);
+        ctx.roundRect(60, 140, width - 120, 185, 20);
         ctx.fill();
         ctx.stroke();
 
-        // Left: English
+        // Left: English Meaning + POS
         ctx.textAlign = 'left';
         ctx.fillStyle = '#94A3B8';
-        ctx.font = 'bold 13px sans-serif';
-        ctx.fillText('ENGLISH TERM', 90, 180);
+        ctx.font = 'bold 12px sans-serif';
+        const posText = (currentItem.part_of_speech ? currentItem.part_of_speech.toUpperCase() + ' • ' : '') + 'ENGLISH MEANING';
+        ctx.fillText(posText, 90, 178);
 
         ctx.fillStyle = '#FFFFFF';
-        ctx.font = '900 42px sans-serif';
-        ctx.fillText(currentItem.word, 90, 235);
+        ctx.font = '900 38px sans-serif';
+        const enTitle = cleanEnglish(currentItem.english_meaning);
+        ctx.fillText(enTitle.length > 25 ? enTitle.substring(0, 25) + '...' : enTitle, 90, 235);
 
         // Center vertical divider
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
         ctx.beginPath();
         ctx.moveTo(width / 2, 160);
-        ctx.lineTo(width / 2, 290);
+        ctx.lineTo(width / 2, 305);
         ctx.stroke();
 
-        // Right: Urdu Meaning (in Noto Nastaliq Urdu)
+        // Right: Urdu Word (in Noto Nastaliq Urdu)
         ctx.textAlign = 'right';
         ctx.fillStyle = '#FDE68A';
         ctx.font = 'bold 16px "Noto Nastaliq Urdu", serif';
-        ctx.fillText('اردو ترجمہ (Urdu Meaning)', width - 90, 185);
+        ctx.fillText('اردو لفظ (Urdu Word)', width - 90, 185);
 
         ctx.fillStyle = '#F59E0B';
-        ctx.font = 'bold 36px "Noto Nastaliq Urdu", serif';
-        ctx.fillText(currentItem.meaning, width - 90, 245);
+        ctx.font = 'bold 44px "Noto Nastaliq Urdu", serif';
+        ctx.fillText(currentItem.urdu_word, width - 90, 255);
 
-        // 6. Dialogue Section Header
-        let currentY = 355;
+        // Dialogue Section Header
+        let currentY = 365;
         ctx.textAlign = 'left';
         ctx.fillStyle = '#F59E0B';
         ctx.font = 'bold 14px sans-serif';
-        ctx.fillText('EXAM-FORMAT DIALOGUE SCENARIOS (3 CONTEXTS)', 60, currentY);
+        ctx.fillText('NAATI CCL DIALOGUE SCENARIOS & INTERPRETATIONS', 60, currentY);
 
         currentY += 20;
 
@@ -823,8 +893,8 @@ import Layout from '../../../layouts/Layout.astro';
             const boxWidth = width - 120;
             const textWidth = boxWidth - 60;
 
-            const enLines = wrapLines(ex.en || '', textWidth, enFont);
-            const urLines = wrapLines(ex.ur || '', textWidth, urFont);
+            const enLines = wrapLines(ex.english || '', textWidth, enFont);
+            const urLines = wrapLines(ex.urdu || '', textWidth, urFont);
 
             const boxHeight = 65 + (enLines.length * 24) + (urLines.length * 36);
 
@@ -839,7 +909,8 @@ import Layout from '../../../layouts/Layout.astro';
             ctx.fillStyle = '#F59E0B';
             ctx.font = 'bold 12px sans-serif';
             ctx.textAlign = 'left';
-            ctx.fillText('EXAMPLE ' + (idx + 1) + ' — DIALOGUE INTERPRETATION', 85, currentY + 30);
+            const exTitle = 'EXAMPLE ' + (ex.example_number || (idx + 1)) + (ex.context ? ' — ' + ex.context.toUpperCase() : '');
+            ctx.fillText(exTitle, 85, currentY + 30);
 
             ctx.font = enFont;
             ctx.fillStyle = '#E2E8F0';
@@ -870,7 +941,7 @@ import Layout from '../../../layouts/Layout.astro';
           });
         }
 
-        // 7. Footer Branding Bar (Watermark, Contact, WhatsApp, Instagram)
+        // Footer Branding Bar
         const footerY = estimatedHeight - 110;
         ctx.fillStyle = 'rgba(6, 10, 24, 0.95)';
         ctx.fillRect(30, footerY, width - 60, 80);
@@ -889,7 +960,7 @@ import Layout from '../../../layouts/Layout.astro';
 
         ctx.fillStyle = '#94A3B8';
         ctx.font = '500 13px sans-serif';
-        ctx.fillText('moazzamshoukat.com • PTE & NAATI CCL Master Trainer', 60, footerY + 58);
+        ctx.fillText('moazzamshoukat.com • NAATI CCL Urdu Master Trainer', 60, footerY + 58);
 
         ctx.textAlign = 'right';
         ctx.fillStyle = '#22C55E';
@@ -898,24 +969,23 @@ import Layout from '../../../layouts/Layout.astro';
 
         ctx.fillStyle = '#FDE68A';
         ctx.font = 'bold 13px sans-serif';
-        ctx.fillText('Instagram: @coachingbyms | @moazzamshoukat', width - 60, footerY + 58);
+        ctx.fillText('Instagram: @moazzamshoukat | @coachingbyms', width - 60, footerY + 58);
 
-        // 8. Convert to JPG & Trigger Download
         const imgDataUrl = canvas.toDataURL('image/jpeg', 0.92);
         const link = document.createElement('a');
-        const cleanWord = (currentItem.word || 'NAATI-Vocabulary').replace(/[^a-zA-Z0-9_\u0600-\u06FF]/g, '_');
-        link.download = cleanWord + '-NAATI-CCL-Urdu.jpg';
+        const cleanName = (currentItem.urdu_word || 'NAATI-Word').replace(/[^a-zA-Z0-9_\u0600-\u06FF]/g, '_');
+        link.download = cleanName + '-NAATI-CCL-Urdu.jpg';
         link.href = imgDataUrl;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
 
       } catch (err) {
-        console.error('Error rendering JPG card:', err);
+        console.error('Error rendering image:', err);
         alert('Could not generate JPG image. Please try again.');
       } finally {
-        downloadBtnLabel.textContent = 'Download JPG';
-        downloadJpgBtn.disabled = false;
+        downloadBtnLabel.textContent = 'Download Image';
+        downloadImageBtn.disabled = false;
       }
     });
 

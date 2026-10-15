@@ -1,4 +1,4 @@
-﻿export interface NavSubItem {
+export interface NavSubItem {
   label: string;
   href: string;
   description?: string;
@@ -33,7 +33,7 @@ export const headerNav: NavItem[] = [
           {
             label: "Vocabulary",
             href: "/preparation/naati/vocabulary/",
-            description: "669+ bilingual terms with Urdu meanings and 3 dialogue contexts",
+            description: "7,796+ complete bilingual terms with Urdu words and 46,700+ dialogue sentences",
             badge: "Interactive Bank"
           },
           {
