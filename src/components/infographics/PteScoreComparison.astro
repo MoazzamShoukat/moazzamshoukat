@@ -1,11 +1,12 @@
 ---
 interface Props {
   className?: string;
+  compact?: boolean;
 }
 
-const { className = '' } = Astro.props;
+const { className = '', compact = false } = Astro.props;
 
-const scales = [
+const allScales = [
   {
     pte: "84 - 90",
     ielts: "Band 8.5 - 9.0",
@@ -52,6 +53,8 @@ const scales = [
     desc: "Minimum threshold to fulfill basic Australian Subclass 500 student visa requirements."
   }
 ];
+
+const scales = compact ? allScales.slice(0, 2) : allScales;
 ---
 
 <div class={`rounded-3xl bg-white dark:bg-[#0F172A] border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm ${className}`}>
@@ -62,7 +65,7 @@ const scales = [
         INFOGRAPHIC &bull; PTE VS IELTS CALIBRATION
       </div>
       <h3 class="text-2xl font-black text-[#0A1128] dark:text-white tracking-tight">
-        PTE Academic Score Conversion & PR Points Matrix
+        {compact ? "PTE Superior English (79+) Benchmark" : "PTE Academic Score Conversion & PR Points Matrix"}
       </h3>
       <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
         Official concordance between Pearson PTE Academic, IELTS Bands, and immigration allocation rules.
@@ -114,4 +117,14 @@ const scales = [
       </tbody>
     </table>
   </div>
+
+  {compact && (
+    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+      <span class="text-slate-500 dark:text-slate-400">Showing Superior tier summary.</span>
+      <a href="/online-pte-classes/" class="font-bold text-amber-700 dark:text-amber-400 hover:underline inline-flex items-center gap-1">
+        <span>View Full 5-Tier PTE Concordance Matrix on Online PTE Classes</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  )}
 </div>

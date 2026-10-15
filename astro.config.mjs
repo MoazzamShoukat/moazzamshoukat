@@ -6,6 +6,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+const retiredPaths = [
+  '/pte-coaching',
+  '/naati-ccl-urdu',
+  '/australia-immigration',
+  '/skills-assessment-australia',
+  '/immigration',
+  '/english-training',
+  '/education-research'
+];
+
 /**
  * Ensures sitemap.xml is generated directly at /sitemap.xml in dist
  * while maintaining compatibility with sitemap-index.xml
@@ -30,16 +40,37 @@ function sitemapXmlAliasIntegration() {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://moazzamshoukat.com',
-  trailingSlash: 'ignore',
+  trailingSlash: 'always',
+  build: {
+    format: 'directory'
+  },
   output: 'static',
   outDir: './dist',
+  redirects: {
+    '/pte-coaching/': '/online-pte-classes/',
+    '/naati-ccl-urdu/': '/naati-ccl-urdu-preparation/',
+    '/australia-immigration/': '/australia-skilled-migration/',
+    '/skills-assessment-australia/': '/skill-assessment-guidance/',
+    '/immigration/': '/services/',
+    '/english-training/': '/services/',
+    '/education-research/': '/research/'
+  },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/404'),
+      filter: (page) => {
+        if (page.includes('/404')) return false;
+        try {
+          const url = new URL(page);
+          const cleanPath = url.pathname.replace(/\/$/, '');
+          return !retiredPaths.includes(cleanPath);
+        } catch {
+          return true;
+        }
+      },
       serialize(item) {
-        // Do not use artificial priority or change-frequency values as an SEO shortcut
         delete item.priority;
         delete item.changefreq;
+        item.lastmod = new Date().toISOString();
         return item;
       }
     }),

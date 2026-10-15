@@ -185,7 +185,7 @@ export const siteData = {
       ],
       stack: ["ANZSCO Code Mapping", "CRS Points Engine", "SkillSelect Optimization", "Advisory Compliance"],
       gradient: "from-amber-600/20 via-yellow-600/10 to-transparent",
-      link: "/australia-immigration"
+      link: "/australia-skilled-migration/"
     },
     {
       id: "naati-ccl-urdu-suite",
@@ -202,7 +202,7 @@ export const siteData = {
       ],
       stack: ["Audio Interpretation", "Urdu-English Lexicons", "Mock Simulations", "Live Mentoring"],
       gradient: "from-slate-700/20 via-amber-500/10 to-transparent",
-      link: "/naati-ccl-urdu"
+      link: "/naati-ccl-urdu-preparation/"
     },
     {
       id: "anemia-detection-ai",

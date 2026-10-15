@@ -8,98 +8,86 @@ const { className = '' } = Astro.props;
 
 <div class={`rounded-3xl bg-white dark:bg-[#0F172A] border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm ${className}`}>
   <!-- Header -->
-  <div class="text-center max-w-2xl mx-auto pb-8 mb-8 border-b border-slate-100 dark:border-slate-800">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 mb-2">
-      INFOGRAPHIC &bull; GLOBAL PATHWAY COMPARISON
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-8 border-b border-slate-100 dark:border-slate-800 gap-4">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 mb-2">
+        STRATEGIC PATHWAY COMPARISON
+      </div>
+      <h3 class="text-2xl font-black text-[#0A1128] dark:text-white tracking-tight">
+        Canada Express Entry vs. Australia Skilled Migration
+      </h3>
+      <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
+        Side-by-side architectural breakdown of immigration points, processing times, and English requirements.
+      </p>
     </div>
-    <h3 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white tracking-tight">
-      Canada Express Entry vs. Australia SkillSelect GSM
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2">
-      A side-by-side strategic analysis of timelines, language criteria, assessment bodies, and permanent residency outcomes.
-    </p>
   </div>
 
-  <!-- Side-by-Side Dual Columns -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- Dual Comparison Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     
-    <!-- Canada Pillar -->
-    <div class="rounded-2xl p-6 bg-slate-50 dark:bg-[#111827] border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between space-y-6">
+    <!-- Canada Card -->
+    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
       <div>
-        <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
-          <div class="flex items-center gap-3">
-            <span class="text-3xl">🍁</span>
-            <div>
-              <h4 class="text-lg font-black text-[#0A1128] dark:text-white">Canada Express Entry</h4>
-              <p class="text-xs text-amber-700 dark:text-amber-400 font-semibold">Federal Skilled Worker & Category Draws</p>
-            </div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🍁</span>
+            <h4 class="text-lg font-black text-[#0A1128] dark:text-white">Canada Express Entry</h4>
           </div>
-          <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-800 dark:text-amber-300">
+          <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20">
             CRS System
           </span>
         </div>
 
-        <ul class="space-y-3.5 mt-5 text-xs text-slate-700 dark:text-slate-300">
+        <ul class="space-y-3 text-xs text-slate-700 dark:text-slate-300 mb-6">
           <li class="flex items-start gap-2.5">
             <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>Language Benchmark:</strong> Target CLB 9 (IELTS L:8.0, R:7.0, W:7.0, S:7.0 or PTE Core equivalent) to maximize skill transferability.</div>
+            <div><strong>Language Benchmark:</strong> CLB 9/10 (IELTS 8777 or PTE Core equivalent) unlocks maximum Skill Transferability CRS points.</div>
           </li>
           <li class="flex items-start gap-2.5">
             <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>Credential Verification:</strong> ECA through WES, IQAS, or ICES (evaluates degrees without career deduction penalties).</div>
+            <div><strong>Target Draws:</strong> Category-based selection prioritizing STEM talent, healthcare professionals, and Francophones.</div>
           </li>
           <li class="flex items-start gap-2.5">
             <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>Category Draws:</strong> Preferential invitations for STEM (Software Engineers, Data Engineers) with lower cutoffs.</div>
+            <div><strong>PNP Booster:</strong> Provincial nomination adds +600 CRS points, guaranteeing an Invitation to Apply (ITA).</div>
           </li>
           <li class="flex items-start gap-2.5">
             <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>Processing Velocity:</strong> 6 to 9 months average post-ITA document submission to eCOPR & PR Visa.</div>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>Citizenship Path:</strong> Eligible for Canadian passport after 3 years (1,095 days) of physical PR residency.</div>
+            <div><strong>Processing Velocity:</strong> Standard Express Entry processing aims for approximately 6 months post-ITA.</div>
           </li>
         </ul>
       </div>
 
-      <a href="/canada-immigration" class="block w-full text-center py-2.5 rounded-xl font-bold text-xs bg-[#0A1128] dark:bg-amber-400 text-white dark:text-slate-950 hover:opacity-90 transition-opacity">
+      <a href="/canada-immigration/" class="block w-full text-center py-2.5 rounded-xl font-bold text-xs bg-[#0A1128] dark:bg-amber-400 text-white dark:text-slate-950 hover:opacity-90 transition-opacity">
         Explore Canada PR Pathways &rarr;
       </a>
     </div>
 
-    <!-- Australia Pillar -->
-    <div class="rounded-2xl p-6 bg-slate-50 dark:bg-[#111827] border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between space-y-6">
+    <!-- Australia Card -->
+    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
       <div>
-        <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
-          <div class="flex items-center gap-3">
-            <span class="text-3xl">🦘</span>
-            <div>
-              <h4 class="text-lg font-black text-[#0A1128] dark:text-white">Australia SkillSelect (GSM)</h4>
-              <p class="text-xs text-amber-700 dark:text-amber-400 font-semibold">Subclasses 189, 190 & 491 Regional</p>
-            </div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🦘</span>
+            <h4 class="text-lg font-black text-[#0A1128] dark:text-white">Australia Skilled Migration</h4>
           </div>
-          <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-800 dark:text-amber-300">
-            Points Test (65+)
+          <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+            SkillSelect GSM
           </span>
         </div>
 
-        <ul class="space-y-3.5 mt-5 text-xs text-slate-700 dark:text-slate-300">
+        <ul class="space-y-3 text-xs text-slate-700 dark:text-slate-300 mb-6">
           <li class="flex items-start gap-2.5">
             <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>Language Benchmark:</strong> PTE Academic 79+ delivers +20 Superior points; +5 bonus via NAATI CCL Urdu (total 25 pts).</div>
+            <div><strong>Language & NAATI:</strong> Superior PTE 79+ (+20 pts) combined with NAATI CCL Urdu (+5 pts) provides a critical 25-point surge.</div>
           </li>
           <li class="flex items-start gap-2.5">
             <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>Skills Assessment:</strong> Mandatory assessment via ACS (IT), EA (Engineers CDR), or VETASSESS prior to EOI submission.</div>
+            <div><strong>Visa Subclasses:</strong> Subclass 189 (Independent), Subclass 190 (+5 state points), and Subclass 491 (+15 regional points).</div>
           </li>
           <li class="flex items-start gap-2.5">
             <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>State Nomination ROIs:</strong> States like Victoria, NSW, and SA invite candidates based on onshore/offshore tech demand.</div>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <span class="text-amber-500 font-bold">✓</span>
-            <div><strong>Processing Velocity:</strong> 8 to 14 months post-nomination grant to permanent visa issuance.</div>
+            <div><strong>Skills Assessment:</strong> Formal positive assessment required from ACS (IT), Engineers Australia (CDR), or VETASSESS before EOI.</div>
           </li>
           <li class="flex items-start gap-2.5">
             <span class="text-amber-500 font-bold">✓</span>
@@ -108,7 +96,7 @@ const { className = '' } = Astro.props;
         </ul>
       </div>
 
-      <a href="/australia-immigration" class="block w-full text-center py-2.5 rounded-xl font-bold text-xs bg-[#0A1128] dark:bg-amber-400 text-white dark:text-slate-950 hover:opacity-90 transition-opacity">
+      <a href="/australia-skilled-migration/" class="block w-full text-center py-2.5 rounded-xl font-bold text-xs bg-[#0A1128] dark:bg-amber-400 text-white dark:text-slate-950 hover:opacity-90 transition-opacity">
         Explore Australia PR Pathways &rarr;
       </a>
     </div>

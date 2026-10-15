@@ -125,7 +125,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "How can I prepare with Moazzam Shoukat for Speaking Band 7+?",
-        "answer": "Explore our personalized <a href=\"/ielts-coaching\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">IELTS Coaching Program</a> for 1-on-1 simulated examiner interviews, live corrections, and targeted lexical upgrades."
+        "answer": "Explore our personalized <a href=\"/ielts-trainer-lahore/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">IELTS Coaching Program</a> for 1-on-1 simulated examiner interviews, live corrections, and targeted lexical upgrades."
       }
     ]
   },
@@ -221,7 +221,7 @@ export const blogPosts: BlogPost[] = [
       "Take a timed diagnostic mock test in both formats before committing your preparation budget.",
       "Check your typing speed: PTE requires typing your essay and summaries under strict countdowns.",
       "Assess your oral delivery: if you have a monotone voice or mic anxiety, practice computer acoustics.",
-      "Align with professional coaching: review our <a href=\"/pte-coaching\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">PTE Coaching in Lahore</a> and <a href=\"/ielts-coaching\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">IELTS Coaching</a>."
+      "Align with professional coaching: review our <a href=\"/online-pte-classes/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">PTE Coaching in Lahore</a> and <a href=\"/ielts-trainer-lahore/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">IELTS Coaching</a>."
     ],
     "faqs": [
       {
@@ -446,7 +446,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "Where can I get my essays marked against official Cambridge rubrics?",
-        "answer": "Enroll in our <a href=\"/ielts-coaching\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">IELTS Coaching Sessions</a> to receive line-by-line markups and Band 8.5 re-writes."
+        "answer": "Enroll in our <a href=\"/ielts-trainer-lahore/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">IELTS Coaching Sessions</a> to receive line-by-line markups and Band 8.5 re-writes."
       }
     ]
   },
@@ -536,7 +536,7 @@ export const blogPosts: BlogPost[] = [
       "Practice 50 authentic exam-simulated dialogues spanning Centrelink, Legal, Healthcare, and Immigration.",
       "Develop your personalized shorthand symbols for high-frequency terms (doctor, appointment, subsidy, payment).",
       "Use your 1 free repeat per dialogue strategically on complex, number-dense segments.",
-      "Join specialized preparation: discover our <a href=\"/naati-ccl-urdu\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">NAATI CCL Urdu Masterclass</a>."
+      "Join specialized preparation: discover our <a href=\"/naati-ccl-urdu-preparation/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">NAATI CCL Urdu Masterclass</a>."
     ],
     "faqs": [
       {
@@ -549,7 +549,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "How many bonus points does NAATI CCL add to Australia PR?",
-        "answer": "Passing NAATI CCL grants you an immediate 5 bonus points towards your Subclass 189, 190, and 491 points tally. Read more in our <a href=\"/australia-immigration\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Australia PR Roadmap</a>."
+        "answer": "Passing NAATI CCL grants you an immediate 5 bonus points towards your Subclass 189, 190, and 491 points tally. Read more in our <a href=\"/australia-skilled-migration/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Australia PR Roadmap</a>."
       }
     ]
   },
@@ -755,7 +755,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "How can I score Band 8.5 in Listening?",
-        "answer": "You need 37 to 38 correct answers out of 40. Achieve this by eliminating careless spelling errors in Sections 1 and 2, which gives you leeway in Section 3 and 4. Learn more in our <a href=\"/ielts-coaching\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Comprehensive IELTS Training</a>."
+        "answer": "You need 37 to 38 correct answers out of 40. Achieve this by eliminating careless spelling errors in Sections 1 and 2, which gives you leeway in Section 3 and 4. Learn more in our <a href=\"/ielts-trainer-lahore/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Comprehensive IELTS Training</a>."
       }
     ]
   },
@@ -858,7 +858,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "Where can I take scored diagnostic mocks for PTE?",
-        "answer": "We offer complete scored AI diagnostic mocks with in-depth analytics in our <a href=\"/pte-coaching\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">PTE Coaching Program</a>."
+        "answer": "We offer complete scored AI diagnostic mocks with in-depth analytics in our <a href=\"/online-pte-classes/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">PTE Coaching Program</a>."
       }
     ]
   },
@@ -992,7 +992,7 @@ export const blogPosts: BlogPost[] = [
       ]
     },
     "checklist": [
-      "Calculate your current Australia PR points tally on our <a href=\"/australia-immigration\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Australia PR Assessment</a>.",
+      "Calculate your current Australia PR points tally on our <a href=\"/australia-skilled-migration/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Australia PR Assessment</a>.",
       "If your tally is below 85 points, plan to take both NAATI CCL (+5) and PTE 79+ (+20).",
       "Ensure you have valid passport identification and high-speed internet for online NAATI test booking.",
       "Practice bilingual dialogue interpretation with authentic Pakistani community terminology.",
@@ -1009,7 +1009,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "How do I enroll in NAATI coaching?",
-        "answer": "Visit our dedicated <a href=\"/naati-ccl-urdu\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">NAATI CCL Urdu Preparation Page</a> or connect directly via WhatsApp."
+        "answer": "Visit our dedicated <a href=\"/naati-ccl-urdu-preparation/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">NAATI CCL Urdu Preparation Page</a> or connect directly via WhatsApp."
       }
     ]
   },
@@ -1112,7 +1112,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "question": "Can I transition from a Student Visa to Australian Permanent Residency?",
-        "answer": "Yes, graduating with an eligible degree unlocks the Subclass 485 Temporary Graduate Visa, providing 2 to 4 years to complete skills assessment, achieve PTE 79+, and lodge your PR EOI. Explore our <a href=\"/australia-immigration\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Australia PR Roadmap</a>."
+        "answer": "Yes, graduating with an eligible degree unlocks the Subclass 485 Temporary Graduate Visa, providing 2 to 4 years to complete skills assessment, achieve PTE 79+, and lodge your PR EOI. Explore our <a href=\"/australia-skilled-migration/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Australia PR Roadmap</a>."
       }
     ]
   },
@@ -1311,7 +1311,7 @@ export const blogPosts: BlogPost[] = [
       "Draft comprehensive employment reference letters incorporating required duties from the assessing authority.",
       "Gather robust financial verification: FBR tax returns, bank salary credit statements, and employment contracts.",
       "Ensure educational transcripts and degree completion letters are certified by a notary public.",
-      "Explore expert dossier audit on our <a href=\"/skills-assessment-australia\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Skills Assessment Australia Page</a>."
+      "Explore expert dossier audit on our <a href=\"/skill-assessment-guidance/\" class=\"text-amber-600 dark:text-amber-400 font-bold underline\">Skills Assessment Australia Page</a>."
     ],
     "faqs": [
       {

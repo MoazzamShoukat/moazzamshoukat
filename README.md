@@ -29,12 +29,12 @@ A modern, high-trust, conversion-focused multi-page immigration and test coachin
 | URL Route | SEO H1 / Title | Key Content & Features |
 |---|---|---|
 | [`/ielts-coaching`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/ielts-coaching.astro) | **Best IELTS Trainer in Lahore \| Band 7.5+ Results Guaranteed** | 1-on-1 speaking mock diagnostics, Cambridge test banks, Task 1 & 2 templates, 6 FAQs, dual CTAs. |
-| [`/pte-coaching`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/pte-coaching.astro) | **Best PTE Academic Coaching in Lahore \| 79+ Superior English Secrets** | Pearson AI speech recognition model calibration, Repeat Sentence & WFD banks, 6 FAQs, dual CTAs. |
-| [`/naati-ccl-urdu`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/naati-ccl-urdu.astro) | **NAATI CCL Urdu Preparation Online & Lahore \| Claim 5 Australian PR Points** | 50+ real audio dialogues, note-taking shorthand, bilingual medical/legal vocabulary, 6 FAQs, dual CTAs. |
+| [`/online-pte-classes/`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/online-pte-classes/.astro) | **Best PTE Academic Coaching in Lahore \| 79+ Superior English Secrets** | Pearson AI speech recognition model calibration, Repeat Sentence & WFD banks, 6 FAQs, dual CTAs. |
+| [`/naati-ccl-urdu-preparation/`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/naati-ccl-urdu-preparation/.astro) | **NAATI CCL Urdu Preparation Online & Lahore \| Claim 5 Australian PR Points** | 50+ real audio dialogues, note-taking shorthand, bilingual medical/legal vocabulary, 6 FAQs, dual CTAs. |
 | [`/student-visa`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/student-visa.astro) | **Student Visa Consultant for Canada & Australia \| Admission & SOP Guidance** | Program selection aligned with PR, Genuine Student (GS) compliance, GIC & financial planning, 6 FAQs, dual CTAs. |
-| [`/skills-assessment-australia`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/skills-assessment-australia.astro) | **Australia Skills Assessment Guidance \| ACS, Engineers Australia CDR & VETASSESS** | ACS IT assessments, 3 CDR Career Episodes, VETASSESS dossiers, minimal deduction strategies, 6 FAQs, dual CTAs. |
+| [`/skill-assessment-guidance/`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/skill-assessment-guidance/.astro) | **Australia Skills Assessment Guidance \| ACS, Engineers Australia CDR & VETASSESS** | ACS IT assessments, 3 CDR Career Episodes, VETASSESS dossiers, minimal deduction strategies, 6 FAQs, dual CTAs. |
 | [`/canada-immigration`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/canada-immigration.astro) | **Canada Immigration Consultant Lahore \| Express Entry & Provincial Nominee PNP** | STEM category draws, CRS score maximization (CLB 9/10), OINP/SINP/AAIP, 6 FAQs, dual CTAs. |
-| [`/australia-immigration`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/australia-immigration.astro) | **Australia Immigration Consultant Lahore \| Subclass 189, 190 & 491 PR** | SkillSelect EOI, +20 PTE Superior points, +5 NAATI CCL points, state nomination ROIs, 6 FAQs, dual CTAs. |
+| [`/australia-skilled-migration/`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/australia-skilled-migration/.astro) | **Australia Immigration Consultant Lahore \| Subclass 189, 190 & 491 PR** | SkillSelect EOI, +20 PTE Superior points, +5 NAATI CCL points, state nomination ROIs, 6 FAQs, dual CTAs. |
 
 ### 2. Strategy Blog (8 SEO Articles)
 | URL Route | Article Title | Target Keyword / Category |
@@ -129,12 +129,12 @@ Edit **[`src/data/blogData.ts`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/
 ### 3. Personalizing Service Pages (FAQs, Offerings, Statistics)
 Each dedicated service page has its own isolated `faqs`, `offerings`, and `stats` array at the top of the file:
 - **IELTS Coaching**: [`src/pages/ielts-coaching.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/ielts-coaching.astro)
-- **PTE Academic Coaching**: [`src/pages/pte-coaching.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/pte-coaching.astro)
-- **NAATI CCL Urdu**: [`src/pages/naati-ccl-urdu.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/naati-ccl-urdu.astro)
+- **PTE Academic Coaching**: [`src/pages/online-pte-classes/.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/online-pte-classes/.astro)
+- **NAATI CCL Urdu**: [`src/pages/naati-ccl-urdu-preparation/.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/naati-ccl-urdu-preparation/.astro)
 - **Student Visa Guidance**: [`src/pages/student-visa.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/student-visa.astro)
-- **Australia Skills Assessment**: [`src/pages/skills-assessment-australia.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/skills-assessment-australia.astro)
+- **Australia Skills Assessment**: [`src/pages/skill-assessment-guidance/.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/skill-assessment-guidance/.astro)
 - **Canada Immigration / PR**: [`src/pages/canada-immigration.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/canada-immigration.astro)
-- **Australia Immigration / PR**: [`src/pages/australia-immigration.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/australia-immigration.astro)
+- **Australia Immigration / PR**: [`src/pages/australia-skilled-migration/.astro`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/pages/australia-skilled-migration/.astro)
 
 ### 4. Updating General Contact Info & Phone
 Edit **[`src/data/siteData.ts`](file:///C:/Users/G%20A%20GROUP/Documents/GitHub/moazzamshoukat/src/data/siteData.ts)**:
