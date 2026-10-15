@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AuthorBox from '../components/AuthorBox.astro';
 import { siteData } from '../data/siteData';
+import SkillsAssessmentSteps from '../components/infographics/SkillsAssessmentSteps.astro';
 
 const faqs = [
   {
@@ -17,7 +19,7 @@ const faqs = [
   },
   {
     q: "What is required for an Engineers Australia CDR (Competency Demonstration Report)?",
-    a: "If your engineering degree is not recognized under the Washington Accord (such as older non-accredited batches or specialized programs), you must submit a CDR. This requires: Continuing Professional Development (CPD) list, 3 detailed Career Episodes (each documenting an engineering project where you personal problem-solved using engineering principles), and an exhaustive Summary Statement cross-referencing Engineers Australia competency elements."
+    a: "If your engineering degree is not recognized under the Washington Accord, you must submit a CDR. This requires: Continuing Professional Development (CPD) list, 3 detailed Career Episodes (each documenting an engineering project where you personal problem-solved using engineering principles), and an exhaustive Summary Statement cross-referencing Engineers Australia competency elements."
   },
   {
     q: "What third-party financial evidence is required to prove paid employment?",
@@ -51,7 +53,7 @@ const authorities = [
   {
     authority: "Trades Recognition Australia (TRA)",
     occupations: "Chefs, Automotive Technicians, Electricians, Carpenters, Welders",
-    focus: "Rigorous technical skills verification, formal apprenticeships, practical workplace demonstrations, and video evidence.",
+    focus: "Rigorous technical skills verification, formal apprenticeships, practical workplace demonstrations, and documentary audits.",
     icon: "🔧"
   }
 ];
@@ -61,6 +63,34 @@ const rejectionPitfalls = [
   { pitfall: "Unverified Cash Salary", risk: "Non-Skilled Deeming", fix: "Compile bank statement credit entries, FBR tax returns, and employer pay stubs." },
   { pitfall: "Plagiarized CDR Episodes", risk: "1-3 Year EA Ban", fix: "Author 100% original, project-specific narratives based on your personal engineering tasks." },
   { pitfall: "Incomplete Organizational Chart", risk: "VETASSESS Negative Outcome", fix: "Include detailed hierarchy charts indicating your exact position, manager, and direct subordinates." }
+];
+
+const cdrComponents = [
+  {
+    title: "Continuing Professional Development (CPD)",
+    format: "1 A4 Page Summary",
+    desc: "Comprehensive chronological listing of postgraduate courses, technical seminars, workshop attendance, and technical literature reviewed since graduation."
+  },
+  {
+    title: "Career Episode 1: Primary Engineering Project",
+    format: "1,500 - 2,500 Words",
+    desc: "Focuses on engineering fundamentals, calculations, design trade-offs, and your personal contribution in problem resolution using standard EA first-person voice ('I designed', 'I calculated')."
+  },
+  {
+    title: "Career Episode 2: Advanced Design or Industrial Task",
+    format: "1,500 - 2,500 Words",
+    desc: "Showcases specialized domain engineering competencies, simulation modeling, codes of practice, and safety risk mitigation protocols."
+  },
+  {
+    title: "Career Episode 3: Leadership or Team Innovation Project",
+    format: "1,500 - 2,500 Words",
+    desc: "Emphasizes project management, cross-functional collaboration, technical testing, commissioning, and environmental impact assessments."
+  },
+  {
+    title: "Summary Statement",
+    format: "Cross-Referenced Matrix",
+    desc: "Mandatory tabular cross-referencing of every paragraph in your Career Episodes against the 16 professional competency indicators mandated by Engineers Australia."
+  }
 ];
 
 const breadcrumbSchema = {
@@ -115,14 +145,19 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Australian Skill Assessment Assistance | ACS, Engineers Australia, VETASSESS | Moazzam Shoukat"
-  description="Secure a positive Australian Skills Assessment with expert documentation guidance from Moazzam Shoukat. ACS IT assessments, Engineers Australia CDRs & VETASSESS dossiers."
-  keywords="Australian Skill Assessment Assistance, Skill Assessment Guidance Pakistan, ACS Skills Assessment Pakistan, Engineers Australia CDR Preparation, VETASSESS Guidance Pakistan, Australian Visa Documentation Assistance"
+  title="Skills Assessment Australia Guidance | ACS, EA & VETASSESS"
+  description="Prepare your Australian Skills Assessment documentation with Moazzam Shoukat. Pre-vetting for ACS IT, Engineers Australia CDR, and VETASSESS dossiers."
   schema={[breadcrumbSchema, serviceSchema, faqSchema]}
 >
   <div class="py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
+      <!-- Non-MARA Compliance Disclaimer Banner -->
+      <div class="mb-8 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs text-slate-700 dark:text-slate-300">
+        <strong class="font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider mr-1">Compliance Notice:</strong>
+        Moazzam Shoukat provides strategic educational guidance, points score planning, test coaching for PTE/NAATI, and documentation pre-vetting. He is not a registered Australian migration agent (MARA) and does not provide legal immigration representation.
+      </div>
+
       <!-- Breadcrumbs -->
       <nav aria-label="Breadcrumb" class="mb-8">
         <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
@@ -141,7 +176,7 @@ const faqSchema = {
       <!-- Hero Header -->
       <div class="max-w-4xl mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
-          <span>📑 Foundation of Australian PR &bull; ACS &bull; EA &bull; VETASSESS &bull; TRA</span>
+          <span>Foundation of Australian PR &bull; ACS &bull; EA &bull; VETASSESS &bull; TRA</span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
@@ -149,7 +184,7 @@ const faqSchema = {
         </h1>
 
         <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
-          A positive skills assessment is the non-negotiable gateway to Australian skilled migration. We provide meticulous pre-vetting for employment reference letters, CDR Career Episodes, and financial evidence to eliminate years deducted and ensure a flawless first-attempt outcome.
+          A positive skills assessment is the non-negotiable gateway to Australian skilled migration. We provide meticulous pre-vetting for employment reference letters, CDR Career Episodes, and financial evidence to minimize experience deductions.
         </p>
 
         <!-- CTA Action Buttons -->
@@ -160,7 +195,7 @@ const faqSchema = {
             rel="noopener noreferrer"
             class="px-8 py-4 rounded-full text-xs sm:text-sm font-black bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-200 flex items-center gap-2"
           >
-            <span>Review My Assessment Documents</span>
+            <span>Review Assessment Documents</span>
             <span>&rarr;</span>
           </a>
           <a
@@ -195,12 +230,44 @@ const faqSchema = {
         </div>
       </section>
 
+      <!-- Infographic: 4-Step Skills Assessment Workflow -->
+      <section class="mb-20">
+        <SkillsAssessmentSteps />
+      </section>
+
+      <!-- Engineers Australia CDR Material Section -->
+      <section class="mb-20 p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl">
+        <div class="max-w-3xl mb-8">
+          <span class="text-amber-400 text-xs font-black uppercase tracking-widest">Engineers Australia (EA) Specialization</span>
+          <h2 class="text-2xl sm:text-3xl font-black mt-2">
+            Competency Demonstration Report (CDR) Structure
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 mt-2">
+            Engineers without Washington Accord accreditation must author a comprehensive CDR. We guide you through every structural component to avoid plagiarized templates or 12-month bans.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {cdrComponents.map((item) => (
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/40 transition-all">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <h3 class="text-base font-bold text-white">{item.title}</h3>
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-400/10 text-amber-300 border border-amber-400/20 shrink-0">
+                  {item.format}
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <!-- Rejection Pitfalls Table -->
       <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl">
         <div class="max-w-3xl mb-6">
           <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">Risk Mitigation</span>
           <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
-            Top Skills Assessment Rejection Pitfalls and How We Solve Them
+            Top Skills Assessment Rejection Pitfalls and Pre-Vetting Solutions
           </h2>
           <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
             Most rejections stem from procedural oversights rather than a lack of true qualifications. We audit every file before submission:
@@ -250,6 +317,9 @@ const faqSchema = {
         </div>
       </section>
 
+      <!-- Author Box Component (Section K.5) -->
+      <AuthorBox className="mb-20" />
+
       <!-- Related Navigation Links -->
       <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
         <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Next Steps in Your PR Journey</h3>
@@ -258,9 +328,9 @@ const faqSchema = {
         </p>
         <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
           <a href="/australia-skilled-migration/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australia Skilled Migration (189/190/491)</a>
-          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE 79+ (+20 English Points)</a>
+          <a href="/online-pte-classes/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Online PTE Classes (+20 Pts)</a>
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE Trainer Lahore</a>
           <a href="/naati-ccl-urdu-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">NAATI CCL Urdu (+5 Points)</a>
-          <a href="/australian-immigration-consultant/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Lahore Immigration Consultation</a>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AuthorBox from '../components/AuthorBox.astro';
 import { siteData } from '../data/siteData';
 
 const faqs = [
@@ -9,11 +10,15 @@ const faqs = [
   },
   {
     q: "Can I take the NAATI CCL Urdu test from Pakistan?",
-    a: "Yes! NAATI CCL tests are conducted 100% online via proctored Microsoft Teams video calls. You can take the exam from the comfort of your home in Lahore, Karachi, Islamabad, or anywhere in Pakistan or Australia, provided you have a reliable internet connection and headset."
+    a: "Yes. NAATI CCL tests are conducted 100% online via proctored Microsoft Teams video calls. You can take the exam from the comfort of your home in Lahore, Karachi, Islamabad, or anywhere in Pakistan or Australia, provided you have a reliable internet connection and headset."
   },
   {
     q: "What is the format and passing score of the NAATI CCL Urdu exam?",
     a: "The test consists of 2 recorded dialogues (approximately 300 words each). Each dialogue involves an English speaker and an Urdu speaker across 12 to 14 segments of up to 35 words each. The total exam is scored out of 90 marks (45 marks per dialogue). To pass, you must score at least 29 out of 45 in each dialogue, with an overall aggregate score of at least 63 out of 90."
+  },
+  {
+    q: "What is the official repeat policy during the test?",
+    a: "You are allowed one free repeat per dialogue without penalty. Any additional repeat in the same dialogue incurs a deduction of 1 mark. We train you in tactical repeat usage to clarify dense sentences without penalty."
   },
   {
     q: "What is the specialized shorthand note-taking technique taught by Moazzam Shoukat?",
@@ -33,7 +38,7 @@ const pillars = [
   {
     icon: "✍️",
     title: "Symbol-Based Shorthand Technique",
-    desc: "A proprietary shorthand system engineered to capture 35-word segments, complex numerical data, and chronological markers without cognitive lag."
+    desc: "A proven shorthand system engineered to capture 35-word segments, complex numerical data, and chronological markers without cognitive lag."
   },
   {
     icon: "🎧",
@@ -57,8 +62,8 @@ const pillars = [
   },
   {
     icon: "🎯",
-    title: "96% First-Attempt Success Rate",
-    desc: "Proven track record of helping over 350+ candidates in Pakistan and Australia clear the test on their very first attempt within 3 to 4 weeks."
+    title: "Structured 3 to 4 Week Roadmap",
+    desc: "Intensive 1-on-1 bilateral dialogue drills, daily voice message interpretation feedback, and real-time proctored mock exams on Microsoft Teams."
   }
 ];
 
@@ -127,9 +132,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="NAATI CCL Urdu Preparation | Claim +5 Australia PR Points | Moazzam Shoukat"
-  description="Pass NAATI CCL Urdu on your first attempt and secure +5 Australia PR points with Moazzam Shoukat. 50+ real dialogues, specialized shorthand notes, glossary & mock tests."
-  keywords="NAATI CCL Urdu Preparation, NAATI CCL Urdu Online Classes, NAATI Urdu Test Preparation Pakistan, NAATI CCL Practice and Mock Tests, NAATI CCL Urdu Lahore, Claim 5 Australia PR Points"
+  title="NAATI CCL Urdu Online Classes | Online Trainer"
+  description="Prepare for the NAATI CCL Urdu test online with Moazzam Shoukat. Master dialogue interpreting, note-taking shorthand, and secure 5 Australia PR points."
   schema={[breadcrumbSchema, courseSchema, faqSchema]}
 >
   <div class="py-16 md:py-24">
@@ -153,11 +157,11 @@ const faqSchema = {
       <!-- Hero Header -->
       <div class="max-w-4xl mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
-          <span>🇦🇺 Official +5 Points on SkillSelect &bull; 96% First-Attempt Pass Rate</span>
+          <span>Official +5 Points on SkillSelect &bull; Online 1-on-1 Coaching</span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
-          <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">NAATI CCL Urdu Preparation</span>: Claim Your +5 Australia PR Points
+          NAATI CCL Urdu Online Trainer and Classes
         </h1>
 
         <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
@@ -199,8 +203,8 @@ const faqSchema = {
           <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Practice Dialogues Included</div>
         </div>
         <div class="text-center p-3 border-l border-slate-200 dark:border-slate-800">
-          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">3 Weeks</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Average Intensive Timeline</div>
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400">3-4 Wks</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Targeted Preparation Cycle</div>
         </div>
       </div>
 
@@ -223,6 +227,32 @@ const faqSchema = {
               <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{p.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <!-- Urdu Script & Roman-Urdu Resources Section (Section K.3) -->
+      <section class="mb-20 p-8 rounded-3xl bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20">
+        <div class="max-w-3xl mb-6">
+          <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">Urdu Language Resources & Overview</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white mt-1">
+            نیتی سی سی ایل اردو کی تیاری اور اہم معلومات (NAATI CCL Urdu in Urdu)
+          </h2>
+        </div>
+
+        <div class="space-y-6 text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-300">
+          <div lang="ur" dir="rtl" class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-serif leading-loose text-base sm:text-lg">
+            <p class="mb-4">
+              نیتی سی سی ایل (NAATI CCL) اردو ٹیسٹ آسٹریلیا کی مستقل سکونت (PR) کے لیے 5 اضافی پوائنٹس حاصل کرنے کا سب سے تیز ترین اور موثر ذریعہ ہے۔ یہ امتحان آن لائن مائیکروسافٹ ٹیمز (MS Teams) پر منعقد کیا جاتا ہے جس میں دو ڈائیلاگز شامل ہوتے ہیں۔ ہر ڈائیلاگ میں انگریزی اور اردو بولنے والوں کے درمیان بات چیت کی ترجمانی کرنی ہوتی ہے۔
+            </p>
+            <p>
+              ہمارے ون آن ون آن لائن سیشنز میں آپ کو شارٹ ہینڈ نوٹ ٹیکنگ، تکنیکی اور قانونی اصطلاحات کا درست اردو ترجمہ، اور فرضی امتحانات (Mock Tests) کے ذریعے مکمل تربیت فراہم کی جاتی ہے تاکہ آپ پہلی ہی کوشش میں 63 سے زائد نمبر حاصل کر سکیں۔
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/60 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm">
+            <span class="font-bold text-[#0A1128] dark:text-white">Roman Urdu Summary: </span>
+            NAATI CCL Urdu exam Australia PR (Subclass 189, 190, 491) points barhanay ke liye nihayat eham test hai. Is test mein 2 dialogues hotay hain jin mein English aur Urdu sentences ko accurately interpret karna hota hai. Moazzam Shoukat ke sath 1-on-1 online classes mein aapko note-taking symbols, vocabulary list, aur real exam condition mock tests ki comprehensive training di jati hai.
+          </div>
         </div>
       </section>
 
@@ -260,6 +290,193 @@ const faqSchema = {
         </div>
       </section>
 
+      <!-- High-Frequency Vocabulary by Domain (Section K.1) -->
+      <section class="mb-20">
+        <div class="max-w-3xl mb-8">
+          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">Core Vocabulary Bank</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
+            High-Frequency NAATI CCL Urdu Vocabulary by Domain
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Official NAATI CCL dialogues center around 4 core Australian community domains. Accurate, natural terminology ensures zero penalty deductions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Healthcare Domain -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+            <h3 class="text-lg font-bold text-[#0A1128] dark:text-white mb-3 flex items-center gap-2">
+              <span>🏥</span> Healthcare & Medical Domain
+            </h3>
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-500">
+                  <th class="py-2">English Term</th>
+                  <th class="py-2 text-right">Urdu Translation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                <tr><td class="py-2 font-medium">Prescription / Dosage</td><td class="py-2 text-right font-serif" dir="rtl">نسخہ / خوراک کی مقدار</td></tr>
+                <tr><td class="py-2 font-medium">Chronic Illness</td><td class="py-2 text-right font-serif" dir="rtl">دائمی بیماری / مرض</td></tr>
+                <tr><td class="py-2 font-medium">Referral Letter / Specialist</td><td class="py-2 text-right font-serif" dir="rtl">تجویدی خط / ماہر امراض</td></tr>
+                <tr><td class="py-2 font-medium">Side Effects / Symptoms</td><td class="py-2 text-right font-serif" dir="rtl">منفی اثرات / علامات</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Legal Domain -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+            <h3 class="text-lg font-bold text-[#0A1128] dark:text-white mb-3 flex items-center gap-2">
+              <span>⚖️</span> Legal & Judicial Domain
+            </h3>
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-500">
+                  <th class="py-2">English Term</th>
+                  <th class="py-2 text-right">Urdu Translation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                <tr><td class="py-2 font-medium">Tenant / Landlord</td><td class="py-2 text-right font-serif" dir="rtl">کرایہ دار / مالک مکان</td></tr>
+                <tr><td class="py-2 font-medium">Breach of Contract</td><td class="py-2 text-right font-serif" dir="rtl">معاہدے کی خلاف ورزی</td></tr>
+                <tr><td class="py-2 font-medium">Restraining Order</td><td class="py-2 text-right font-serif" dir="rtl">حکمی امتناعی / امتناعی حکم</td></tr>
+                <tr><td class="py-2 font-medium">Statutory Declaration</td><td class="py-2 text-right font-serif" dir="rtl">قانونی بیانِ حلفی</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Housing & Centrelink -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+            <h3 class="text-lg font-bold text-[#0A1128] dark:text-white mb-3 flex items-center gap-2">
+              <span>🏡</span> Housing & Centrelink Services
+            </h3>
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-500">
+                  <th class="py-2">English Term</th>
+                  <th class="py-2 text-right">Urdu Translation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                <tr><td class="py-2 font-medium">Rental Bond / Security Deposit</td><td class="py-2 text-right font-serif" dir="rtl">ضمانتی رقم / سیکیورٹی ڈیپازٹ</td></tr>
+                <tr><td class="py-2 font-medium">Living Allowance / Benefit</td><td class="py-2 text-right font-serif" dir="rtl">گزارا الاؤنس / مالی امداد</td></tr>
+                <tr><td class="py-2 font-medium">Eviction Notice</td><td class="py-2 text-right font-serif" dir="rtl">بے دخلی کا نوٹس</td></tr>
+                <tr><td class="py-2 font-medium">Proof of Income / Means Test</td><td class="py-2 text-right font-serif" dir="rtl">آمدنی کا ثبوت / مالی جانچ پڑتال</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Education & Schools -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+            <h3 class="text-lg font-bold text-[#0A1128] dark:text-white mb-3 flex items-center gap-2">
+              <span>🎓</span> Education & Schooling Domain
+            </h3>
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-500">
+                  <th class="py-2">English Term</th>
+                  <th class="py-2 text-right">Urdu Translation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                <tr><td class="py-2 font-medium">Parent-Teacher Interview</td><td class="py-2 text-right font-serif" dir="rtl">والدین اور اساتذہ کی ملاقات</td></tr>
+                <tr><td class="py-2 font-medium">Truancy / Absenteeism</td><td class="py-2 text-right font-serif" dir="rtl">غیر حاضری / اسکول سے بھاگنا</td></tr>
+                <tr><td class="py-2 font-medium">Special Needs / Remedial Classes</td><td class="py-2 text-right font-serif" dir="rtl">خصوصی ضروریات / اصلاحی کلاسز</td></tr>
+                <tr><td class="py-2 font-medium">Academic Performance</td><td class="py-2 text-right font-serif" dir="rtl">تعلیمی کارکردگی</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Note-Taking & Exam Day Checklist (Section K.1) -->
+      <section class="mb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <h3 class="text-xl font-black text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+            <span>📝</span> Shorthand Note-Taking & Repeat Rules
+          </h3>
+          <div class="space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p>
+              <strong>Symbol Shorthand:</strong> Instead of writing words in full, use standardized arrows (&uarr; increase, &darr; decrease), initials (P = Patient, D = Doctor, T = Tenant), and math symbols (+ add, = same).
+            </p>
+            <p>
+              <strong>1 Free Repeat Strategy:</strong> You receive 1 free repeat per dialogue without penalty. Never waste it on simple 10-word segments; reserve it for segments with complex dates, policy numbers, or compound sentences.
+            </p>
+            <p>
+              <strong>5-Second Response Window:</strong> The chime rings at the end of each segment. Begin interpreting within 2 to 3 seconds. Exceeding 5 seconds triggers hesitation deductions.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <h3 class="text-xl font-black text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+            <span>✅</span> Online Exam Day Equipment Checklist
+          </h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span><strong>Proctored Environment:</strong> Private, quiet room with zero background noise and no other person present.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span><strong>Hardware:</strong> Desktop or laptop computer running Windows or macOS with stable webcam and wired headset with boom mic.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span><strong>Software:</strong> Latest Microsoft Teams client installed; verify audio output and input permissions before the call.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span><strong>ID Verification:</strong> Original valid passport ready for presentation to the proctor at exam start.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Course Schedule & Pricing Section (Section K.4) -->
+      <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-3xl mb-6">
+          <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">Flexible Batches & 1-on-1</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
+            Course Structure & Enrollment
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+            Choose between intensive 1-on-1 private coaching and focused small batches.
+          </p>
+        </div>
+
+        <!-- TODO: OWNER_VERIFY Pricing and schedule details for NAATI CCL Urdu -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700">
+            <h3 class="text-base font-bold text-[#0A1128] dark:text-white mb-2">1-on-1 Private Intensive Mentorship</h3>
+            <div class="text-2xl font-black text-amber-600 dark:text-amber-400 mb-2">Customized Schedule</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Dedicated sessions tailored to your target exam date. Full dialogue recording audits and direct WhatsApp feedback.</p>
+            <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300 mb-6">
+              <li>• 16 to 20 live 1-on-1 sessions</li>
+              <li>• 8 full-length simulated mock exams</li>
+              <li>• Personalized shorthand symbol coaching</li>
+            </ul>
+            <a href={siteData.contact.whatsapp} target="_blank" rel="noopener noreferrer" class="block text-center py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs transition-colors">
+              Inquire for 1-on-1 Fee & Slots &rarr;
+            </a>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700">
+            <h3 class="text-base font-bold text-[#0A1128] dark:text-white mb-2">Weekend & Evening Practice Batches</h3>
+            <div class="text-2xl font-black text-amber-600 dark:text-amber-400 mb-2">4-Week Cycle</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Structured evening classes designed for working professionals in Australia and Pakistan.</p>
+            <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300 mb-6">
+              <li>• 4 weeks of structured live workshops</li>
+              <li>• 50+ audio dialogue scenario library</li>
+              <li>• Complete 800-word vocabulary glossary</li>
+            </ul>
+            <a href={siteData.contact.whatsapp} target="_blank" rel="noopener noreferrer" class="block text-center py-2.5 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs hover:bg-slate-300 transition-colors">
+              Inquire for Batch Dates & Fee &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- FAQs -->
       <section class="mb-20">
         <div class="text-center max-w-3xl mx-auto mb-12">
@@ -281,6 +498,9 @@ const faqSchema = {
         </div>
       </section>
 
+      <!-- Author Box Component (Section K.5) -->
+      <AuthorBox className="mb-20" />
+
       <!-- Related Navigation Links -->
       <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
         <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Complete Your Australia PR Points Strategy</h3>
@@ -288,10 +508,10 @@ const faqSchema = {
           Combine +5 NAATI CCL points with +20 PTE Superior English points to maximize your invitation chances for Subclass 189, 190, and 491.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
-          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE 79+ (+20 Points)</a>
+          <a href="/online-pte-classes/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Online PTE Classes (+20 Points)</a>
+          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE Lahore In-Person</a>
           <a href="/australia-skilled-migration/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australia Skilled Migration (189/190/491)</a>
           <a href="/skill-assessment-guidance/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Skills Assessment (ACS / EA)</a>
-          <a href="/australian-immigration-consultant/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Immigration Guidance Lahore</a>
         </div>
       </section>
 

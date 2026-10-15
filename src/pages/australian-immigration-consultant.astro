@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AuthorBox from '../components/AuthorBox.astro';
 import { siteData } from '../data/siteData';
 
 const faqs = [
@@ -87,7 +88,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Australian Immigration Consultant",
+      "name": "Australia PR Points Guidance",
       "item": "https://moazzamshoukat.com/australian-immigration-consultant/"
     }
   ]
@@ -96,8 +97,8 @@ const breadcrumbSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Australian Immigration & Skilled Migration Guidance in Lahore",
-  "description": "Expert Australian skilled migration guidance, points optimization, skills assessment review, and Subclass 189, 190, 491 EOI roadmaps by Moazzam Shoukat.",
+  "name": "Australia PR Points & Skills Assessment Guidance",
+  "description": "Strategic Australian skilled migration points optimization, skills assessment review, and Subclass 189, 190, 491 EOI roadmaps by Moazzam Shoukat.",
   "provider": {
     "@type": "Person",
     "name": "Moazzam Shoukat",
@@ -125,14 +126,19 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Australian Immigration Consultant in Lahore | Skilled Migration Advisor | Moazzam Shoukat"
-  description="Navigate Australian Skilled Migration (189, 190, 491) with Moazzam Shoukat in Lahore. Strategic points calculation, skills assessment documentation & EOI guidance."
-  keywords="Australian Immigration Consultant in Lahore, Best Australian Immigration Advisor Pakistan, Australia Skilled Migration Guidance, Australia PR Pathway Guidance, Australian Skill Assessment Assistance, Subclass 189 190 491 Guidance"
+  title="Australia PR Points & Skills Assessment Guidance"
+  description="Strategic guidance for Australia PR points and skills assessment. Profile evaluation, ACS and Engineers Australia pre-vetting, and SkillSelect EOI planning."
   schema={[breadcrumbSchema, serviceSchema, faqSchema]}
 >
   <div class="py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
+      <!-- Compliance & Non-MARA Disclaimer Banner at Top -->
+      <div class="mb-8 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs text-slate-700 dark:text-slate-300">
+        <strong class="font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider mr-1">Compliance Notice:</strong>
+        Moazzam Shoukat provides strategic educational guidance, points score planning, test coaching for PTE/NAATI, and documentation pre-vetting based on publicly available Australian Department of Home Affairs standards. He is not a registered Australian migration agent (MARA) and does not provide legal immigration representation.
+      </div>
+
       <!-- Breadcrumbs -->
       <nav aria-label="Breadcrumb" class="mb-8">
         <ol class="flex items-center flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
@@ -144,22 +150,22 @@ const faqSchema = {
             <a href="/services/" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Services</a>
           </li>
           <li class="text-slate-400">/</li>
-          <li class="text-amber-700 dark:text-amber-400 font-semibold">Australian Immigration Consultant</li>
+          <li class="text-amber-700 dark:text-amber-400 font-semibold">Australia PR Points Guidance</li>
         </ol>
       </nav>
 
       <!-- Hero Header -->
       <div class="max-w-4xl mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-widest mb-6">
-          <span>🇦🇺 General Skilled Migration Advisory &bull; Subclass 189, 190 & 491</span>
+          <span>General Skilled Migration Advisory &bull; Subclass 189, 190 & 491</span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1128] dark:text-white tracking-tight leading-tight mb-6">
-          Trusted <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Australian Immigration Guidance</span> in Lahore
+          Australia PR Points & Skills Assessment Guidance
         </h1>
 
         <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
-          Strategic, transparent migration documentation and points optimization for Pakistani professionals. Maximize your SkillSelect ranking, navigate ACS / Engineers Australia skills assessments, and chart an authoritative roadmap to Australian Permanent Residency.
+          Strategic, transparent migration documentation and points optimization for professionals. Maximize your SkillSelect ranking, navigate ACS / Engineers Australia skills assessments, and chart an authoritative roadmap to Australian Permanent Residency.
         </p>
 
         <!-- CTA Action Buttons -->
@@ -179,17 +185,6 @@ const faqSchema = {
           >
             Points Calculator Guide &rarr;
           </a>
-        </div>
-      </div>
-
-      <!-- Compliance & E-E-A-T Disclaimer Banner -->
-      <div class="mb-16 p-6 rounded-2xl bg-amber-500/10 dark:bg-amber-400/5 border border-amber-500/20">
-        <div class="flex items-start gap-4">
-          <span class="text-2xl mt-0.5">ℹ️</span>
-          <div class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            <strong class="font-bold text-slate-900 dark:text-white block mb-1">Scope of Service & Regulatory Transparency:</strong>
-            Moazzam Shoukat provides strategic educational guidance, points score planning, English/NAATI coaching, and skills assessment document vetting based on publicly available Australian Department of Home Affairs standards. We do not claim to be a registered Australian migration agent (MARA) or Australian legal practitioner. Where formal statutory legal representation is required, clients are directed to registered migration authorities.
-          </div>
         </div>
       </div>
 
@@ -218,12 +213,12 @@ const faqSchema = {
       <!-- Visa Comparison Table -->
       <section class="mb-20 p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xl">
         <div class="max-w-3xl mb-6">
-          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">Visa Pathway Comparison</span>
+          <span class="text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-widest">Comparative Pathways</span>
           <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">
-            Understanding Australian Skilled Visa Subclasses (189 vs 190 vs 491)
+            General Skilled Migration Visas Compared
           </h2>
           <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
-            Choosing the right subclass depends on your points tally, nominated occupation list, and state sponsorship eligibility.
+            Understand the rights, restrictions, and nomination mechanics for each GSM visa subclass:
           </p>
         </div>
 
@@ -232,20 +227,20 @@ const faqSchema = {
             <thead>
               <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">
                 <th class="py-3 px-4 font-bold">Subclass</th>
-                <th class="py-3 px-4 font-bold">Visa Status</th>
-                <th class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Bonus Points</th>
+                <th class="py-3 px-4 font-bold">Visa Type</th>
+                <th class="py-3 px-4 font-bold text-amber-600 dark:text-amber-400">Nomination Boost</th>
                 <th class="py-3 px-4 font-bold">Residency Condition</th>
-                <th class="py-3 px-4 font-bold">Ideal Applicant Profile</th>
+                <th class="py-3 px-4 font-bold">Target Occupations</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
-              {visaComparison.map((row) => (
+              {visaComparison.map((v) => (
                 <tr>
-                  <td class="py-3 px-4 font-black text-slate-900 dark:text-white">{row.subclass}</td>
-                  <td class="py-3 px-4">{row.type}</td>
-                  <td class="py-3 px-4 font-black text-amber-700 dark:text-amber-400">{row.pointsBonus}</td>
-                  <td class="py-3 px-4">{row.location}</td>
-                  <td class="py-3 px-4 text-slate-500 dark:text-slate-400">{row.targetGroup}</td>
+                  <td class="py-3 px-4 font-black text-slate-900 dark:text-white">{v.subclass}</td>
+                  <td class="py-3 px-4 font-bold text-slate-700 dark:text-slate-300">{v.type}</td>
+                  <td class="py-3 px-4 font-black text-amber-700 dark:text-amber-400">{v.pointsBonus}</td>
+                  <td class="py-3 px-4">{v.location}</td>
+                  <td class="py-3 px-4 text-slate-600 dark:text-slate-400">{v.targetGroup}</td>
                 </tr>
               ))}
             </tbody>
@@ -257,10 +252,10 @@ const faqSchema = {
       <section class="mb-20">
         <div class="text-center max-w-3xl mx-auto mb-12">
           <h2 class="text-3xl sm:text-4xl font-black text-[#0A1128] dark:text-white mb-4">
-            Frequently Asked Questions: Australian Migration Guidance
+            Frequently Asked Questions: PR Points & Skills Guidance
           </h2>
           <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-            Honest, verified insights on invitation rounds, costs, and documentation requirements.
+            Clear, transparent answers regarding points eligibility, assessment authorities, and EOI management.
           </p>
         </div>
 
@@ -274,18 +269,20 @@ const faqSchema = {
         </div>
       </section>
 
+      <!-- Author Box Component (Section K.5) -->
+      <AuthorBox className="mb-20" />
+
       <!-- Related Navigation Links -->
       <section class="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
-        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Explore Related Skilled Migration Pillars</h3>
+        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">Assemble Your Complete PR Strategy</h3>
         <p class="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
-          Streamline your case with skills assessment guidance and language coaching specifically tuned to Australian PR.
+          Unlock 25 language points and audit your skills assessment to reach competitive invitation scores.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
-          <a href="/australia-skilled-migration/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australia Skilled Migration Overview</a>
-          <a href="/skill-assessment-guidance/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Skill Assessment Guidance (ACS/EA)</a>
-          <a href="/pte-trainer-lahore/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">PTE 79+ (+20 English Points)</a>
-          <a href="/naati-ccl-urdu-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">NAATI CCL Urdu (+5 Points)</a>
-          <a href="/contact/" class="px-4 py-2 rounded-xl bg-amber-400 text-slate-950 hover:bg-amber-300 transition-colors">Book Profile Consultation</a>
+          <a href="/online-pte-classes/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Online PTE Classes (+20 Pts)</a>
+          <a href="/naati-ccl-urdu-preparation/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">NAATI CCL Urdu (+5 Pts)</a>
+          <a href="/skill-assessment-guidance/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Skills Assessment (ACS / EA)</a>
+          <a href="/australia-skilled-migration/" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:text-amber-600 transition-colors">Australia Skilled Migration (189/190/491)</a>
         </div>
       </section>
 
