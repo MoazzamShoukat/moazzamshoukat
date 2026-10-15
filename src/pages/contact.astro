@@ -4,8 +4,8 @@ import { siteData } from '../data/siteData';
 ---
 
 <Layout
-  title={`Contact & Free Assessment | ${siteData.name}`}
-  description="Book your consultation with Moazzam Shoukat in Lahore or online worldwide. Technical advisory, AI research, Canada & Australia immigration, and IELTS/PTE coaching."
+  title={`Contact & Consultation | ${siteData.name}`}
+  description="Book your consultation with Moazzam Shoukat in Lahore or online worldwide for PTE, NAATI CCL Urdu, IELTS coaching, and Australian PR guidance."
 >
   <div class="py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +20,7 @@ import { siteData } from '../data/siteData';
           <span class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-200 bg-clip-text text-transparent">Book Your Consultation.</span>
         </h1>
         <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
-          Whether you need an upfront Canada Express Entry/PNP points audit, Australian GSM roadmap, IELTS 7.5+ / PTE 79+ preparation, or to discuss software engineering and speech AI research, reach out directly.
+          Whether you need PTE Academic 79+ preparation, NAATI CCL Urdu coaching, Australian GSM points strategy, or skills assessment pre-vetting, reach out directly.
         </p>
       </div>
 
@@ -38,6 +38,7 @@ import { siteData } from '../data/siteData';
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center justify-between p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 hover:border-amber-400 transition-colors group"
+                data-track-whatsapp="contact_page"
               >
                 <div>
                   <span class="block text-[10px] font-bold text-amber-800 dark:text-amber-400 uppercase tracking-wider">WhatsApp Direct (Instant Reply)</span>
@@ -50,6 +51,7 @@ import { siteData } from '../data/siteData';
               <a
                 href="tel:+923280484399"
                 class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-amber-400 transition-colors group"
+                data-track-phone="contact_page"
               >
                 <div>
                   <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider">Telephone Call</span>
@@ -59,12 +61,13 @@ import { siteData } from '../data/siteData';
               </a>
 
               <!-- Email -->
+              <!-- TODO: Replace moazzamshoukat1@gmail.com with official domain email once created by the owner -->
               <a
                 href={`mailto:${siteData.contact.email}`}
                 class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-amber-400 transition-colors group"
               >
                 <div>
-                  <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider">Official Email</span>
+                  <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider">Email Address</span>
                   <span class="font-bold text-[#0A1128] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400">{siteData.contact.email}</span>
                 </div>
                 <span class="text-slate-600 dark:text-slate-300 text-xs font-bold">Send Mail &rarr;</span>
@@ -80,25 +83,19 @@ import { siteData } from '../data/siteData';
 
             <!-- Social Links Matrix -->
             <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
-              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">All Professional Profiles</span>
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">Professional Profiles</span>
               <div class="grid grid-cols-2 gap-2 text-xs font-medium">
                 <a href={siteData.socials.linkedin} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-                  <span>🔗</span> LinkedIn
+                  LinkedIn
                 </a>
                 <a href={siteData.socials.scholar} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-                  <span>🔬</span> Google Scholar
+                  Google Scholar
                 </a>
-                <a href={siteData.socials.upwork} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-amber-600 transition-colors flex items-center gap-1.5 font-bold">
-                  <span>⚡</span> Upwork
+                <a href={siteData.socials.github} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-amber-600 transition-colors flex items-center gap-1.5">
+                  GitHub
                 </a>
                 <a href={siteData.socials.coachingInstagram} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-                  <span>📸</span> Coaching Insta
-                </a>
-                <a href={siteData.socials.instagram} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-                  <span>📷</span> Personal Insta
-                </a>
-                <a href={siteData.socials.facebook} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-                  <span>👍</span> Facebook
+                  Instagram
                 </a>
               </div>
             </div>
@@ -106,18 +103,19 @@ import { siteData } from '../data/siteData';
           </div>
         </div>
 
-        <!-- Right: Real Working Consultation Form (7 cols) -->
+        <!-- Right: Consultation / Enquiry Form (7 cols) -->
         <div class="lg:col-span-7 p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
           <div>
-            <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">ONLINE APPOINTMENT</span>
+            <span class="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">ONLINE ENQUIRY</span>
             <h2 class="text-2xl sm:text-3xl font-black text-[#0A1128] dark:text-white mt-1">
-              Request a Free Profile Diagnostic
+              Request a Consultation or Assessment
             </h2>
             <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-              Submit your inquiry below. It connects directly with Moazzam's WhatsApp and inbox for a guaranteed response within 24 business hours.
+              Fill out your details below to schedule your diagnostic session.
             </p>
           </div>
 
+          <!-- TODO: Backend form collection endpoint required (e.g. Formspree/Resend/custom endpoint). Currently routes to WhatsApp or mailto to prevent silent data drop. -->
           <form id="diagnostic-form" class="space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -133,7 +131,7 @@ import { siteData } from '../data/siteData';
               </div>
 
               <div>
-                <label for="phone" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Phone / WhatsApp *</label>
+                <label for="phone" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">WhatsApp Number *</label>
                 <input
                   type="tel"
                   id="phone"
@@ -147,64 +145,59 @@ import { siteData } from '../data/siteData';
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="email" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="your.email@example.com"
-                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0F172A] border border-slate-200 dark:border-slate-700 text-xs sm:text-sm focus:outline-none focus:border-amber-500 text-slate-900 dark:text-white"
-                />
-              </div>
-
-              <div>
-                <label for="service" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Primary Interest *</label>
+                <label for="service" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Service Required *</label>
                 <select
                   id="service"
                   name="service"
                   required
                   class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0F172A] border border-slate-200 dark:border-slate-700 text-xs sm:text-sm focus:outline-none focus:border-amber-500 text-slate-900 dark:text-white"
                 >
-                  <option value="Canada Express Entry / PNP">Canada Express Entry / PNP</option>
+                  <option value="Online PTE Classes (1-on-1)">Online PTE Classes (1-on-1)</option>
+                  <option value="PTE Trainer in Lahore">PTE Trainer in Lahore (In-Person)</option>
+                  <option value="NAATI CCL Urdu Preparation">NAATI CCL Urdu (+5 Points)</option>
+                  <option value="IELTS Coaching (Lahore & Online)">IELTS Coaching (Lahore & Online)</option>
                   <option value="Australia Skilled Migration (189/190/491)">Australia Skilled Migration (189/190/491)</option>
-                  <option value="Skills Assessment (ACS, EA, VETASSESS)">Skills Assessment (ACS, EA, VETASSESS)</option>
-                  <option value="Student Visa & Genuine Student (GS)">Student Visa & Genuine Student (GS)</option>
-                  <option value="IELTS Band 7.5+ Coaching">IELTS Band 7.5+ Coaching</option>
-                  <option value="PTE Academic 79+ Coaching">PTE Academic 79+ Coaching</option>
-                  <option value="NAATI CCL Urdu (5 Points)">NAATI CCL Urdu (5 Points)</option>
-                  <option value="Software & AI Advisory">Software Engineering & AI Advisory</option>
+                  <option value="Skills Assessment (ACS / EA CDR / VETASSESS)">Skills Assessment (ACS / EA CDR / VETASSESS)</option>
+                  <option value="PTE Core for Canada PR">PTE Core for Canada PR</option>
+                  <option value="Canada Express Entry & PNP">Canada Express Entry & PNP</option>
+                  <option value="Student Visa & Admission Guidance">Student Visa & Admission Guidance</option>
+                  <option value="AI Research & Technical Advisory">AI Research & Technical Advisory</option>
                 </select>
+              </div>
+
+              <div>
+                <label for="target_score_date" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Target Score or Test Date *</label>
+                <input
+                  type="text"
+                  id="target_score_date"
+                  name="target_score_date"
+                  required
+                  placeholder="e.g. PTE 79+ by Nov 2026 / NAATI in 4 weeks"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0F172A] border border-slate-200 dark:border-slate-700 text-xs sm:text-sm focus:outline-none focus:border-amber-500 text-slate-900 dark:text-white"
+                />
               </div>
             </div>
 
             <div>
-              <label for="message" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Your Profile Summary or Questions *</label>
+              <label for="message" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Message / Current Status *</label>
               <textarea
                 id="message"
                 name="message"
                 rows="4"
                 required
-                placeholder="Mention your age, qualification, current English band, years of experience, or technical project requirements..."
+                placeholder="Briefly describe your background, previous test scores (if any), target visa subclass, or timeline..."
                 class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0F172A] border border-slate-200 dark:border-slate-700 text-xs sm:text-sm focus:outline-none focus:border-amber-500 text-slate-900 dark:text-white"
               ></textarea>
             </div>
 
-            <!-- Real Feedback & Redirect Status Box -->
-            <div id="form-status" class="hidden p-4 rounded-xl border text-xs space-y-2">
-              <div id="status-title" class="font-bold text-sm flex items-center gap-2"></div>
-              <div id="status-desc" class="text-xs leading-relaxed"></div>
-              <div id="status-actions" class="pt-2 flex flex-wrap gap-2"></div>
-            </div>
-
-            <!-- Submission Options -->
+            <!-- Submission Actions -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               <button
                 type="submit"
                 id="submit-wa-btn"
                 class="w-full py-3.5 px-5 rounded-full text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
               >
-                <span>💬 Submit via WhatsApp (Fastest)</span>
+                <span>Submit via WhatsApp (Fastest)</span>
               </button>
 
               <button
@@ -212,7 +205,7 @@ import { siteData } from '../data/siteData';
                 id="submit-mail-btn"
                 class="w-full py-3.5 px-5 rounded-full text-xs font-bold text-slate-800 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all cursor-pointer flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-700"
               >
-                <span>✉️ Submit via Email</span>
+                <span>Submit via Email</span>
               </button>
             </div>
             
@@ -221,89 +214,49 @@ import { siteData } from '../data/siteData';
             </p>
           </form>
 
+          <script is:inline>
+            const form = document.getElementById('diagnostic-form');
+            const mailBtn = document.getElementById('submit-mail-btn');
+
+            function getFormData() {
+              const name = document.getElementById('name').value;
+              const phone = document.getElementById('phone').value;
+              const service = document.getElementById('service').value;
+              const target = document.getElementById('target_score_date').value;
+              const message = document.getElementById('message').value;
+              return { name, phone, service, target, message };
+            }
+
+            if (form) {
+              form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const d = getFormData();
+                const text = encodeURIComponent(
+                  `Hi Moazzam, my name is ${d.name}.\n\nService: ${d.service}\nTarget Score / Date: ${d.target}\nWhatsApp: ${d.phone}\nMessage: ${d.message}`
+                );
+                window.open(`https://wa.me/923280484399?text=${text}`, '_blank');
+              });
+            }
+
+            if (mailBtn) {
+              mailBtn.addEventListener('click', () => {
+                const d = getFormData();
+                if (!d.name || !d.phone) {
+                  alert('Please enter your name and contact details first.');
+                  return;
+                }
+                const subject = encodeURIComponent(`Consultation Inquiry: ${d.service} - ${d.name}`);
+                const body = encodeURIComponent(
+                  `Name: ${d.name}\nWhatsApp / Phone: ${d.phone}\nService: ${d.service}\nTarget Score / Test Date: ${d.target}\n\nDetails:\n${d.message}`
+                );
+                window.location.href = `mailto:moazzamshoukat1@gmail.com?subject=${subject}&body=${body}`;
+              });
+            }
+          </script>
         </div>
 
       </div>
 
     </div>
   </div>
-
-  <script is:inline>
-    const form = document.getElementById('diagnostic-form');
-    const statusBox = document.getElementById('form-status');
-    const statusTitle = document.getElementById('status-title');
-    const statusDesc = document.getElementById('status-desc');
-    const statusActions = document.getElementById('status-actions');
-    const mailBtn = document.getElementById('submit-mail-btn');
-
-    function buildInquiryPayload() {
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const service = document.getElementById('service').value;
-      const message = document.getElementById('message').value.trim();
-
-      const text = `*New Consultation Inquiry - Moazzam Shoukat*\n\n` +
-        `• *Full Name:* ${name}\n` +
-        `• *Phone/WhatsApp:* ${phone}\n` +
-        `• *Email:* ${email}\n` +
-        `• *Primary Service:* ${service}\n` +
-        `• *Profile Details:* ${message}\n\n` +
-        `Sent via moazzamshoukat.com`;
-
-      return { name, phone, email, service, message, text };
-    }
-
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const { name, text, email, phone, service, message } = buildInquiryPayload();
-
-        if (!name || !phone || !email) {
-          alert('Please fill out all required fields.');
-          return;
-        }
-
-        const waUrl = `https://wa.me/923280484399?text=${encodeURIComponent(text)}`;
-        
-        statusBox.className = 'p-4 rounded-xl border border-amber-500/40 bg-amber-500/10 text-slate-900 dark:text-white text-xs space-y-2 block';
-        statusTitle.innerHTML = '<span>🚀 Opening WhatsApp with your inquiry...</span>';
-        statusDesc.innerHTML = 'Your case details have been formatted for instant review. If WhatsApp did not launch automatically, tap below:';
-        statusActions.innerHTML = `
-          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs inline-flex items-center gap-1.5 shadow-sm">
-            Launch WhatsApp Direct &rarr;
-          </a>
-          <a href="mailto:moazzamshoukat1@gmail.com?subject=${encodeURIComponent('Consultation Inquiry: ' + service)}&body=${encodeURIComponent(text)}" class="px-4 py-2 rounded-lg bg-slate-800 text-white font-bold text-xs inline-flex items-center gap-1.5">
-            Send as Email Instead
-          </a>
-        `;
-
-        window.open(waUrl, '_blank');
-      });
-    }
-
-    if (mailBtn) {
-      mailBtn.addEventListener('click', () => {
-        const { name, phone, email, service, message, text } = buildInquiryPayload();
-        if (!name || !email) {
-          alert('Please provide your name and email before sending.');
-          return;
-        }
-
-        const subject = `Consultation Inquiry - ${service} (${name})`;
-        const mailUrl = `mailto:moazzamshoukat1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
-        
-        statusBox.className = 'p-4 rounded-xl border border-amber-500/40 bg-amber-500/10 text-slate-900 dark:text-white text-xs space-y-2 block';
-        statusTitle.innerHTML = '<span>✉️ Opening email client...</span>';
-        statusDesc.innerHTML = 'Your default mail app is opening with your formatted inquiry. You can also contact Moazzam directly at <strong>moazzamshoukat1@gmail.com</strong> or WhatsApp +92-328-048-4399.';
-        statusActions.innerHTML = `
-          <a href="${mailUrl}" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs inline-flex items-center gap-1.5 shadow-sm">
-            Open Email Client &rarr;
-          </a>
-        `;
-
-        window.location.href = mailUrl;
-      });
-    }
-  </script>
 </Layout>
