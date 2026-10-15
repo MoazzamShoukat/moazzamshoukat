@@ -3,12 +3,12 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
 import { siteData } from '../data/siteData';
 
 interface Props {
   title?: string;
   description?: string;
-  keywords?: string;
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
@@ -16,9 +16,8 @@ interface Props {
 }
 
 const {
-  title = `${siteData.name} | AI Researcher & Immigration Strategist`,
-  description = siteData.tagline,
-  keywords = "PTE Trainer in Lahore, Best PTE Coaching Pakistan, IELTS Trainer in Lahore, NAATI CCL Urdu Preparation, Australia Immigration Consultant, Australia Skilled Migration, Skills Assessment Australia, AI Researcher Speech Processing, Python Developer, Data Engineer",
+  title = "Moazzam Shoukat | PTE, NAATI CCL & IELTS Trainer",
+  description = "Expert 1-on-1 coaching for PTE Academic, NAATI CCL Urdu, and IELTS in Lahore and online. Strategic guidance for Australian PR points and skills assessment.",
   ogImage = "/images/moazzam.png",
   ogType = "website",
   noindex = false,
@@ -30,8 +29,16 @@ let pathname = Astro.url.pathname;
 if (!pathname.endsWith('/') && !pathname.includes('.')) {
   pathname += '/';
 }
-const canonicalUrl = new URL(pathname, Astro.site || "https://moazzamshoukat.com").href;
-const absoluteOgImage = new URL(ogImage, Astro.site || "https://moazzamshoukat.com").href;
+const canonicalUrl = new URL(pathname, Astro.site || "https://moazzamshoukat.com/").href;
+const absoluteOgImage = new URL(ogImage, Astro.site || "https://moazzamshoukat.com/").href;
+
+// SEO Title & Description Build-Time Length Validations
+if (title && title.length > 60) {
+  console.warn(`[SEO Warning] Title exceeds 60 characters (${title.length} chars): "${title}" on path ${pathname}`);
+}
+if (description && (description.length > 155 || description.length < 70)) {
+  console.warn(`[SEO Warning] Description outside 70-155 characters (${description.length} chars): "${description}" on path ${pathname}`);
+}
 
 const baseSchema = {
   "@context": "https://schema.org",
@@ -41,7 +48,7 @@ const baseSchema = {
       "@id": "https://moazzamshoukat.com/#website",
       "url": "https://moazzamshoukat.com/",
       "name": "Moazzam Shoukat",
-      "description": "Technical Specialist, AI Researcher, Senior Software Engineer, Australia & Canada Migration Guidance, and Elite PTE & IELTS Trainer in Lahore",
+      "description": "PTE Academic, NAATI CCL Urdu, and IELTS Coaching in Lahore and Online. Australia PR Points Guidance.",
       "inLanguage": "en-US",
       "publisher": {
         "@id": "https://moazzamshoukat.com/#person"
@@ -53,7 +60,7 @@ const baseSchema = {
       "name": "Moazzam Shoukat",
       "url": "https://moazzamshoukat.com/",
       "image": "https://moazzamshoukat.com/images/moazzam.png",
-      "jobTitle": "Senior Software Engineer, AI Researcher & Master English/Immigration Trainer",
+      "jobTitle": "PTE, NAATI CCL & IELTS Master Trainer, Australia PR Guidance Specialist",
       "telephone": "+92-328-048-4399",
       "email": "moazzamshoukat1@gmail.com",
       "alumniOf": {
@@ -72,25 +79,18 @@ const baseSchema = {
         "IELTS Academic & General Training",
         "NAATI CCL Urdu",
         "Australian Skilled Migration (Subclass 189, 190, 491)",
-        "Australian Skills Assessment (ACS, Engineers Australia, VETASSESS)",
-        "Speech Processing & Deep Learning",
-        "Large Audio Models",
-        "Data Engineering & ETL Pipelines",
-        "Python & Full-Stack Web Development"
+        "Australian Skills Assessment (ACS, Engineers Australia, VETASSESS)"
       ],
       "sameAs": [
-        "https://www.linkedin.com/in/moazzamshoukat/",
         "https://scholar.google.com/citations?user=uU550yYAAAAJ",
-        "https://www.upwork.com/freelancers/~013acf6cdef10719d7",
-        "https://www.instagram.com/moazzamshoukat/",
-        "http://facebook.com/moazzamshoukat",
+        "https://www.linkedin.com/in/moazzamshoukat/",
         "https://github.com/moazzamshoukat"
       ]
     },
     {
       "@type": "ProfessionalService",
       "@id": "https://moazzamshoukat.com/#organization",
-      "name": "Moazzam Shoukat - Technical Advisory, Test Prep & Migration Guidance",
+      "name": "Moazzam Shoukat Coaching & PR Guidance",
       "url": "https://moazzamshoukat.com/",
       "logo": "https://moazzamshoukat.com/favicon.svg",
       "image": "https://moazzamshoukat.com/images/moazzam.png",
@@ -151,10 +151,9 @@ const baseSchema = {
         : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
     />
 
-    <!-- SEO Meta Tags -->
+    <!-- SEO Meta Tags (no keywords) -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="author" content={siteData.name} />
     <link rel="canonical" href={canonicalUrl} />
 
@@ -167,7 +166,7 @@ const baseSchema = {
     <meta property="og:image" content={absoluteOgImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Moazzam Shoukat - Technical Specialist, AI Researcher and Migration Strategist" />
+    <meta property="og:image:alt" content="Moazzam Shoukat - PTE, NAATI CCL & IELTS Trainer" />
     <meta property="og:site_name" content={siteData.name} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -181,12 +180,10 @@ const baseSchema = {
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- Base Schema.org JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+    <SchemaOrg schema={baseSchema} />
     
-    <!-- Page-Specific JSON-LD Schema (e.g. FAQPage, Article, Service, BreadcrumbList) -->
-    {schema && (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    )}
+    <!-- Page-Specific JSON-LD Schema (e.g. Course, FAQPage, Article, BreadcrumbList) -->
+    {schema && <SchemaOrg schema={schema} />}
 
     <!-- Theme Initialization Script to Prevent FOUC -->
     <script is:inline>
@@ -199,6 +196,50 @@ const baseSchema = {
       } else {
         document.documentElement.classList.remove('dark');
       }
+    </script>
+
+    <!-- GA4 Analytics & Click Measurement -->
+    <script is:inline define:vars={{ gaId: import.meta.env.PUBLIC_GA_ID || '' }}>
+      if (gaId) {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', gaId, { anonymize_ip: true });
+      }
+
+      document.addEventListener('click', function(e) {
+        const target = e.target.closest('a');
+        if (!target) return;
+        const href = target.getAttribute('href') || '';
+        const location = target.getAttribute('data-track-whatsapp') || 
+                         target.getAttribute('data-track-phone') || 
+                         target.getAttribute('title') || 
+                         target.innerText.trim().slice(0, 30) || 'unspecified';
+
+        if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'whatsapp_click', {
+              page_path: window.location.pathname,
+              link_location: location,
+              link_url: href
+            });
+          }
+        } else if (href.startsWith('tel:')) {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'phone_click', {
+              page_path: window.location.pathname,
+              link_location: location,
+              phone_number: href.replace('tel:', '')
+            });
+          }
+        }
+      });
     </script>
   </head>
   <body class="bg-[#F8FAFC] text-[#0A1128] dark:bg-[#0B0F19] dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-amber-400 selection:text-slate-950 font-['Plus_Jakarta_Sans',system-ui,sans-serif] overflow-x-hidden">
