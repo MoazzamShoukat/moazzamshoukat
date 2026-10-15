@@ -737,139 +737,29 @@ import Layout from '../../../layouts/Layout.astro';
     }
 
     // -------------------------------------------------------------------------
-    // Download Image Feature (High-Quality JPG Canvas Generator)
+    // Download Image Feature (Publicity Poster Style Canvas Generator)
     // -------------------------------------------------------------------------
     downloadImageBtn.addEventListener('click', async function() {
       if (!currentItem) return;
 
-      downloadBtnLabel.textContent = 'Generating...';
+      downloadBtnLabel.textContent = 'Generating Poster...';
       downloadImageBtn.disabled = true;
 
       try {
         await document.fonts.ready;
         try {
-          await document.fonts.load("bold 34px 'Noto Nastaliq Urdu'");
-          await document.fonts.load("400 20px 'Noto Nastaliq Urdu'");
+          await document.fonts.load("bold 48px 'Noto Nastaliq Urdu'");
+          await document.fonts.load("bold 20px 'Noto Nastaliq Urdu'");
+          await document.fonts.load("900 26px sans-serif");
         } catch(e) {}
 
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
-
         const width = 1200;
-        let estimatedHeight = 1420;
-        
-        canvas.width = width;
-        canvas.height = estimatedHeight;
-
-        // Background Gradient (Deep Navy to Midnight)
-        const bgGrad = ctx.createLinearGradient(0, 0, 0, estimatedHeight);
-        bgGrad.addColorStop(0, '#0A1128');
-        bgGrad.addColorStop(0.5, '#0D1736');
-        bgGrad.addColorStop(1, '#060A18');
-        ctx.fillStyle = bgGrad;
-        ctx.fillRect(0, 0, width, estimatedHeight);
-
-        // Outer Decorative Gold Border
-        ctx.strokeStyle = '#F59E0B';
-        ctx.lineWidth = 3;
-        ctx.strokeRect(30, 30, width - 60, estimatedHeight - 60);
-
-        ctx.strokeStyle = 'rgba(245, 158, 11, 0.25)';
-        ctx.lineWidth = 1;
-        ctx.strokeRect(38, 38, width - 76, estimatedHeight - 76);
-
-        // Subtle Watermark
-        ctx.save();
-        ctx.translate(width / 2, estimatedHeight / 2);
-        ctx.rotate(-0.35);
-        ctx.fillStyle = 'rgba(245, 158, 11, 0.035)';
-        ctx.font = '900 80px sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText('MOAZZAM SHOUKAT', 0, -40);
-        ctx.fillText('NAATI CCL URDU', 0, 60);
-        ctx.restore();
-
-        // Header Bar
-        ctx.fillStyle = '#F59E0B';
-        ctx.font = 'bold 15px sans-serif';
-        ctx.textAlign = 'left';
-        ctx.fillText('NAATI CCL URDU • VOCABULARY DICTIONARY', 60, 85);
-
-        // Domain Badge (Right)
-        const domainText = (currentItem.naati_domain || 'NAATI CCL Context').toUpperCase();
-        ctx.font = 'bold 13px sans-serif';
-        const dWidth = ctx.measureText(domainText).width + 30;
-        const dX = width - 60 - dWidth;
-        
-        ctx.fillStyle = 'rgba(245, 158, 11, 0.15)';
-        ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.roundRect(dX, 65, dWidth, 32, 16);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.fillStyle = '#FDE68A';
-        ctx.textAlign = 'center';
-        ctx.fillText(domainText, dX + (dWidth / 2), 86);
-
-        // Header Separator
-        ctx.strokeStyle = 'rgba(245, 158, 11, 0.2)';
-        ctx.beginPath();
-        ctx.moveTo(60, 115);
-        ctx.lineTo(width - 60, 115);
-        ctx.stroke();
-
-        // Hero Card: English Meaning & Urdu Word
-        ctx.fillStyle = '#111C3D';
-        ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.roundRect(60, 140, width - 120, 185, 20);
-        ctx.fill();
-        ctx.stroke();
-
-        // Left: English Meaning + POS
-        ctx.textAlign = 'left';
-        ctx.fillStyle = '#94A3B8';
-        ctx.font = 'bold 12px sans-serif';
-        const posText = (currentItem.part_of_speech ? currentItem.part_of_speech.toUpperCase() + ' • ' : '') + 'ENGLISH MEANING';
-        ctx.fillText(posText, 90, 178);
-
-        ctx.fillStyle = '#FFFFFF';
-        ctx.font = '900 38px sans-serif';
-        const enTitle = cleanEnglish(currentItem.english_meaning);
-        ctx.fillText(enTitle.length > 25 ? enTitle.substring(0, 25) + '...' : enTitle, 90, 235);
-
-        // Center vertical divider
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-        ctx.beginPath();
-        ctx.moveTo(width / 2, 160);
-        ctx.lineTo(width / 2, 305);
-        ctx.stroke();
-
-        // Right: Urdu Word (in Noto Nastaliq Urdu)
-        ctx.textAlign = 'right';
-        ctx.fillStyle = '#FDE68A';
-        ctx.font = 'bold 16px "Noto Nastaliq Urdu", serif';
-        ctx.fillText('اردو لفظ (Urdu Word)', width - 90, 185);
-
-        ctx.fillStyle = '#F59E0B';
-        ctx.font = 'bold 44px "Noto Nastaliq Urdu", serif';
-        ctx.fillText(currentItem.urdu_word, width - 90, 255);
-
-        // Dialogue Section Header
-        let currentY = 365;
-        ctx.textAlign = 'left';
-        ctx.fillStyle = '#F59E0B';
-        ctx.font = 'bold 14px sans-serif';
-        ctx.fillText('NAATI CCL DIALOGUE SCENARIOS & INTERPRETATIONS', 60, currentY);
-
-        currentY += 20;
 
         function wrapLines(text, maxWidth, font) {
           ctx.font = font;
-          const words = text.split(' ');
+          const words = (text || '').split(' ');
           let line = '';
           const lines = [];
           for (let n = 0; n < words.length; n++) {
@@ -882,99 +772,469 @@ import Layout from '../../../layouts/Layout.astro';
               line = testLine;
             }
           }
-          lines.push(line.trim());
+          if (line.trim().length > 0) lines.push(line.trim());
           return lines;
         }
 
+        // Measure content dynamically
+        const boxWidth = width - 128;
+        const textWidth = boxWidth - 60;
+        const enFont = '500 16px sans-serif';
+        const urFont = 'bold 20px "Noto Nastaliq Urdu", serif';
+
+        let dialogueHeights = 0;
+        const processedExamples = [];
+
         if (currentItem.examples && Array.isArray(currentItem.examples)) {
           currentItem.examples.forEach(function(ex, idx) {
-            const enFont = '500 16px sans-serif';
-            const urFont = '500 19px "Noto Nastaliq Urdu", serif';
-            const boxWidth = width - 120;
-            const textWidth = boxWidth - 60;
-
             const enLines = wrapLines(ex.english || '', textWidth, enFont);
             const urLines = wrapLines(ex.urdu || '', textWidth, urFont);
-
-            const boxHeight = 65 + (enLines.length * 24) + (urLines.length * 36);
-
-            ctx.fillStyle = '#0D152D';
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.roundRect(60, currentY, boxWidth, boxHeight, 16);
-            ctx.fill();
-            ctx.stroke();
-
-            ctx.fillStyle = '#F59E0B';
-            ctx.font = 'bold 12px sans-serif';
-            ctx.textAlign = 'left';
-            const exTitle = 'EXAMPLE ' + (ex.example_number || (idx + 1)) + (ex.context ? ' — ' + ex.context.toUpperCase() : '');
-            ctx.fillText(exTitle, 85, currentY + 30);
-
-            ctx.font = enFont;
-            ctx.fillStyle = '#E2E8F0';
-            ctx.textAlign = 'left';
-            let lineY = currentY + 58;
-            enLines.forEach(function(l) {
-              ctx.fillText(l, 85, lineY);
-              lineY += 24;
-            });
-
-            lineY += 6;
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
-            ctx.beginPath();
-            ctx.moveTo(85, lineY);
-            ctx.lineTo(width - 85, lineY);
-            ctx.stroke();
-
-            lineY += 30;
-            ctx.font = urFont;
-            ctx.fillStyle = '#FDE68A';
-            ctx.textAlign = 'right';
-            urLines.forEach(function(l) {
-              ctx.fillText(l, width - 85, lineY);
-              lineY += 36;
-            });
-
-            currentY += boxHeight + 18;
+            const bHeight = 70 + (enLines.length * 26) + (urLines.length * 40);
+            dialogueHeights += bHeight + 18;
+            processedExamples.push({ ex: ex, idx: idx, enLines: enLines, urLines: urLines, bHeight: bHeight });
           });
         }
 
-        // Footer Branding Bar
-        const footerY = estimatedHeight - 110;
-        ctx.fillStyle = 'rgba(6, 10, 24, 0.95)';
-        ctx.fillRect(30, footerY, width - 60, 80);
+        const baseTopHeight = 440; // Header, ribbon banner, hero word card & section title
+        const footerHeight = 180;  // Marketing & contact footer bar + padding
+        const totalHeight = Math.max(1480, baseTopHeight + dialogueHeights + footerHeight);
 
-        ctx.strokeStyle = '#F59E0B';
+        canvas.width = width;
+        canvas.height = totalHeight;
+
+        // 1. Poster Background Gradient (Deep Navy to Midnight Black)
+        const bgGrad = ctx.createLinearGradient(0, 0, 0, totalHeight);
+        bgGrad.addColorStop(0, '#0A1128');
+        bgGrad.addColorStop(0.35, '#0E1736');
+        bgGrad.addColorStop(0.75, '#0A1024');
+        bgGrad.addColorStop(1, '#050814');
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, width, totalHeight);
+
+        // Ambient Gold Glow Circles in Background
+        const glowGrad1 = ctx.createRadialGradient(width - 150, 150, 20, width - 150, 150, 450);
+        glowGrad1.addColorStop(0, 'rgba(212, 175, 55, 0.08)');
+        glowGrad1.addColorStop(1, 'rgba(10, 17, 40, 0)');
+        ctx.fillStyle = glowGrad1;
+        ctx.fillRect(0, 0, width, totalHeight);
+
+        // 2. Decorative Repeated Text Border: "www.moazzamshoukat.com"
+        const borderRepeatText = 'www.moazzamshoukat.com  ✦  ';
+        ctx.font = 'bold 10px monospace';
+        ctx.fillStyle = 'rgba(245, 158, 11, 0.42)';
+        const step = ctx.measureText(borderRepeatText).width;
+
+        // Top Edge
+        for (let x = 18; x < width - 18; x += step) {
+          ctx.fillText(borderRepeatText, x, 22);
+        }
+        // Bottom Edge
+        for (let x = 18; x < width - 18; x += step) {
+          ctx.fillText(borderRepeatText, x, totalHeight - 14);
+        }
+        // Left Edge (Rotated)
+        ctx.save();
+        ctx.translate(22, totalHeight - 20);
+        ctx.rotate(-Math.PI / 2);
+        for (let x = 0; x < totalHeight - 40; x += step) {
+          ctx.fillText(borderRepeatText, x, 0);
+        }
+        ctx.restore();
+        // Right Edge (Rotated)
+        ctx.save();
+        ctx.translate(width - 14, 20);
+        ctx.rotate(Math.PI / 2);
+        for (let x = 0; x < totalHeight - 40; x += step) {
+          ctx.fillText(borderRepeatText, x, 0);
+        }
+        ctx.restore();
+
+        // 3. Inner Architectural Gold Frame & Corner Star Ornaments
+        ctx.strokeStyle = '#D4AF37';
+        ctx.lineWidth = 1.8;
+        ctx.strokeRect(34, 34, width - 68, totalHeight - 68);
+
+        ctx.strokeStyle = 'rgba(212, 175, 55, 0.25)';
         ctx.lineWidth = 1;
+        ctx.strokeRect(40, 40, width - 80, totalHeight - 80);
+
+        function drawCornerStar(cx, cy, r) {
+          ctx.fillStyle = '#F5D77F';
+          ctx.beginPath();
+          ctx.moveTo(cx, cy - r);
+          ctx.quadraticCurveTo(cx, cy, cx + r, cy);
+          ctx.quadraticCurveTo(cx, cy, cx, cy + r);
+          ctx.quadraticCurveTo(cx, cy, cx - r, cy);
+          ctx.quadraticCurveTo(cx, cy, cx, cy - r);
+          ctx.fill();
+          ctx.fillStyle = '#FFFFFF';
+          ctx.beginPath();
+          ctx.arc(cx, cy, r * 0.25, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        drawCornerStar(34, 34, 11);
+        drawCornerStar(width - 34, 34, 11);
+        drawCornerStar(34, totalHeight - 34, 11);
+        drawCornerStar(width - 34, totalHeight - 34, 11);
+
+        // 4. Subtle Clear Website Watermark in Center
+        ctx.save();
+        ctx.translate(width / 2, totalHeight / 2 - 40);
+        ctx.rotate(-0.32);
+        ctx.fillStyle = 'rgba(245, 158, 11, 0.038)';
+        ctx.textAlign = 'center';
+        ctx.font = '900 72px sans-serif';
+        ctx.fillText('MOAZZAM SHOUKAT', 0, -55);
+        ctx.font = '800 42px sans-serif';
+        ctx.fillText('WWW.MOAZZAMSHOUKAT.COM', 0, 5);
+        ctx.font = '700 32px sans-serif';
+        ctx.fillText('NAATI CCL URDU • MASTER STUDY POSTER', 0, 55);
+        ctx.restore();
+
+        // 5. Detailed Premium Header & Website Logo
+        const logoX = 64;
+        const logoY = 56;
+        const logoSize = 64;
+
+        // Logo Monogram Container Box
+        const logoGrad = ctx.createLinearGradient(logoX, logoY, logoX + logoSize, logoY + logoSize);
+        logoGrad.addColorStop(0, '#0A1128');
+        logoGrad.addColorStop(0.5, '#0F172A');
+        logoGrad.addColorStop(1, '#1A2644');
+        ctx.fillStyle = logoGrad;
         ctx.beginPath();
-        ctx.moveTo(40, footerY);
-        ctx.lineTo(width - 40, footerY);
+        ctx.roundRect(logoX, logoY, logoSize, logoSize, 16);
+        ctx.fill();
+
+        ctx.strokeStyle = '#D4AF37';
+        ctx.lineWidth = 1.8;
         ctx.stroke();
 
+        // Draw Official MS Monogram Vectors on Canvas
+        ctx.save();
+        ctx.translate(logoX + 7, logoY + 7);
+        const s = (logoSize - 14) / 120;
+        ctx.scale(s, s);
+
+        const goldGrad = ctx.createLinearGradient(0, 0, 120, 120);
+        goldGrad.addColorStop(0, '#FFF8DB');
+        goldGrad.addColorStop(0.3, '#F5D77F');
+        goldGrad.addColorStop(0.7, '#D4AF37');
+        goldGrad.addColorStop(1, '#9E7820');
+
+        ctx.strokeStyle = 'rgba(212, 175, 55, 0.4)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(60, 60, 50, -0.6 * Math.PI, 0.2 * Math.PI);
+        ctx.stroke();
+
+        // Monogram M
+        ctx.strokeStyle = goldGrad;
+        ctx.lineWidth = 7.5;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        ctx.moveTo(34, 84);
+        ctx.lineTo(34, 36);
+        ctx.lineTo(50, 62);
+        ctx.lineTo(66, 36);
+        ctx.lineTo(66, 84);
+        ctx.stroke();
+
+        // Monogram S
+        ctx.beginPath();
+        ctx.moveTo(96, 44);
+        ctx.bezierCurveTo(96, 36, 88, 35, 83, 35);
+        ctx.bezierCurveTo(74, 35, 71, 41, 71, 48);
+        ctx.bezierCurveTo(71, 60, 97, 60, 97, 72);
+        ctx.bezierCurveTo(97, 82, 90, 85, 83, 85);
+        ctx.bezierCurveTo(74, 85, 70, 80, 70, 74);
+        ctx.stroke();
+
+        // Neural Node Circuit traces
+        [[18, 34], [18, 52], [18, 72]].forEach(function(pt) {
+          ctx.beginPath();
+          ctx.arc(pt[0], pt[1], 3, 0, Math.PI * 2);
+          ctx.fillStyle = '#FFF8DB';
+          ctx.fill();
+          ctx.beginPath();
+          ctx.moveTo(pt[0], pt[1]);
+          ctx.lineTo(34, pt[1]);
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = goldGrad;
+          ctx.stroke();
+        });
+
+        // Orbit Star Flare at top right
+        ctx.fillStyle = '#FFFFFF';
+        ctx.beginPath();
+        ctx.arc(104, 20, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        // Header Brand Typography
         ctx.textAlign = 'left';
         ctx.fillStyle = '#FFFFFF';
-        ctx.font = 'bold 16px sans-serif';
-        ctx.fillText('Moazzam Shoukat', 60, footerY + 35);
+        ctx.font = '900 26px sans-serif';
+        ctx.fillText('Moazzam Shoukat', 144, 84);
+
+        // Specular gold dot
+        ctx.fillStyle = '#F59E0B';
+        ctx.beginPath();
+        ctx.arc(372, 77, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#F59E0B';
+        ctx.font = 'bold 12px sans-serif';
+        ctx.fillText('AI RESEARCHER  •  AUSTRALIA & CANADA MIGRATION STRATEGIST', 144, 105);
 
         ctx.fillStyle = '#94A3B8';
-        ctx.font = '500 13px sans-serif';
-        ctx.fillText('moazzamshoukat.com • NAATI CCL Urdu Master Trainer', 60, footerY + 58);
+        ctx.font = '500 11.5px sans-serif';
+        ctx.fillText('Master PTE Academic & NAATI CCL Urdu Trainer • Lahore & Global Online', 144, 122);
 
-        ctx.textAlign = 'right';
-        ctx.fillStyle = '#22C55E';
-        ctx.font = 'bold 15px sans-serif';
-        ctx.fillText('WhatsApp: +92-328-048-4399', width - 60, footerY + 35);
+        // Top Right Official Study Badge
+        const badgeText = '★ NAATI CCL URDU STUDY POSTER (+5 PR POINTS) ★';
+        ctx.font = 'bold 12px sans-serif';
+        const badgeWidth = ctx.measureText(badgeText).width + 32;
+        const badgeX = width - 64 - badgeWidth;
+
+        ctx.fillStyle = 'rgba(245, 158, 11, 0.15)';
+        ctx.strokeStyle = '#D4AF37';
+        ctx.lineWidth = 1.3;
+        ctx.beginPath();
+        ctx.roundRect(badgeX, 70, badgeWidth, 36, 18);
+        ctx.fill();
+        ctx.stroke();
 
         ctx.fillStyle = '#FDE68A';
-        ctx.font = 'bold 13px sans-serif';
-        ctx.fillText('Instagram: @moazzamshoukat | @coachingbyms', width - 60, footerY + 58);
+        ctx.textAlign = 'center';
+        ctx.fillText(badgeText, badgeX + (badgeWidth / 2), 92);
 
-        const imgDataUrl = canvas.toDataURL('image/jpeg', 0.92);
+        // 6. Attractive Call-To-Action Campaign Ribbon
+        const bannerY = 144;
+        const bannerH = 46;
+        const bannerGrad = ctx.createLinearGradient(64, bannerY, width - 64, bannerY);
+        bannerGrad.addColorStop(0, 'rgba(245, 158, 11, 0.12)');
+        bannerGrad.addColorStop(0.5, 'rgba(245, 158, 11, 0.28)');
+        bannerGrad.addColorStop(1, 'rgba(245, 158, 11, 0.12)');
+        ctx.fillStyle = bannerGrad;
+        ctx.strokeStyle = 'rgba(245, 158, 11, 0.55)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.roundRect(64, bannerY, width - 128, bannerH, 12);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = '#FFF8DB';
+        ctx.font = '900 13px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('🎯 MASTER NAATI CCL WITH EXPERT GUIDANCE • GUARANTEED FIRST-ATTEMPT FORMULA • 50+ REAL EXAM DIALOGUES', width / 2, bannerY + 28);
+
+        // 7. Word Spotlight Hero Card
+        const heroY = 208;
+        const heroH = 175;
+
+        const heroGrad = ctx.createLinearGradient(64, heroY, 64, heroY + heroH);
+        heroGrad.addColorStop(0, '#101B3A');
+        heroGrad.addColorStop(1, '#0C142B');
+        ctx.fillStyle = heroGrad;
+        ctx.strokeStyle = 'rgba(212, 175, 55, 0.45)';
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.roundRect(64, heroY, width - 128, heroH, 20);
+        ctx.fill();
+        ctx.stroke();
+
+        // Domain tag pill inside hero card
+        const dTag = (currentItem.naati_domain || 'NAATI CCL Vocabulary').toUpperCase();
+        ctx.font = 'bold 11px sans-serif';
+        const dTagW = ctx.measureText(dTag).width + 26;
+        ctx.fillStyle = 'rgba(245, 158, 11, 0.18)';
+        ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.roundRect(width - 94 - dTagW, heroY + 18, dTagW, 26, 13);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = '#FDE68A';
+        ctx.textAlign = 'center';
+        ctx.fillText(dTag, width - 94 - (dTagW / 2), heroY + 35);
+
+        // Left: English Meaning
+        ctx.textAlign = 'left';
+        ctx.fillStyle = '#94A3B8';
+        ctx.font = 'bold 11.5px sans-serif';
+        const posBadge = (currentItem.part_of_speech ? currentItem.part_of_speech.toUpperCase() + ' • ' : '') + 'ENGLISH VOCABULARY MEANING';
+        ctx.fillText(posBadge, 94, heroY + 38);
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '900 36px sans-serif';
+        const enClean = cleanEnglish(currentItem.english_meaning);
+        ctx.fillText(enClean.length > 24 ? enClean.substring(0, 24) + '...' : enClean, 94, heroY + 92);
+
+        if (currentItem.transliteration) {
+          ctx.fillStyle = '#38BDF8';
+          ctx.font = '600 13px sans-serif';
+          ctx.fillText('Phonetic: ' + currentItem.transliteration, 94, heroY + 128);
+        } else {
+          ctx.fillStyle = '#F59E0B';
+          ctx.font = 'bold 12px sans-serif';
+          ctx.fillText('✓ High-Yield NAATI Dialogue Term', 94, heroY + 128);
+        }
+
+        // Center vertical divider
+        const divGrad = ctx.createLinearGradient(width / 2, heroY + 20, width / 2, heroY + heroH - 20);
+        divGrad.addColorStop(0, 'rgba(212, 175, 55, 0.1)');
+        divGrad.addColorStop(0.5, 'rgba(212, 175, 55, 0.6)');
+        divGrad.addColorStop(1, 'rgba(212, 175, 55, 0.1)');
+        ctx.strokeStyle = divGrad;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(width / 2, heroY + 20);
+        ctx.lineTo(width / 2, heroY + heroH - 20);
+        ctx.stroke();
+
+        // Right: Urdu Word (Noto Nastaliq Urdu)
+        ctx.textAlign = 'right';
+        ctx.fillStyle = '#FDE68A';
+        ctx.font = 'bold 15px "Noto Nastaliq Urdu", serif';
+        ctx.fillText('اردو ترجمہ و تلفظ (Urdu Translation)', width - 94, heroY + 70);
+
+        ctx.fillStyle = '#F59E0B';
+        ctx.font = 'bold 48px "Noto Nastaliq Urdu", serif';
+        ctx.fillText(currentItem.urdu_word, width - 94, heroY + 138);
+
+        // 8. Dialogue Scenarios Section Title
+        let currentY = 412;
+        ctx.textAlign = 'left';
+        ctx.fillStyle = '#F59E0B';
+        ctx.font = 'bold 13px sans-serif';
+        ctx.fillText('⚡ NAATI CCL EXAM DIALOGUE SCENARIOS & INTERPRETATIONS', 64, currentY);
+
+        ctx.fillStyle = '#94A3B8';
+        ctx.font = '500 11.5px sans-serif';
+        ctx.fillText('Contextual sentence interpretations for community interpreter exam readiness', 64, currentY + 18);
+
+        currentY += 36;
+
+        // 9. Dialogue Cards
+        processedExamples.forEach(function(item) {
+          const ex = item.ex;
+          const idx = item.idx;
+          const enLines = item.enLines;
+          const urLines = item.urLines;
+          const bHeight = item.bHeight;
+
+          ctx.fillStyle = '#0D152D';
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+          ctx.lineWidth = 1.2;
+          ctx.beginPath();
+          ctx.roundRect(64, currentY, boxWidth, bHeight, 16);
+          ctx.fill();
+          ctx.stroke();
+
+          // Left Gold Highlight Accent Bar on Card
+          ctx.fillStyle = '#F59E0B';
+          ctx.beginPath();
+          ctx.roundRect(64, currentY + 12, 4, bHeight - 24, 2);
+          ctx.fill();
+
+          ctx.fillStyle = '#F59E0B';
+          ctx.font = 'bold 12px sans-serif';
+          ctx.textAlign = 'left';
+          const exTitle = 'SCENARIO ' + (ex.example_number || (idx + 1)) + (ex.context ? ' — ' + ex.context.toUpperCase() : '');
+          ctx.fillText(exTitle, 88, currentY + 30);
+
+          ctx.font = enFont;
+          ctx.fillStyle = '#E2E8F0';
+          ctx.textAlign = 'left';
+          let lineY = currentY + 58;
+          enLines.forEach(function(l) {
+            ctx.fillText(l, 88, lineY);
+            lineY += 26;
+          });
+
+          lineY += 6;
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.07)';
+          ctx.beginPath();
+          ctx.moveTo(88, lineY);
+          ctx.lineTo(width - 88, lineY);
+          ctx.stroke();
+
+          lineY += 32;
+          ctx.font = urFont;
+          ctx.fillStyle = '#FDE68A';
+          ctx.textAlign = 'right';
+          urLines.forEach(function(l) {
+            ctx.fillText(l, width - 88, lineY);
+            lineY += 40;
+          });
+
+          currentY += bHeight + 18;
+        });
+
+        // 10. Footer Marketing & Publicity Contact Bar
+        const footerY = totalHeight - 150;
+        const footerH = 110;
+
+        const footerGrad = ctx.createLinearGradient(64, footerY, 64, footerY + footerH);
+        footerGrad.addColorStop(0, '#090F24');
+        footerGrad.addColorStop(1, '#050814');
+        ctx.fillStyle = footerGrad;
+        ctx.strokeStyle = '#D4AF37';
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.roundRect(64, footerY, width - 128, footerH, 18);
+        ctx.fill();
+        ctx.stroke();
+
+        // Left Column: Direct WhatsApp
+        ctx.textAlign = 'left';
+        ctx.fillStyle = '#94A3B8';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.fillText('DIRECT 1-ON-1 ADMISSIONS & EVALUATION', 92, footerY + 36);
+
+        ctx.fillStyle = '#22C55E';
+        ctx.font = '900 17px sans-serif';
+        ctx.fillText('💬 WhatsApp: +92-328-048-4399', 92, footerY + 65);
+
+        ctx.fillStyle = '#CBD5E1';
+        ctx.font = '500 11px sans-serif';
+        ctx.fillText('Diagnostic Score Audit & Custom Schedule', 92, footerY + 88);
+
+        // Center Column: Website
+        ctx.textAlign = 'center';
+        ctx.fillStyle = '#94A3B8';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.fillText('OFFICIAL MIGRATION & COACHING HUB', width / 2, footerY + 36);
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '900 17px sans-serif';
+        ctx.fillText('www.moazzamshoukat.com', width / 2, footerY + 65);
+
+        ctx.fillStyle = '#FDE68A';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.fillText('PTE 79+ • NAATI CCL • Australia GSM 189/190', width / 2, footerY + 88);
+
+        // Right Column: Instagram & Socials
+        ctx.textAlign = 'right';
+        ctx.fillStyle = '#94A3B8';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.fillText('STUDY COMMUNITY & VOCABULARY DRILLS', width - 92, footerY + 36);
+
+        ctx.fillStyle = '#F59E0B';
+        ctx.font = '900 16px sans-serif';
+        ctx.fillText('📷 Instagram: @moazzamshoukat', width - 92, footerY + 65);
+
+        ctx.fillStyle = '#CBD5E1';
+        ctx.font = '500 11px sans-serif';
+        ctx.fillText('@coachingbyms • Lahore & Worldwide', width - 92, footerY + 88);
+
+        // Export high-quality JPG
+        const imgDataUrl = canvas.toDataURL('image/jpeg', 0.94);
         const link = document.createElement('a');
         const cleanName = (currentItem.urdu_word || 'NAATI-Word').replace(/[^a-zA-Z0-9_\u0600-\u06FF]/g, '_');
-        link.download = cleanName + '-NAATI-CCL-Urdu.jpg';
+        link.download = cleanName + '-NAATI-CCL-Urdu-Poster.jpg';
         link.href = imgDataUrl;
         document.body.appendChild(link);
         link.click();
@@ -982,9 +1242,9 @@ import Layout from '../../../layouts/Layout.astro';
 
       } catch (err) {
         console.error('Error rendering image:', err);
-        alert('Could not generate JPG image. Please try again.');
+        alert('Could not generate JPG poster. Please try again.');
       } finally {
-        downloadBtnLabel.textContent = 'Download Image';
+        downloadBtnLabel.textContent = 'Download Poster Card';
         downloadImageBtn.disabled = false;
       }
     });

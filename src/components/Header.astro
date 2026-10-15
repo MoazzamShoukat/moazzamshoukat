@@ -1,4 +1,4 @@
-﻿---
+---
 import ThemeToggle from './ThemeToggle.astro';
 import SiteLogo from './SiteLogo.astro';
 import { headerNav } from '../data/navData';
@@ -23,7 +23,7 @@ function isActive(path: string) {
           <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
         </svg>
-        <span>Lahore, Pakistan &bull; Online Classes for Pakistan, Australia & Worldwide</span>
+        <span>Lahore, Pakistan &bull; Global AI & Migration Advisory</span>
       </div>
       <div class="flex items-center gap-2">
         <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -37,13 +37,13 @@ function isActive(path: string) {
     <div class="flex items-center gap-4 text-[11px]">
       <span class="inline-flex items-center gap-1.5 text-amber-300/90 font-medium">
         <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-        PTE &bull; NAATI CCL Urdu &bull; IELTS &bull; Australia PR Points & Skills Guidance
+        AI Researcher &bull; Australia & Canada PR Strategist &bull; PTE & IELTS Master Trainer
       </span>
     </div>
   </div>
 </div>
 
-<!-- Main Sticky Header -->
+<!-- Main Sticky Header: Crystal / Glassmorphic Effect -->
 <header
   id="main-header"
   class="sticky top-0 z-50 w-full crystal-glass-header transition-all duration-300 ease-out"
@@ -51,51 +51,50 @@ function isActive(path: string) {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       
-      <!-- Logo -->
+      <!-- Logo on Left -->
       <SiteLogo variant="header" />
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex items-center gap-1 text-[13px] font-semibold" aria-label="Main Navigation">
+      <!-- Desktop Navigation in Center: Streamlined, Spacious & Elegant -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-[13px] font-semibold" aria-label="Main Navigation">
         {headerNav.map((item) => {
-          // Mega-Menu renderer for wide multi-column items (e.g. Preparation)
+          // 1. Wide Mega Menu for Preparation
           if (item.megaMenu && item.megaMenu.length > 0) {
             return (
               <div class="relative group">
                 <a
                   href={item.href}
-                  class={`px-3 py-2 rounded-lg inline-flex items-center gap-1.5 transition-all cursor-pointer ${
+                  class={`px-3 py-2 rounded-xl inline-flex items-center gap-1.5 transition-all cursor-pointer ${
                     isActive(item.href)
                       ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
                       : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
                   }`}
                 >
                   <span>{item.label}</span>
-                  <span class="px-1.5 py-0.2 text-[9px] uppercase font-black tracking-wider rounded-md bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30">
-                    New
-                  </span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400 animate-pulse"></span>
                   <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </a>
 
-                <!-- Wide Multi-Column Mega Menu -->
-                <div class="absolute left-0 xl:-left-24 top-full pt-2 w-[860px] max-w-[95vw] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
-                  <div class="p-6 rounded-2xl bg-white/95 dark:bg-[#0C1324]/95 backdrop-blur-2xl border border-slate-200/80 dark:border-white/10 shadow-2xl shadow-slate-900/15">
+                <!-- Wide Mega-Menu Dropdown Panel -->
+                <div class="absolute left-1/2 -translate-x-1/3 top-full pt-2 w-[860px] max-w-[95vw] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                  <div class="p-6 rounded-3xl bg-white/95 dark:bg-[#0C1324]/95 backdrop-blur-2xl border border-slate-200/80 dark:border-white/10 shadow-2xl shadow-slate-900/20">
                     
-                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-200/70 dark:border-white/10">
+                    <div class="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-200/70 dark:border-white/10">
                       <div>
-                        <div class="text-xs font-black tracking-wider uppercase text-amber-600 dark:text-amber-400">
+                        <div class="text-xs font-black tracking-wider uppercase text-amber-600 dark:text-amber-400 flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                           Exam Preparation & Practice Portals
                         </div>
                         <div class="text-[11px] text-slate-500 dark:text-slate-400">
-                          Interactive vocabulary bank, exam-format dialogues, and timed test practice
+                          Complete 7,796-term bilingual dictionary, exam dialogues, and practice modules
                         </div>
                       </div>
                       <a
                         href="/preparation/naati/vocabulary/"
-                        class="text-[11px] font-bold text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1"
+                        class="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1"
                       >
-                        NAATI Vocabulary Bank &rarr;
+                        Launch Vocabulary Bank &rarr;
                       </a>
                     </div>
 
@@ -106,22 +105,18 @@ function isActive(path: string) {
                             <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
                             <span>{group.groupTitle}</span>
                           </div>
-                          <div class="space-y-1.5">
+                          <div class="space-y-1">
                             {group.items.map((sub) => (
                               <a
                                 href={sub.href}
-                                class="block p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/sub"
+                                class="block p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/sub"
                               >
                                 <div class="flex items-center justify-between gap-1.5">
                                   <span class="font-bold text-slate-900 dark:text-white text-xs group-hover/sub:text-amber-700 dark:group-hover/sub:text-amber-400">
                                     {sub.label}
                                   </span>
                                   {sub.badge && (
-                                    <span class={`text-[9px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-tight shrink-0 ${
-                                      sub.badge.includes('Interactive') || sub.badge.includes('Live')
-                                        ? 'bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30'
-                                        : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
-                                    }`}>
+                                    <span class="text-[9px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-tight bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 shrink-0">
                                       {sub.badge}
                                     </span>
                                   )}
@@ -144,13 +139,13 @@ function isActive(path: string) {
             );
           }
 
-          // Standard short dropdown (e.g. PTE Coaching, Australia PR)
+          // 2. Standard Dropdown for Coaching & Immigration
           if (item.children && item.children.length > 0) {
             return (
               <div class="relative group">
                 <a
                   href={item.href}
-                  class={`px-3 py-2 rounded-lg inline-flex items-center gap-1.5 transition-all cursor-pointer ${
+                  class={`px-3 py-2 rounded-xl inline-flex items-center gap-1.5 transition-all cursor-pointer ${
                     isActive(item.href)
                       ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
                       : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
@@ -185,10 +180,11 @@ function isActive(path: string) {
             );
           }
 
+          // 3. Direct Link (Home, Pricing, Success Stories, Blog)
           return (
             <a
               href={item.href}
-              class={`px-3 py-2 rounded-lg transition-all ${
+              class={`px-3 py-2 rounded-xl transition-all ${
                 isActive(item.href)
                   ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
                   : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
@@ -199,12 +195,12 @@ function isActive(path: string) {
           );
         })}
       </nav>
-
       <!-- Right Header Actions (Phone, Theme Toggle & Consultation CTA) -->
-      <div class="flex items-center gap-2.5 sm:gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <!-- Direct Phone Icon Button -->
         <a
           href="tel:+923280484399"
-          class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors"
+          class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors"
           aria-label="Direct Phone Call to +92-328-048-4399"
           title="Direct Call: +92-328-048-4399"
           data-track-phone="header_top"
@@ -214,11 +210,13 @@ function isActive(path: string) {
           </svg>
         </a>
 
+        <!-- Dark/Light Theme Toggle -->
         <ThemeToggle />
 
+        <!-- Book Consultation CTA -->
         <a
           href="/contact/"
-          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-black bg-[#0A1128] hover:bg-slate-900 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-all shadow-md group cursor-pointer border border-amber-500/20"
+          class="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs font-black bg-[#0A1128] hover:bg-slate-900 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-all shadow-md group cursor-pointer border border-amber-500/20"
         >
           <svg class="w-3.5 h-3.5 text-amber-400 dark:text-slate-950 shrink-0 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -229,7 +227,7 @@ function isActive(path: string) {
           </svg>
         </a>
 
-        <!-- Mobile Hamburger Button -->
+        <!-- Mobile Animated Hamburger Button -->
         <button
           id="mobile-menu-btn"
           type="button"
@@ -265,14 +263,14 @@ function isActive(path: string) {
             <div class="flex items-center justify-between">
               <span>{item.label}</span>
               {item.megaMenu && (
-                <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-700 dark:text-amber-300 font-extrabold uppercase">
-                  New Portal
+                <span class="text-[9px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800 dark:text-amber-300 font-extrabold uppercase">
+                  7,796 Terms
                 </span>
               )}
             </div>
           </a>
 
-          {/* Mega menu in mobile */}
+          {/* Mega Menu sub-items on mobile */}
           {item.megaMenu && (
             <div class="pl-3 pt-2 space-y-3 pb-2 border-l-2 border-amber-500/20 ml-2">
               {item.megaMenu.map((group) => (
@@ -300,7 +298,7 @@ function isActive(path: string) {
             </div>
           )}
 
-          {/* Regular children in mobile */}
+          {/* Regular children on mobile */}
           {item.children && (
             <div class="pl-3 pt-1 space-y-1">
               {item.children.map((sub) => (
@@ -315,6 +313,7 @@ function isActive(path: string) {
           )}
         </div>
       ))}
+      
       <a
         href="/contact/"
         class="block p-3 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-300 font-extrabold text-xs text-center"
@@ -323,14 +322,22 @@ function isActive(path: string) {
       </a>
     </div>
 
-    <!-- Mobile Quick Call Button -->
-    <div class="pt-4 border-t border-slate-200/50 dark:border-slate-800">
+    <!-- Mobile Quick Call & WhatsApp -->
+    <div class="pt-4 border-t border-slate-200/50 dark:border-slate-800 space-y-2">
       <a
         href="tel:+923280484399"
         class="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white text-center font-bold text-xs flex items-center justify-center gap-2"
         data-track-phone="mobile_drawer"
       >
-        <span>Direct Phone Call (+92-328-048-4399)</span>
+        <span>Direct Call: +92-328-048-4399</span>
+      </a>
+      <a
+        href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20would%20like%20to%20book%20a%20consultation."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full py-3 rounded-xl bg-[#25D366] text-white text-center font-bold text-xs flex items-center justify-center gap-2 shadow-md"
+      >
+        <span>Instant WhatsApp Chat</span>
       </a>
     </div>
   </div>

@@ -28,65 +28,61 @@ export const headerNav: NavItem[] = [
     href: "/preparation/naati/vocabulary/",
     megaMenu: [
       {
-        groupTitle: "NAATI CCL",
+        groupTitle: "NAATI CCL Urdu",
         items: [
           {
-            label: "Vocabulary",
+            label: "Vocabulary Dictionary",
             href: "/preparation/naati/vocabulary/",
-            description: "7,796+ complete bilingual terms with Urdu words and 46,700+ dialogue sentences",
-            badge: "Interactive Bank"
+            description: "7,796+ bilingual terms with Urdu words & 46,700+ dialogue sentences",
+            badge: "7,796 Terms"
           },
           {
-            label: "Dialogues",
+            label: "Exam Dialogues",
             href: "/preparation/naati/dialogues/",
-            description: "Full exam-format interpreting scenarios & audios",
+            description: "Consecutive interpreting scenarios across 6 community domains",
             badge: "Coming Soon"
           },
           {
-            label: "Practice Tests",
+            label: "Mock Practice Tests",
             href: "/preparation/naati/practice-tests/",
-            description: "Timed CCL exam simulations with marking feedback",
+            description: "Timed exam simulations with score deduction analysis",
             badge: "Coming Soon"
           }
         ]
       },
       {
-        groupTitle: "PTE Academic / UKVI",
+        groupTitle: "PTE Academic & Core",
         items: [
           {
             label: "Speaking",
             href: "/preparation/pte/speaking/",
-            description: "Read Aloud, Repeat Sentence, Describe Image, Retell Lecture, ASQ, SGD, RTS",
-            badge: "Modules"
+            description: "Read Aloud, Repeat Sentence, Describe Image, Retell Lecture, ASQ, SGD, RTS"
           },
           {
             label: "Writing",
             href: "/preparation/pte/writing/",
-            description: "Summarize Written Text & 20-minute Essay templates",
-            badge: "Modules"
+            description: "Summarize Written Text & 20-minute Essay templates"
           },
           {
             label: "Reading",
             href: "/preparation/pte/reading/",
-            description: "Fill in the Blanks, Re-order Paragraphs & Multiple Choice",
-            badge: "Modules"
+            description: "Fill in the Blanks, Re-order Paragraphs & Multiple Choice"
           },
           {
             label: "Listening",
             href: "/preparation/pte/listening/",
-            description: "Summarize Spoken Text & Write from Dictation mastery",
-            badge: "Modules"
+            description: "Summarize Spoken Text & Write from Dictation mastery"
+          },
+          {
+            label: "PTE Core (Canada PR)",
+            href: "/preparation/pte-core/",
+            description: "CLB 7/9/10 preparation for Canadian Express Entry"
           }
         ]
       },
       {
-        groupTitle: "Other Tests",
+        groupTitle: "IELTS & Other Tests",
         items: [
-          {
-            label: "PTE Core",
-            href: "/preparation/pte-core/",
-            description: "CLB 7/9/10 preparation for Canada Express Entry"
-          },
           {
             label: "IELTS Academic",
             href: "/preparation/ielts-academic/",
@@ -112,7 +108,7 @@ export const headerNav: NavItem[] = [
     ]
   },
   {
-    label: "PTE Coaching",
+    label: "Coaching",
     href: "/online-pte-classes/",
     children: [
       {
@@ -126,22 +122,24 @@ export const headerNav: NavItem[] = [
         description: "In-person & hybrid classes with mock exam simulations"
       },
       {
-        label: "PTE Core (Canada PR)",
+        label: "PTE Core for Canada PR",
         href: "/pte-core-preparation/",
         description: "CLB 9/10 preparation for Canadian Express Entry"
+      },
+      {
+        label: "NAATI CCL Urdu Preparation",
+        href: "/naati-ccl-urdu-preparation/",
+        description: "+5 bonus PR points with 50+ authentic dialogues"
+      },
+      {
+        label: "IELTS Trainer in Lahore",
+        href: "/ielts-trainer-lahore/",
+        description: "Band 7.5+ & 8.0 coaching with speaking room diagnostics"
       }
     ]
   },
   {
-    label: "NAATI CCL Urdu",
-    href: "/naati-ccl-urdu-preparation/"
-  },
-  {
-    label: "IELTS",
-    href: "/ielts-trainer-lahore/"
-  },
-  {
-    label: "Australia PR",
+    label: "Immigration",
     href: "/australia-skilled-migration/",
     children: [
       {
@@ -155,7 +153,7 @@ export const headerNav: NavItem[] = [
         description: "ACS IT, Engineers Australia CDR & VETASSESS dossiers"
       },
       {
-        label: "PR Points Guidance Lahore",
+        label: "PR Points Advisory Lahore",
         href: "/australian-immigration-consultant/",
         description: "Strategic case roadmaps & SkillSelect EOI planning"
       },
@@ -172,8 +170,8 @@ export const headerNav: NavItem[] = [
     ]
   },
   {
-    label: "All Services",
-    href: "/services/"
+    label: "Pricing",
+    href: "/pricing/"
   },
   {
     label: "Success Stories",
@@ -186,24 +184,24 @@ export const headerNav: NavItem[] = [
 ];
 
 export const footerServiceLinks = [
-  { label: "NAATI CCL Urdu Vocabulary Bank", href: "/preparation/naati/vocabulary/" },
-  { label: "Online PTE Classes", href: "/online-pte-classes/" },
+  { label: "Transparent Pricing & Packages", href: "/pricing/" },
+  { label: "NAATI CCL Urdu Dictionary (7,796 Terms)", href: "/preparation/naati/vocabulary/" },
+  { label: "Online PTE Classes (1-on-1)", href: "/online-pte-classes/" },
   { label: "PTE Trainer in Lahore", href: "/pte-trainer-lahore/" },
   { label: "PTE Core for Canada PR", href: "/pte-core-preparation/" },
   { label: "NAATI CCL Urdu Preparation", href: "/naati-ccl-urdu-preparation/" },
   { label: "IELTS Trainer in Lahore", href: "/ielts-trainer-lahore/" },
   { label: "Australia Skilled Migration (189/190/491)", href: "/australia-skilled-migration/" },
   { label: "Skills Assessment (ACS / EA CDR)", href: "/skill-assessment-guidance/" },
-  { label: "Australia PR Points Guidance", href: "/australian-immigration-consultant/" },
   { label: "Canada Express Entry & PNP", href: "/canada-immigration/" }
 ];
 
 export const footerQuickLinks = [
   { label: "Home", href: "/" },
+  { label: "Pricing & Packages", href: "/pricing/" },
   { label: "Preparation Hub", href: "/preparation/naati/vocabulary/" },
   { label: "About Moazzam", href: "/about/" },
   { label: "All Services", href: "/services/" },
-  { label: "Pricing & Fees", href: "/pricing/" },
   { label: "Success Stories", href: "/success-stories/" },
   { label: "Knowledge Hub & Blog", href: "/blog/" },
   { label: "Contact & Consultations", href: "/contact/" }
