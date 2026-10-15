@@ -1,0 +1,571 @@
+﻿---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout
+  title="NAATI CCL Urdu Vocabulary Bank | Moazzam Shoukat"
+  description="Search 669+ high-frequency NAATI CCL Urdu vocabulary terms with authentic translations, official testing domains, and bilingual dialogue example sentences."
+>
+  <div class="py-12 md:py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-amber-600 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-slate-400">Preparation</span>
+      <span>/</span>
+      <span class="text-slate-400">NAATI CCL</span>
+      <span>/</span>
+      <span class="text-amber-600 dark:text-amber-400 font-bold">Urdu Vocabulary</span>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black tracking-wider uppercase bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 mb-4">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        Interactive Database &bull; 669 Verified Terms
+      </div>
+      
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
+        NAATI CCL Urdu <span class="text-amber-600 dark:text-amber-400">Vocabulary Bank</span>
+      </h1>
+      
+      <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+        High-scoring community language interpreting demands instant terminology recall. Search 669+ official NAATI dialogue terms with verified Urdu meanings (<span dir="rtl" class="font-bold text-amber-700 dark:text-amber-300">اردو ترجمہ</span>), domain categories, and complete bilingual dialogue contexts.
+      </p>
+
+      <!-- Rate Limit & Fair Usage Pill -->
+      <div class="mt-4 flex items-center justify-center gap-2 text-xs">
+        <span id="rate-limit-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold border border-slate-200 dark:border-slate-700">
+          <svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span id="rate-limit-text">Daily Limit: 20 searches per IP / 24h</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Search Box Card -->
+    <div class="max-w-3xl mx-auto mb-8">
+      <form id="vocab-search-form" class="relative">
+        <div class="relative flex items-center shadow-xl shadow-slate-900/5 dark:shadow-black/40 rounded-2xl bg-white dark:bg-[#0E1526] border-2 border-slate-200 dark:border-slate-800 focus-within:border-amber-500 dark:focus-within:border-amber-400 transition-all p-1.5 sm:p-2">
+          
+          <!-- Search Icon -->
+          <div class="pl-3 sm:pl-4 pr-2 text-slate-400">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </div>
+
+          <!-- Input Field -->
+          <input
+            type="text"
+            id="search-input"
+            autocomplete="off"
+            placeholder="Type any English word or term (e.g. Abdomen, Affidavit)..."
+            class="w-full py-2.5 sm:py-3 bg-transparent text-slate-900 dark:text-white placeholder-slate-400 text-sm sm:text-base font-medium focus:outline-none"
+          />
+
+          <!-- Clear Button (hidden by default) -->
+          <button
+            type="button"
+            id="clear-btn"
+            class="hidden px-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+            aria-label="Clear search"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            id="search-btn"
+            class="px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl bg-[#0A1128] hover:bg-slate-900 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 shrink-0 cursor-pointer shadow-md"
+          >
+            <span id="btn-text">Search</span>
+            <span id="btn-spinner" class="hidden">
+              <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Suggested Quick Search Chips -->
+      <div class="mt-4 flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-slate-500 dark:text-slate-400 justify-center">
+        <span class="font-semibold text-slate-700 dark:text-slate-300 mr-1">Sample Words:</span>
+        {['Abdomen', 'Affidavit', 'Bankruptcy', 'Compensation', 'Deportation', 'Encephalitis', 'Foreclosure', 'Guardian'].map((word) => (
+          <button
+            type="button"
+            class="sample-chip px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-amber-500/10 hover:text-amber-700 dark:bg-slate-800/80 dark:hover:bg-amber-400/10 dark:hover:text-amber-300 text-slate-600 dark:text-slate-300 transition-colors border border-slate-200/60 dark:border-slate-700/60 cursor-pointer font-medium"
+            data-word={word}
+          >
+            {word}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Rate Limit Exceeded Banner (Hidden by default) -->
+    <div id="rate-limit-banner" class="hidden max-w-3xl mx-auto mb-8 p-5 rounded-2xl bg-rose-500/10 border-2 border-rose-500/30 text-rose-800 dark:text-rose-200">
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-xl bg-rose-500/20 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-sm sm:text-base text-rose-900 dark:text-rose-100">
+            Search Limit Reached
+          </h3>
+          <p id="rate-limit-message" class="text-xs sm:text-sm mt-1 text-rose-700 dark:text-rose-300">
+            You have reached the daily limit of 20 vocabulary searches. Please try again after 24 hours.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fuzzy Match Notice (Hidden by default) -->
+    <div id="fuzzy-notice" class="hidden max-w-3xl mx-auto mb-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-200">
+      <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold">
+        <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span id="fuzzy-text">Exact match not found. Closest match: <strong>Word</strong></span>
+      </div>
+    </div>
+
+    <!-- Result Container -->
+    <div id="results-area" class="max-w-3xl mx-auto">
+      
+      <!-- Initial Empty State -->
+      <div id="initial-state" class="text-center py-12 px-4 rounded-3xl bg-slate-50 dark:bg-[#0C1222] border border-slate-200/80 dark:border-white/5">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+          </svg>
+        </div>
+        <h3 class="font-extrabold text-base text-slate-800 dark:text-white mb-1">
+          Search the NAATI CCL Terminology Bank
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+          Type an English term above or select a sample word to instantly access accurate Urdu translations and real dialogue context sentences.
+        </p>
+      </div>
+
+      <!-- Loading State (hidden) -->
+      <div id="loading-state" class="hidden text-center py-16">
+        <div class="w-12 h-12 mx-auto mb-4 border-4 border-amber-400/30 border-t-amber-500 rounded-full animate-spin"></div>
+        <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold tracking-wider uppercase">
+          Searching terminology database...
+        </p>
+      </div>
+
+      <!-- Error State (hidden) -->
+      <div id="error-state" class="hidden text-center py-12 px-4 rounded-3xl bg-slate-50 dark:bg-[#0C1222] border border-slate-200 dark:border-slate-800">
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-rose-500/10 text-rose-500 flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+        <h3 class="font-bold text-sm text-slate-900 dark:text-white mb-1" id="error-title">
+          No matches found
+        </h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400" id="error-desc">
+          Please check the spelling and try again.
+        </p>
+      </div>
+
+      <!-- Result Card (hidden by default) -->
+      <div id="result-card" class="hidden">
+        <div class="rounded-3xl bg-white dark:bg-[#0C1324] border border-slate-200/90 dark:border-white/10 shadow-2xl shadow-slate-900/10 overflow-hidden">
+          
+          <!-- Term Header Banner -->
+          <div class="p-6 sm:p-8 bg-gradient-to-r from-slate-900 via-[#0E172F] to-[#0A1128] text-white">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <span id="card-domain" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-400/15 text-amber-300 border border-amber-400/25">
+                Healthcare & Medical
+              </span>
+              <span id="card-match-badge" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/10 text-slate-300">
+                Exact Match
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-1">
+                  English Term
+                </div>
+                <h2 id="card-word" class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                  Abdomen
+                </h2>
+              </div>
+
+              <!-- Urdu Meaning Box (RTL) -->
+              <div class="text-right md:text-right p-4 rounded-2xl bg-white/5 border border-white/10">
+                <div class="text-[11px] text-amber-300 uppercase tracking-widest font-semibold mb-1">
+                  اردو ترجمہ (Urdu Meaning)
+                </div>
+                <div
+                  id="card-meaning"
+                  dir="rtl"
+                  class="text-2xl sm:text-3xl font-bold text-amber-400 tracking-normal leading-relaxed"
+                  style="font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', Tahoma, sans-serif;"
+                >
+                  پیٹ / شکم
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bilingual Examples Section -->
+          <div class="p-6 sm:p-8 space-y-6 bg-slate-50/50 dark:bg-[#090E1B]">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xs font-black uppercase tracking-widest text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                NAATI CCL Dialogue Examples
+              </h3>
+              <span class="text-[11px] text-slate-500 dark:text-slate-400">
+                3 Bilingual Context Scenarios
+              </span>
+            </div>
+
+            <!-- Example List -->
+            <div id="card-examples" class="space-y-4">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+          <!-- Footer Action / Coaching Banner -->
+          <div class="px-6 py-4 bg-slate-100 dark:bg-slate-900/60 border-t border-slate-200 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+            <span class="text-slate-600 dark:text-slate-400 text-center sm:text-left">
+              Need personalized NAATI CCL Urdu mock evaluation and notes strategy?
+            </span>
+            <a
+              href="/naati-ccl-urdu-preparation/"
+              class="font-bold text-amber-700 dark:text-amber-400 hover:underline shrink-0 flex items-center gap-1"
+            >
+              Book 1-on-1 Coaching &rarr;
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Domain Information Grid -->
+    <div class="mt-16 pt-12 border-t border-slate-200 dark:border-slate-800">
+      <h3 class="text-center text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-8">
+        Tested NAATI CCL Community Contexts Included in Database
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
+        {[
+          { title: "Healthcare", desc: "Symptoms, prescriptions, surgery & hospital intake" },
+          { title: "Immigration", desc: "Visa subclasses, PR criteria, appeals & DOHA" },
+          { title: "Legal & Police", desc: "Court hearings, police statements & bail" },
+          { title: "Social Services", desc: "Centrelink, Medicare, benefits & subsidies" },
+          { title: "Housing", desc: "Tenancy disputes, bonds, leases & eviction" },
+          { title: "Education", desc: "School policies, parent interviews & reports" }
+        ].map((item) => (
+          <div class="p-3.5 rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/60 shadow-sm">
+            <div class="font-extrabold text-xs text-slate-900 dark:text-white mb-1">
+              {item.title}
+            </div>
+            <div class="text-[10px] text-slate-500 dark:text-slate-400 leading-tight">
+              {item.desc}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</Layout>
+
+<script is:inline>
+  (function() {
+    const form = document.getElementById('vocab-search-form');
+    const input = document.getElementById('search-input');
+    const clearBtn = document.getElementById('clear-btn');
+    const searchBtn = document.getElementById('search-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+    
+    const initialState = document.getElementById('initial-state');
+    const loadingState = document.getElementById('loading-state');
+    const errorState = document.getElementById('error-state');
+    const errorTitle = document.getElementById('error-title');
+    const errorDesc = document.getElementById('error-desc');
+    
+    const fuzzyNotice = document.getElementById('fuzzy-notice');
+    const fuzzyText = document.getElementById('fuzzy-text');
+    const rateLimitBanner = document.getElementById('rate-limit-banner');
+    const rateLimitMessage = document.getElementById('rate-limit-message');
+    const rateLimitText = document.getElementById('rate-limit-text');
+
+    const resultCard = document.getElementById('result-card');
+    const cardDomain = document.getElementById('card-domain');
+    const cardMatchBadge = document.getElementById('card-match-badge');
+    const cardWord = document.getElementById('card-word');
+    const cardMeaning = document.getElementById('card-meaning');
+    const cardExamples = document.getElementById('card-examples');
+
+    // Levenshtein helper for local dev fallback simulation
+    function levenshtein(a, b) {
+      const an = a ? a.length : 0;
+      const bn = b ? b.length : 0;
+      if (an === 0) return bn;
+      if (bn === 0) return an;
+      const matrix = [];
+      for (let i = 0; i <= bn; ++i) matrix[i] = [i];
+      for (let i = 0; i <= an; ++i) matrix[0][i] = i;
+      for (let i = 1; i <= bn; ++i) {
+        for (let j = 1; j <= an; ++j) {
+          if (b.charAt(i - 1) === a.charAt(j - 1)) {
+            matrix[i][j] = matrix[i - 1][j - 1];
+          } else {
+            matrix[i][j] = Math.min(
+              matrix[i - 1][j - 1] + 1,
+              Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1)
+            );
+          }
+        }
+      }
+      return matrix[bn][an];
+    }
+
+    // Local cached DB for dev fallback only
+    let fallbackDb = null;
+
+    // Toggle clear button
+    input.addEventListener('input', function() {
+      if (this.value.trim().length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+    });
+
+    clearBtn.addEventListener('click', function() {
+      input.value = '';
+      clearBtn.classList.add('hidden');
+      input.focus();
+    });
+
+    // Sample chip clicks
+    document.querySelectorAll('.sample-chip').forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        const word = this.getAttribute('data-word');
+        input.value = word;
+        clearBtn.classList.remove('hidden');
+        doSearch(word);
+      });
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const term = input.value.trim();
+      if (!term) return;
+      doSearch(term);
+    });
+
+    function setLoading(isLoading) {
+      if (isLoading) {
+        searchBtn.disabled = true;
+        btnText.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+        initialState.classList.add('hidden');
+        errorState.classList.add('hidden');
+        resultCard.classList.add('hidden');
+        fuzzyNotice.classList.add('hidden');
+        loadingState.classList.remove('hidden');
+      } else {
+        searchBtn.disabled = false;
+        btnText.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+        loadingState.classList.add('hidden');
+      }
+    }
+
+    function showRateLimit(msg) {
+      rateLimitBanner.classList.remove('hidden');
+      if (msg) rateLimitMessage.textContent = msg;
+      searchBtn.disabled = true;
+      searchBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      input.disabled = true;
+      rateLimitText.textContent = 'Daily Limit Reached (20/20 searches)';
+      rateLimitText.classList.add('text-rose-500', 'font-bold');
+    }
+
+    function renderResult(item, isClosest, closestWord) {
+      initialState.classList.add('hidden');
+      errorState.classList.add('hidden');
+      loadingState.classList.add('hidden');
+
+      if (isClosest) {
+        fuzzyNotice.classList.remove('hidden');
+        fuzzyText.innerHTML = 'Exact match not found. Closest match: <strong>' + (closestWord || item.word) + '</strong>';
+        cardMatchBadge.textContent = 'Closest Match';
+        cardMatchBadge.className = 'text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30';
+      } else {
+        fuzzyNotice.classList.add('hidden');
+        cardMatchBadge.textContent = 'Exact Match';
+        cardMatchBadge.className = 'text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/10 text-slate-300';
+      }
+
+      cardDomain.textContent = item.domain || 'General CCL Context';
+      cardWord.textContent = item.word;
+      cardMeaning.textContent = item.meaning;
+
+      // Populate 3 bilingual examples
+      cardExamples.innerHTML = '';
+      if (item.examples && Array.isArray(item.examples)) {
+        item.examples.forEach(function(ex, idx) {
+          const block = document.createElement('div');
+          block.className = 'p-4 rounded-2xl bg-white dark:bg-[#0E1527] border border-slate-200/80 dark:border-white/5 space-y-2';
+
+          const title = document.createElement('div');
+          title.className = 'text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400';
+          title.textContent = 'Example ' + (idx + 1) + ' (Dialogue Context)';
+
+          const enP = document.createElement('div');
+          enP.className = 'text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-medium leading-relaxed';
+          enP.textContent = ex.en || '';
+
+          const urP = document.createElement('div');
+          urP.setAttribute('dir', 'rtl');
+          urP.className = 'text-xs sm:text-sm text-slate-900 dark:text-amber-200/90 font-medium leading-relaxed pt-1.5 border-t border-slate-100 dark:border-white/5';
+          urP.style.fontFamily = "'Noto Nastaliq Urdu', 'Urdu Typesetting', Tahoma, sans-serif";
+          urP.textContent = ex.ur || '';
+
+          block.appendChild(title);
+          block.appendChild(enP);
+          block.appendChild(urP);
+          cardExamples.appendChild(block);
+        });
+      }
+
+      resultCard.classList.remove('hidden');
+    }
+
+    async function executeDevFallback(term) {
+      // 1. Dev localStorage rate limit simulation
+      const key = 'naati_dev_searches_ts';
+      const now = Date.now();
+      let timestamps = [];
+      try {
+        timestamps = JSON.parse(localStorage.getItem(key) || '[]');
+      } catch (e) {
+        timestamps = [];
+      }
+      timestamps = timestamps.filter(ts => (now - ts) < 86400000);
+      
+      if (timestamps.length >= 20) {
+        showRateLimit('You have reached the daily limit of 20 vocabulary searches. Please try again after 24 hours.');
+        return;
+      }
+
+      // 2. Fetch data once on demand in dev
+      if (!fallbackDb) {
+        const res = await fetch('/api/data/naati-vocabulary.json');
+        if (!res.ok) throw new Error('Data file inaccessible');
+        fallbackDb = await res.json();
+      }
+
+      timestamps.push(now);
+      localStorage.setItem(key, JSON.stringify(timestamps));
+      const remaining = 20 - timestamps.length;
+      rateLimitText.textContent = remaining + ' searches remaining today (20 max / 24h)';
+
+      // 3. Exact match search
+      const qLower = term.toLowerCase().trim();
+      let exact = null;
+      let closest = null;
+      let minDistance = 9999;
+
+      for (let i = 0; i < fallbackDb.length; i++) {
+        const item = fallbackDb[i];
+        const wLower = item.word.toLowerCase();
+        if (wLower === qLower) {
+          exact = item;
+          break;
+        }
+        let d = levenshtein(qLower, wLower);
+        if (wLower.includes(qLower) || qLower.includes(wLower)) {
+          d = Math.max(1, d - 2);
+        }
+        if (d < minDistance) {
+          minDistance = d;
+          closest = item;
+        }
+      }
+
+      if (exact) {
+        renderResult(exact, false);
+      } else if (closest) {
+        renderResult(closest, true, closest.word);
+      } else {
+        errorTitle.textContent = 'No terminology match';
+        errorDesc.textContent = 'Could not find any words matching your search.';
+        errorState.classList.remove('hidden');
+      }
+    }
+
+    async function doSearch(term) {
+      setLoading(true);
+
+      try {
+        const response = await fetch('/api/naati-vocab.php?q=' + encodeURIComponent(term));
+        
+        if (response.status === 429) {
+          const data = await response.json().catch(() => ({}));
+          setLoading(false);
+          showRateLimit(data.message || 'You have reached the daily limit of 20 vocabulary searches. Please try again after 24 hours.');
+          return;
+        }
+
+        const contentType = response.headers.get('content-type') || '';
+        if (response.ok && contentType.includes('application/json')) {
+          const result = await response.json();
+          setLoading(false);
+
+          if (result.searchesRemaining !== undefined) {
+            rateLimitText.textContent = result.searchesRemaining + ' searches remaining today (20 max / 24h)';
+          }
+
+          if (result.success && result.data) {
+            const isClosest = result.match === 'closest';
+            renderResult(result.data, isClosest, result.closestWord);
+          } else {
+            errorTitle.textContent = 'No match found';
+            errorDesc.textContent = result.message || 'Could not find any words matching your search.';
+            errorState.classList.remove('hidden');
+          }
+          return;
+        }
+
+        // If PHP endpoint returned non-JSON / 404 (e.g. running in local Vite dev server)
+        console.warn('Production PHP endpoint unreachable in dev environment. Falling back to local data search.');
+        await executeDevFallback(term);
+        setLoading(false);
+
+      } catch (err) {
+        console.warn('Network error calling PHP endpoint, running dev fallback:', err);
+        try {
+          await executeDevFallback(term);
+        } catch (fbErr) {
+          errorTitle.textContent = 'Search unavailable';
+          errorDesc.textContent = 'Unable to query vocabulary database. Please check your network connection.';
+          errorState.classList.remove('hidden');
+        }
+        setLoading(false);
+      }
+    }
+
+  })();
+</script>

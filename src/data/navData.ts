@@ -1,18 +1,115 @@
+﻿export interface NavSubItem {
+  label: string;
+  href: string;
+  description?: string;
+  badge?: string;
+}
+
+export interface NavGroup {
+  groupTitle: string;
+  items: NavSubItem[];
+}
+
 export interface NavItem {
   label: string;
   href: string;
   description?: string;
-  children?: {
-    label: string;
-    href: string;
-    description?: string;
-  }[];
+  children?: NavSubItem[];
+  megaMenu?: NavGroup[];
 }
 
 export const headerNav: NavItem[] = [
   {
     label: "Home",
     href: "/"
+  },
+  {
+    label: "Preparation",
+    href: "/preparation/naati/vocabulary/",
+    megaMenu: [
+      {
+        groupTitle: "NAATI CCL",
+        items: [
+          {
+            label: "Vocabulary",
+            href: "/preparation/naati/vocabulary/",
+            description: "669+ bilingual terms with Urdu meanings and 3 dialogue contexts",
+            badge: "Interactive Bank"
+          },
+          {
+            label: "Dialogues",
+            href: "/preparation/naati/dialogues/",
+            description: "Full exam-format interpreting scenarios & audios",
+            badge: "Coming Soon"
+          },
+          {
+            label: "Practice Tests",
+            href: "/preparation/naati/practice-tests/",
+            description: "Timed CCL exam simulations with marking feedback",
+            badge: "Coming Soon"
+          }
+        ]
+      },
+      {
+        groupTitle: "PTE Academic / UKVI",
+        items: [
+          {
+            label: "Speaking",
+            href: "/preparation/pte/speaking/",
+            description: "Read Aloud, Repeat Sentence, Describe Image, Retell Lecture, ASQ, SGD, RTS",
+            badge: "Modules"
+          },
+          {
+            label: "Writing",
+            href: "/preparation/pte/writing/",
+            description: "Summarize Written Text & 20-minute Essay templates",
+            badge: "Modules"
+          },
+          {
+            label: "Reading",
+            href: "/preparation/pte/reading/",
+            description: "Fill in the Blanks, Re-order Paragraphs & Multiple Choice",
+            badge: "Modules"
+          },
+          {
+            label: "Listening",
+            href: "/preparation/pte/listening/",
+            description: "Summarize Spoken Text & Write from Dictation mastery",
+            badge: "Modules"
+          }
+        ]
+      },
+      {
+        groupTitle: "Other Tests",
+        items: [
+          {
+            label: "PTE Core",
+            href: "/preparation/pte-core/",
+            description: "CLB 7/9/10 preparation for Canada Express Entry"
+          },
+          {
+            label: "IELTS Academic",
+            href: "/preparation/ielts-academic/",
+            description: "Band 7.5+ strategies for university admissions & visas"
+          },
+          {
+            label: "IELTS General Training",
+            href: "/preparation/ielts-general/",
+            description: "Targeted modules for migration to Canada & Australia"
+          },
+          {
+            label: "Duolingo English Test",
+            href: "/preparation/duolingo/",
+            description: "Adaptive testing tactics for 120-135+ band scores"
+          },
+          {
+            label: "CELPIP",
+            href: "/preparation/celpip/",
+            description: "Canadian English Language Proficiency Index Program"
+          }
+        ]
+      }
+    ]
   },
   {
     label: "PTE Coaching",
@@ -89,6 +186,7 @@ export const headerNav: NavItem[] = [
 ];
 
 export const footerServiceLinks = [
+  { label: "NAATI CCL Urdu Vocabulary Bank", href: "/preparation/naati/vocabulary/" },
   { label: "Online PTE Classes", href: "/online-pte-classes/" },
   { label: "PTE Trainer in Lahore", href: "/pte-trainer-lahore/" },
   { label: "PTE Core for Canada PR", href: "/pte-core-preparation/" },
@@ -97,17 +195,16 @@ export const footerServiceLinks = [
   { label: "Australia Skilled Migration (189/190/491)", href: "/australia-skilled-migration/" },
   { label: "Skills Assessment (ACS / EA CDR)", href: "/skill-assessment-guidance/" },
   { label: "Australia PR Points Guidance", href: "/australian-immigration-consultant/" },
-  { label: "Canada Express Entry & PNP", href: "/canada-immigration/" },
-  { label: "AI Research & Audio Models", href: "/ai-research/" }
+  { label: "Canada Express Entry & PNP", href: "/canada-immigration/" }
 ];
 
 export const footerQuickLinks = [
   { label: "Home", href: "/" },
+  { label: "Preparation Hub", href: "/preparation/naati/vocabulary/" },
   { label: "About Moazzam", href: "/about/" },
   { label: "All Services", href: "/services/" },
   { label: "Pricing & Fees", href: "/pricing/" },
   { label: "Success Stories", href: "/success-stories/" },
   { label: "Knowledge Hub & Blog", href: "/blog/" },
-  { label: "AI & Tech Research", href: "/ai-research/" },
   { label: "Contact & Consultations", href: "/contact/" }
 ];
