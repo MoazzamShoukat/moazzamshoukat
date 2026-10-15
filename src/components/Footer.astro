@@ -1,6 +1,7 @@
 ---
 import { siteData } from '../data/siteData';
 import SiteLogo from './SiteLogo.astro';
+import { footerServiceLinks, footerQuickLinks } from '../data/navData';
 ---
 
 <footer class="bg-[#0A1128] text-slate-300 dark:bg-[#070B14] border-t border-amber-500/20 pt-16 pb-12 transition-colors">
@@ -9,12 +10,12 @@ import SiteLogo from './SiteLogo.astro';
     <!-- Top Grid Section -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-14 border-b border-slate-800">
       
-      <!-- Brand & Summary (3 cols) -->
-      <div class="lg:col-span-3 space-y-5">
+      <!-- Brand & Summary (4 cols) -->
+      <div class="lg:col-span-4 space-y-5">
         <SiteLogo variant="footer" />
 
         <p class="text-xs text-slate-300/80 leading-relaxed max-w-sm">
-          Bridging advanced speech AI research and software engineering with accredited, high-success immigration strategies for Australia and Canada, alongside master coaching for PTE, IELTS, and NAATI CCL Urdu.
+          Bridging advanced speech AI research and software engineering with proven points-based immigration strategies for Australia and Canada, alongside specialized coaching for PTE Academic, IELTS, and NAATI CCL Urdu.
         </p>
 
         <!-- Direct Contact Details -->
@@ -40,72 +41,50 @@ import SiteLogo from './SiteLogo.astro';
             <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.71 4.31 3.8 2.53 1.09 2.53.73 2.99.69.45-.04 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
             </svg>
-            <a href="https://wa.me/923280484399" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300 font-bold transition-colors">
+            <a
+              href="https://wa.me/923280484399"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-amber-300 font-bold transition-colors"
+              data-track-whatsapp="footer"
+            >
               +92-328-048-4399 (WhatsApp)
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Quick Navigation (2 cols) -->
-      <div class="lg:col-span-2 space-y-3">
+      <!-- Quick Navigation (3 cols) -->
+      <div class="lg:col-span-3 space-y-3">
         <h4 class="text-xs font-black text-amber-400 uppercase tracking-widest">Navigation</h4>
         <ul class="space-y-1.5 text-xs">
-          <li><a href="/" class="hover:text-amber-300 transition-colors">Home</a></li>
-          <li><a href="/about/" class="hover:text-amber-300 transition-colors">About Moazzam</a></li>
-          <li><a href="/research/" class="hover:text-amber-300 transition-colors font-bold text-white">Research (7 Papers)</a></li>
-          <li><a href="/experience/" class="hover:text-amber-300 transition-colors">Experience</a></li>
-          <li><a href="/education/" class="hover:text-amber-300 transition-colors">Education</a></li>
-          <li><a href="/skills/" class="hover:text-amber-300 transition-colors">Skills Matrix</a></li>
-          <li><a href="/success-stories/" class="hover:text-amber-300 transition-colors font-bold text-amber-300">Success Stories</a></li>
-          <li><a href="/pricing/" class="hover:text-amber-300 transition-colors">Pricing & Fees</a></li>
-          <li><a href="/blog/" class="hover:text-amber-300 transition-colors">Guides & Hub</a></li>
+          {footerQuickLinks.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-amber-300 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
-      <!-- PTE, IELTS & NAATI (2 cols) -->
-      <div class="lg:col-span-2 space-y-3">
-        <h4 class="text-xs font-black text-amber-400 uppercase tracking-widest">PTE & Language</h4>
-        <ul class="space-y-1.5 text-xs">
-          <li><a href="/pte-trainer-lahore/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5 text-amber-300 font-semibold"><span>📍</span> PTE Trainer Lahore</a></li>
-          <li><a href="/online-pte-classes/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🌐</span> Online PTE Classes</a></li>
-          <li><a href="/pte-core-preparation/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🍁</span> PTE Core (Canada)</a></li>
-          <li><a href="/ielts-trainer-lahore/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🎯</span> IELTS Trainer Lahore</a></li>
-          <li><a href="/naati-ccl-urdu-preparation/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🗣️</span> NAATI CCL (+5 Pts)</a></li>
-          <li><a href="/pte-coaching/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>⚡</span> PTE 79+ Superior</a></li>
-          <li><a href="/ielts-coaching/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>📖</span> IELTS Academic 8+</a></li>
-        </ul>
-      </div>
-
-      <!-- Australian & Canadian Immigration (2 cols) -->
-      <div class="lg:col-span-2 space-y-3">
-        <h4 class="text-xs font-black text-amber-400 uppercase tracking-widest">Immigration Advisory</h4>
-        <ul class="space-y-1.5 text-xs">
-          <li><a href="/australia-skilled-migration/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5 text-amber-300 font-semibold"><span>🇦🇺</span> Australia GSM (189/190)</a></li>
-          <li><a href="/australian-immigration-consultant/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🦘</span> Immigration Consultant</a></li>
-          <li><a href="/skill-assessment-guidance/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>📊</span> Skill Assessment (ACS)</a></li>
-          <li><a href="/skills-assessment-australia/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>📑</span> Engineers Australia CDR</a></li>
-          <li><a href="/canada-immigration/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🍁</span> Canada Express Entry</a></li>
-          <li><a href="/student-visa/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🎓</span> Student Visa & SOP</a></li>
-        </ul>
-      </div>
-
-      <!-- Technology & AI Services (3 cols) -->
-      <div class="lg:col-span-3 space-y-3">
-        <h4 class="text-xs font-black text-amber-400 uppercase tracking-widest">Technology & AI</h4>
-        <ul class="space-y-1.5 text-xs">
-          <li><a href="/ai-research/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5 text-amber-300 font-semibold"><span>🔬</span> AI Research & LAMs</a></li>
-          <li><a href="/data-engineering/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🔀</span> Data Engineering & ETL</a></li>
-          <li><a href="/web-development/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🌐</span> Full-Stack Web Apps</a></li>
-          <li><a href="/data-scraping/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🕷️</span> Web Scraping Clusters</a></li>
-          <li><a href="/ai-development/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🧠</span> AI & Speech Models</a></li>
-          <li><a href="/ai-agentic-development/" class="hover:text-amber-300 transition-colors flex items-center gap-1.5"><span>🤖</span> AI Agentic Workflows</a></li>
+      <!-- Core Services Links (5 cols) -->
+      <div class="lg:col-span-5 space-y-3">
+        <h4 class="text-xs font-black text-amber-400 uppercase tracking-widest">Core Coaching & Advisory</h4>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-xs">
+          {footerServiceLinks.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-amber-300 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
     </div>
 
-    <!-- Professional Disclaimer Section -->
+    <!-- Professional Compliance Disclaimer Section -->
     <div class="mt-10 pt-8 border-t border-slate-800/80">
       <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/60 border border-slate-800/90 backdrop-blur-md">
         <div class="flex items-start gap-3.5">
@@ -115,8 +94,8 @@ import SiteLogo from './SiteLogo.astro';
             </svg>
           </div>
           <p class="text-xs leading-relaxed text-slate-400">
-            <strong class="text-slate-200 font-bold uppercase tracking-wider text-[11px] block sm:inline mb-1 sm:mb-0 mr-1.5">Disclaimer:</strong>
-            Moazzam Shoukat provides strategic educational guidance, points score planning, test coaching for PTE, IELTS, and NAATI CCL, and migration documentation vetting for Australia and Canada. This website does not provide legal immigration representation and Moazzam Shoukat is not a registered Australian migration agent (MARA). Outcomes depend on individual qualifications, official Department of Home Affairs and IRCC regulations, and quota changes. Verify all information with official government authorities.
+            <strong class="text-slate-200 font-bold uppercase tracking-wider text-[11px] block sm:inline mb-1 sm:mb-0 mr-1.5">Compliance Disclaimer:</strong>
+            Moazzam Shoukat provides strategic educational guidance, points score planning, test coaching for PTE, IELTS, and NAATI CCL, and migration documentation pre-vetting for Australia and Canada. This website does not provide legal immigration representation and Moazzam Shoukat is not a registered Australian migration agent (MARA). Outcomes depend on individual qualifications, official Department of Home Affairs and IRCC regulations, and quota changes. Verify all information with official government authorities.
           </p>
         </div>
       </div>

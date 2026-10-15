@@ -1,6 +1,7 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
 import SiteLogo from './SiteLogo.astro';
+import { headerNav } from '../data/navData';
 
 const currentPath = Astro.url.pathname.replace(/\/$/, "");
 
@@ -8,6 +9,7 @@ function isActive(path: string) {
   const clean = path.replace(/\/$/, "");
   if (clean === "" && currentPath === "") return true;
   if (clean !== "" && currentPath === clean) return true;
+  if (clean !== "" && currentPath.startsWith(clean)) return true;
   return false;
 }
 ---
@@ -21,7 +23,7 @@ function isActive(path: string) {
           <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
         </svg>
-        <span>Lahore, Pakistan &bull; Global AI & Migration Advisory</span>
+        <span>Lahore, Pakistan &bull; Online Classes for Pakistan, Australia & Worldwide</span>
       </div>
       <div class="flex items-center gap-2">
         <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -35,13 +37,13 @@ function isActive(path: string) {
     <div class="flex items-center gap-4 text-[11px]">
       <span class="inline-flex items-center gap-1.5 text-amber-300/90 font-medium">
         <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-        AI Researcher &bull; Australia & Canada PR Strategist &bull; PTE & IELTS Master Trainer
+        PTE &bull; NAATI CCL Urdu &bull; IELTS &bull; Australia PR Points & Skills Guidance
       </span>
     </div>
   </div>
 </div>
 
-<!-- Main Sticky Header: Crystal / Glassmorphic Effect -->
+<!-- Main Sticky Header -->
 <header
   id="main-header"
   class="sticky top-0 z-50 w-full crystal-glass-header transition-all duration-300 ease-out"
@@ -49,343 +51,83 @@ function isActive(path: string) {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       
-      <!-- Modernized Logo & Brand Monogram on Left -->
+      <!-- Logo -->
       <SiteLogo variant="header" />
 
-      <!-- Desktop Navigation in Center - Streamlined & Accessible -->
-      <nav class="hidden lg:flex items-center gap-1 text-[13px] font-semibold">
-        <!-- Home Link -->
-        <a
-          href="/"
-          class={`px-3 py-2 rounded-lg transition-all ${
-            isActive('/')
-              ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-              : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-          }`}
-        >
-          Home
-        </a>
-
-        <!-- About Link -->
-        <a
-          href="/about/"
-          class={`px-3 py-2 rounded-lg transition-all ${
-            isActive('/about')
-              ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-              : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-          }`}
-        >
-          About
-        </a>
-
-        <!-- Services Dropdown -->
-        <div class="relative group">
-          <a
-            href="/services/"
-            class={`px-3 py-2 rounded-lg inline-flex items-center gap-1.5 transition-all cursor-pointer ${
-              currentPath.includes('services') || currentPath.includes('canada') || currentPath.includes('australia') || currentPath.includes('student-visa') || currentPath.includes('skills-assessment') || currentPath.includes('skill-assessment') || currentPath.includes('ielts') || currentPath.includes('pte') || currentPath.includes('naati') || currentPath.includes('english') || currentPath.includes('immigration') || currentPath.includes('application-development') || currentPath.includes('web-development') || currentPath.includes('data-engineering') || currentPath.includes('data-scraping') || currentPath.includes('ai-development') || currentPath.includes('ai-agentic-development') || currentPath.includes('ai-research')
-                ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-                : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-            }`}
-          >
-            <span>Services</span>
-            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-          
-          <!-- Services Mega Menu Crystal Card -->
-          <div class="absolute -left-36 lg:-left-44 top-full pt-3 w-[880px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
-            <div class="p-6 rounded-3xl bg-white/95 dark:bg-[#0C1324]/95 backdrop-blur-2xl border border-white/60 dark:border-white/10 shadow-2xl shadow-slate-900/20 space-y-4">
-              
-              <!-- 3-Column Mega Grid -->
-              <div class="grid grid-cols-3 gap-6">
+      <!-- Desktop Navigation (5-7 top-level items + short dropdowns) -->
+      <nav class="hidden lg:flex items-center gap-1 text-[13px] font-semibold" aria-label="Main Navigation">
+        {headerNav.map((item) => {
+          if (item.children && item.children.length > 0) {
+            return (
+              <div class="relative group">
+                <a
+                  href={item.href}
+                  class={`px-3 py-2 rounded-lg inline-flex items-center gap-1.5 transition-all cursor-pointer ${
+                    isActive(item.href)
+                      ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
+                      : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
                 
-                <!-- Column 1: Immigration Pathways -->
-                <div class="space-y-2">
-                  <div class="pb-1 px-2 text-[10px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
-                    <span>Immigration Services</span>
-                    <span class="text-[9px] font-semibold text-slate-400">PR Pathways</span>
+                <div class="absolute left-0 top-full pt-2 w-80 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                  <div class="p-3 rounded-2xl bg-white/95 dark:bg-[#0C1324]/95 backdrop-blur-2xl border border-slate-200/80 dark:border-white/10 shadow-2xl shadow-slate-900/15 space-y-1">
+                    {item.children.map((sub) => (
+                      <a
+                        href={sub.href}
+                        class="block p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/sub"
+                      >
+                        <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/sub:text-amber-700 dark:group-hover/sub:text-amber-400">
+                          {sub.label}
+                        </div>
+                        {sub.description && (
+                          <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                            {sub.description}
+                          </div>
+                        )}
+                      </a>
+                    ))}
                   </div>
-                  <a href="/australia-skilled-migration/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🇦🇺</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Australia Skilled Migration</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Subclass 189, 190, 491 points</div>
-                    </div>
-                  </a>
-                  <a href="/australian-immigration-consultant/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🦘</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Immigration Advisor Lahore</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Strategic case & EOI guidance</div>
-                    </div>
-                  </a>
-                  <a href="/skill-assessment-guidance/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">📊</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Skills Assessment (ACS / EA)</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">IT, CDR & VETASSESS reviews</div>
-                    </div>
-                  </a>
-                  <a href="/canada-immigration/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🍁</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Canada Express Entry & PNP</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">STEM draws & CRS points</div>
-                    </div>
-                  </a>
-                  <a href="/student-visa/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🎓</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Student Visa & GS Guidance</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Genuine Student Statements</div>
-                    </div>
-                  </a>
-                </div>
-
-                <!-- Column 2: English Test Training -->
-                <div class="space-y-2 border-x border-slate-100 dark:border-slate-800/80 px-3">
-                  <div class="pb-1 px-2 text-[10px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
-                    <span>English & NAATI</span>
-                    <span class="text-[9px] font-semibold text-slate-400">Max Score</span>
-                  </div>
-                  <a href="/pte-trainer-lahore/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">📍</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">PTE Trainer in Lahore</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Speech algorithm calibration</div>
-                    </div>
-                  </a>
-                  <a href="/online-pte-classes/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🌐</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Online PTE Classes (1-on-1)</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Pakistan & Australia timings</div>
-                    </div>
-                  </a>
-                  <a href="/pte-core-preparation/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">⚡</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">PTE Core for Canada PR</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">CLB 9/10 & workplace tasks</div>
-                    </div>
-                  </a>
-                  <a href="/ielts-trainer-lahore/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🎯</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">IELTS Trainer in Lahore</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Speaking rooms & Task 2 (Band 8+)</div>
-                    </div>
-                  </a>
-                  <a href="/naati-ccl-urdu-preparation/" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-base shrink-0 mt-0.5">🗣️</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">NAATI CCL Urdu (+5 Points)</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">50+ recorded exam dialogues</div>
-                    </div>
-                  </a>
-                </div>
-
-                <!-- Column 3: Technology & AI Services -->
-                <div class="space-y-1.5">
-                  <div class="pb-1 px-2 text-[10px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
-                    <span>Technology & AI</span>
-                    <span class="text-[9px] font-semibold text-slate-400">Engineering</span>
-                  </div>
-                  <a href="/ai-research/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-sm shrink-0 mt-0.5">🔬</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">AI Research & LAMs</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">7 papers in Elsevier & IEEE</div>
-                    </div>
-                  </a>
-                  <a href="/data-engineering/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-sm shrink-0 mt-0.5">🔀</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Data Engineering & Pipelines</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Scalable Python ETL & PostgreSQL</div>
-                    </div>
-                  </a>
-                  <a href="/web-development/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-sm shrink-0 mt-0.5">🌐</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Full-Stack Web Development</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Next.js & Astro Jamstack</div>
-                    </div>
-                  </a>
-                  <a href="/data-scraping/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-sm shrink-0 mt-0.5">🕷️</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Enterprise Data Scraping</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Scrapy & anti-bot bypass</div>
-                    </div>
-                  </a>
-                  <a href="/ai-development/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-sm shrink-0 mt-0.5">🧠</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">AI & Machine Learning</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Speech AI, Whisper & LLMs</div>
-                    </div>
-                  </a>
-                  <a href="/ai-agentic-development/" class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                    <span class="text-sm shrink-0 mt-0.5">🤖</span>
-                    <div>
-                      <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">AI Agentic Development</div>
-                      <div class="text-[10px] text-slate-500 dark:text-slate-400">Multi-agents & vector RAG</div>
-                    </div>
-                  </a>
-                </div>
-
-              </div>
-
-              <!-- Mega Menu Bottom Bar -->
-              <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs px-2">
-                <span class="text-slate-400 text-[11px]">Empowering Global Careers & Enterprise AI Breakthroughs</span>
-                <div class="flex items-center gap-4">
-                  <a href="/services/" class="font-bold text-amber-700 dark:text-amber-400 hover:underline">
-                    View All Services &rarr;
-                  </a>
-                  <a href="/pricing/" class="font-bold text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400">
-                    Transparent Pricing
-                  </a>
                 </div>
               </div>
+            );
+          }
 
-            </div>
-          </div>
-        </div>
-
-        <!-- Research Link -->
-        <a
-          href="/research/"
-          class={`px-3 py-2 rounded-lg transition-all ${
-            isActive('/research') || isActive('/education-research') || isActive('/ai-research')
-              ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-              : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-          }`}
-        >
-          Research
-        </a>
-
-        <!-- Background Dropdown: Experience, Education, Skills -->
-        <div class="relative group">
-          <a
-            href="/experience/"
-            class={`px-3 py-2 rounded-lg inline-flex items-center gap-1.5 transition-all cursor-pointer ${
-              currentPath.includes('experience') || currentPath.includes('education') || currentPath.includes('skills') || currentPath.includes('selected-work')
-                ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-                : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-            }`}
-          >
-            <span>Background</span>
-            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-          
-          <div class="absolute left-0 top-full pt-2 w-72 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
-            <div class="p-2.5 rounded-2xl bg-white/95 dark:bg-[#0C1324]/95 backdrop-blur-2xl border border-white/60 dark:border-white/10 shadow-2xl shadow-slate-900/15 space-y-1">
-              <a href="/experience/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                <span class="text-base">💼</span>
-                <div>
-                  <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Professional Experience</div>
-                  <div class="text-[11px] text-slate-500 dark:text-slate-400">Software engineering & data leadership</div>
-                </div>
-              </a>
-              <a href="/education/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                <span class="text-base">🎓</span>
-                <div>
-                  <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Education & Degrees</div>
-                  <div class="text-[11px] text-slate-500 dark:text-slate-400">ITU Lahore BS CS, DAE & Projects</div>
-                </div>
-              </a>
-              <a href="/skills/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                <span class="text-base">🛠️</span>
-                <div>
-                  <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Technical Skills</div>
-                  <div class="text-[11px] text-slate-500 dark:text-slate-400">Python, ETL, Databases & Tools</div>
-                </div>
-              </a>
-              <a href="/selected-work/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors group/item">
-                <span class="text-base">⭐</span>
-                <div>
-                  <div class="font-bold text-slate-900 dark:text-white text-xs group-hover/item:text-amber-700 dark:group-hover/item:text-amber-400">Selected Work</div>
-                  <div class="text-[11px] text-slate-500 dark:text-slate-400">Featured architecture case studies</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Success Stories Link -->
-        <a
-          href="/success-stories/"
-          class={`px-3 py-2 rounded-lg transition-all ${
-            isActive('/success-stories')
-              ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-              : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-          }`}
-        >
-          Success Stories
-        </a>
-
-        <!-- Blog Link -->
-        <a
-          href="/blog/"
-          class={`px-3 py-2 rounded-lg transition-all ${
-            isActive('/blog')
-              ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-              : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-          }`}
-        >
-          Blog
-        </a>
-
-        <!-- Pricing Link -->
-        <a
-          href="/pricing/"
-          class={`px-3 py-2 rounded-lg transition-all ${
-            isActive('/pricing')
-              ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-              : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-          }`}
-        >
-          Pricing
-        </a>
-
-        <!-- Contact Link -->
-        <a
-          href="/contact/"
-          class={`px-3 py-2 rounded-lg transition-all ${
-            isActive('/contact')
-              ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
-              : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
-          }`}
-        >
-          Contact
-        </a>
+          return (
+            <a
+              href={item.href}
+              class={`px-3 py-2 rounded-lg transition-all ${
+                isActive(item.href)
+                  ? 'text-amber-700 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 font-bold'
+                  : 'text-slate-700 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100/60 dark:hover:bg-white/5'
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
       </nav>
 
-      <!-- Right Header Actions (Phone Icon, Sun/Moon Only Toggle & CTA) -->
+      <!-- Right Header Actions (Phone, Theme Toggle & Consultation CTA) -->
       <div class="flex items-center gap-2.5 sm:gap-3">
-        
-        <!-- Clean Phone Icon Only -->
         <a
           href="tel:+923280484399"
           class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-500/10 dark:hover:bg-amber-400/10 transition-colors"
-          aria-label="Direct Call to +92-328-048-4399"
+          aria-label="Direct Phone Call to +92-328-048-4399"
           title="Direct Call: +92-328-048-4399"
+          data-track-phone="header_top"
         >
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
           </svg>
         </a>
 
-        <!-- Dark/Light Theme Toggle -->
         <ThemeToggle />
 
-        <!-- Consultation Booking CTA Button -->
         <a
           href="/contact/"
           class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-black bg-[#0A1128] hover:bg-slate-900 text-white dark:bg-amber-400 dark:hover:bg-amber-300 dark:text-slate-950 transition-all shadow-md group cursor-pointer border border-amber-500/20"
@@ -399,7 +141,7 @@ function isActive(path: string) {
           </svg>
         </a>
 
-        <!-- Mobile Animated Hamburger Button -->
+        <!-- Mobile Hamburger Button -->
         <button
           id="mobile-menu-btn"
           type="button"
@@ -416,148 +158,80 @@ function isActive(path: string) {
     </div>
   </div>
 
-  <!-- Mobile Dropdown Menu (Crystal Glass Style) -->
+  <!-- Mobile Dropdown Menu (Reuses headerNav data source) -->
   <div
     id="mobile-menu"
-    class="hidden lg:hidden border-t border-white/40 dark:border-white/10 bg-white/95 dark:bg-[#070D1D]/95 backdrop-blur-2xl px-5 pt-4 pb-8 space-y-4 transition-all duration-300 max-h-[85vh] overflow-y-auto"
+    class="hidden lg:hidden border-t border-slate-200/50 dark:border-white/10 bg-white/95 dark:bg-[#070D1D]/95 backdrop-blur-2xl px-5 pt-4 pb-8 space-y-4 transition-all duration-300 max-h-[85vh] overflow-y-auto"
   >
-    <div class="grid grid-cols-2 gap-2 text-xs font-bold">
-      <a href="/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Home</a>
-      <a href="/about/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">About Moazzam</a>
-      <a href="/services/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">All Services</a>
-      <a href="/research/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-amber-600 dark:text-amber-400 font-extrabold">Research & Papers</a>
-      <a href="/experience/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Experience</a>
-      <a href="/education/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Education</a>
-      <a href="/skills/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Technical Skills</a>
-      <a href="/success-stories/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-amber-600 dark:text-amber-400 font-extrabold">Success Stories</a>
-      <a href="/blog/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Blog & Guides</a>
-      <a href="/pricing/" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white">Pricing & Packages</a>
-      <a href="/contact/" class="p-3 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-300 font-extrabold">Contact Moazzam</a>
+    <div class="space-y-2">
+      {headerNav.map((item) => (
+        <div>
+          <a
+            href={item.href}
+            class={`block p-3 rounded-xl font-bold text-xs ${
+              isActive(item.href)
+                ? 'bg-amber-500/10 text-amber-700 dark:text-amber-400 font-extrabold'
+                : 'bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white'
+            }`}
+          >
+            {item.label}
+          </a>
+          {item.children && (
+            <div class="pl-3 pt-1 space-y-1">
+              {item.children.map((sub) => (
+                <a
+                  href={sub.href}
+                  class="block p-2 rounded-lg text-[11px] font-semibold text-slate-600 dark:text-slate-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800/40"
+                >
+                  &rarr; {sub.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+      <a
+        href="/contact/"
+        class="block p-3 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-300 font-extrabold text-xs text-center"
+      >
+        Book Consultation
+      </a>
     </div>
 
-    <!-- Mobile Immigration Section -->
-    <div class="pt-2 border-t border-slate-200/50 dark:border-slate-800">
-      <div class="text-[11px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">
-        Immigration Services
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
-        <a href="/australia-skilled-migration/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold text-amber-600 dark:text-amber-400">
-          <span>🇦🇺</span> Australia GSM (189/190/491)
-        </a>
-        <a href="/australian-immigration-consultant/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🦘</span> Immigration Advisor Lahore
-        </a>
-        <a href="/skill-assessment-guidance/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>📊</span> Skills Assessment (ACS/EA)
-        </a>
-        <a href="/canada-immigration/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🍁</span> Canada Express Entry & PNP
-        </a>
-        <a href="/student-visa/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🎓</span> Student Visa & GS SOP
-        </a>
-      </div>
-    </div>
-
-    <!-- Mobile English Training Section -->
-    <div class="pt-2 border-t border-slate-200/50 dark:border-slate-800">
-      <div class="text-[11px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">
-        PTE, IELTS & NAATI Coaching
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
-        <a href="/pte-trainer-lahore/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-bold flex items-center gap-2 text-amber-600 dark:text-amber-400">
-          <span>📍</span> PTE Trainer in Lahore
-        </a>
-        <a href="/online-pte-classes/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
-          <span>🌐</span> Online PTE Classes (1-on-1)
-        </a>
-        <a href="/pte-core-preparation/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
-          <span>⚡</span> PTE Core for Canada PR
-        </a>
-        <a href="/ielts-trainer-lahore/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
-          <span>🎯</span> IELTS Trainer in Lahore (Band 8+)
-        </a>
-        <a href="/naati-ccl-urdu-preparation/" class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
-          <span>🗣️</span> NAATI CCL Urdu (+5 Points)
-        </a>
-      </div>
-    </div>
-
-    <!-- Mobile Technology & AI Section -->
-    <div class="pt-2 border-t border-slate-200/50 dark:border-slate-800">
-      <div class="text-[11px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">
-        Technology & AI Services
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
-        <a href="/ai-research/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold text-amber-600 dark:text-amber-400">
-          <span>🔬</span> AI Research & LAMs
-        </a>
-        <a href="/data-engineering/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🔀</span> Data Engineering & Pipelines
-        </a>
-        <a href="/web-development/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🌐</span> Full-Stack Web Development
-        </a>
-        <a href="/data-scraping/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🕷️</span> Enterprise Web Scraping
-        </a>
-        <a href="/ai-development/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🧠</span> AI & Machine Learning
-        </a>
-        <a href="/ai-agentic-development/" class="p-2.5 rounded-lg border border-slate-200/70 dark:border-slate-800 flex items-center gap-2 font-bold">
-          <span>🤖</span> AI Agentic Development
-        </a>
-      </div>
-    </div>
-
-    <!-- Mobile Actions (Direct Phone & WhatsApp) -->
-    <div class="pt-4 flex flex-col gap-2">
+    <!-- Mobile Quick Call Button -->
+    <div class="pt-4 border-t border-slate-200/50 dark:border-slate-800">
       <a
         href="tel:+923280484399"
         class="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white text-center font-bold text-xs flex items-center justify-center gap-2"
+        data-track-phone="mobile_drawer"
       >
         <span>Direct Phone Call (+92-328-048-4399)</span>
-      </a>
-      <a
-        href="https://wa.me/923280484399?text=Hi%20Moazzam%2C%20I%20would%20like%20to%20book%20a%20consultation"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="w-full py-3 rounded-xl bg-[#25D366] text-white text-center font-bold text-xs flex items-center justify-center gap-2 shadow-md"
-      >
-        <span>Instant WhatsApp Chat</span>
       </a>
     </div>
   </div>
 </header>
 
-<script>
-  function setupMobileMenu() {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar-1');
-    const bar2 = document.getElementById('bar-2');
-    const bar3 = document.getElementById('bar-3');
+<script is:inline>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar-1');
+  const bar2 = document.getElementById('bar-2');
+  const bar3 = document.getElementById('bar-3');
 
-    if (!btn || !menu || !bar1 || !bar2 || !bar3) return;
-
+  if (btn && menu) {
     btn.addEventListener('click', () => {
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', (!isExpanded).toString());
-      
+      btn.setAttribute('aria-expanded', !isExpanded);
       menu.classList.toggle('hidden');
-
       if (!isExpanded) {
-        bar1.classList.add('rotate-45', 'translate-y-[8px]');
+        bar1.classList.add('rotate-45', 'translate-y-2');
         bar2.classList.add('opacity-0');
-        bar3.classList.add('-rotate-45', '-translate-y-[8px]');
+        bar3.classList.add('-rotate-45', '-translate-y-2');
       } else {
-        bar1.classList.remove('rotate-45', 'translate-y-[8px]');
+        bar1.classList.remove('rotate-45', 'translate-y-2');
         bar2.classList.remove('opacity-0');
-        bar3.classList.remove('-rotate-45', '-translate-y-[8px]');
+        bar3.classList.remove('-rotate-45', '-translate-y-2');
       }
     });
   }
-
-  setupMobileMenu();
-  document.addEventListener('astro:after-swap', setupMobileMenu);
 </script>
